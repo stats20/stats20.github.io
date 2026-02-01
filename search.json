@@ -9,8 +9,12 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "website",
+    "title": "Welcome to Statistics 20",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This site was produced with Quarto and WebR using Positron and is currently hosted by GitHub. It was created for the students of Statistics 20 for use inside and outside of the classroom.\nTo learn more about Quarto websites please visit https://quarto.org/docs/websites.\nTo learn more about WebR please visit https://docs.r-wasm.org/webr/latest/\nAnd about its Quarto extension also please visit https://quarto-webr.thecoatlessprofessor.com/\nAnd https://github.com/coatless/quarto-webr\nAnd this site is hosted by GitHub (free) and easy setup and maintenance https://pages.github.com/",
+    "crumbs": [
+      "Start Here",
+      "Overview"
+    ]
   }
 ]
