@@ -7,6 +7,50 @@
     "text": "About this site"
   },
   {
+    "objectID": "activity/Week01test_drive.html",
+    "href": "activity/Week01test_drive.html",
+    "title": "Week 1 Getting Started",
+    "section": "",
+    "text": "This is a “test drive” activity for Week 1. The goal is to get you familiar with the R environment and some of the tools we will be using in this course.\nThis tool is called “webr” and it allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device.\nYou can run the code chunks by clicking on the “Run Code” button that appears when you hover over them.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity 1"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#introduction",
+    "href": "activity/Week01test_drive.html#introduction",
+    "title": "Week 1 Getting Started",
+    "section": "",
+    "text": "This is a “test drive” activity for Week 1. The goal is to get you familiar with the R environment and some of the tools we will be using in this course.\nThis tool is called “webr” and it allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device.\nYou can run the code chunks by clicking on the “Run Code” button that appears when you hover over them.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity 1"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#example-r-has-built-in-datasets",
+    "href": "activity/Week01test_drive.html#example-r-has-built-in-datasets",
+    "title": "Week 1 Getting Started",
+    "section": "Example: R has built in datasets",
+    "text": "Example: R has built in datasets\nLet’s examine “iris” which is a built-in dataset. You can run the code chunk below to see what it looks like.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s unpack that. A handy function when you are starting out in R is is() (seriously). It tells you what type of R object you are working with.\nAn “object” is something that R recognizes and knows how to store it and work with it. iris is an R object. We can ask R what type of object it is:",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity 1"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#basic-examination",
+    "href": "activity/Week01test_drive.html#basic-examination",
+    "title": "Week 1 Getting Started",
+    "section": "Basic examination",
+    "text": "Basic examination\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nfor now, just understand that it is data. It is technically a “data.frame” which is a type of object that is designed to hold data in rows and columns (like a spreadsheet). We will learn more about data frames later, but for now, just know that it is a way (there are others) to store data.\nLet’s backup, how old are you in years? Suppose you are 20 years old. How would you store that in R? You could just type:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe line above is jammed with information.\nWe just created an R object named “age” and we assigned it the value of 20. In R, you “name it and create it” in one step.\nThe “&lt;-” symbol is called the assignment operator (“gets”) and it tells R to store the value on the right (20) in the object on the left (age).\nNow R can use the object “age” in our calculations. Let’s see what it “is”. Try it like is(iris) but with age instead.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe vector, in this case a numeric vector, is the most basic type of object in R. It is a sequence of values that are all of the same type (in this case, numbers).\nRemember iris above? It is a data frame, which is a more complex type of R object that consists of multiple vectors (columns) that can be of different types (numbers, characters, etc.). Another handy basic function in R is str() which gives you a quick overview of the structure of an R object. Try it on iris.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow we are getting a real look at data in R. We see that iris has 150 rows and 5 columns. The first four columns are numeric (the measurements of the flowers) and the last column is a factor (the species of the flower). We will learn more about factors later, but for now, just know that it is a way to store non-numeric (categorical) data (like species).",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity 1"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to Statistics 20",
