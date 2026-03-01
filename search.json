@@ -11,7 +11,7 @@
     "href": "activity/Week01test_drive.html",
     "title": "Week 1 Getting Started",
     "section": "",
-    "text": "This is a “test drive” activity for Week 1. The goal is to get you familiar with the R environment and some of the tools we will be using in this course.\nThis tool is called “webr” and it allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device.\nYou can run the code chunks by clicking on the “Run Code” button that appears when you hover over them.",
+    "text": "This is a “test drive” activity for Week 1. The goal is to get you familiar with the R environment and some of the tools we will be using in this course.\nThis tool is called “webr” and it allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser. If you try to run this on a tablet you will need to turn off lockdown mode (security) for stats20.github.io\nYou can run the code chunks by clicking on the “Run Code” button that appears it the upper left of the code chunk.",
     "crumbs": [
       "Activities",
       "Lecture 1 Activity 1"
@@ -22,29 +22,84 @@
     "href": "activity/Week01test_drive.html#introduction",
     "title": "Week 1 Getting Started",
     "section": "",
-    "text": "This is a “test drive” activity for Week 1. The goal is to get you familiar with the R environment and some of the tools we will be using in this course.\nThis tool is called “webr” and it allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device.\nYou can run the code chunks by clicking on the “Run Code” button that appears when you hover over them.",
+    "text": "This is a “test drive” activity for Week 1. The goal is to get you familiar with the R environment and some of the tools we will be using in this course.\nThis tool is called “webr” and it allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser. If you try to run this on a tablet you will need to turn off lockdown mode (security) for stats20.github.io\nYou can run the code chunks by clicking on the “Run Code” button that appears it the upper left of the code chunk.",
     "crumbs": [
       "Activities",
       "Lecture 1 Activity 1"
     ]
   },
   {
-    "objectID": "activity/Week01test_drive.html#example-r-has-built-in-datasets",
-    "href": "activity/Week01test_drive.html#example-r-has-built-in-datasets",
+    "objectID": "activity/Week01test_drive.html#real-basic-r-the-calculator",
+    "href": "activity/Week01test_drive.html#real-basic-r-the-calculator",
     "title": "Week 1 Getting Started",
-    "section": "Example: R has built in datasets",
-    "text": "Example: R has built in datasets\nLet’s examine “iris” which is a built-in dataset. You can run the code chunk below to see what it looks like.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s unpack that. A handy function when you are starting out in R is is() (seriously). It tells you what type of R object you are working with.\nAn “object” is something that R recognizes and knows how to store it and work with it. iris is an R object. We can ask R what type of object it is:",
+    "section": "Real Basic: R the Calculator",
+    "text": "Real Basic: R the Calculator\nR is a fancy calculator. Try the basic calculations in the code chunk below, just click Run Code when you are ready. You can modify the code and try different calculations too. Parentheses will work as expected, and R follows the standard order of operations (PEMDAS). Please try it.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWhat you might notice is that R isn’t storing the results anywhere except printing so you can see it (notice, you don’t need to type print() to see the results).\nIf you want to save the results, you need to assign them to a variable. A variable is a name that you can use to store a value (or an object) in R. You can use the assignment operator (called “gets”) &lt;- to assign a value to a variable. Try it out below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBut you don’t see any results, right? That’s because you are just assigning the values to the variables named x, y, and z. If you want to see the results, you can just type the variable name and run it.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry this - what do you think you will get if you type x + y + z and run it? Try it out in the code chunk below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDid you get what you expected to get as a result? That is a fundamental skill in programming – you should have an idea of what to expect as a result. If you got something different, try to understand why. If you are confused, ask for help. This is a learning process and it is normal to be confused at first.",
     "crumbs": [
       "Activities",
       "Lecture 1 Activity 1"
     ]
   },
   {
-    "objectID": "activity/Week01test_drive.html#basic-examination",
-    "href": "activity/Week01test_drive.html#basic-examination",
+    "objectID": "activity/Week01test_drive.html#built-in-datasets-in-r",
+    "href": "activity/Week01test_drive.html#built-in-datasets-in-r",
     "title": "Week 1 Getting Started",
-    "section": "Basic examination",
-    "text": "Basic examination\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nfor now, just understand that it is data. It is technically a “data.frame” which is a type of object that is designed to hold data in rows and columns (like a spreadsheet). We will learn more about data frames later, but for now, just know that it is a way (there are others) to store data.\nLet’s backup, how old are you in years? Suppose you are 20 years old. How would you store that in R? You could just type:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe line above is jammed with information.\nWe just created an R object named “age” and we assigned it the value of 20. In R, you “name it and create it” in one step.\nThe “&lt;-” symbol is called the assignment operator (“gets”) and it tells R to store the value on the right (20) in the object on the left (age).\nNow R can use the object “age” in our calculations. Let’s see what it “is”. Try it like is(iris) but with age instead.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe vector, in this case a numeric vector, is the most basic type of object in R. It is a sequence of values that are all of the same type (in this case, numbers).\nRemember iris above? It is a data frame, which is a more complex type of R object that consists of multiple vectors (columns) that can be of different types (numbers, characters, etc.). Another handy basic function in R is str() which gives you a quick overview of the structure of an R object. Try it on iris.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow we are getting a real look at data in R. We see that iris has 150 rows and 5 columns. The first four columns are numeric (the measurements of the flowers) and the last column is a factor (the species of the flower). We will learn more about factors later, but for now, just know that it is a way to store non-numeric (categorical) data (like species).",
+    "section": "Built-in datasets in R",
+    "text": "Built-in datasets in R\nNo one is going to hire you to do calculations like the ones above, but they will hire you to work with data. R has a lot of built-in datasets that you can use to practice your data manipulation and analysis skills.\nLet’s examine “iris” which is a built-in dataset. You can run the code chunk below to see what it looks like.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s unpack this! You can modify my code above in the browser, try modifying the box above with “head(iris)” instead of just “iris” and see what happens. The head() function gives you the first few rows of the dataset, which is a nice way to get a quick look at it without overwhelming you with all 150 rows.\nA handy function when you are starting out in R is is() (seriously). It tells you what type of R object you are working with.\nAn “object” is something that R recognizes and knows how to store it and work with it. iris is an R object. We can ask R what type of object it is:",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity 1"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#what-is-iris",
+    "href": "activity/Week01test_drive.html#what-is-iris",
+    "title": "Week 1 Getting Started",
+    "section": "What is() iris?",
+    "text": "What is() iris?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nfor now, just understand that iris is data. In R, iris is a “data.frame” which is a type of object that is designed to store data in rows and columns (like a spreadsheet).\nWe will learn more about data frames later, but for now, just know that it is a way (there are others) to contain data for processing.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity 1"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#try-this-what-are-x-y-and-z",
+    "href": "activity/Week01test_drive.html#try-this-what-are-x-y-and-z",
+    "title": "Week 1 Getting Started",
+    "section": "Try this: what are x, y, and z?",
+    "text": "Try this: what are x, y, and z?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity 1"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#the-vector",
+    "href": "activity/Week01test_drive.html#the-vector",
+    "title": "Week 1 Getting Started",
+    "section": "The vector",
+    "text": "The vector\nThe vector, in this case a numeric vector is a sequence of values that are all of the same type (in this case, numbers). In R, the vector is the fundamental data structure.\nNotice that for a single number, R still treats it as a vector of length 1 (there are no scalars in R). This is a common source of confusion for those new to R.\nYou can examine the built-in dataset “rivers” to see an example of a numeric vector. Try it out below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity 1"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#back-to-iris",
+    "href": "activity/Week01test_drive.html#back-to-iris",
+    "title": "Week 1 Getting Started",
+    "section": "Back to iris",
+    "text": "Back to iris\nRemember iris above? It is a data frame, which is a more complex type of R object that consists of multiple vectors (columns) that can be of different types (numbers, characters, etc.). Another handy basic function in R is str() which gives you a quick overview of the structure of an R object. Try it on iris.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow we are getting a real look at data in R. We see that iris has 150 rows and 5 columns. The first four columns are numeric (the measurements of the flowers) and the last column is a factor (the species of the flower). We will learn more about factors later, but for now, just know that it is a way to store non-numeric (categorical) data (like species).\nI am going to leave you with one more useful basic function, summary(), which gives you a quick summary of the data in each column. Try it on iris and just for fun, try it on age too. What happens and why?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity 1"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#takeaways",
+    "href": "activity/Week01test_drive.html#takeaways",
+    "title": "Week 1 Getting Started",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nR is a fancy calculator that can do basic arithmetic and more complex calculations.\nYou can assign values to variables using the assignment operator &lt;- and then use those variables in calculations\nR has built-in datasets that you can use to practice your data manipulation and analysis skills.\nThe is() function tells you what type of R object you are working with.\nThe vector is the most basic type of data object in R, and it is a sequence of values that are all of the same type.\nThe str() function gives you a quick overview of the structure of an R object.\nThe summary() function gives you a quick summary of the data in each vector (column) of a data frame.",
     "crumbs": [
       "Activities",
       "Lecture 1 Activity 1"
