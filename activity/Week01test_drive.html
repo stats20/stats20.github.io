@@ -2233,7 +2233,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This is a “test drive” activity for Week 1. The goal of this activity is to help you become familiar with the R environment and some of the tools we will be using in this course.</p>
-<p>The activity is not a substitute for using RStudio BUT exists in the even that you do not have a device running R during lecture.</p>
+<p>The activity is not a substitute for using RStudio BUT exists for the times when you do not have a device running R during lecture and we want a “hands on” activity.</p>
 <p>This tool is called “webr” and it allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, have not tested other brands). If you try to run this on a tablet you will need to turn off lockdown mode (security) for stats20.github.io</p>
 <p>You can run the code chunks by clicking on the “Run Code” button that appears it the upper left of the code chunk. The other two icons on the upper right of the code chunk are for copying the code and for refreshing the window (which will clear all your work and start you over). You can also modify the code in the code chunks and run it to see how it works. This is a great way to learn by doing.</p>
 </section>
@@ -2243,13 +2243,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>What you might notice is that R isn’t storing the results anywhere except printing so you can see it (notice, you don’t need to type print() to see the results). The [1] that you see printed is just an index that R uses to indicate the position of the first element in the output. Since we are just doing simple calculations, there is only one element in the output, so it is indexed as [1]. If you were to do a calculation that resulted in multiple values, you would see multiple indices.</p>
-<p>If you want to save the results, you need to assign them to a variable. A variable is a name that you can use to store a value (or an object) in R. You can use the assignment operator (called “gets”) <strong>&lt;-</strong> to assign a value to a variable. Try it out below.</p>
+<p>If you want to save the results, you need to assign them to a variable. <strong>A variable is a name</strong> that you can use to store a value (or values) in R. You can use the assignment operator (called “gets”) <strong>&lt;-</strong> to associate a value with a variable. Try it out below.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>But you don’t see any results, right? That’s because you are just assigning the values to the variables named x, y, and z. If you want to see the results, you can just type the variable name and run it.</p>
+<p>But you don’t see any results when you run the code right? That’s because you are just associating the values with the variables named x, y, and z. If you want to see the results, in R, you can just type the variable name and run it.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Try this - what do you think you will get if you type x + y + z and run it? Try it out in the code chunk below.</p>
+<p>Try this - what do you think you will get if you type <strong>x + y + z</strong> and run it? Try it out in the code chunk below.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Did you get what you expected to get as a result? That is a fundamental skill in programming – you should have an idea of what to expect as a result. If you got something different, try to understand why. If you are confused, ask for help. This is a learning process and it is normal to be confused at first.</p>
@@ -2260,17 +2260,17 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Let’s examine “iris” which is a built-in dataset. You can run the code chunk below to see what it looks like.</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Let’s unpack this! You can modify my code above in the browser, try modifying the box above with “head(iris)” instead of just “iris” and see what happens. The head() function gives you the first few rows of the dataset, which is a nice way to get a quick look at it without overwhelming you with all 150 rows.</p>
+<p>Let’s unpack this! You can modify my code above in the browser, try modifying the box above with <code>head(iris)</code> instead of just <code>iris</code> and see what happens. The <code>head()</code> function reveals the first few rows of the data. This is a way to get a quick look at it without overwhelming you with all 150 rows.</p>
 <p>Notice the row numbering on the left and the column names at the top. The row numbering is just for reference and is not part of the data. The column names are important because they tell you what each column represents. In this case, we have measurements of different parts of the iris flower (sepal length, sepal width, petal length, petal width) and the species of the flower.</p>
 <p>A handy function when you are starting out in R is <code>is()</code> (seriously). It tells you what type of R object you are working with.</p>
-<p>An “object” is something that R recognizes and knows how to store it and work with it. iris is an R object. We can ask R what type of object it is:</p>
+<p>An “object” is something that R recognizes and knows how to store it in memory and work with when you request the object by name. <code>iris</code> is a built-in R object that contains data. We can ask R what type of object <code>iris</code> is:</p>
 </section>
 <section id="what-is-iris" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-iris">What is() iris?</h2>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>for now, just understand that <strong>iris</strong> is data. In R, iris is a <strong>“data.frame”</strong> which is a type of R object that is designed to store data in rows and columns (like a spreadsheet).</p>
-<p>We will learn more about data frames later, but for now, just know that it is a way (there are other way) for R to store data for processing.</p>
+<p>We will learn more about data frames later, but for now, just know that it is a way (there are other ways) for R to store data for processing and analysis.</p>
 </section>
 <section id="try-this-what-are-x-y-and-z" class="level2">
 <h2 class="anchored" data-anchor-id="try-this-what-are-x-y-and-z">Try this: what are x, y, and z?</h2>
@@ -2279,8 +2279,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="the-vector" class="level2">
 <h2 class="anchored" data-anchor-id="the-vector">The vector</h2>
-<p>The vector, in this case a numeric vector is a sequence of values that are all of the same type (in this case, numbers). In R, the vector is the fundamental data structure.</p>
-<p>Notice that for a single number, R still treats it as a vector of length 1 (there are no scalars in R) with index [1]. This is a common source of confusion for those new to R.</p>
+<p>The vector, in this case, a numeric vector is a sequence of values that are all of the same type (in this case, numbers). In R, the vector is the fundamental data structure.</p>
+<p>Notice that for a single number, R still treats it as a vector of length 1 (there are no scalars in R) with index [1]. This is a common source of confusion for those new to R. R is 1-indexed, meaning enumeration starts at 1. It is like the way we count. Python, C / C++, Java, JavaScript and many other programming languages are 0-indexed, meaning enumeration starts at 0.</p>
 <p>You can examine the built-in dataset “rivers” to see an example of a numeric vector. Try it out below and notice the values of the indices between the [].</p>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -2300,13 +2300,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <h2 class="anchored" data-anchor-id="takeaways">Takeaways</h2>
 <ul>
 <li>R is a fancy calculator that can do basic arithmetic and more complex calculations.</li>
-<li>You can assign values to variables using the assignment operator &lt;- and then use those variables in calculations</li>
-<li>R has many built-in datasets such as iris and rivers that you can use to practice your data manipulation and analysis skills.</li>
-<li>The is() function tells you what type of R object you are working with.</li>
+<li>You can assign values to variables using the assignment operator <code>&lt;-</code> and then use those variables in calculations</li>
+<li>R has many built-in data sets such as iris and rivers that you can use to practice your data manipulation and analysis skills.</li>
+<li>The <code>is()</code> function tells you what type of R object you are working with.</li>
 <li>The vector is the most basic type of data object in R, and it is a sequence of values that are all of the same type.</li>
 <li>The data frame is a more complex type of R object that consists of multiple vectors (columns) that can be of different types (numbers, factors, etc.).</li>
-<li>Vectors are indexed starting at 1, even if they only have one value (there are no scalars in R).</li>
-<li>The str() function gives you a quick overview of the structure of an R object.</li>
+<li>R vectors are 1-indexed, even when the vector only has one value (there are no scalars in R, only vectors).</li>
+<li>The <code>str()</code> function gives you a quick overview of the structure of an R object.</li>
 <li>The summary() function gives you a quick summary of the data in each vector (column) of a data frame.</li>
 </ul>
 
