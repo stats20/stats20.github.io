@@ -1907,9 +1907,13 @@ globalThis.qwebrExecuteCode = async function (
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works">How it works</a></li>
+  <li><a href="#how-this-page-works" id="toc-how-this-page-works" class="nav-link" data-scroll-target="#how-this-page-works">How this page works</a></li>
   <li><a href="#first-steps-r-the-calculator" id="toc-first-steps-r-the-calculator" class="nav-link" data-scroll-target="#first-steps-r-the-calculator">First Steps: R the Calculator</a></li>
-  <li><a href="#built-in-datasets-in-r" id="toc-built-in-datasets-in-r" class="nav-link" data-scroll-target="#built-in-datasets-in-r">Built-in datasets in R</a></li>
+  <li><a href="#built-in-datasets-in-r" id="toc-built-in-datasets-in-r" class="nav-link" data-scroll-target="#built-in-datasets-in-r">Built-in datasets in R</a>
+  <ul class="collapse">
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  <li><a href="#examine-iris" id="toc-examine-iris" class="nav-link" data-scroll-target="#examine-iris">Examine iris</a></li>
+  </ul></li>
   <li><a href="#what-is-iris" id="toc-what-is-iris" class="nav-link" data-scroll-target="#what-is-iris">What is() iris?</a></li>
   <li><a href="#try-this-what-are-or-is-x-y-and-z" id="toc-try-this-what-are-or-is-x-y-and-z" class="nav-link" data-scroll-target="#try-this-what-are-or-is-x-y-and-z">Try this: what are (or is…) x, y, and z?</a></li>
   <li><a href="#the-vector" id="toc-the-vector" class="nav-link" data-scroll-target="#the-vector">The vector</a></li>
@@ -2233,12 +2237,12 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This is a “test drive” activity for Week 1. The goal of this activity is to help you become familiar R and some of the tools we will be using in this course.</p>
-<p>The activity is not a substitute for using RStudio BUT exists for the times when you do not have a device running R during lecture but we want you to experience a “hands on” activity.</p>
-<p>This tool is called <strong>webr</strong> and it allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, have not tested other brands). If you try to run this on a tablet you will need to turn off lockdown mode (security) for stats20.github.io</p>
+<p>This is a “test drive” activity for Week 1 using a tool called <span style="font-weight: bold;">webr&lt;&gt; . The goal of this activity is to help you become familiar R and some of the tools we will be using in this course.</span></p>
+<p>This activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity.</p>
+<p><span style="font-weight: bold;">webr&lt;&gt; allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io</span></p>
 </section>
-<section id="how-it-works" class="level2">
-<h2 class="anchored" data-anchor-id="how-it-works">How it works</h2>
+<section id="how-this-page-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-this-page-works">How this page works</h2>
 <p>You can run the R code chunks by clicking on the <strong>Run Code</strong> button that appears in the upper left of the “code chunks”. The other two icons on the upper right of the code chunk are for copying the code and for refreshing the window (which will clear all of your work and start you over). You can also modify the code in the code chunks and run it to see how it works.</p>
 </section>
 <section id="first-steps-r-the-calculator" class="level2">
@@ -2246,9 +2250,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>R is a sophisticated calculator. Try the basic calculations in the code chunk below, just click Run Code when you are ready. You can modify the code and try different calculations too. Parentheses will work as expected, and R follows the standard order of operations (PEMDAS). Please try it.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>What you might notice is that R isn’t storing the results anywhere except print the results to your screen so you can see it (notice, you don’t need to type <code>print()</code> to see the results). The <strong>[1]</strong> that you see printed is just an index that R uses to indicate the position of the first element in the output. Since we are just doing simple calculations and there is only one element in the output, it is indexed as <strong>[1]</strong>. If you were to do a calculation that resulted in multiple values, you would see multiple indices.</p>
-<p>R also uses newlines to separate the outputs of different calculations (or complete each expression generally). When you run the code chunk above, you will also see the results of each calculation on a new line.</p>
-<p>If you want to save the results, you need to assign them to a variable (think math). You can use the assignment operator (called “gets”) <code>&lt;-</code> to associate a value with a variable. Try it out below.</p>
+<p>What you might notice is that R isn’t storing the results anywhere except to print the results to your screen so you can see it (notice, you don’t need to type <code>print()</code> to see the results). The <code>[1]</code> that you see printed is just an index that R uses to indicate the position of the first element in the output. Since we are just doing simple calculations and there is only one element in the output, it is indexed as <code>[1]</code>. If you were to do a calculation that resulted in multiple values, you would see multiple indices.</p>
+<p>R also uses new lines to separate the outputs of different calculations (or complete each expression generally). When you run the code chunk above, you will also see the results of each calculation on a new line.</p>
+<p>If you want to save the results, you need to assign them to a variable (think math). You can use the assignment operator (read “gets”) <code>&lt;-</code> to associate a value (name) with a variable. Try it out below.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>But you don’t see any results when you run the code right? That’s because you are just associating the values with the variables named x, y, and z. If you want to see the results, in R, you can just type the variable name and run it.</p>
@@ -2257,19 +2261,26 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Try this - what do you think you will get if you type <code>x + y + z</code> and run it? First think about what it should be, then try it out in the code chunk below.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p><strong>Did you get what you expected to get as a result?</strong> That is a fundamental skill in programming – you should have an idea of what to expect as a result of your code. If you got something different, try to understand why it differed. If you are confused, ask for help. This is a learning process and it is normal to be confused at first.</p>
+<p><code>Did you get what you expected to get as a result?</code> That is a fundamental skill in programming – you should have an idea of what to expect as a result of your code. If you got something different, try to understand why it differed. If you are confused, ask for help. This is a learning process and it is normal to be confused at first.</p>
+<p><code>We will see more operators in the future, for today, just the simplest</code></p>
 </section>
 <section id="built-in-datasets-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="built-in-datasets-in-r">Built-in datasets in R</h2>
-<p>No one is going to hire you to do calculations like the ones above, but they will hire you to work with data. R has a lot of built-in data that you can use to practice your data manipulation and analysis skills.</p>
+<p>No one is going to hire you to program calculations like the ones above, but they will hire you to work with data. R has a lot of built-in data that you can use to practice your data manipulation and analysis skills.</p>
 <p>Let’s examine <code>iris</code> which is a built-in data set. You can run the code chunk below to see what it looks like.</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Let’s unpack this! You can modify my code above in the browser, try modifying the box above with <code>head(iris)</code> instead of just <code>iris</code> and see what happens. <code>head()</code> is a <strong>function</strong>.</p>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
 <p>Functions do all of the work in R. Functions have a function name followed by parentheses. Functions can have arguments and options within the parentheses. So <code>head(iris)</code> reveals the first few rows of the built-in data <code>iris</code>. This is a way to get a quick look at the data without overwhelming you (or anyone else) with all 150 rows.</p>
+</section>
+<section id="examine-iris" class="level3">
+<h3 class="anchored" data-anchor-id="examine-iris">Examine iris</h3>
 <p>Notice the row numbering on the left and the column names at the top. The row numbering is just for reference and is not part of the data. By convention, rows typically (not always) represent an observation. The column names are important because they tell you what each column represents. In this case, we have measurements of different parts of the iris flower (sepal length, sepal width, petal length, petal width) and the species of the flower.</p>
-<p>A handy function when you are starting out in R is <code>is()</code> (seriously). It tells you what <strong>is</strong> this <strong>iris</strong> thing?</p>
-<p>An <strong>“object”</strong> is something that R recognizes and knows how to store it in memory and work with when you request the R object by its name. <code>iris</code> is a built-in R object that contains data. We can ask R what type of R object <code>iris</code> is:</p>
+<p>A handy function when you are starting out in R is <code>is()</code> (seriously). It tells you what <code>is</code> this <code>iris</code> thing?</p>
+<p>An <code>object</code> is something that R recognizes and knows how to store it in memory and work with when you request the R object by its <code>name</code>. <code>iris</code> is a built-in R object that contains data. We can ask R what type of R object <code>iris</code> is:</p>
+</section>
 </section>
 <section id="what-is-iris" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-iris">What is() iris?</h2>
@@ -2301,7 +2312,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>I am going to leave you with two more useful basic functions, <code>summary()</code>, which gives you a quick summary of an R object. Try it on iris and just for fun, try it on rivers too. What happens and why?</p>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>and finally <code>help()</code> which gives you the documentation for a function or a built in data set like <code>rivers</code>. Try it on <code>head()</code> to see what <code>head()</code> can do and what additional arguments it can take.</p>
+<p>and finally <code>help()</code> which gives you the documentation for a function or a built in data set like <code>rivers</code> or <code>iris</code>. Try it on <code>head()</code> to see what <code>head()</code> can do and what additional arguments it can take.</p>
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
@@ -2317,7 +2328,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>The <code>is()</code> function tells you what type of R object you are working with.</li>
 <li>The vector is the most basic type of data object in R, and it is a sequence of values that are all of the same type.</li>
 <li>The data frame is a more complex type of R object that consists of multiple vectors (columns) that can be of different types (numbers, factors, etc.).</li>
-<li>R vectors are 1-indexed, even when the vector only has one value (there are no scalars in R, only vectors).</li>
+<li>R vectors are 1-indexed (numbered starting with 1), even when the vector only has one value (there are no scalars in R, only vectors).</li>
 <li>The <code>str()</code> function gives you a quick overview of the structure of an R object.</li>
 <li>The <code>summary()</code> function gives you a quick summary of the data in each vector (column) of a data frame.</li>
 </ul>
