@@ -18,17 +18,6 @@
     ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#anonymous-activity-1",
-    "href": "lectures/Lecture01/Lecture01.html#anonymous-activity-1",
-    "title": "Lecture 01",
-    "section": "Anonymous Activity #1",
-    "text": "Anonymous Activity #1\n\nQR CodeResult\n\n\nThis is optional and anonymous, but helpful to Stats 20, Please scan this\n\nand there is a simple question. I’m gathering data.",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
-  },
-  {
     "objectID": "lectures/Lecture01/Lecture01.html#format",
     "href": "lectures/Lecture01/Lecture01.html#format",
     "title": "Lecture 01",
@@ -84,22 +73,22 @@
     ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#activity-2-r-in-the-browser",
-    "href": "lectures/Lecture01/Lecture01.html#activity-2-r-in-the-browser",
+    "objectID": "lectures/Lecture01/Lecture01.html#activity-1-r-in-the-browser",
+    "href": "lectures/Lecture01/Lecture01.html#activity-1-r-in-the-browser",
     "title": "Lecture 01",
-    "section": "Activity #2 R in the Browser",
-    "text": "Activity #2 R in the Browser\n\nSometimes, like today, I want all of you to have access to R at your fingertips like on your laptop or on your phone or tablet.\nWe will use R in the Browser.\nThis is a simple webpage version of R, not really for analysis, more for instruction by example",
+    "section": "Activity #1 R in the Browser",
+    "text": "Activity #1 R in the Browser\n\nSometimes, like today, I want all of you to have access to R at your fingertips like on your laptop or on your phone or tablet.\nToday, we will use R in the Browser.\nThis is a simple webpage version of R, not really for analysis, more for instruction by example",
     "crumbs": [
       "Lectures",
       "Lecture 01"
     ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#activity-2-takeaways",
-    "href": "lectures/Lecture01/Lecture01.html#activity-2-takeaways",
+    "objectID": "lectures/Lecture01/Lecture01.html#activity-1-takeaways",
+    "href": "lectures/Lecture01/Lecture01.html#activity-1-takeaways",
     "title": "Lecture 01",
-    "section": "Activity #2 Takeaways",
-    "text": "Activity #2 Takeaways\n\nIn the beginning, R is like a calculator\nNumbers, operators, vectors, data frames, functions are objects.\n\nA simplification: virtually everything in R is an object.\nNames like x, y, z, iris, rivers are associated with R objects and by calling the name, we have access.\nThe fundamental data structure in R is the vector\nVectors are indexed (elements are numbered 1 to however many elements we have)",
+    "section": "Activity #1 Takeaways",
+    "text": "Activity #1 Takeaways\n\nIn the beginning, R is like a calculator\nNumbers, operators, vectors, data frames, functions are objects.\n\nA simplification: virtually everything in R is an object.\nNames like x, y, z, iris, rivers are associated with R objects and by calling the name, we have access to the associated object\nThe fundamental data structure in R is the vector\nVectors are indexed (elements are numbered 1 to however many elements we have)",
     "crumbs": [
       "Lectures",
       "Lecture 01"
@@ -154,7 +143,7 @@
     "href": "lectures/Lecture01/Lecture01.html#r-v-python-example-1",
     "title": "Lecture 01",
     "section": "R v Python Example 1",
-    "text": "R v Python Example 1\nLet’s look at a bivariate (simple) regression: one Y (dependent), one X (independent). If you have forgotten see IMS Chapter 7.\n\nRPythonTakeawaysRPythonPython Plot Result\n\n\nIf you already have R running on your computer or copy and paste this to the activity, you can try this\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nsummary(model1)\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\nX = mtcars[\"wt\"]\nX = sm.add_constant(X)\nY = mtcars[\"mpg\"]\n\nfit = sm.OLS(Y, X).fit()\n\nprint(fit.summary())\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.753\nModel:                            OLS   Adj. R-squared:                  0.745\nMethod:                 Least Squares   F-statistic:                     91.38\nDate:                Mon, 30 Mar 2026   Prob (F-statistic):           1.29e-10\nTime:                        19:09:10   Log-Likelihood:                -80.015\nNo. Observations:                  32   AIC:                             164.0\nDf Residuals:                      30   BIC:                             167.0\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         37.2851      1.878     19.858      0.000      33.450      41.120\nwt            -5.3445      0.559     -9.559      0.000      -6.486      -4.203\n==============================================================================\nOmnibus:                        2.988   Durbin-Watson:                   1.252\nProb(Omnibus):                  0.225   Jarque-Bera (JB):                2.399\nSkew:                           0.668   Prob(JB):                        0.301\nKurtosis:                       2.877   Cond. No.                         12.7\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\n\n\n\nR has “built-in” data “data = mtcars”, Python does not, need a library.\nIn both situations, we are testing the same hypothesis: does MPG change in a predictable direction as WT changes?\nNotice the “&lt;-” in R this is called a “gets”, it is used for assignment. Could read it as “model 1 gets”\nPython uses “=” for both assignment and options\nYou can use “=” for assignment in R, but it is really meant to identify options\nR is written in a way comparable to how we think about things in statistics lm(mpg ~ wt, data = mtcars) lm() is the basic linear model FUNCTION (important word) and the () encloses its “arguments”. Functions do all of the “work” in R.\n~ could be read “as a function of” so we can read the code like “linear model(mpg as a function of wt the data is mtcars)” and “model1” “gets” the result.\nYou don’t need to print() explicitly in R, but you must explicity print() in Python to see results\n\n\n\nDiagnostic plots are part of the output of lm()\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nplot(model1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou want diagnostic plots? This is for one plot:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\nfitted = model.fittedvalues\nresiduals = model.resid\n\ninfluence = model.get_influence()\nstandardized_resid = influence.resid_studentized_internal\nleverage = influence.hat_matrix_diag\ncooks = influence.cooks_distance[0]\n\nfig, ax = plt.subplots(figsize=(8, 5), dpi=100)\n\nax.scatter(model.fittedvalues, model.resid, alpha=0.7)\nax.axhline(0, color='red', linestyle='--')\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nax.set_title(\"Residuals vs Fitted\")\nplt.tight_layout()\n\n\n\n\nPython is very powerful and can make its plot look exactly like R’s plot!\nThis gives you a sense of the “swiss army knife” of Python",
+    "text": "R v Python Example 1\nLet’s look at a bivariate (simple) regression: one Y (dependent), one X (independent). If you have forgotten see IMS Chapter 7.\n\nRPythonTakeawaysRPythonPython Plot Result\n\n\nIf you already have R running on your computer or copy and paste this to the activity, you can try this\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nsummary(model1)\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\nX = mtcars[\"wt\"]\nX = sm.add_constant(X)\nY = mtcars[\"mpg\"]\n\nfit = sm.OLS(Y, X).fit()\n\nprint(fit.summary())\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.753\nModel:                            OLS   Adj. R-squared:                  0.745\nMethod:                 Least Squares   F-statistic:                     91.38\nDate:                Tue, 31 Mar 2026   Prob (F-statistic):           1.29e-10\nTime:                        00:51:36   Log-Likelihood:                -80.015\nNo. Observations:                  32   AIC:                             164.0\nDf Residuals:                      30   BIC:                             167.0\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         37.2851      1.878     19.858      0.000      33.450      41.120\nwt            -5.3445      0.559     -9.559      0.000      -6.486      -4.203\n==============================================================================\nOmnibus:                        2.988   Durbin-Watson:                   1.252\nProb(Omnibus):                  0.225   Jarque-Bera (JB):                2.399\nSkew:                           0.668   Prob(JB):                        0.301\nKurtosis:                       2.877   Cond. No.                         12.7\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\n\n\n\nR has “built-in” data “data = mtcars”, Python does not, need a library.\nIn both situations, we are testing the same hypothesis: does MPG change in a predictable direction as WT changes?\nNotice the “&lt;-” in R this is called a “gets”, it is used for assignment. Could read it as “model 1 gets”\nPython uses “=” for both assignment and options\nYou can use “=” for assignment in R, but it is really meant to identify options\nR is written in a way comparable to how we think about things in statistics lm(mpg ~ wt, data = mtcars) lm() is the basic linear model FUNCTION (important word) and the () encloses its “arguments”. Functions do all of the “work” in R.\n~ could be read “as a function of” so we can read the code like “linear model(mpg as a function of wt the data is mtcars)” and “model1” “gets” the result.\nYou don’t need to print() explicitly in R, but you must explicity print() in Python to see results\n\n\n\nDiagnostic plots are part of the output of lm()\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nplot(model1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou want diagnostic plots? This is for ONE plot in Python:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\nfitted = model.fittedvalues\nresiduals = model.resid\n\ninfluence = model.get_influence()\nstandardized_resid = influence.resid_studentized_internal\nleverage = influence.hat_matrix_diag\ncooks = influence.cooks_distance[0]\n\nfig, ax = plt.subplots(figsize=(8, 5), dpi=100)\n\nax.scatter(model.fittedvalues, model.resid, alpha=0.7)\nax.axhline(0, color='red', linestyle='--')\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nax.set_title(\"Residuals vs Fitted\")\nplt.tight_layout()\n\n\n\n\nPython is very powerful and can make its plot look exactly like R’s plot!\nThis gives you a sense of the “swiss army knife” of Python",
     "crumbs": [
       "Lectures",
       "Lecture 01"
@@ -186,8 +175,8 @@
     "objectID": "lectures/Lecture01/Lecture01.html#if-you-dont-want-to-raise-your-hand",
     "href": "lectures/Lecture01/Lecture01.html#if-you-dont-want-to-raise-your-hand",
     "title": "Lecture 01",
-    "section": "If you don’t want to raise your hand ",
-    "text": "If you don’t want to raise your hand",
+    "section": "If you don’t want to raise your hand",
+    "text": "If you don’t want to raise your hand\n\n\n\n\n\nYou are not required to participate\nParticipation is always anonymous\nBut sometimes I will ask the class questions to “take a pulse”\nMentimeter is free to you, you just need a phone or a tablet or even a laptop",
     "crumbs": [
       "Lectures",
       "Lecture 01"
@@ -198,7 +187,7 @@
     "href": "lectures/Lecture01/Lecture01.html#where-are-we",
     "title": "Lecture 01",
     "section": "Where are we?",
-    "text": "Where are we?\n\nFocus on becoming a “System Architect” who understands how the code (regardless of the specific language) serves a specific business or research goal (this AI cannot do yet). It is like study/ understand the process in addition to trusting it.\nFocus on possessing AI Augmentation Skills – where AI is used as a tool to help humans do more, rather than replace humans. When coding in this class, AI is your helper to develop your computational thinking and broaden your understanding of the application of the code beyond the problem in front of us.\nAI is the best at “book learning” so instead of competeting at that level – leverage AI to help you gain practical, hands-on experience through projects and then internships and then jobs. Show that you can apply what you have learned in the areas/industries/fields that you want to join.\nDevelop your Human Judgment - roles that require judgment, for example - handling complex client interactions, dealing with “messiness” (when things do not go as planned). Develop your Spidey Senses.",
+    "text": "Where are we?\n\nLearn how to be a “System Architect” – someone who understands how code (regardless of the specific language) serves a specific business or research goal (this AI cannot do yet). Study/ understand the process in addition to trusting it.\nFocus on possessing AI Augmentation Skills – where AI is used as a tool to help humans do more, rather than replace humans. When coding in this class, AI is your helper to develop your computational thinking and broaden your understanding of the application of the code beyond the problem in front of us.\nAI is the best at “book learning” (explicit knowledge) so instead of competing – leverage AI to help you gain practical, hands-on experience through projects and then internships and then jobs. Show that you can apply what you have learned in the areas/industries/fields that you want to join.\nDevelop your “Tacit Knowledge” – an advanced form of pattern recognition that the brain does subconsciously after years of experience - having good judgment arising from “the feel” of a situation, for example - handling complex client interactions, dealing with “messiness” (when things do not go as planned). Develop your Spidey Senses for a situation.",
     "crumbs": [
       "Lectures",
       "Lecture 01"
@@ -304,11 +293,11 @@
     ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#activity-3-attendance",
-    "href": "lectures/Lecture01/Lecture01.html#activity-3-attendance",
+    "objectID": "lectures/Lecture01/Lecture01.html#activity-2-attendance",
+    "href": "lectures/Lecture01/Lecture01.html#activity-2-attendance",
     "title": "Lecture 01",
-    "section": "Activity 3: Attendance",
-    "text": "Activity 3: Attendance\n\n\n\nEveryone in here has a camera.\nThis is how you get credit for attendance, upload a minimum of one photo per week.\nYou cannot be alone in it. Meet your classmates, take a photograph. Here is an example, with their permission of course\n\n\n\n\n\nThe Mhen of Statistics",
+    "section": "Activity #2: Attendance",
+    "text": "Activity #2: Attendance\n\n\n\nEveryone in here has a camera.\nThis is how you get credit for attendance, upload a minimum of one photo per week.\nYou cannot receive credit if it’s only you in the photo\nAnd I’ll start rejecting photos if its always you and the same people.\nMeet your classmates, take a photograph. Here is an example, with their permission of course\n\n\n\n\n\nThe Mhen of Statistics",
     "crumbs": [
       "Lectures",
       "Lecture 01"
@@ -319,7 +308,7 @@
     "href": "lectures/Lecture01/Lecture01.html#when-acquiring-a-new-skill",
     "title": "Lecture 01",
     "section": "When acquiring a new skill",
-    "text": "When acquiring a new skill\n\nThe general wisdom is to “protect the downside first”, it’s psychological\nWhen starting out with R, we are going to build a safety net, here are the first two parts:\n\nRStudio is friendlier than Position or VS Code\nKeep your work organized. In RStudio, use Projects\n\nLet’s take a look at RStudio",
+    "text": "When acquiring a new skill\n\nThe general wisdom is to “protect the downside first”, it’s psychological\nWhen starting out with R, we are going to build a safety net, here are the first two parts:\n\nRStudio is friendlier than Positron or VS Code\nKeep your work organized. In RStudio, use Projects (Positron/VS Code uses filenames and folders)\n\nLet’s take a look at RStudio",
     "crumbs": [
       "Lectures",
       "Lecture 01"
@@ -480,8 +469,8 @@
     ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#result-1",
-    "href": "lectures/Lecture01/Lecture01.html#result-1",
+    "objectID": "lectures/Lecture01/Lecture01.html#result",
+    "href": "lectures/Lecture01/Lecture01.html#result",
     "title": "Lecture 01",
     "section": "Result",
     "text": "Result",
@@ -513,11 +502,11 @@
     ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#activity-4-try-installing-the-package-praise-for-fun",
-    "href": "lectures/Lecture01/Lecture01.html#activity-4-try-installing-the-package-praise-for-fun",
+    "objectID": "lectures/Lecture01/Lecture01.html#activity-3-try-installing-the-package-praise-for-fun",
+    "href": "lectures/Lecture01/Lecture01.html#activity-3-try-installing-the-package-praise-for-fun",
     "title": "Lecture 01",
-    "section": "Activity #4: Try Installing the package “praise” for fun",
-    "text": "Activity #4: Try Installing the package “praise” for fun\n\nPraise is a little package\nTry installing it using install.packages(“praise”)\nThen issue a library(praise)\nThen issue a praise() at the console prompt",
+    "section": "Activity #3: Try Installing the package “praise” for fun",
+    "text": "Activity #3: Try Installing the package “praise” for fun\n\nPraise is a little package\nTry installing it using install.packages(“praise”)\nThen issue a library(praise)\nThen issue a praise() at the console prompt",
     "crumbs": [
       "Lectures",
       "Lecture 01"
@@ -644,50 +633,11 @@
     "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   },
   {
-    "objectID": "lectures/Lecture01/mentimeter_test.html#anonymous-activity",
-    "href": "lectures/Lecture01/mentimeter_test.html#anonymous-activity",
-    "title": "Lecture 01",
-    "section": "Anonymous Activity",
-    "text": "Anonymous Activity\n\nmentimeter"
-  },
-  {
-    "objectID": "lectures/Lecture01/mentimeter_test.html#results",
-    "href": "lectures/Lecture01/mentimeter_test.html#results",
-    "title": "Lecture 01",
-    "section": "Results",
-    "text": "Results"
-  },
-  {
-    "objectID": "lectures/Lecture01/mentimeter_test.html#quarto",
-    "href": "lectures/Lecture01/mentimeter_test.html#quarto",
-    "title": "Lecture 01",
-    "section": "Quarto",
-    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
-  },
-  {
-    "objectID": "lectures/Lecture01/mentimeter_test.html#bullets",
-    "href": "lectures/Lecture01/mentimeter_test.html#bullets",
-    "title": "Lecture 01",
-    "section": "Bullets",
-    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
-  },
-  {
-    "objectID": "lectures/Lecture01/mentimeter_test.html#code",
-    "href": "lectures/Lecture01/mentimeter_test.html#code",
-    "title": "Lecture 01",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to Statistics 20",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "This site was produced with Quarto and WebR using Positron and is currently hosted by GitHub. It was created for the students of Statistics 20 for use inside and outside of the classroom.\nTo learn more about Quarto websites please visit https://quarto.org/docs/websites.\nTo learn more about WebR please visit https://docs.r-wasm.org/webr/latest/\nAnd about its Quarto extension also please visit https://quarto-webr.thecoatlessprofessor.com/\nAnd https://github.com/coatless/quarto-webr\nAnd this site is hosted by GitHub (free) and easy setup and maintenance https://pages.github.com/",
-    "crumbs": [
-      "Start Here",
-      "Overview"
-    ]
+    "text": "About this site"
   },
   {
     "objectID": "activity/Week01test_drive.html",
@@ -811,11 +761,50 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to Statistics 20",
     "section": "",
-    "text": "About this site"
+    "text": "This site was produced with Quarto and WebR using Positron and is currently hosted by GitHub. It was created for the students of Statistics 20 for use inside and outside of the classroom.\nTo learn more about Quarto websites please visit https://quarto.org/docs/websites.\nTo learn more about WebR please visit https://docs.r-wasm.org/webr/latest/\nAnd about its Quarto extension also please visit https://quarto-webr.thecoatlessprofessor.com/\nAnd https://github.com/coatless/quarto-webr\nAnd this site is hosted by GitHub (free) and easy setup and maintenance https://pages.github.com/",
+    "crumbs": [
+      "Start Here",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/mentimeter_test.html#anonymous-activity",
+    "href": "lectures/Lecture01/mentimeter_test.html#anonymous-activity",
+    "title": "Lecture 01",
+    "section": "Anonymous Activity",
+    "text": "Anonymous Activity\n\nmentimeter"
+  },
+  {
+    "objectID": "lectures/Lecture01/mentimeter_test.html#results",
+    "href": "lectures/Lecture01/mentimeter_test.html#results",
+    "title": "Lecture 01",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "lectures/Lecture01/mentimeter_test.html#quarto",
+    "href": "lectures/Lecture01/mentimeter_test.html#quarto",
+    "title": "Lecture 01",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+  },
+  {
+    "objectID": "lectures/Lecture01/mentimeter_test.html#bullets",
+    "href": "lectures/Lecture01/mentimeter_test.html#bullets",
+    "title": "Lecture 01",
+    "section": "Bullets",
+    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
+  },
+  {
+    "objectID": "lectures/Lecture01/mentimeter_test.html#code",
+    "href": "lectures/Lecture01/mentimeter_test.html#code",
+    "title": "Lecture 01",
+    "section": "Code",
+    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
   },
   {
     "objectID": "lectures/Lecture01/Lecture01rev.html#hello-welcome-to-stats-20",
