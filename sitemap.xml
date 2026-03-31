@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://stats20.github.io/lectures/Lecture01/Python_Plot_slides.html</loc>
-    <lastmod>2026-02-21T23:46:46.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stats20.github.io/lectures/Lecture01/Lecture01.html</loc>
+    <loc>https://stats20.github.io/lectures/Lecture01/Lecture01old.html</loc>
     <lastmod>2026-03-31T07:48:40.000Z</lastmod>
   </url>
   <url>
-    <loc>https://stats20.github.io/lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html</loc>
-    <lastmod>2026-03-22T01:18:02.000Z</lastmod>
+    <loc>https://stats20.github.io/lectures/Lecture01/binding_basics.html</loc>
+    <lastmod>2026-03-15T07:37:19.000Z</lastmod>
   </url>
   <url>
-    <loc>https://stats20.github.io/lectures/Lecture01/survey_test.html</loc>
-    <lastmod>2026-03-31T07:48:29.000Z</lastmod>
+    <loc>https://stats20.github.io/lectures/Lecture01/Lecture01rev.html</loc>
+    <lastmod>2026-03-08T02:53:44.000Z</lastmod>
   </url>
   <url>
     <loc>https://stats20.github.io/about.html</loc>
@@ -33,11 +29,15 @@
     <lastmod>2026-03-01T04:37:23.000Z</lastmod>
   </url>
   <url>
-    <loc>https://stats20.github.io/lectures/Lecture01/Lecture01rev.html</loc>
-    <lastmod>2026-03-08T02:53:44.000Z</lastmod>
+    <loc>https://stats20.github.io/lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html</loc>
+    <lastmod>2026-03-22T01:18:02.000Z</lastmod>
   </url>
   <url>
-    <loc>https://stats20.github.io/lectures/Lecture01/binding_basics.html</loc>
-    <lastmod>2026-03-15T07:37:19.000Z</lastmod>
+    <loc>https://stats20.github.io/lectures/Lecture01/Lecture01.html</loc>
+    <lastmod>2026-03-31T23:56:34.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stats20.github.io/lectures/Lecture01/Python_Plot_slides.html</loc>
+    <lastmod>2026-02-21T23:46:46.000Z</lastmod>
   </url>
 </urlset>

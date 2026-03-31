@@ -1,636 +1,507 @@
 [
   {
-    "objectID": "lectures/Lecture01/Python_Plot_slides.html",
-    "href": "lectures/Lecture01/Python_Plot_slides.html",
-    "title": "presentation with python plot",
-    "section": "",
-    "text": "import numpy as np\nimport matplotlib.pyplot as plt\n\nplt.close(\"all\")\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\n# 2. Setup Figure\nfig, ax = plt.subplots(figsize=(10, 5))\n\n# Plot the points (open circles like R)\nax.scatter(model.fittedvalues, model.resid, facecolors='none', edgecolors='black')\n\n# Add the horizontal 'zero' line\nax.axhline(0, color='silver', linestyle=':', zorder=0)\n\n# 3. Add the Red Lowess Line (The 'R' special)\nlowess = sm.nonparametric.lowess(model.resid, model.fittedvalues, frac=2/3)\nax.plot(lowess[:, 0], lowess[:, 1], color='red', lw=1, alpha=0.8)\n\n# 4. Label the Top 3 Outliers\n# Find indices of the 3 largest absolute residuals\ntop_3_idx = np.abs(model.resid).sort_values(ascending=False).head(3).index\n\nfor i in top_3_idx:\n    ax.annotate(i, (model.fittedvalues[i], model.resid[i]), \n                xytext=(5, 5), textcoords='offset points', fontsize=9)\n\n# Formatting\nax.set_title(\"Residuals vs Fitted\")\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nplt.savefig(\"01_residuals_vs_fitted.png\")\n\n\n\n\n\n\n\nFigure 1: Residuals vs Fitted Plot"
-  },
-  {
-    "objectID": "lectures/Lecture01/Lecture01.html#hello-welcome-to-stats-20",
-    "href": "lectures/Lecture01/Lecture01.html#hello-welcome-to-stats-20",
+    "objectID": "lectures/Lecture01/Lecture01old.html#hello-welcome-to-stats-20",
+    "href": "lectures/Lecture01/Lecture01old.html#hello-welcome-to-stats-20",
     "title": "Lecture 01",
     "section": "Hello & Welcome to Stats 20",
-    "text": "Hello & Welcome to Stats 20\n\nPlease greet your neighbor(s)\nMy name is Dr. Vivian Lew, I am a senior lecturer in the Department of Statistics & Data Science\nStatistics is about learning from data - drawing conclusions, assessing uncertainty, generalizing results to a larger population\nData Science is about using data to make predictions/automate decisions\nR is the language of Statisticians\nThe goal is to prep you for upper division work in Statistics & Data Science\nFirst Day Stuff today",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Hello & Welcome to Stats 20\n\nPlease greet your neighbor(s)\nMy name is Dr. Vivian Lew, I am a senior lecturer in the Department of Statistics & Data Science\nStatistics is about learning from data - drawing conclusions, assessing uncertainty, generalizing results to a larger population\nData Science is about using data to make predictions/automate decisions\nR is the language of Statisticians\nThe goal is to prep you for upper division work in Statistics & Data Science\nFirst Day Stuff today"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#format",
-    "href": "lectures/Lecture01/Lecture01.html#format",
+    "objectID": "lectures/Lecture01/Lecture01old.html#format",
+    "href": "lectures/Lecture01/Lecture01old.html#format",
     "title": "Lecture 01",
     "section": "Format",
-    "text": "Format\n\nThis class is project-based, hands-on approach to developing computational problem solving approaches, concepts, and skills in R\nI ask you to try things while in class and to ask questions\nSo please bring a laptop or comparable and be prepared to use it\nGrades are assigned on the university’s straight scale (90-100% A type of grade, 80-89% B type of grade, etc.)",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Format\n\nThis class is project-based, hands-on approach to developing computational problem solving approaches, concepts, and skills in R\nI ask you to try things while in class and to ask questions\nSo please bring a laptop or comparable and be prepared to use it\nGrades are assigned on the university’s straight scale (90-100% A type of grade, 80-89% B type of grade, etc.)"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#deliverables",
-    "href": "lectures/Lecture01/Lecture01.html#deliverables",
+    "objectID": "lectures/Lecture01/Lecture01old.html#deliverables",
+    "href": "lectures/Lecture01/Lecture01old.html#deliverables",
     "title": "Lecture 01",
     "section": "Deliverables",
-    "text": "Deliverables\n\n5% Group “Meet the Professor” (in person, before the end of Week 3)\n10% DataCamp (multiple assignments per week, graded complete/not complete)\n10% Weekly BruinOnline Quiz (graded complete/not complete)\n\n10% Basic Reproducible Report (Due Week 3)\n10% Video Recorded Presentation (Due Week 5)\n10% Polished Reproducible Report (Due Week 7)\n15% Discussion Section and Section Project (Due Week 9 or later, TAs decision)\n20% Final Exam (Friday, Week 11, more to follow)\n10% Attend 1 class meeting per week (1-10) in person",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Deliverables\n\n5% Group “Meet the Professor” (in person, before the end of Week 3)\n10% DataCamp (multiple assignments per week, graded complete/not complete)\n10% Weekly BruinOnline Quiz (graded complete/not complete)\n\n10% Basic Reproducible Report (Due Week 3)\n10% Video Recorded Presentation (Due Week 5)\n10% Polished Reproducible Report (Due Week 7)\n15% Discussion Section and Section Project (Due Week 9 or later, TAs decision)\n20% Final Exam (Friday, Week 11, more to follow)\n10% Attend 1 class meeting per week (1-10) in person"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#choose-your-tools",
-    "href": "lectures/Lecture01/Lecture01.html#choose-your-tools",
+    "objectID": "lectures/Lecture01/Lecture01old.html#choose-your-tools",
+    "href": "lectures/Lecture01/Lecture01old.html#choose-your-tools",
     "title": "Lecture 01",
     "section": "Choose your tools",
-    "text": "Choose your tools\n\nI will be using RStudio. It is an Integrated Development Environment (IDE) for R\nYou are free to use whatever IDE you want (RStudio preferred, Positron, VS Code, JetBrains) to complete assignments\nI will ask your TAs to assist you with RStudio but do decide on your tools before the end of Week 2 (first assignment that needs it is due Week 3)\nYou are free to obtain assistance from your favorite LLM/AI (READ THE COURSE AI POLICY FIRST)\nThe point of an IDE like RStudio or whatever is to teach familiarity with software that allows you to write scripts (.R) and notebooks (preferably .qmd but .rmd will work), manage them, and execute/render/run them.\nNote: your tool choice may affect how your results are delivered (e.g., PDF, web page)",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Choose your tools\n\nI will be using RStudio. It is an Integrated Development Environment (IDE) for R\nYou are free to use whatever IDE you want (RStudio preferred, Positron, VS Code, JetBrains) to complete assignments\nI will ask your TAs to assist you with RStudio but do decide on your tools before the end of Week 2 (first assignment that needs it is due Week 3)\nYou are free to obtain assistance from your favorite LLM/AI (READ THE COURSE AI POLICY FIRST)\nThe point of an IDE like RStudio or whatever is to teach familiarity with software that allows you to write scripts (.R) and notebooks (preferably .qmd but .rmd will work), manage them, and execute/render/run them.\nNote: your tool choice may affect how your results are delivered (e.g., PDF, web page)"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#ai-policy",
-    "href": "lectures/Lecture01/Lecture01.html#ai-policy",
+    "objectID": "lectures/Lecture01/Lecture01old.html#ai-policy",
+    "href": "lectures/Lecture01/Lecture01old.html#ai-policy",
     "title": "Lecture 01",
     "section": "AI Policy",
-    "text": "AI Policy\n\nWe permit and encourage the responsible use of AI-assisted programming tools (e.g., GitHub Copilot, built-in IDE assistants or similar tools which have been integrated into RStudio, Positron or others).\n\nPresently, programming in professional (paid/internship) environments usually involves some AI-support.\n\nLearning how to use these tools well (e.g., understand the coding decision, have an eye to correcting it or changing suggestions) and ethically is part of become a competent programmer in any language since 2023.\n\nPlease review the syllabus and/or the recording of it for an expanded detailed version of this summary",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "AI Policy\n\nWe permit and encourage the responsible use of AI-assisted programming tools (e.g., GitHub Copilot, built-in IDE assistants or similar tools which have been integrated into RStudio, Positron or others).\n\nPresently, programming in professional (paid/internship) environments usually involves some AI-support.\n\nLearning how to use these tools well (e.g., understand the coding decision, have an eye to correcting it or changing suggestions) and ethically is part of become a competent programmer in any language since 2023.\n\nPlease review the syllabus and/or the recording of it for an expanded detailed version of this summary"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#flying-over-stats-20",
-    "href": "lectures/Lecture01/Lecture01.html#flying-over-stats-20",
+    "objectID": "lectures/Lecture01/Lecture01old.html#flying-over-stats-20",
+    "href": "lectures/Lecture01/Lecture01old.html#flying-over-stats-20",
     "title": "Lecture 01",
     "section": "Flying Over Stats 20",
-    "text": "Flying Over Stats 20\n\nOutlineWorkflow (in research)Workflow (in workplaces)What is R?\n\n\nOver the next 10 weeks, we will try to cover the following topics:\n\nData Science Workflow (computational steps), Reproducibility, Communication.\n\nCore/Base R (the language, data structures, functions, etc.).\n\nData Wrangling (not analyzable -&gt; analyzable).\n\nDebugging/Problem Solving.\nTidyverse + Data Viz\n\nDistributions, Sampling, Statistics.\nControl Flow, Functions, and Programming Concepts.\nLinear Algebra in R.\n\n\n\n\n\n\nA Data Science Workflow\n\n\n\n\n\n\n\nFrom Google\n\n\n\n\nFrom CRAN (the Comprehensive R Archive Network):\n\nR is a system for statistical computation and graphics. It consists of a language plus a run-time environment with graphics, a debugger, access to certain system functions, and the ability to run programs stored in script files.\n\nTranslation:\n\nR is a language with an interpreter and a standard library (toolkit/toolbox of functions)\nWith execution support code (behind the scenes code that helps your R code run on your computer)\nAll for the practice of statistics (involves computation,simulation, data visualization etc.)\n\nR can also monitor/analyze code, identify coding errors, interact with your operating system, run programs saved on your computer as scripts (or similar) among other things.",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Flying Over Stats 20\n\nOutlineWorkflow (in research)Workflow (in workplaces)What is R?\n\n\nOver the next 10 weeks, we will try to cover the following topics:\n\nData Science Workflow (computational steps), Reproducibility, Communication.\n\nCore/Base R (the language, data structures, functions, etc.).\n\nData Wrangling (not analyzable -&gt; analyzable).\n\nDebugging/Problem Solving.\nTidyverse + Data Viz\n\nDistributions, Sampling, Statistics.\nControl Flow, Functions, and Programming Concepts.\nLinear Algebra in R.\n\n\n\n\n\n\nA Data Science Workflow\n\n\n\n\n\n\n\nFrom Google\n\n\n\n\nFrom CRAN (the Comprehensive R Archive Network):\n\nR is a system for statistical computation and graphics. It consists of a language plus a run-time environment with graphics, a debugger, access to certain system functions, and the ability to run programs stored in script files.\n\nTranslation:\n\nR is a language with an interpreter and a standard library (toolkit/toolbox of functions)\nWith execution support code (behind the scenes code that helps your R code run on your computer)\nAll for the practice of statistics (involves computation,simulation, data visualization etc.)\n\nR can also monitor/analyze code, identify coding errors, interact with your operating system, run programs saved on your computer as scripts (or similar) among other things."
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#activity-1-r-in-the-browser",
-    "href": "lectures/Lecture01/Lecture01.html#activity-1-r-in-the-browser",
+    "objectID": "lectures/Lecture01/Lecture01old.html#activity-1-r-in-the-browser",
+    "href": "lectures/Lecture01/Lecture01old.html#activity-1-r-in-the-browser",
     "title": "Lecture 01",
     "section": "Activity #1 R in the Browser",
-    "text": "Activity #1 R in the Browser\n\nSometimes, like today, I want all of you to have access to R at your fingertips like on your laptop or on your phone or tablet.\nToday, we will use R in the Browser.\nThis is a simple webpage version of R, not really for analysis, more for instruction by example",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Activity #1 R in the Browser\n\nSometimes, like today, I want all of you to have access to R at your fingertips like on your laptop or on your phone or tablet.\nToday, we will use R in the Browser.\nThis is a simple webpage version of R, not really for analysis, more for instruction by example"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#activity-1-takeaways",
-    "href": "lectures/Lecture01/Lecture01.html#activity-1-takeaways",
+    "objectID": "lectures/Lecture01/Lecture01old.html#activity-1-takeaways",
+    "href": "lectures/Lecture01/Lecture01old.html#activity-1-takeaways",
     "title": "Lecture 01",
     "section": "Activity #1 Takeaways",
-    "text": "Activity #1 Takeaways\n\nIn the beginning, R is like a calculator\nNumbers, operators, vectors, data frames, functions are objects.\n\nA simplification: virtually everything in R is an object.\nNames like x, y, z, iris, rivers are associated with R objects and by calling the name, we have access to the associated object\nThe fundamental data structure in R is the vector\nVectors are indexed (elements are numbered 1 to however many elements we have)",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Activity #1 Takeaways\n\nIn the beginning, R is like a calculator\nNumbers, operators, vectors, data frames, functions are objects.\n\nA simplification: virtually everything in R is an object.\nNames like x, y, z, iris, rivers are associated with R objects and by calling the name, we have access to the associated object\nThe fundamental data structure in R is the vector\nVectors are indexed (elements are numbered 1 to however many elements we have)"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#why-r-and-not-python",
-    "href": "lectures/Lecture01/Lecture01.html#why-r-and-not-python",
+    "objectID": "lectures/Lecture01/Lecture01old.html#why-r-and-not-python",
+    "href": "lectures/Lecture01/Lecture01old.html#why-r-and-not-python",
     "title": "Lecture 01",
     "section": "Why R and not Python?",
-    "text": "Why R and not Python?\n\nThe basic difference: R was built by statisticians for statisticians, so the focus is narrower.\nPython was built by software engineers for general purpose applications, so the focus is broad.\nR is great for focusing on thinking about statistical problems, solving them, and communicating the results\nPython is great for doing lots of different things. Example, download thousands of YouTube videos, analyze the images frame by frame, transcribe the sound into words, analyze the data, etc.",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Why R and not Python?\n\nThe basic difference: R was built by statisticians for statisticians, so the focus is narrower.\nPython was built by software engineers for general purpose applications, so the focus is broad.\nR is great for focusing on thinking about statistical problems, solving them, and communicating the results\nPython is great for doing lots of different things. Example, download thousands of YouTube videos, analyze the images frame by frame, transcribe the sound into words, analyze the data, etc."
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#why-r-and-not-python-contd",
-    "href": "lectures/Lecture01/Lecture01.html#why-r-and-not-python-contd",
+    "objectID": "lectures/Lecture01/Lecture01old.html#why-r-and-not-python-contd",
+    "href": "lectures/Lecture01/Lecture01old.html#why-r-and-not-python-contd",
     "title": "Lecture 01",
     "section": "Why R and not Python? (cont’d)",
-    "text": "Why R and not Python? (cont’d)\n\nR is “Problem-First” or “Problem-Forward”\nIn R, data structures are integrated directly into the language and do not require additional tools (but tools, found in libraries, are helpful).\nWhen you load a dataset, R assumes you want to analyze it. The syntax is designed to mirror the way a researcher thinks: “I want to study something which involves data, get the data, then filter/subset it, then group it, then summarize/describe, then model, etc.”\n\nAlso R’s simpler modeling formulas allows one to remain thinking about the analytical problem.",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Why R and not Python? (cont’d)\n\nR is “Problem-First” or “Problem-Forward”\nIn R, data structures are integrated directly into the language and do not require additional tools (but tools, found in libraries, are helpful).\nWhen you load a dataset, R assumes you want to analyze it. The syntax is designed to mirror the way a researcher thinks: “I want to study something which involves data, get the data, then filter/subset it, then group it, then summarize/describe, then model, etc.”\n\nAlso R’s simpler modeling formulas allows one to remain thinking about the analytical problem."
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#why-r-and-not-python-contd-1",
-    "href": "lectures/Lecture01/Lecture01.html#why-r-and-not-python-contd-1",
+    "objectID": "lectures/Lecture01/Lecture01old.html#why-r-and-not-python-contd-1",
+    "href": "lectures/Lecture01/Lecture01old.html#why-r-and-not-python-contd-1",
     "title": "Lecture 01",
     "section": "Why R and not Python? (cont’d)",
-    "text": "Why R and not Python? (cont’d)\n\nPython is “System-First”\nIn Python, you “build” your environment before you can solve the problem (importing tools, found in libraries such as pandas, numpy, etc.)\nIn Python, it matters how your programming code integrates within a larger system, the result is versatility. So it is easy for Python to interact with YouTube for example (not as easy/or maybe not possible in R)\nIn R, what matters is how the programming code helps you reveal the truth found in the data.",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Why R and not Python? (cont’d)\n\nPython is “System-First”\nIn Python, you “build” your environment before you can solve the problem (importing tools, found in libraries such as pandas, numpy, etc.)\nIn Python, it matters how your programming code integrates within a larger system, the result is versatility. So it is easy for Python to interact with YouTube for example (not as easy/or maybe not possible in R)\nIn R, what matters is how the programming code helps you reveal the truth found in the data."
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#visual",
-    "href": "lectures/Lecture01/Lecture01.html#visual",
+    "objectID": "lectures/Lecture01/Lecture01old.html#visual",
+    "href": "lectures/Lecture01/Lecture01old.html#visual",
     "title": "Lecture 01",
     "section": "Visual",
-    "text": "Visual",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Visual"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#r-v-python-example-1",
-    "href": "lectures/Lecture01/Lecture01.html#r-v-python-example-1",
+    "objectID": "lectures/Lecture01/Lecture01old.html#r-v-python-example-1",
+    "href": "lectures/Lecture01/Lecture01old.html#r-v-python-example-1",
     "title": "Lecture 01",
     "section": "R v Python Example 1",
-    "text": "R v Python Example 1\nLet’s look at a bivariate (simple) regression: one Y (dependent), one X (independent). If you have forgotten see IMS Chapter 7.\n\nRPythonTakeawaysRPythonPython Plot Result\n\n\nIf you already have R running on your computer or copy and paste this to the activity, you can try this\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nsummary(model1)\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\nX = mtcars[\"wt\"]\nX = sm.add_constant(X)\nY = mtcars[\"mpg\"]\n\nfit = sm.OLS(Y, X).fit()\n\nprint(fit.summary())\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.753\nModel:                            OLS   Adj. R-squared:                  0.745\nMethod:                 Least Squares   F-statistic:                     91.38\nDate:                Tue, 31 Mar 2026   Prob (F-statistic):           1.29e-10\nTime:                        00:51:36   Log-Likelihood:                -80.015\nNo. Observations:                  32   AIC:                             164.0\nDf Residuals:                      30   BIC:                             167.0\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         37.2851      1.878     19.858      0.000      33.450      41.120\nwt            -5.3445      0.559     -9.559      0.000      -6.486      -4.203\n==============================================================================\nOmnibus:                        2.988   Durbin-Watson:                   1.252\nProb(Omnibus):                  0.225   Jarque-Bera (JB):                2.399\nSkew:                           0.668   Prob(JB):                        0.301\nKurtosis:                       2.877   Cond. No.                         12.7\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\n\n\n\nR has “built-in” data “data = mtcars”, Python does not, need a library.\nIn both situations, we are testing the same hypothesis: does MPG change in a predictable direction as WT changes?\nNotice the “&lt;-” in R this is called a “gets”, it is used for assignment. Could read it as “model 1 gets”\nPython uses “=” for both assignment and options\nYou can use “=” for assignment in R, but it is really meant to identify options\nR is written in a way comparable to how we think about things in statistics lm(mpg ~ wt, data = mtcars) lm() is the basic linear model FUNCTION (important word) and the () encloses its “arguments”. Functions do all of the “work” in R.\n~ could be read “as a function of” so we can read the code like “linear model(mpg as a function of wt the data is mtcars)” and “model1” “gets” the result.\nYou don’t need to print() explicitly in R, but you must explicity print() in Python to see results\n\n\n\nDiagnostic plots are part of the output of lm()\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nplot(model1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou want diagnostic plots? This is for ONE plot in Python:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\nfitted = model.fittedvalues\nresiduals = model.resid\n\ninfluence = model.get_influence()\nstandardized_resid = influence.resid_studentized_internal\nleverage = influence.hat_matrix_diag\ncooks = influence.cooks_distance[0]\n\nfig, ax = plt.subplots(figsize=(8, 5), dpi=100)\n\nax.scatter(model.fittedvalues, model.resid, alpha=0.7)\nax.axhline(0, color='red', linestyle='--')\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nax.set_title(\"Residuals vs Fitted\")\nplt.tight_layout()\n\n\n\n\nPython is very powerful and can make its plot look exactly like R’s plot!\nThis gives you a sense of the “swiss army knife” of Python",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "R v Python Example 1\nLet’s look at a bivariate (simple) regression: one Y (dependent), one X (independent). If you have forgotten see IMS Chapter 7.\n\nRPythonTakeawaysRPythonPython Plot Result\n\n\nIf you already have R running on your computer or copy and paste this to the activity, you can try this\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nsummary(model1)\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\nX = mtcars[\"wt\"]\nX = sm.add_constant(X)\nY = mtcars[\"mpg\"]\n\nfit = sm.OLS(Y, X).fit()\n\nprint(fit.summary())\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.753\nModel:                            OLS   Adj. R-squared:                  0.745\nMethod:                 Least Squares   F-statistic:                     91.38\nDate:                Tue, 31 Mar 2026   Prob (F-statistic):           1.29e-10\nTime:                        16:57:07   Log-Likelihood:                -80.015\nNo. Observations:                  32   AIC:                             164.0\nDf Residuals:                      30   BIC:                             167.0\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         37.2851      1.878     19.858      0.000      33.450      41.120\nwt            -5.3445      0.559     -9.559      0.000      -6.486      -4.203\n==============================================================================\nOmnibus:                        2.988   Durbin-Watson:                   1.252\nProb(Omnibus):                  0.225   Jarque-Bera (JB):                2.399\nSkew:                           0.668   Prob(JB):                        0.301\nKurtosis:                       2.877   Cond. No.                         12.7\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\n\n\n\nR has “built-in” data “data = mtcars”, Python does not, need a library.\nIn both situations, we are testing the same hypothesis: does MPG change in a predictable direction as WT changes?\nNotice the “&lt;-” in R this is called a “gets”, it is used for assignment. Could read it as “model 1 gets”\nPython uses “=” for both assignment and options\nYou can use “=” for assignment in R, but it is really meant to identify options\nR is written in a way comparable to how we think about things in statistics lm(mpg ~ wt, data = mtcars) lm() is the basic linear model FUNCTION (important word) and the () encloses its “arguments”. Functions do all of the “work” in R.\n~ could be read “as a function of” so we can read the code like “linear model(mpg as a function of wt the data is mtcars)” and “model1” “gets” the result.\nYou don’t need to print() explicitly in R, but you must explicity print() in Python to see results\n\n\n\nDiagnostic plots are part of the output of lm()\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nplot(model1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou want diagnostic plots? This is for ONE plot in Python:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\nfitted = model.fittedvalues\nresiduals = model.resid\n\ninfluence = model.get_influence()\nstandardized_resid = influence.resid_studentized_internal\nleverage = influence.hat_matrix_diag\ncooks = influence.cooks_distance[0]\n\nfig, ax = plt.subplots(figsize=(8, 5), dpi=100)\n\nax.scatter(model.fittedvalues, model.resid, alpha=0.7)\nax.axhline(0, color='red', linestyle='--')\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nax.set_title(\"Residuals vs Fitted\")\nplt.tight_layout()\n\n\n\n\nPython is very powerful and can make its plot look exactly like R’s plot!\nThis gives you a sense of the “swiss army knife” of Python"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#the-formula-vs.-the-matrix",
-    "href": "lectures/Lecture01/Lecture01.html#the-formula-vs.-the-matrix",
+    "objectID": "lectures/Lecture01/Lecture01old.html#the-formula-vs.-the-matrix",
+    "href": "lectures/Lecture01/Lecture01old.html#the-formula-vs.-the-matrix",
     "title": "Lecture 01",
     "section": "The “Formula” vs. “The Matrix”",
-    "text": "The “Formula” vs. “The Matrix”\nIn R, a statistical model is treated like a scientific hypothesis. In Python, a statistical model is treated like “how does the computer wants its input formatted?”\n\nR Approach: You use formulas (y ~ x). This is like saying “I think \\(y\\) changes in response to \\(x\\).” R automatically handles things creating the underlying matrix and keeps the names of your variables intact so you can read the results.\nPython Approach: Most Python libraries(toolkits) require you to manually transform your data into a matrix of numbers first. Then pass them in as \\(x\\) and \\(y\\).\n\nIn R, the code looks like the math inside your head. In Python, the code looks like the way the computer understands math.",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "The “Formula” vs. “The Matrix”\nIn R, a statistical model is treated like a scientific hypothesis. In Python, a statistical model is treated like “how does the computer wants its input formatted?”\n\nR Approach: You use formulas (y ~ x). This is like saying “I think \\(y\\) changes in response to \\(x\\).” R automatically handles things creating the underlying matrix and keeps the names of your variables intact so you can read the results.\nPython Approach: Most Python libraries(toolkits) require you to manually transform your data into a matrix of numbers first. Then pass them in as \\(x\\) and \\(y\\).\n\nIn R, the code looks like the math inside your head. In Python, the code looks like the way the computer understands math."
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#r-v-python-example-2",
-    "href": "lectures/Lecture01/Lecture01.html#r-v-python-example-2",
+    "objectID": "lectures/Lecture01/Lecture01old.html#r-v-python-example-2",
+    "href": "lectures/Lecture01/Lecture01old.html#r-v-python-example-2",
     "title": "Lecture 01",
     "section": "R v Python Example 2",
-    "text": "R v Python Example 2\nR allows for a more linear flow of thought, less engineering, more thinking. Not good or bad, just a different philosophy. In each of these examples, we filter (subset/split up), aggregate (combine), then analyze:\n\nRPythonPython with pandasPython one line\n\n\nR uses the “pipe” operator (%&gt;% Tidyverse library or |&gt; core R) which is read like “then”. You know zero R today, but with a little help, you can read your R code like a sentence.\nlibrary(dplyr)                    # a library is like a toolbox filled with helpful functions\ndf %&gt;%                            # df stands for \"data frame\", you'll learn more about this data structure soon \n  filter(year &gt; 2020) %&gt;%         # filter() function - keep these years in the data frame\n  group_by(state) %&gt;%             # Then, \"group the data by\" state for analysis\n  summarize(mean_yield = mean(y)) # Finally, calculate the mean() save it to a new variable mean_yield\nWe created a new variable just by naming it.\n\n\nIn Python, you frequently create “intermediate” variables or use complex nested brackets to do the same:\nfrom collections import defaultdict\n\n## filter\nfiltered = [row for row in data if row[\"year\"] &gt; 2020]\n\n## group and accumulate sums and counts\nsums = defaultdict(float)\ncounts = defaultdict(int)\n\nfor row in filtered:\n    state = row[\"state\"]\n    y = row[\"y\"]\n    sums[state] += y\n    counts[state] += 1\n\n## compute means\nmean_yield_by_state = {\n    state: sums[state] / counts[state]\n    for state in sums\n}\n\n## print the result\nfor state, mean_yield in mean_yield_by_state.items():\n    print(state, mean_yield)\n\n\nThis is why pandas exists (compare Python using pandas against the previous Python no pandas)\nimport pandas as pd\n\n## assume df is a data frame in Python\nresult = (\n    df[df[\"year\"] &gt; 2020]          ## Keep these years\n      .groupby(\"state\", as_index=False) ## aggregate by state  \n      .agg(mean_yield=(\"y\", \"mean\"))  ## Calculate the mean of y and store as mean_yield\n)\n\nprint(result)\n\n\nPython pandas is still readable even when complex\nimport pandas as pd\n\nresult = df[df[\"year\"] &gt; 2020].groupby(\"state\")[\"y\"].mean().reset_index(name=\"mean_yield\")",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "R v Python Example 2\nR allows for a more linear flow of thought, less engineering, more thinking. Not good or bad, just a different philosophy. In each of these examples, we filter (subset/split up), aggregate (combine), then analyze:\n\nRPythonPython with pandasPython one line\n\n\nR uses the “pipe” operator (%&gt;% Tidyverse library or |&gt; core R) which is read like “then”. You know zero R today, but with a little help, you can read your R code like a sentence.\nlibrary(dplyr)                    # a library is like a toolbox filled with helpful functions\ndf %&gt;%                            # df stands for \"data frame\", you'll learn more about this data structure soon \n  filter(year &gt; 2020) %&gt;%         # filter() function - keep these years in the data frame\n  group_by(state) %&gt;%             # Then, \"group the data by\" state for analysis\n  summarize(mean_yield = mean(y)) # Finally, calculate the mean() save it to a new variable mean_yield\nWe created a new variable just by naming it.\n\n\nIn Python, you frequently create “intermediate” variables or use complex nested brackets to do the same:\nfrom collections import defaultdict\n\n## filter\nfiltered = [row for row in data if row[\"year\"] &gt; 2020]\n\n## group and accumulate sums and counts\nsums = defaultdict(float)\ncounts = defaultdict(int)\n\nfor row in filtered:\n    state = row[\"state\"]\n    y = row[\"y\"]\n    sums[state] += y\n    counts[state] += 1\n\n## compute means\nmean_yield_by_state = {\n    state: sums[state] / counts[state]\n    for state in sums\n}\n\n## print the result\nfor state, mean_yield in mean_yield_by_state.items():\n    print(state, mean_yield)\n\n\nThis is why pandas exists (compare Python using pandas against the previous Python no pandas)\nimport pandas as pd\n\n## assume df is a data frame in Python\nresult = (\n    df[df[\"year\"] &gt; 2020]          ## Keep these years\n      .groupby(\"state\", as_index=False) ## aggregate by state  \n      .agg(mean_yield=(\"y\", \"mean\"))  ## Calculate the mean of y and store as mean_yield\n)\n\nprint(result)\n\n\nPython pandas is still readable even when complex\nimport pandas as pd\n\nresult = df[df[\"year\"] &gt; 2020].groupby(\"state\")[\"y\"].mean().reset_index(name=\"mean_yield\")"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#if-you-dont-want-to-raise-your-hand",
-    "href": "lectures/Lecture01/Lecture01.html#if-you-dont-want-to-raise-your-hand",
+    "objectID": "lectures/Lecture01/Lecture01old.html#if-you-dont-want-to-raise-your-hand",
+    "href": "lectures/Lecture01/Lecture01old.html#if-you-dont-want-to-raise-your-hand",
     "title": "Lecture 01",
     "section": "If you don’t want to raise your hand",
-    "text": "If you don’t want to raise your hand\n\n\n\n\n\nYou are not required to participate\nParticipation is always anonymous\nBut sometimes I will ask the class questions to “take a pulse”\nMentimeter is free to you, you just need a phone or a tablet or even a laptop",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "If you don’t want to raise your hand\n\n\n\n\n\nYou are not required to participate\nParticipation is always anonymous\nBut sometimes I will ask the class questions to “take a pulse”\nMentimeter is free to you, you just need a phone or a tablet or even a laptop"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#where-are-we",
-    "href": "lectures/Lecture01/Lecture01.html#where-are-we",
+    "objectID": "lectures/Lecture01/Lecture01old.html#where-are-we",
+    "href": "lectures/Lecture01/Lecture01old.html#where-are-we",
     "title": "Lecture 01",
     "section": "Where are we?",
-    "text": "Where are we?\n\nLearn how to be a “System Architect” – someone who understands how code (regardless of the specific language) serves a specific business or research goal (this AI cannot do yet). Study/ understand the process in addition to trusting it.\nFocus on possessing AI Augmentation Skills – where AI is used as a tool to help humans do more, rather than replace humans. When coding in this class, AI is your helper to develop your computational thinking and broaden your understanding of the application of the code beyond the problem in front of us.\nAI is the best at “book learning” (explicit knowledge) so instead of competing – leverage AI to help you gain practical, hands-on experience through projects and then internships and then jobs. Show that you can apply what you have learned in the areas/industries/fields that you want to join.\nDevelop your “Tacit Knowledge” – an advanced form of pattern recognition that the brain does subconsciously after years of experience - having good judgment arising from “the feel” of a situation, for example - handling complex client interactions, dealing with “messiness” (when things do not go as planned). Develop your Spidey Senses for a situation.",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Where are we?\n\nLearn how to be a “System Architect” – someone who understands how code (regardless of the specific language) serves a specific business or research goal (this AI cannot do yet). Study/ understand the process in addition to trusting it.\nFocus on possessing AI Augmentation Skills – where AI is used as a tool to help humans do more, rather than replace humans. When coding in this class, AI is your helper to develop your computational thinking and broaden your understanding of the application of the code beyond the problem in front of us.\nAI is the best at “book learning” (explicit knowledge) so instead of competing – leverage AI to help you gain practical, hands-on experience through projects and then internships and then jobs. Show that you can apply what you have learned in the areas/industries/fields that you want to join.\nDevelop your “Tacit Knowledge” – an advanced form of pattern recognition that the brain does subconsciously after years of experience - having good judgment arising from “the feel” of a situation, for example - handling complex client interactions, dealing with “messiness” (when things do not go as planned). Develop your Spidey Senses for a situation."
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#the-value-of-computational-thinking",
-    "href": "lectures/Lecture01/Lecture01.html#the-value-of-computational-thinking",
+    "objectID": "lectures/Lecture01/Lecture01old.html#the-value-of-computational-thinking",
+    "href": "lectures/Lecture01/Lecture01old.html#the-value-of-computational-thinking",
     "title": "Lecture 01",
     "section": "The Value of Computational Thinking",
-    "text": "The Value of Computational Thinking\n\n\n\nDecomposition - Breaking a larger problem down into smaller pieces\nPattern Recognition - Looking for similarities within and across problems\nAbstraction - Avoid hyperfocusing on granular details and focusing instead on developing general solutions\nAlgorithm Design - Automating the process efficiently, ensuring reproducibility and reducing the need for excessive human intervention\n\n\n\n\n\nImage created by ISTE & CSTA",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "The Value of Computational Thinking\n\n\n\nDecomposition - Breaking a larger problem down into smaller pieces\nPattern Recognition - Looking for similarities within and across problems\nAbstraction - Avoid hyperfocusing on granular details and focusing instead on developing general solutions\nAlgorithm Design - Automating the process efficiently, ensuring reproducibility and reducing the need for excessive human intervention\n\n\n\n\n\nImage created by ISTE & CSTA"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#decomposition",
-    "href": "lectures/Lecture01/Lecture01.html#decomposition",
+    "objectID": "lectures/Lecture01/Lecture01old.html#decomposition",
+    "href": "lectures/Lecture01/Lecture01old.html#decomposition",
     "title": "Lecture 01",
     "section": "Decomposition",
-    "text": "Decomposition\n\nBasic StructureAnd Still More\n\n\nBy the end of the quarter, instead of simply saying “I analyzed some data,” we can articulate more of what is involved as we learn how to do decompose what we do while learn R:\n\nI read some data\nI prepared the data for analysis\nI generated statistics and visualizations\nI modeled outcomes\nI communicated my findings to others\n\n\n\nand learn a little about a complete/professional workflow:\n\nIngest data (read CSV / JSON / SQL database)\nClean & make data consistent (e.g. fix various date formats)\nAddress missing values\nRecode categories (regroup/relabel values)\nTransform values (logarithms, standardization)\nEngineer new variables (great creative skills)\nAggregate or Reshape/restructure data\nModel / analyze the cleaned data\nValidate/verify/reproduce results\nCommunicate results (tables, figures, reports)\nReturn to previous steps to refine one’s understanding (iterative)\n\nEach step is clear and repeatable across different data & problems",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Decomposition\n\nBasic StructureAnd Still More\n\n\nBy the end of the quarter, instead of simply saying “I analyzed some data,” we can articulate more of what is involved as we learn how to do decompose what we do while learn R:\n\nI read some data\nI prepared the data for analysis\nI generated statistics and visualizations\nI modeled outcomes\nI communicated my findings to others\n\n\n\nand learn a little about a complete/professional workflow:\n\nIngest data (read CSV / JSON / SQL database)\nClean & make data consistent (e.g. fix various date formats)\nAddress missing values\nRecode categories (regroup/relabel values)\nTransform values (logarithms, standardization)\nEngineer new variables (great creative skills)\nAggregate or Reshape/restructure data\nModel / analyze the cleaned data\nValidate/verify/reproduce results\nCommunicate results (tables, figures, reports)\nReturn to previous steps to refine one’s understanding (iterative)\n\nEach step is clear and repeatable across different data & problems"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#pattern-recognition",
-    "href": "lectures/Lecture01/Lecture01.html#pattern-recognition",
+    "objectID": "lectures/Lecture01/Lecture01old.html#pattern-recognition",
+    "href": "lectures/Lecture01/Lecture01old.html#pattern-recognition",
     "title": "Lecture 01",
     "section": "Pattern Recognition",
-    "text": "Pattern Recognition\nIntuitively seeking structure, repetition, regularity in data:\n\nnoticing the same data-cleaning steps apply to many different types of data files\nrecognizing that bootstrapping, permutation tests, and cross-validation share a common resampling pattern (upper division)\nseeing that multiple models differ only by a formula or parameter\n\nThis is where the need for loops, reusable functions, and pipelines (making raw data analyzable) arise.\nIf I have time, the streetwise soldier who intuition saved his platoon during the worst of the Vietnam War (1965-1973).",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Pattern Recognition\nIntuitively seeking structure, repetition, regularity in data:\n\nnoticing the same data-cleaning steps apply to many different types of data files\nrecognizing that bootstrapping, permutation tests, and cross-validation share a common resampling pattern (upper division)\nseeing that multiple models differ only by a formula or parameter\n\nThis is where the need for loops, reusable functions, and pipelines (making raw data analyzable) arise.\nIf I have time, the streetwise soldier who intuition saved his platoon during the worst of the Vietnam War (1965-1973)."
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#abstraction",
-    "href": "lectures/Lecture01/Lecture01.html#abstraction",
+    "objectID": "lectures/Lecture01/Lecture01old.html#abstraction",
+    "href": "lectures/Lecture01/Lecture01old.html#abstraction",
     "title": "Lecture 01",
     "section": "Abstraction",
-    "text": "Abstraction\nFocus on what matters, minimize what does not:\n\ndata is “rows = cases, columns = variables” rather than obsessing over file format\nthinking in terms of distributions rather than individual observations\ndefining a function that works for “any dataset”\n\nAbstraction is what helps you generalize from one analysis to the next. This helps maximize productivity and minimize time spent in repetitive tasks.",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Abstraction\nFocus on what matters, minimize what does not:\n\ndata is “rows = cases, columns = variables” rather than obsessing over file format\nthinking in terms of distributions rather than individual observations\ndefining a function that works for “any dataset”\n\nAbstraction is what helps you generalize from one analysis to the next. This helps maximize productivity and minimize time spent in repetitive tasks."
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#algorithmic-thinking-good-design",
-    "href": "lectures/Lecture01/Lecture01.html#algorithmic-thinking-good-design",
+    "objectID": "lectures/Lecture01/Lecture01old.html#algorithmic-thinking-good-design",
+    "href": "lectures/Lecture01/Lecture01old.html#algorithmic-thinking-good-design",
     "title": "Lecture 01",
     "section": "Algorithmic thinking, good design",
-    "text": "Algorithmic thinking, good design\nCreate a clear, step-by-step procedure that produces a (reproducible) result\n\nan iterative fitting routine\nsimulation steps (“repeat 10,000 times…”)\na reproducible analysis script that always gives the same output from the same input\n\nThis is the bridge between statistical reasoning and actual computation.",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Algorithmic thinking, good design\nCreate a clear, step-by-step procedure that produces a (reproducible) result\n\nan iterative fitting routine\nsimulation steps (“repeat 10,000 times…”)\na reproducible analysis script that always gives the same output from the same input\n\nThis is the bridge between statistical reasoning and actual computation."
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#why-do-this",
-    "href": "lectures/Lecture01/Lecture01.html#why-do-this",
+    "objectID": "lectures/Lecture01/Lecture01old.html#why-do-this",
+    "href": "lectures/Lecture01/Lecture01old.html#why-do-this",
     "title": "Lecture 01",
     "section": "Why do this?",
-    "text": "Why do this?\nThe American Statistical Association emphasizes computational thinking because modern statistics is no longer just formulas on paper:\n\nSimulation &gt; closed-form solutions (formulas)\nResampling (let the data tell us) &gt; asymptotics (trust the math)\nReproducible pipelines &gt; one time calculations/analyses\nData wrangling &gt; textbook-clean datasets\n\nstatistical thinking + computational thinking = data science.",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Why do this?\nThe American Statistical Association emphasizes computational thinking because modern statistics is no longer just formulas on paper:\n\nSimulation &gt; closed-form solutions (formulas)\nResampling (let the data tell us) &gt; asymptotics (trust the math)\nReproducible pipelines &gt; one time calculations/analyses\nData wrangling &gt; textbook-clean datasets\n\nstatistical thinking + computational thinking = data science."
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#workflow-in-action-computational-thinking",
-    "href": "lectures/Lecture01/Lecture01.html#workflow-in-action-computational-thinking",
+    "objectID": "lectures/Lecture01/Lecture01old.html#workflow-in-action-computational-thinking",
+    "href": "lectures/Lecture01/Lecture01old.html#workflow-in-action-computational-thinking",
     "title": "Lecture 01",
     "section": "Workflow in Action & computational thinking",
-    "text": "Workflow in Action & computational thinking\n\nDecomposition is like the flow of data and thought from problem to solution\nPattern recognition is like seeing that flow across different projects\nAbstraction is like “cleaning” & “modeling” & “reporting” generally\nAlgorithmic thinking is about having ordered, executable steps\n\nComputational Thinking forces us to stop thinking in terms of isolated/one-off projects and start thinking in terms reproducible processes and the enterprise (whatever it may be) as a whole",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Workflow in Action & computational thinking\n\nDecomposition is like the flow of data and thought from problem to solution\nPattern recognition is like seeing that flow across different projects\nAbstraction is like “cleaning” & “modeling” & “reporting” generally\nAlgorithmic thinking is about having ordered, executable steps\n\nComputational Thinking forces us to stop thinking in terms of isolated/one-off projects and start thinking in terms reproducible processes and the enterprise (whatever it may be) as a whole"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#example-estimate-uncertainty-in-a-statistic-using-resampling-methods",
-    "href": "lectures/Lecture01/Lecture01.html#example-estimate-uncertainty-in-a-statistic-using-resampling-methods",
+    "objectID": "lectures/Lecture01/Lecture01old.html#example-estimate-uncertainty-in-a-statistic-using-resampling-methods",
+    "href": "lectures/Lecture01/Lecture01old.html#example-estimate-uncertainty-in-a-statistic-using-resampling-methods",
     "title": "Lecture 01",
     "section": "Example: Estimate uncertainty in a statistic using resampling methods",
-    "text": "Example: Estimate uncertainty in a statistic using resampling methods\n\nComputational thinkingPure codingComparison\n\n\n\nIdentify the statistic of interest (mean, median, slope)\nDefine a resampling procedure\nDecide on the number of repetitions\nDecide how the results should be summarized\nDecide how uncertainty will be reported/communicated\n\n\n\n\nWrite the loop / vectorized call\nSelect random seeds\nStore the results\nCall a visualization function\nDebug syntax errors\n\n\n\n\n\n\nComputational thinking\nCoding\n\n\n\n\nConceptual\nConcrete\n\n\nLanguage-independent\nLanguage-specific\n\n\nAbout structure\nAbout syntax\n\n\nCan be sketched\nMust be run\n\n\nTransfers across tools\nDoes not fully transfer",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Example: Estimate uncertainty in a statistic using resampling methods\n\nComputational thinkingPure codingComparison\n\n\n\nIdentify the statistic of interest (mean, median, slope)\nDefine a resampling procedure\nDecide on the number of repetitions\nDecide how the results should be summarized\nDecide how uncertainty will be reported/communicated\n\n\n\n\nWrite the loop / vectorized call\nSelect random seeds\nStore the results\nCall a visualization function\nDebug syntax errors\n\n\n\n\n\n\nComputational thinking\nCoding\n\n\n\n\nConceptual\nConcrete\n\n\nLanguage-independent\nLanguage-specific\n\n\nAbout structure\nAbout syntax\n\n\nCan be sketched\nMust be run\n\n\nTransfers across tools\nDoes not fully transfer"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#recap-in-statistics-20",
-    "href": "lectures/Lecture01/Lecture01.html#recap-in-statistics-20",
+    "objectID": "lectures/Lecture01/Lecture01old.html#recap-in-statistics-20",
+    "href": "lectures/Lecture01/Lecture01old.html#recap-in-statistics-20",
     "title": "Lecture 01",
     "section": "Recap: In Statistics 20",
-    "text": "Recap: In Statistics 20\n\nDeveloping your computational thinking\nApplying computational thinking fundamentals using a language called R\nStatisticians apply procedures and are not limited to tools like R (e.g. Python, SQL, etc)\nSoftware changes but your thinking skills will endure\nWe need to explain the steps and reasoning behind an analysis not just name the tools\nWhile it is acceptable to use AI to assist, learn more than copying and pasting\nLet’s learn what to do and why we do it\nBUT FIRST… attendance!",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Recap: In Statistics 20\n\nDeveloping your computational thinking\nApplying computational thinking fundamentals using a language called R\nStatisticians apply procedures and are not limited to tools like R (e.g. Python, SQL, etc)\nSoftware changes but your thinking skills will endure\nWe need to explain the steps and reasoning behind an analysis not just name the tools\nWhile it is acceptable to use AI to assist, learn more than copying and pasting\nLet’s learn what to do and why we do it\nBUT FIRST… attendance!"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#activity-2-attendance",
-    "href": "lectures/Lecture01/Lecture01.html#activity-2-attendance",
+    "objectID": "lectures/Lecture01/Lecture01old.html#activity-2-attendance",
+    "href": "lectures/Lecture01/Lecture01old.html#activity-2-attendance",
     "title": "Lecture 01",
     "section": "Activity #2: Attendance",
-    "text": "Activity #2: Attendance\n\n\n\nEveryone in here has a camera.\nThis is how you get credit for attendance, upload a minimum of one photo per week.\nYou cannot receive credit if it’s only you in the photo\nAnd I’ll start rejecting photos if its always you and the same people.\nMeet your classmates, take a photograph. Here is an example, with their permission of course\n\n\n\n\n\nThe Mhen of Statistics",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Activity #2: Attendance\n\n\n\nEveryone in here has a camera.\nThis is how you get credit for attendance, upload a minimum of one photo per week.\nYou cannot receive credit if it’s only you in the photo\nAnd I’ll start rejecting photos if its always you and the same people.\nMeet your classmates, take a photograph. Here is an example, with their permission of course\n\n\n\n\n\nThe Mhen of Statistics"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#when-acquiring-a-new-skill",
-    "href": "lectures/Lecture01/Lecture01.html#when-acquiring-a-new-skill",
+    "objectID": "lectures/Lecture01/Lecture01old.html#when-acquiring-a-new-skill",
+    "href": "lectures/Lecture01/Lecture01old.html#when-acquiring-a-new-skill",
     "title": "Lecture 01",
     "section": "When acquiring a new skill",
-    "text": "When acquiring a new skill\n\nThe general wisdom is to “protect the downside first”, it’s psychological\nWhen starting out with R, we are going to build a safety net, here are the first two parts:\n\nRStudio is friendlier than Positron or VS Code\nKeep your work organized. In RStudio, use Projects (Positron/VS Code uses filenames and folders)\n\nLet’s take a look at RStudio",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "When acquiring a new skill\n\nThe general wisdom is to “protect the downside first”, it’s psychological\nWhen starting out with R, we are going to build a safety net, here are the first two parts:\n\nRStudio is friendlier than Positron or VS Code\nKeep your work organized. In RStudio, use Projects (Positron/VS Code uses filenames and folders)\n\nLet’s take a look at RStudio"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#the-ide-rstudio---3-panes",
-    "href": "lectures/Lecture01/Lecture01.html#the-ide-rstudio---3-panes",
+    "objectID": "lectures/Lecture01/Lecture01old.html#the-ide-rstudio---3-panes",
+    "href": "lectures/Lecture01/Lecture01old.html#the-ide-rstudio---3-panes",
     "title": "Lecture 01",
     "section": "The IDE RStudio - 3 panes",
-    "text": "The IDE RStudio - 3 panes",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "The IDE RStudio - 3 panes"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#the-ide-rstudio---4-panes",
-    "href": "lectures/Lecture01/Lecture01.html#the-ide-rstudio---4-panes",
+    "objectID": "lectures/Lecture01/Lecture01old.html#the-ide-rstudio---4-panes",
+    "href": "lectures/Lecture01/Lecture01old.html#the-ide-rstudio---4-panes",
     "title": "Lecture 01",
     "section": "The IDE RStudio - 4 panes",
-    "text": "The IDE RStudio - 4 panes",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "The IDE RStudio - 4 panes"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#a-new-project-the-project-menu",
-    "href": "lectures/Lecture01/Lecture01.html#a-new-project-the-project-menu",
+    "objectID": "lectures/Lecture01/Lecture01old.html#a-new-project-the-project-menu",
+    "href": "lectures/Lecture01/Lecture01old.html#a-new-project-the-project-menu",
     "title": "Lecture 01",
     "section": "A new project: the project menu",
-    "text": "A new project: the project menu",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "A new project: the project menu"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#a-new-project-the-project-menu-alternate",
-    "href": "lectures/Lecture01/Lecture01.html#a-new-project-the-project-menu-alternate",
+    "objectID": "lectures/Lecture01/Lecture01old.html#a-new-project-the-project-menu-alternate",
+    "href": "lectures/Lecture01/Lecture01old.html#a-new-project-the-project-menu-alternate",
     "title": "Lecture 01",
     "section": "A new project: the project menu alternate",
-    "text": "A new project: the project menu alternate",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "A new project: the project menu alternate"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#a-new-project-choose-location",
-    "href": "lectures/Lecture01/Lecture01.html#a-new-project-choose-location",
+    "objectID": "lectures/Lecture01/Lecture01old.html#a-new-project-choose-location",
+    "href": "lectures/Lecture01/Lecture01old.html#a-new-project-choose-location",
     "title": "Lecture 01",
     "section": "A new project: choose location",
-    "text": "A new project: choose location",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "A new project: choose location"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#a-new-project-choose-type",
-    "href": "lectures/Lecture01/Lecture01.html#a-new-project-choose-type",
+    "objectID": "lectures/Lecture01/Lecture01old.html#a-new-project-choose-type",
+    "href": "lectures/Lecture01/Lecture01old.html#a-new-project-choose-type",
     "title": "Lecture 01",
     "section": "A new project: choose type",
-    "text": "A new project: choose type",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "A new project: choose type"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#create-and-check",
-    "href": "lectures/Lecture01/Lecture01.html#create-and-check",
+    "objectID": "lectures/Lecture01/Lecture01old.html#create-and-check",
+    "href": "lectures/Lecture01/Lecture01old.html#create-and-check",
     "title": "Lecture 01",
     "section": "Create and Check",
-    "text": "Create and Check",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Create and Check"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#create-and-check-off",
-    "href": "lectures/Lecture01/Lecture01.html#create-and-check-off",
+    "objectID": "lectures/Lecture01/Lecture01old.html#create-and-check-off",
+    "href": "lectures/Lecture01/Lecture01old.html#create-and-check-off",
     "title": "Lecture 01",
     "section": "Create and Check OFF",
-    "text": "Create and Check OFF",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Create and Check OFF"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#ready-to-use",
-    "href": "lectures/Lecture01/Lecture01.html#ready-to-use",
+    "objectID": "lectures/Lecture01/Lecture01old.html#ready-to-use",
+    "href": "lectures/Lecture01/Lecture01old.html#ready-to-use",
     "title": "Lecture 01",
     "section": "Ready to Use",
-    "text": "Ready to Use",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Ready to Use"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#create-your-first-r-script-program",
-    "href": "lectures/Lecture01/Lecture01.html#create-your-first-r-script-program",
+    "objectID": "lectures/Lecture01/Lecture01old.html#create-your-first-r-script-program",
+    "href": "lectures/Lecture01/Lecture01old.html#create-your-first-r-script-program",
     "title": "Lecture 01",
     "section": "Create your first R script (program)",
-    "text": "Create your first R script (program)",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Create your first R script (program)"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#modify-your-first-r-script",
-    "href": "lectures/Lecture01/Lecture01.html#modify-your-first-r-script",
+    "objectID": "lectures/Lecture01/Lecture01old.html#modify-your-first-r-script",
+    "href": "lectures/Lecture01/Lecture01old.html#modify-your-first-r-script",
     "title": "Lecture 01",
     "section": "Modify your first R script",
-    "text": "Modify your first R script",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Modify your first R script"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#save-and-rename-your-first-r-script",
-    "href": "lectures/Lecture01/Lecture01.html#save-and-rename-your-first-r-script",
+    "objectID": "lectures/Lecture01/Lecture01old.html#save-and-rename-your-first-r-script",
+    "href": "lectures/Lecture01/Lecture01old.html#save-and-rename-your-first-r-script",
     "title": "Lecture 01",
     "section": "Save and Rename your first R script",
-    "text": "Save and Rename your first R script",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Save and Rename your first R script"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#save-and-rename-your-first-r-script-1",
-    "href": "lectures/Lecture01/Lecture01.html#save-and-rename-your-first-r-script-1",
+    "objectID": "lectures/Lecture01/Lecture01old.html#save-and-rename-your-first-r-script-1",
+    "href": "lectures/Lecture01/Lecture01old.html#save-and-rename-your-first-r-script-1",
     "title": "Lecture 01",
     "section": "Save and Rename your first R script",
-    "text": "Save and Rename your first R script",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Save and Rename your first R script"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#source-first-r-script",
-    "href": "lectures/Lecture01/Lecture01.html#source-first-r-script",
+    "objectID": "lectures/Lecture01/Lecture01old.html#source-first-r-script",
+    "href": "lectures/Lecture01/Lecture01old.html#source-first-r-script",
     "title": "Lecture 01",
     "section": "Source first R script",
-    "text": "Source first R script",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Source first R script"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#result",
-    "href": "lectures/Lecture01/Lecture01.html#result",
+    "objectID": "lectures/Lecture01/Lecture01old.html#result",
+    "href": "lectures/Lecture01/Lecture01old.html#result",
     "title": "Lecture 01",
     "section": "Result",
-    "text": "Result",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Result"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#clear-the-console",
-    "href": "lectures/Lecture01/Lecture01.html#clear-the-console",
+    "objectID": "lectures/Lecture01/Lecture01old.html#clear-the-console",
+    "href": "lectures/Lecture01/Lecture01old.html#clear-the-console",
     "title": "Lecture 01",
     "section": "Clear the Console",
-    "text": "Clear the Console",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Clear the Console"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#take-a-breath",
-    "href": "lectures/Lecture01/Lecture01.html#take-a-breath",
+    "objectID": "lectures/Lecture01/Lecture01old.html#take-a-breath",
+    "href": "lectures/Lecture01/Lecture01old.html#take-a-breath",
     "title": "Lecture 01",
     "section": "Take a breath",
-    "text": "Take a breath",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Take a breath"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#activity-3-try-installing-the-package-praise-for-fun",
-    "href": "lectures/Lecture01/Lecture01.html#activity-3-try-installing-the-package-praise-for-fun",
+    "objectID": "lectures/Lecture01/Lecture01old.html#activity-3-try-installing-the-package-praise-for-fun",
+    "href": "lectures/Lecture01/Lecture01old.html#activity-3-try-installing-the-package-praise-for-fun",
     "title": "Lecture 01",
     "section": "Activity #3: Try Installing the package “praise” for fun",
-    "text": "Activity #3: Try Installing the package “praise” for fun\n\nPraise is a little package\nTry installing it using install.packages(“praise”)\nThen issue a library(praise)\nThen issue a praise() at the console prompt",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Activity #3: Try Installing the package “praise” for fun\n\nPraise is a little package\nTry installing it using install.packages(“praise”)\nThen issue a library(praise)\nThen issue a praise() at the console prompt"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#install-packages---praise",
-    "href": "lectures/Lecture01/Lecture01.html#install-packages---praise",
+    "objectID": "lectures/Lecture01/Lecture01old.html#install-packages---praise",
+    "href": "lectures/Lecture01/Lecture01old.html#install-packages---praise",
     "title": "Lecture 01",
     "section": "Install Packages - Praise",
-    "text": "Install Packages - Praise",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Install Packages - Praise"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#install-packages---praise-result",
-    "href": "lectures/Lecture01/Lecture01.html#install-packages---praise-result",
+    "objectID": "lectures/Lecture01/Lecture01old.html#install-packages---praise-result",
+    "href": "lectures/Lecture01/Lecture01old.html#install-packages---praise-result",
     "title": "Lecture 01",
     "section": "Install Packages - Praise result",
-    "text": "Install Packages - Praise result",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Install Packages - Praise result"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#install-packages---not-working",
-    "href": "lectures/Lecture01/Lecture01.html#install-packages---not-working",
+    "objectID": "lectures/Lecture01/Lecture01old.html#install-packages---not-working",
+    "href": "lectures/Lecture01/Lecture01old.html#install-packages---not-working",
     "title": "Lecture 01",
     "section": "Install Packages - not working?",
-    "text": "Install Packages - not working?",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Install Packages - not working?"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#install-packages---check-options",
-    "href": "lectures/Lecture01/Lecture01.html#install-packages---check-options",
+    "objectID": "lectures/Lecture01/Lecture01old.html#install-packages---check-options",
+    "href": "lectures/Lecture01/Lecture01old.html#install-packages---check-options",
     "title": "Lecture 01",
     "section": "Install Packages - check options",
-    "text": "Install Packages - check options",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Install Packages - check options"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#successful-install",
-    "href": "lectures/Lecture01/Lecture01.html#successful-install",
+    "objectID": "lectures/Lecture01/Lecture01old.html#successful-install",
+    "href": "lectures/Lecture01/Lecture01old.html#successful-install",
     "title": "Lecture 01",
     "section": "Successful Install",
-    "text": "Successful Install",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Successful Install"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#activating-a-library",
-    "href": "lectures/Lecture01/Lecture01.html#activating-a-library",
+    "objectID": "lectures/Lecture01/Lecture01old.html#activating-a-library",
+    "href": "lectures/Lecture01/Lecture01old.html#activating-a-library",
     "title": "Lecture 01",
     "section": "Activating a Library",
-    "text": "Activating a Library",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Activating a Library"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#using-a-library-function",
-    "href": "lectures/Lecture01/Lecture01.html#using-a-library-function",
+    "objectID": "lectures/Lecture01/Lecture01old.html#using-a-library-function",
+    "href": "lectures/Lecture01/Lecture01old.html#using-a-library-function",
     "title": "Lecture 01",
     "section": "Using a Library Function",
-    "text": "Using a Library Function",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Using a Library Function"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#using-a-library-function-result",
-    "href": "lectures/Lecture01/Lecture01.html#using-a-library-function-result",
+    "objectID": "lectures/Lecture01/Lecture01old.html#using-a-library-function-result",
+    "href": "lectures/Lecture01/Lecture01old.html#using-a-library-function-result",
     "title": "Lecture 01",
     "section": "Using a Library Function – Result",
-    "text": "Using a Library Function – Result",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Using a Library Function – Result"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01.html#takeaways-1",
-    "href": "lectures/Lecture01/Lecture01.html#takeaways-1",
+    "objectID": "lectures/Lecture01/Lecture01old.html#takeaways-1",
+    "href": "lectures/Lecture01/Lecture01old.html#takeaways-1",
     "title": "Lecture 01",
     "section": "Takeaways",
-    "text": "Takeaways\n\nStats 20 is an introduction to R and here – a Computational Thinking approach\nCourse specifics are in the syllabus, note the deliverables, please watch the video\nA little basic R - objects - everything in R is an object AND objects have names\noperators (e.g., +, -) are objects, vectors are objects, functions is(), str() and summary() are objects\nChoose your tools: specifically an IDE (RStudio, Positron, VS Code, etc.)\nProjects and libraries (+++).\n\nKnow how to call a library using the library() function to access helpful and more advanced functions.\n\nProjects help you stay organized.\n\nPerhaps read Chapter 1-2 of the Book of R (any edition)\nPerhaps read Chapter 1-2 of the Braun & Murdoch (any edition) if Book of R is too easy or confusing",
-    "crumbs": [
-      "Lectures",
-      "Lecture 01"
-    ]
+    "text": "Takeaways\n\nStats 20 is an introduction to R and here – a Computational Thinking approach\nCourse specifics are in the syllabus, note the deliverables, please watch the video\nA little basic R - objects - everything in R is an object AND objects have names\noperators (e.g., +, -) are objects, vectors are objects, functions is(), str() and summary() are objects\nChoose your tools: specifically an IDE (RStudio, Positron, VS Code, etc.)\nProjects and libraries (+++).\n\nKnow how to call a library using the library() function to access helpful and more advanced functions.\n\nProjects help you stay organized.\n\nPerhaps read Chapter 1-2 of the Book of R (any edition)\nPerhaps read Chapter 1-2 of the Braun & Murdoch (any edition) if Book of R is too easy or confusing"
   },
   {
-    "objectID": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html",
-    "href": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html",
-    "title": "my first quarto",
+    "objectID": "lectures/Lecture01/binding_basics.html",
+    "href": "lectures/Lecture01/binding_basics.html",
+    "title": "A note on R objects and their names",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "This section was taken from “Advanced R” by Hadley Wickham (chief scientist at Posit, the creators of RStudio). Only the most essential part was taken from his book on this subject. While I use the word “gets” in a first Stats 20 lecture to help make it more accessible, technically, that day one explanation of the “&lt;-” isn’t quite accurate and if you plan to do any advanced R programming in the future, it is best to make it as clear as possible from the begining. My notes and comments are in a different color - magenta"
   },
   {
-    "objectID": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html#quarto",
-    "href": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html#quarto",
-    "title": "my first quarto",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "objectID": "lectures/Lecture01/binding_basics.html#from-chapter-2.2-binding-basics",
+    "href": "lectures/Lecture01/binding_basics.html#from-chapter-2.2-binding-basics",
+    "title": "A note on R objects and their names",
+    "section": "from Chapter 2.2 “Binding Basics”",
+    "text": "from Chapter 2.2 “Binding Basics”\nConsider this code:\n\nx &lt;- c(1, 2, 3)\n\nIt’s easy to read it as: “create an object named ‘x’, containing the values 1, 2, and 3”. ( or R object ‘x’ gets the vector 1, 2, 3 ) Unfortunately, that’s a simplification that will lead to inaccurate predictions about what R is actually doing behind the scenes. It’s more accurate to say that this code is doing two things:\n\nIt’s creating an object, a vector of values, c(1, 2, 3).\nAnd it’s binding (associating) that object to a name, x.\n\nIn other words, the object, or value, (technically) doesn’t have a name; it’s actually the name x here that has a value 1, 2, 3.\nTo further clarify this distinction, I’ll draw diagrams like this:\n\n\n\n\n\n\n\n\nThe name, x, is drawn with a rounded rectangle. It has an arrow that points to (or binds or references) the value, the vector c(1, 2, 3). The arrow points in opposite direction to the assignment arrow: &lt;- creates a binding from the name on the left-hand side to the object on the right-hand side.\nThus, you can think of a name as a reference to a value. For example, if you run this code, you don’t get another copy of the value c(1, 2, 3), you get another binding to the existing object:\n\ny &lt;- x\n\n\n\n\n\n\n\n\n\nYou might have noticed that the value c(1, 2, 3) has a label: 0x74b. While the vector doesn’t have a name, I’ll occasionally need to refer to an object independent of its bindings. To make that possible, I’ll label values with a unique identifier. These identifiers have a special form that looks like the object’s memory “address”, i.e. the location in memory where the object is stored. But because the actual memory addresses changes every time the code is run, we use these identifiers instead.\nYou can access an object’s identifier with lobstr::obj_addr(). Doing so allows you to see that both x and y point to the same identifier:\n\nobj_addr(x)\n\n[1] \"0x128cf6e88\"\n\nobj_addr(y)\n\n[1] \"0x128cf6e88\"\n\n\nThese identifiers are long, and change every time you restart R.\nIt can take some time to get your head around the distinction between names and values, but understanding this is really helpful in functional programming where functions can have different names in different contexts.\n(end Wickham)"
   },
   {
-    "objectID": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html#running-code",
-    "href": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html#running-code",
-    "title": "my first quarto",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "objectID": "lectures/Lecture01/binding_basics.html#the-result-of-rs-ways",
+    "href": "lectures/Lecture01/binding_basics.html#the-result-of-rs-ways",
+    "title": "A note on R objects and their names",
+    "section": "The result of R’s ways",
+    "text": "The result of R’s ways\nSo take a look at what happens when we modify one but not the other\n\ny[[3]] &lt;- 4   ## I am following Wickham's style here, \n\n## instead you could have used y[3] &lt;- 4 \n## read as \"y's third element\" gets 4\n## because we have simple vector, in other places \n## y[[3]] &lt;- 4 is clearer, but we're not there yet\n\nx\n\n[1] 1 2 3\n\ny\n\n[1] 1 2 4\n\n\nlet’s check the memory locations\n\nobj_addr(x)\n\n[1] \"0x128cf6e88\"\n\nobj_addr(y)\n\n[1] \"0x111dc5518\"\n\n\n(start Wickham again)\nModifying y clearly didn’t modify x. So what happened to the shared binding? While the value associated with y changed, the original object did not. Instead, R created a new object, 0xcd2, a copy of 0x74b with one value changed, then rebound y to that object.\n\n\n\n\n\n\n\n\nThis behaviour is called copy-on-modify. Understanding it will radically improve your intuition about the performance of R code.\n(end Wickham)\nDo you need to completely understand this to do well in Stats 20? Probably not BUT if you decide to learn Python or become a paid R programmer later (because all of the documentation assumes you understand R’s decision making in memory), it would help to understand what he is trying to tell you in Chapter 2 of the textbook Advanced R."
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#hello-welcome-to-stats-20",
+    "href": "lectures/Lecture01/Lecture01rev.html#hello-welcome-to-stats-20",
+    "title": "Lecture 01",
+    "section": "Hello & Welcome to Stats 20",
+    "text": "Hello & Welcome to Stats 20\nIntroduction to Statistical Programming with R\n\nPlease greet your neighbor(s)\nMy name is Dr. Vivian Lew, I am a senior lecturer in the Department of Statistics & Data Science\nStatistics is all about learning from data\nR is the language of Statistics\nThe goal is to prep you for upper division work in Statistics & Data Science\nFirst Day Stuff today"
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#anonymous-activity-1",
+    "href": "lectures/Lecture01/Lecture01rev.html#anonymous-activity-1",
+    "title": "Lecture 01",
+    "section": "Anonymous Activity 1",
+    "text": "Anonymous Activity 1\nThis is optional, but helpful to Stats 20, Please scan this and there is a simple question.\n\nScan the QR code displayed on this slide with your phone or tablet.\nOr go to www.menti.com and enter the code shown above.\n\n\nmentimeter"
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#how-are-you-today",
+    "href": "lectures/Lecture01/Lecture01rev.html#how-are-you-today",
+    "title": "Lecture 01",
+    "section": "How are you today?",
+    "text": "How are you today?\nAnd results"
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#format",
+    "href": "lectures/Lecture01/Lecture01rev.html#format",
+    "title": "Lecture 01",
+    "section": "Format",
+    "text": "Format\n\nThis class is project-based, hands-on approach to developing computational problem solving approaches, concepts, and skills in R\nI ask you to try things while in class and to ask questions\nSo please bring a laptop and be prepared to use it\nGrades are assigned on the university’s straight scale (90-100% A type of grade, 80-89% B type of grade, etc.)"
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#deliverables",
+    "href": "lectures/Lecture01/Lecture01rev.html#deliverables",
+    "title": "Lecture 01",
+    "section": "Deliverables",
+    "text": "Deliverables\n\n5% Group “Meet the Professor” (in person, before the end of Week 3)\n15% Data Camp (multiple assignments per week, graded complete/not complete)\n10% Basic Reproducible Report (Due Week 3)\n15% Video Recorded Presentation (Due Week 5)\n10% Polished Reproducible Report (Due Week 7)\n20% Discussion Section and Section Project (Due Week 9 or 10, TAs decision)\n15% Final Exam (Friday, Week 11, part take home, part in person)\n10% Attend 10 out of 20 possible class meetings in person"
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#choose-your-tools",
+    "href": "lectures/Lecture01/Lecture01rev.html#choose-your-tools",
+    "title": "Lecture 01",
+    "section": "Choose your tools",
+    "text": "Choose your tools\n\nI will be using RStudio and sometimes the web browser version of R during lecture\nYou are free to use whatever IDE you want (RStudio, Positron, VS Code, JetBrains) to complete your deliverables\nI will ask your TAs to assist you with RStudio but do decide on your tools the end of Week 2 (first assignment that needs it is due Week 3)\nYou are free to obtain assistance from your favorite LLM/AI (READ THE AI POLICY)\nThe point of an IDE like RStudio or or whatever is to teacgubg familiarity with software that allows you to write scripts (.R) and notebooks (.rmd or .qmd), manage them, and execute/render/run them.\nNote: your tool choice may affect how your results are delivered (e.g., PDF, web page)"
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#ai-policy",
+    "href": "lectures/Lecture01/Lecture01rev.html#ai-policy",
+    "title": "Lecture 01",
+    "section": "AI Policy",
+    "text": "AI Policy\n\nWe permit and encourage the responsible use of AI-assisted programming tools (e.g., GitHub Copilot, built-in IDE assistants or similar tools which have been integrated into RStudio, Positron or others).\n\nPresently, programming in professional (paid/internship) environments usually involves some AI-support.\n\nLearning how to use these tools well (e.g., understand the coding decision, have an eye to correcting it or changing suggestions) and ethically is part of become a competent programmer in any language since 2023.\n\nPlease review the syllabus for an expanded detailed version of this summary"
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#flying-over-stats-20",
+    "href": "lectures/Lecture01/Lecture01rev.html#flying-over-stats-20",
+    "title": "Lecture 01",
+    "section": "Flying Over Stats 20",
+    "text": "Flying Over Stats 20\n\nOutlineWorkflow (at university)Workflow (in workplaces)What is R?\n\n\nOver the next 10 weeks, we will try to cover the following topics:\n\nData Science Workflow (computational steps), Reproducibility, Communication.\n\nCore/Base R (the language, data structures, functions, etc.).\n\nData Wrangling (not analyzable -&gt; analyzable).\n\nDebugging/Problem Solving.\nTidyverse + Data Viz\n\nDistributions, Sampling, Statistics.\nControl Flow, Functions, and Programming Concepts.\nLinear Algebra in R.\n\n\n\n\n\n\nA Data Science Workflow\n\n\n\n\n\n\n\nFrom Google\n\n\n\n\nFrom CRAN (the Comprehensive R Archive Network):\n\nR is a system for statistical computation and graphics. It consists of a language plus a run-time environment with graphics, a debugger, access to certain system functions, and the ability to run programs stored in script files.\n\nTranslation:\n\nR is a language with an interpreter and a standard library (toolkit/toolbox of functions)\nWith execution support code (behind the scenes code that helps your R code run on your computer)\nAll for the practice of statistics (involves computation,simulation, data visualization etc.)\n\nR can also monitor/analyze code, identify coding errors, interact with your operating system, run programs saved on your computer as scripts (or similar) among other things."
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python",
+    "href": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python",
+    "title": "Lecture 01",
+    "section": "Why R and not Python?",
+    "text": "Why R and not Python?\n\nThe basic difference: R was built by statisticians for statisticians, so the focus is narrower.\nPython was built by software engineers for general purpose applications, so the focus is broad.\nR is great for focusing on thinking about statistical problems, solving them, and communicating the results\nPython is great for doing lots of different things. Example, download thousands of YouTube videos, analyze the images frame by frame, transcribe the sound into words, analyze the data, etc."
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python-contd",
+    "href": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python-contd",
+    "title": "Lecture 01",
+    "section": "Why R and not Python? (cont’d)",
+    "text": "Why R and not Python? (cont’d)\n\nR is “Problem-First” or “Problem-Forward”\nIn R, data structures are integrated directly into the language and do not require additional tools (but tools, found in libraries, are helpful).\nWhen you load a dataset, R assumes you want to analyze it. The syntax is designed to mirror the way a researcher thinks: “Take this data, then filter it, then group it, then summarize the mean, etc.”\n\nAlso R’s simpler modeling formulas allows one to remain thinking about the analytical problem."
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python-contd-1",
+    "href": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python-contd-1",
+    "title": "Lecture 01",
+    "section": "Why R and not Python? (cont’d)",
+    "text": "Why R and not Python? (cont’d)\n\nPython is “System-First”\nIn Python, you “build” your environment before you can solve the problem (importing tools, found in libraries such as pandas, numpy, etc.)\nIn Python, it matters how the code integrates within a larger system, the result is versatility. So it is easy for Python to interact with YouTube for example (not as easy/or maybe not possible in R)\nIn R, what matters is how the programming code helps you reveals the truth in the data."
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#visual",
+    "href": "lectures/Lecture01/Lecture01rev.html#visual",
+    "title": "Lecture 01",
+    "section": "Visual",
+    "text": "Visual"
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#r-v-python-example-1",
+    "href": "lectures/Lecture01/Lecture01rev.html#r-v-python-example-1",
+    "title": "Lecture 01",
+    "section": "R v Python Example 1",
+    "text": "R v Python Example 1\nLet’s look at a bivariate regression: one Y (dependent), one X (independent)\n\nRPythonTakeaways\n\n\nIf you already have R running on your computer, you can try this\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nsummary(model1)\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\n\n\n\nR has “built-in” data, Python does not (mtcars)\nNotice the “&lt;-” in R this is called a “gets”, it is used for assignment.read it “model 1 gets”\nPython uses “=” for assignment and options\nYou can use “=” for assignment in R, but it is really meant to identify options\nR is written comparable to way we think about things in statistics lm(mpg ~ wt, data = mtcars) lm is the basic linear model (lm) FUNCTION (important word) and the () encloses its “arguments”. Functions do all of the “work” in R.\n~ means “as a function of” so linear model - mpg as a function of wt the data is mtcars\nYou don’t need to print() explicitly in R, you must in Python to see results"
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01rev.html#the-formula-vs.-the-matrix",
+    "href": "lectures/Lecture01/Lecture01rev.html#the-formula-vs.-the-matrix",
+    "title": "Lecture 01",
+    "section": "The “Formula” vs. “The Matrix”",
+    "text": "The “Formula” vs. “The Matrix”\nIn R, a statistical model is treated like a scientific hypothesis. In Python, it is treated like how the computer wants its input formatted.\n\nR Approach: You use formulas (y ~ x). This is like saying “I think \\(y\\) is a function of \\(x\\).” R automatically handles things like creating “dummy variables” for categorical information (e.g., turning “Species” into 0s and 1s) and keeps the names of your variables intact so you can read the results.\nPython Approach: Most Python libraries require you to manually transform your data into a matrix of numbers first. You then “One-Hot Encode” your categories and strip away the column names, then pass them in as \\(x\\) and \\(y\\).\n\nIn R, the code looks like the math inside your head. In Python, the code looks like the way the computer understands math."
   },
   {
     "objectID": "about.html",
@@ -807,122 +678,339 @@
     "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#hello-welcome-to-stats-20",
-    "href": "lectures/Lecture01/Lecture01rev.html#hello-welcome-to-stats-20",
+    "objectID": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html",
+    "href": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html",
+    "title": "my first quarto",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html#quarto",
+    "href": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html#quarto",
+    "title": "my first quarto",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html#running-code",
+    "href": "lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html#running-code",
+    "title": "my first quarto",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#hello-welcome-to-stats-20",
+    "href": "lectures/Lecture01/Lecture01.html#hello-welcome-to-stats-20",
     "title": "Lecture 01",
     "section": "Hello & Welcome to Stats 20",
-    "text": "Hello & Welcome to Stats 20\nIntroduction to Statistical Programming with R\n\nPlease greet your neighbor(s)\nMy name is Dr. Vivian Lew, I am a senior lecturer in the Department of Statistics & Data Science\nStatistics is all about learning from data\nR is the language of Statistics\nThe goal is to prep you for upper division work in Statistics & Data Science\nFirst Day Stuff today"
+    "text": "Hello & Welcome to Stats 20\n\nPlease greet your neighbor(s)\nMy name is Dr. Vivian Lew, I am a senior lecturer in the Department of Statistics & Data Science\nStatistics is about learning from data - drawing conclusions, assessing uncertainty, generalizing results to a larger population\nData Science is about using data to make predictions/automate decisions\nR is the language of Statisticians\nThe goal is to prep you for upper division work in Statistics & Data Science\nFirst Day Stuff today",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#anonymous-activity-1",
-    "href": "lectures/Lecture01/Lecture01rev.html#anonymous-activity-1",
-    "title": "Lecture 01",
-    "section": "Anonymous Activity 1",
-    "text": "Anonymous Activity 1\nThis is optional, but helpful to Stats 20, Please scan this and there is a simple question.\n\nScan the QR code displayed on this slide with your phone or tablet.\nOr go to www.menti.com and enter the code shown above.\n\n\nmentimeter"
-  },
-  {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#how-are-you-today",
-    "href": "lectures/Lecture01/Lecture01rev.html#how-are-you-today",
-    "title": "Lecture 01",
-    "section": "How are you today?",
-    "text": "How are you today?\nAnd results"
-  },
-  {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#format",
-    "href": "lectures/Lecture01/Lecture01rev.html#format",
+    "objectID": "lectures/Lecture01/Lecture01.html#format",
+    "href": "lectures/Lecture01/Lecture01.html#format",
     "title": "Lecture 01",
     "section": "Format",
-    "text": "Format\n\nThis class is project-based, hands-on approach to developing computational problem solving approaches, concepts, and skills in R\nI ask you to try things while in class and to ask questions\nSo please bring a laptop and be prepared to use it\nGrades are assigned on the university’s straight scale (90-100% A type of grade, 80-89% B type of grade, etc.)"
+    "text": "Format\n\nThis class is project-based, hands-on approach to developing computational problem solving approaches, concepts, and skills in R\nI ask you to try things while in class and to ask questions\nSo please bring a laptop or comparable and be prepared to use it\nGrades are assigned on the university’s straight scale (90-100% A type of grade, 80-89% B type of grade, etc.)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#deliverables",
-    "href": "lectures/Lecture01/Lecture01rev.html#deliverables",
+    "objectID": "lectures/Lecture01/Lecture01.html#deliverables",
+    "href": "lectures/Lecture01/Lecture01.html#deliverables",
     "title": "Lecture 01",
     "section": "Deliverables",
-    "text": "Deliverables\n\n5% Group “Meet the Professor” (in person, before the end of Week 3)\n15% Data Camp (multiple assignments per week, graded complete/not complete)\n10% Basic Reproducible Report (Due Week 3)\n15% Video Recorded Presentation (Due Week 5)\n10% Polished Reproducible Report (Due Week 7)\n20% Discussion Section and Section Project (Due Week 9 or 10, TAs decision)\n15% Final Exam (Friday, Week 11, part take home, part in person)\n10% Attend 10 out of 20 possible class meetings in person"
+    "text": "Deliverables\n\n5% Group “Meet the Professor” (in person, before the end of Week 3)\n10% DataCamp (multiple assignments per week, graded complete/not complete)\n10% Weekly BruinOnline Quiz (graded complete/not complete)\n\n10% Basic Reproducible Report (Due Week 3)\n10% Video Recorded Presentation (Due Week 5)\n10% Polished Reproducible Report (Due Week 7)\n15% Discussion Section and Section Project (Due Week 9 or later, TAs decision)\n20% Final Exam (Friday, Week 11, more to follow)\n10% Attend 1 class meeting per week (1-10) in person",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#choose-your-tools",
-    "href": "lectures/Lecture01/Lecture01rev.html#choose-your-tools",
+    "objectID": "lectures/Lecture01/Lecture01.html#choose-your-tools",
+    "href": "lectures/Lecture01/Lecture01.html#choose-your-tools",
     "title": "Lecture 01",
     "section": "Choose your tools",
-    "text": "Choose your tools\n\nI will be using RStudio and sometimes the web browser version of R during lecture\nYou are free to use whatever IDE you want (RStudio, Positron, VS Code, JetBrains) to complete your deliverables\nI will ask your TAs to assist you with RStudio but do decide on your tools the end of Week 2 (first assignment that needs it is due Week 3)\nYou are free to obtain assistance from your favorite LLM/AI (READ THE AI POLICY)\nThe point of an IDE like RStudio or or whatever is to teacgubg familiarity with software that allows you to write scripts (.R) and notebooks (.rmd or .qmd), manage them, and execute/render/run them.\nNote: your tool choice may affect how your results are delivered (e.g., PDF, web page)"
+    "text": "Choose your tools\n\nI will be using RStudio. It is an Integrated Development Environment (IDE) for R\nYou are free to use whatever IDE you want (RStudio preferred, Positron, VS Code, JetBrains) to complete assignments\nI will ask your TAs to assist you with RStudio but do decide on your tools before the end of Week 2 (first assignment that needs it is due Week 3)\nYou are free to obtain assistance from your favorite LLM/AI (READ THE COURSE AI POLICY FIRST)\nThe point of an IDE like RStudio or whatever is to teach familiarity with software that allows you to write scripts (.R) and notebooks (preferably .qmd but .rmd will work), manage them, and execute/render/run them.\nNote: your tool choice may affect how your results are delivered (e.g., PDF, web page)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#ai-policy",
-    "href": "lectures/Lecture01/Lecture01rev.html#ai-policy",
+    "objectID": "lectures/Lecture01/Lecture01.html#ai-policy",
+    "href": "lectures/Lecture01/Lecture01.html#ai-policy",
     "title": "Lecture 01",
     "section": "AI Policy",
-    "text": "AI Policy\n\nWe permit and encourage the responsible use of AI-assisted programming tools (e.g., GitHub Copilot, built-in IDE assistants or similar tools which have been integrated into RStudio, Positron or others).\n\nPresently, programming in professional (paid/internship) environments usually involves some AI-support.\n\nLearning how to use these tools well (e.g., understand the coding decision, have an eye to correcting it or changing suggestions) and ethically is part of become a competent programmer in any language since 2023.\n\nPlease review the syllabus for an expanded detailed version of this summary"
+    "text": "AI Policy\n\nWe permit and encourage the responsible use of AI-assisted programming tools (e.g., GitHub Copilot, built-in IDE assistants or similar tools which have been integrated into RStudio, Positron or others).\n\nPresently, programming in professional (paid/internship) environments usually involves some AI-support.\n\nLearning how to use these tools well (e.g., understand the coding decision, have an eye to correcting it or changing suggestions) and ethically is part of become a competent programmer in any language since 2023.\n\nPlease review the syllabus and/or the recording of it for an expanded detailed version of this summary",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#flying-over-stats-20",
-    "href": "lectures/Lecture01/Lecture01rev.html#flying-over-stats-20",
+    "objectID": "lectures/Lecture01/Lecture01.html#flying-over-stats-20",
+    "href": "lectures/Lecture01/Lecture01.html#flying-over-stats-20",
     "title": "Lecture 01",
     "section": "Flying Over Stats 20",
-    "text": "Flying Over Stats 20\n\nOutlineWorkflow (at university)Workflow (in workplaces)What is R?\n\n\nOver the next 10 weeks, we will try to cover the following topics:\n\nData Science Workflow (computational steps), Reproducibility, Communication.\n\nCore/Base R (the language, data structures, functions, etc.).\n\nData Wrangling (not analyzable -&gt; analyzable).\n\nDebugging/Problem Solving.\nTidyverse + Data Viz\n\nDistributions, Sampling, Statistics.\nControl Flow, Functions, and Programming Concepts.\nLinear Algebra in R.\n\n\n\n\n\n\nA Data Science Workflow\n\n\n\n\n\n\n\nFrom Google\n\n\n\n\nFrom CRAN (the Comprehensive R Archive Network):\n\nR is a system for statistical computation and graphics. It consists of a language plus a run-time environment with graphics, a debugger, access to certain system functions, and the ability to run programs stored in script files.\n\nTranslation:\n\nR is a language with an interpreter and a standard library (toolkit/toolbox of functions)\nWith execution support code (behind the scenes code that helps your R code run on your computer)\nAll for the practice of statistics (involves computation,simulation, data visualization etc.)\n\nR can also monitor/analyze code, identify coding errors, interact with your operating system, run programs saved on your computer as scripts (or similar) among other things."
+    "text": "Flying Over Stats 20\n\nOutlineWorkflow (in research)Workflow (in workplaces)What is R?\n\n\nOver the next 10 weeks, we will try to cover the following topics:\n\nData Science Workflow (computational steps), Reproducibility, Communication.\n\nCore/Base R (the language, data structures, functions, etc.).\n\nData Wrangling (not analyzable -&gt; analyzable).\n\nDebugging/Problem Solving.\nTidyverse + Data Viz\n\nDistributions, Sampling, Statistics.\nControl Flow, Functions, and Programming Concepts.\nLinear Algebra in R.\n\n\n\n\n\n\nA Data Science Workflow\n\n\n\n\n\n\n\nFrom Google\n\n\n\n\nFrom CRAN (the Comprehensive R Archive Network):\n\nR is a system for statistical computation and graphics. It consists of a language plus a run-time environment with graphics, a debugger, access to certain system functions, and the ability to run programs stored in script files.\n\nTranslation:\n\nR is a language with an interpreter and a standard library (toolkit/toolbox of functions)\nWith execution support code (behind the scenes code that helps your R code run on your computer)\nAll for the practice of statistics (involves computation,simulation, data visualization etc.)\n\nR can also monitor/analyze code, identify coding errors, interact with your operating system, run programs saved on your computer as scripts (or similar) among other things.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python",
-    "href": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python",
+    "objectID": "lectures/Lecture01/Lecture01.html#activity-1-r-in-the-browser",
+    "href": "lectures/Lecture01/Lecture01.html#activity-1-r-in-the-browser",
+    "title": "Lecture 01",
+    "section": "Activity #1 R in the Browser",
+    "text": "Activity #1 R in the Browser\n\nSometimes, like today, I want all of you to have access to R at your fingertips like on your laptop or on your phone or tablet.\nToday, we will use R in the Browser.\nThis is a simple webpage version of R, not really for analysis, more for instruction by example",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#activity-1-takeaways",
+    "href": "lectures/Lecture01/Lecture01.html#activity-1-takeaways",
+    "title": "Lecture 01",
+    "section": "Activity #1 Takeaways",
+    "text": "Activity #1 Takeaways\n\nIn the beginning, R is like a calculator\nNumbers, operators, vectors, data frames, functions are objects.\n\nA simplification: virtually everything in R is an object.\nNames like x, y, z, iris, rivers are associated with R objects and by calling the name, we have access to the associated object\nThe fundamental data structure in R is the vector\nVectors are indexed (elements are numbered 1 to however many elements we have)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#why-r-and-not-python",
+    "href": "lectures/Lecture01/Lecture01.html#why-r-and-not-python",
     "title": "Lecture 01",
     "section": "Why R and not Python?",
-    "text": "Why R and not Python?\n\nThe basic difference: R was built by statisticians for statisticians, so the focus is narrower.\nPython was built by software engineers for general purpose applications, so the focus is broad.\nR is great for focusing on thinking about statistical problems, solving them, and communicating the results\nPython is great for doing lots of different things. Example, download thousands of YouTube videos, analyze the images frame by frame, transcribe the sound into words, analyze the data, etc."
+    "text": "Why R and not Python?\n\nThe basic difference: R was built by statisticians for statisticians, so the focus is narrower.\nPython was built by software engineers for general purpose applications, so the focus is broad.\nR is great for focusing on thinking about statistical problems, solving them, and communicating the results\nPython is great for doing lots of different things. Example, download thousands of YouTube videos, analyze the images frame by frame, transcribe the sound into words, analyze the data, etc.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python-contd",
-    "href": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python-contd",
+    "objectID": "lectures/Lecture01/Lecture01.html#why-r-and-not-python-contd",
+    "href": "lectures/Lecture01/Lecture01.html#why-r-and-not-python-contd",
     "title": "Lecture 01",
     "section": "Why R and not Python? (cont’d)",
-    "text": "Why R and not Python? (cont’d)\n\nR is “Problem-First” or “Problem-Forward”\nIn R, data structures are integrated directly into the language and do not require additional tools (but tools, found in libraries, are helpful).\nWhen you load a dataset, R assumes you want to analyze it. The syntax is designed to mirror the way a researcher thinks: “Take this data, then filter it, then group it, then summarize the mean, etc.”\n\nAlso R’s simpler modeling formulas allows one to remain thinking about the analytical problem."
+    "text": "Why R and not Python? (cont’d)\n\nR is “Problem-First” or “Problem-Forward”\nIn R, data structures are integrated directly into the language and do not require additional tools (but tools, found in libraries, are helpful).\nWhen you load a dataset, R assumes you want to analyze it. The syntax is designed to mirror the way a researcher thinks: “I want to study something which involves data, get the data, then filter/subset it, then group it, then summarize/describe, then model, etc.”\n\nAlso R’s simpler modeling formulas allows one to remain thinking about the analytical problem.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python-contd-1",
-    "href": "lectures/Lecture01/Lecture01rev.html#why-r-and-not-python-contd-1",
+    "objectID": "lectures/Lecture01/Lecture01.html#why-r-and-not-python-contd-1",
+    "href": "lectures/Lecture01/Lecture01.html#why-r-and-not-python-contd-1",
     "title": "Lecture 01",
     "section": "Why R and not Python? (cont’d)",
-    "text": "Why R and not Python? (cont’d)\n\nPython is “System-First”\nIn Python, you “build” your environment before you can solve the problem (importing tools, found in libraries such as pandas, numpy, etc.)\nIn Python, it matters how the code integrates within a larger system, the result is versatility. So it is easy for Python to interact with YouTube for example (not as easy/or maybe not possible in R)\nIn R, what matters is how the programming code helps you reveals the truth in the data."
+    "text": "Why R and not Python? (cont’d)\n\nPython is “System-First”\nIn Python, you “build” your environment before you can solve the problem (importing tools, found in libraries such as pandas, numpy, etc.)\nIn Python, it matters how your programming code integrates within a larger system, the result is versatility. So it is easy for Python to interact with YouTube for example (not as easy/or maybe not possible in R)\nIn R, what matters is how the programming code helps you reveal the truth found in the data.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#visual",
-    "href": "lectures/Lecture01/Lecture01rev.html#visual",
+    "objectID": "lectures/Lecture01/Lecture01.html#visual",
+    "href": "lectures/Lecture01/Lecture01.html#visual",
     "title": "Lecture 01",
     "section": "Visual",
-    "text": "Visual"
+    "text": "Visual",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#r-v-python-example-1",
-    "href": "lectures/Lecture01/Lecture01rev.html#r-v-python-example-1",
+    "objectID": "lectures/Lecture01/Lecture01.html#r-v-python-example-1",
+    "href": "lectures/Lecture01/Lecture01.html#r-v-python-example-1",
     "title": "Lecture 01",
     "section": "R v Python Example 1",
-    "text": "R v Python Example 1\nLet’s look at a bivariate regression: one Y (dependent), one X (independent)\n\nRPythonTakeaways\n\n\nIf you already have R running on your computer, you can try this\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nsummary(model1)\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\n\n\n\nR has “built-in” data, Python does not (mtcars)\nNotice the “&lt;-” in R this is called a “gets”, it is used for assignment.read it “model 1 gets”\nPython uses “=” for assignment and options\nYou can use “=” for assignment in R, but it is really meant to identify options\nR is written comparable to way we think about things in statistics lm(mpg ~ wt, data = mtcars) lm is the basic linear model (lm) FUNCTION (important word) and the () encloses its “arguments”. Functions do all of the “work” in R.\n~ means “as a function of” so linear model - mpg as a function of wt the data is mtcars\nYou don’t need to print() explicitly in R, you must in Python to see results"
+    "text": "R v Python Example 1\nLet’s look at a bivariate (simple) regression: one Y (dependent), one X (independent). If you have forgotten see IMS Chapter 7.\n\nRPythonTakeawaysRPythonPython Plot Result\n\n\nIf you already have R running on your computer or copy and paste this to the activity, you can try this\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nsummary(model1)\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\nX = mtcars[\"wt\"]\nX = sm.add_constant(X)\nY = mtcars[\"mpg\"]\n\nfit = sm.OLS(Y, X).fit()\n\nprint(fit.summary())\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.753\nModel:                            OLS   Adj. R-squared:                  0.745\nMethod:                 Least Squares   F-statistic:                     91.38\nDate:                Tue, 31 Mar 2026   Prob (F-statistic):           1.29e-10\nTime:                        16:57:00   Log-Likelihood:                -80.015\nNo. Observations:                  32   AIC:                             164.0\nDf Residuals:                      30   BIC:                             167.0\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         37.2851      1.878     19.858      0.000      33.450      41.120\nwt            -5.3445      0.559     -9.559      0.000      -6.486      -4.203\n==============================================================================\nOmnibus:                        2.988   Durbin-Watson:                   1.252\nProb(Omnibus):                  0.225   Jarque-Bera (JB):                2.399\nSkew:                           0.668   Prob(JB):                        0.301\nKurtosis:                       2.877   Cond. No.                         12.7\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\n\n\n\nR has “built-in” data “data = mtcars”, Python does not, need a library.\nIn both situations, we are testing the same hypothesis: does MPG change in a predictable direction as WT changes?\nNotice the “&lt;-” in R this is called a “gets”, it is used for assignment. Could read it as “model 1 gets”\nPython uses “=” for both assignment and options\nYou can use “=” for assignment in R, but it is really meant to identify options\nR is written in a way comparable to how we think about things in statistics lm(mpg ~ wt, data = mtcars) lm() is the basic linear model FUNCTION (important word) and the () encloses its “arguments”. Functions do all of the “work” in R.\n~ could be read “as a function of” so we can read the code like “linear model(mpg as a function of wt the data is mtcars)” and “model1” “gets” the result.\nYou don’t need to print() explicitly in R, but you must explicity print() in Python to see results\n\n\n\nDiagnostic plots are part of the output of lm()\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nplot(model1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou want diagnostic plots? This is for ONE plot in Python:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\nfitted = model.fittedvalues\nresiduals = model.resid\n\ninfluence = model.get_influence()\nstandardized_resid = influence.resid_studentized_internal\nleverage = influence.hat_matrix_diag\ncooks = influence.cooks_distance[0]\n\nfig, ax = plt.subplots(figsize=(8, 5), dpi=100)\n\nax.scatter(model.fittedvalues, model.resid, alpha=0.7)\nax.axhline(0, color='red', linestyle='--')\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nax.set_title(\"Residuals vs Fitted\")\nplt.tight_layout()\n\n\n\n\nPython is very powerful and can make its plot look exactly like R’s plot!\nThis gives you a sense of the “swiss army knife” of Python",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/Lecture01rev.html#the-formula-vs.-the-matrix",
-    "href": "lectures/Lecture01/Lecture01rev.html#the-formula-vs.-the-matrix",
+    "objectID": "lectures/Lecture01/Lecture01.html#the-formula-vs.-the-matrix",
+    "href": "lectures/Lecture01/Lecture01.html#the-formula-vs.-the-matrix",
     "title": "Lecture 01",
     "section": "The “Formula” vs. “The Matrix”",
-    "text": "The “Formula” vs. “The Matrix”\nIn R, a statistical model is treated like a scientific hypothesis. In Python, it is treated like how the computer wants its input formatted.\n\nR Approach: You use formulas (y ~ x). This is like saying “I think \\(y\\) is a function of \\(x\\).” R automatically handles things like creating “dummy variables” for categorical information (e.g., turning “Species” into 0s and 1s) and keeps the names of your variables intact so you can read the results.\nPython Approach: Most Python libraries require you to manually transform your data into a matrix of numbers first. You then “One-Hot Encode” your categories and strip away the column names, then pass them in as \\(x\\) and \\(y\\).\n\nIn R, the code looks like the math inside your head. In Python, the code looks like the way the computer understands math."
+    "text": "The “Formula” vs. “The Matrix”\nIn R, a statistical model is treated like a scientific hypothesis. In Python, a statistical model is treated like “how does the computer wants its input formatted?”\n\nR Approach: You use formulas (y ~ x). This is like saying “I think \\(y\\) changes in response to \\(x\\).” R automatically handles things creating the underlying matrix and keeps the names of your variables intact so you can read the results.\nPython Approach: Most Python libraries(toolkits) require you to manually transform your data into a matrix of numbers first. Then pass them in as \\(x\\) and \\(y\\).\n\nIn R, the code looks like the math inside your head. In Python, the code looks like the way the computer understands math.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
   },
   {
-    "objectID": "lectures/Lecture01/binding_basics.html",
-    "href": "lectures/Lecture01/binding_basics.html",
-    "title": "A note on R objects and their names",
+    "objectID": "lectures/Lecture01/Lecture01.html#r-v-python-example-2",
+    "href": "lectures/Lecture01/Lecture01.html#r-v-python-example-2",
+    "title": "Lecture 01",
+    "section": "R v Python Example 2",
+    "text": "R v Python Example 2\nR allows for a more linear flow of thought, less engineering, more thinking. Not good or bad, just a different philosophy. In each of these examples, we filter (subset/split up), aggregate (combine), then analyze:\n\nRPythonPython with pandasPython one line\n\n\nR uses the “pipe” operator (%&gt;% Tidyverse library or |&gt; core R) which is read like “then”. You know zero R today, but with a little help, you can read your R code like a sentence.\nlibrary(dplyr)                    # a library is like a toolbox filled with helpful functions\ndf %&gt;%                            # df stands for \"data frame\", you'll learn more about this data structure soon \n  filter(year &gt; 2020) %&gt;%         # filter() function - keep these years in the data frame\n  group_by(state) %&gt;%             # Then, \"group the data by\" state for analysis\n  summarize(mean_yield = mean(y)) # Finally, calculate the mean() save it to a new variable mean_yield\nWe created a new variable just by naming it.\n\n\nIn Python, you frequently create “intermediate” variables or use complex nested brackets to do the same:\nfrom collections import defaultdict\n\n## filter\nfiltered = [row for row in data if row[\"year\"] &gt; 2020]\n\n## group and accumulate sums and counts\nsums = defaultdict(float)\ncounts = defaultdict(int)\n\nfor row in filtered:\n    state = row[\"state\"]\n    y = row[\"y\"]\n    sums[state] += y\n    counts[state] += 1\n\n## compute means\nmean_yield_by_state = {\n    state: sums[state] / counts[state]\n    for state in sums\n}\n\n## print the result\nfor state, mean_yield in mean_yield_by_state.items():\n    print(state, mean_yield)\n\n\nThis is why pandas exists (compare Python using pandas against the previous Python no pandas)\nimport pandas as pd\n\n## assume df is a data frame in Python\nresult = (\n    df[df[\"year\"] &gt; 2020]          ## Keep these years\n      .groupby(\"state\", as_index=False) ## aggregate by state  \n      .agg(mean_yield=(\"y\", \"mean\"))  ## Calculate the mean of y and store as mean_yield\n)\n\nprint(result)\n\n\nPython pandas is still readable even when complex\nimport pandas as pd\n\nresult = df[df[\"year\"] &gt; 2020].groupby(\"state\")[\"y\"].mean().reset_index(name=\"mean_yield\")",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#if-you-dont-want-to-raise-your-hand",
+    "href": "lectures/Lecture01/Lecture01.html#if-you-dont-want-to-raise-your-hand",
+    "title": "Lecture 01",
+    "section": "If you don’t want to raise your hand",
+    "text": "If you don’t want to raise your hand\n\n\n\n\n\nYou are not required to participate\nParticipation is always anonymous\nBut sometimes I will ask the class questions to “take a pulse”\nMentimeter is free to you, you just need a phone or a tablet or even a laptop",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#where-are-we",
+    "href": "lectures/Lecture01/Lecture01.html#where-are-we",
+    "title": "Lecture 01",
+    "section": "Where are we?",
+    "text": "Where are we?\n\nLearn how to be a “System Architect” – someone who understands how code (regardless of the specific language) serves a specific business or research goal (this AI cannot do yet). Study/ understand the process in addition to trusting it.\nFocus on possessing AI Augmentation Skills – where AI is used as a tool to help humans do more, rather than replace humans. When coding in this class, AI is your helper to develop your computational thinking and broaden your understanding of the application of the code beyond the problem in front of us.\nAI is the best at “book learning” (explicit knowledge) so instead of competing – leverage AI to help you gain practical, hands-on experience through projects and then internships and then jobs. Show that you can apply what you have learned in the areas/industries/fields that you want to join.\nDevelop your “Tacit Knowledge” – an advanced form of pattern recognition that the brain does subconsciously after years of experience - having good judgment arising from “the feel” of a situation, for example - handling complex client interactions, dealing with “messiness” (when things do not go as planned). Develop your Spidey Senses for a situation.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#the-value-of-computational-thinking",
+    "href": "lectures/Lecture01/Lecture01.html#the-value-of-computational-thinking",
+    "title": "Lecture 01",
+    "section": "The Value of Computational Thinking",
+    "text": "The Value of Computational Thinking\n\n\n\nDecomposition - Breaking a larger problem down into smaller pieces\nPattern Recognition - Looking for similarities within and across problems\nAbstraction - Avoid hyperfocusing on granular details and focusing instead on developing general solutions\nAlgorithm Design - Automating the process efficiently, ensuring reproducibility and reducing the need for excessive human intervention\n\n\n\n\n\nImage created by ISTE & CSTA",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#decomposition",
+    "href": "lectures/Lecture01/Lecture01.html#decomposition",
+    "title": "Lecture 01",
+    "section": "Decomposition",
+    "text": "Decomposition\n\nBasic StructureAnd Still More\n\n\nBy the end of the quarter, instead of simply saying “I analyzed some data,” we can articulate more of what is involved as we learn how to do decompose what we do while learn R:\n\nI read some data\nI prepared the data for analysis\nI generated statistics and visualizations\nI modeled outcomes\nI communicated my findings to others\n\n\n\nand learn a little about a complete/professional workflow:\n\nIngest data (read CSV / JSON / SQL database)\nClean & make data consistent (e.g. fix various date formats)\nAddress missing values\nRecode categories (regroup/relabel values)\nTransform values (logarithms, standardization)\nEngineer new variables (great creative skills)\nAggregate or Reshape/restructure data\nModel / analyze the cleaned data\nValidate/verify/reproduce results\nCommunicate results (tables, figures, reports)\nReturn to previous steps to refine one’s understanding (iterative)\n\nEach step is clear and repeatable across different data & problems",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#pattern-recognition",
+    "href": "lectures/Lecture01/Lecture01.html#pattern-recognition",
+    "title": "Lecture 01",
+    "section": "Pattern Recognition",
+    "text": "Pattern Recognition\nIntuitively seeking structure, repetition, regularity in data:\n\nnoticing the same data-cleaning steps apply to many different types of data files\nrecognizing that bootstrapping, permutation tests, and cross-validation share a common resampling pattern (upper division)\nseeing that multiple models differ only by a formula or parameter\n\nThis is where the need for loops, reusable functions, and pipelines (making raw data analyzable) arise.\nIf I have time, the streetwise soldier who intuition saved his platoon during the worst of the Vietnam War (1965-1973).",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#abstraction",
+    "href": "lectures/Lecture01/Lecture01.html#abstraction",
+    "title": "Lecture 01",
+    "section": "Abstraction",
+    "text": "Abstraction\nFocus on what matters, minimize what does not:\n\ndata is “rows = cases, columns = variables” rather than obsessing over file format\nthinking in terms of distributions rather than individual observations\ndefining a function that works for “any dataset”\n\nAbstraction is what helps you generalize from one analysis to the next. This helps maximize productivity and minimize time spent in repetitive tasks.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#algorithmic-thinking-good-design",
+    "href": "lectures/Lecture01/Lecture01.html#algorithmic-thinking-good-design",
+    "title": "Lecture 01",
+    "section": "Algorithmic thinking, good design",
+    "text": "Algorithmic thinking, good design\nCreate a clear, step-by-step procedure that produces a (reproducible) result\n\nan iterative fitting routine\nsimulation steps (“repeat 10,000 times…”)\na reproducible analysis script that always gives the same output from the same input\n\nThis is the bridge between statistical reasoning and actual computation.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#why-do-this",
+    "href": "lectures/Lecture01/Lecture01.html#why-do-this",
+    "title": "Lecture 01",
+    "section": "Why do this?",
+    "text": "Why do this?\nThe American Statistical Association emphasizes computational thinking because modern statistics is no longer just formulas on paper:\n\nSimulation &gt; closed-form solutions (formulas)\nResampling (let the data tell us) &gt; asymptotics (trust the math)\nReproducible pipelines &gt; one time calculations/analyses\nData wrangling &gt; textbook-clean datasets\n\nstatistical thinking + computational thinking = data science.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#workflow-in-action-computational-thinking",
+    "href": "lectures/Lecture01/Lecture01.html#workflow-in-action-computational-thinking",
+    "title": "Lecture 01",
+    "section": "Workflow in Action & computational thinking",
+    "text": "Workflow in Action & computational thinking\n\nDecomposition is like the flow of data and thought from problem to solution\nPattern recognition is like seeing that flow across different projects\nAbstraction is like “cleaning” & “modeling” & “reporting” generally\nAlgorithmic thinking is about having ordered, executable steps\n\nComputational Thinking forces us to stop thinking in terms of isolated/one-off projects and start thinking in terms reproducible processes and the enterprise (whatever it may be) as a whole",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#example-estimate-uncertainty-in-a-statistic-using-resampling-methods",
+    "href": "lectures/Lecture01/Lecture01.html#example-estimate-uncertainty-in-a-statistic-using-resampling-methods",
+    "title": "Lecture 01",
+    "section": "Example: Estimate uncertainty in a statistic using resampling methods",
+    "text": "Example: Estimate uncertainty in a statistic using resampling methods\n\nComputational thinkingPure codingComparison\n\n\n\nIdentify the statistic of interest (mean, median, slope)\nDefine a resampling procedure\nDecide on the number of repetitions\nDecide how the results should be summarized\nDecide how uncertainty will be reported/communicated\n\n\n\n\nWrite the loop / vectorized call\nSelect random seeds\nStore the results\nCall a visualization function\nDebug syntax errors\n\n\n\n\n\n\nComputational thinking\nCoding\n\n\n\n\nConceptual\nConcrete\n\n\nLanguage-independent\nLanguage-specific\n\n\nAbout structure\nAbout syntax\n\n\nCan be sketched\nMust be run\n\n\nTransfers across tools\nDoes not fully transfer",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#recap-in-statistics-20",
+    "href": "lectures/Lecture01/Lecture01.html#recap-in-statistics-20",
+    "title": "Lecture 01",
+    "section": "Recap: In Statistics 20",
+    "text": "Recap: In Statistics 20\n\nDeveloping your computational thinking\nApplying computational thinking fundamentals using a language called R\nStatisticians apply procedures and are not limited to tools like R (e.g. Python, SQL, etc)\nSoftware changes but your thinking skills will endure\nWe need to explain the steps and reasoning behind an analysis not just name the tools\nWhile it is acceptable to use AI to assist, learn more than copying and pasting\nLet’s learn what to do and why we do it\nBUT FIRST… attendance!",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#activity-2-attendance",
+    "href": "lectures/Lecture01/Lecture01.html#activity-2-attendance",
+    "title": "Lecture 01",
+    "section": "Activity #2: Attendance",
+    "text": "Activity #2: Attendance\n\n\n\nEveryone in here has a camera.\nThis is how you get credit for attendance, upload a minimum of one photo per week.\nYou cannot receive credit if it’s only you in the photo\nAnd I’ll start rejecting photos if its always you and the same people.\nMeet your classmates, take a photograph. Here is an example, with their permission of course\n\n\n\n\n\nThe Mhen of Statistics",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture01.html#takeaways-1",
+    "href": "lectures/Lecture01/Lecture01.html#takeaways-1",
+    "title": "Lecture 01",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nStats 20 is an introduction to R and here – a Computational Thinking approach\nCourse specifics are in the syllabus, note the deliverables, please watch the video\nA little basic R - objects - everything in R is an object AND objects have names\noperators (e.g., +, -) are objects, vectors are objects, functions is(), str() and summary() are objects\nChoose your tools: specifically an IDE (RStudio, Positron, VS Code, etc.)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 01"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Python_Plot_slides.html",
+    "href": "lectures/Lecture01/Python_Plot_slides.html",
+    "title": "presentation with python plot",
     "section": "",
-    "text": "This section was taken from “Advanced R” by Hadley Wickham (chief scientist at Posit, the creators of RStudio). Only the most essential part was taken from his book on this subject. While I use the word “gets” in a first Stats 20 lecture to help make it more accessible, technically, that day one explanation of the “&lt;-” isn’t quite accurate and if you plan to do any advanced R programming in the future, it is best to make it as clear as possible from the begining. My notes and comments are in a different color - magenta"
-  },
-  {
-    "objectID": "lectures/Lecture01/binding_basics.html#from-chapter-2.2-binding-basics",
-    "href": "lectures/Lecture01/binding_basics.html#from-chapter-2.2-binding-basics",
-    "title": "A note on R objects and their names",
-    "section": "from Chapter 2.2 “Binding Basics”",
-    "text": "from Chapter 2.2 “Binding Basics”\nConsider this code:\n\nx &lt;- c(1, 2, 3)\n\nIt’s easy to read it as: “create an object named ‘x’, containing the values 1, 2, and 3”. ( or R object ‘x’ gets the vector 1, 2, 3 ) Unfortunately, that’s a simplification that will lead to inaccurate predictions about what R is actually doing behind the scenes. It’s more accurate to say that this code is doing two things:\n\nIt’s creating an object, a vector of values, c(1, 2, 3).\nAnd it’s binding (associating) that object to a name, x.\n\nIn other words, the object, or value, (technically) doesn’t have a name; it’s actually the name x here that has a value 1, 2, 3.\nTo further clarify this distinction, I’ll draw diagrams like this:\n\n\n\n\n\n\n\n\nThe name, x, is drawn with a rounded rectangle. It has an arrow that points to (or binds or references) the value, the vector c(1, 2, 3). The arrow points in opposite direction to the assignment arrow: &lt;- creates a binding from the name on the left-hand side to the object on the right-hand side.\nThus, you can think of a name as a reference to a value. For example, if you run this code, you don’t get another copy of the value c(1, 2, 3), you get another binding to the existing object:\n\ny &lt;- x\n\n\n\n\n\n\n\n\n\nYou might have noticed that the value c(1, 2, 3) has a label: 0x74b. While the vector doesn’t have a name, I’ll occasionally need to refer to an object independent of its bindings. To make that possible, I’ll label values with a unique identifier. These identifiers have a special form that looks like the object’s memory “address”, i.e. the location in memory where the object is stored. But because the actual memory addresses changes every time the code is run, we use these identifiers instead.\nYou can access an object’s identifier with lobstr::obj_addr(). Doing so allows you to see that both x and y point to the same identifier:\n\nobj_addr(x)\n\n[1] \"0x128cf6e88\"\n\nobj_addr(y)\n\n[1] \"0x128cf6e88\"\n\n\nThese identifiers are long, and change every time you restart R.\nIt can take some time to get your head around the distinction between names and values, but understanding this is really helpful in functional programming where functions can have different names in different contexts.\n(end Wickham)"
-  },
-  {
-    "objectID": "lectures/Lecture01/binding_basics.html#the-result-of-rs-ways",
-    "href": "lectures/Lecture01/binding_basics.html#the-result-of-rs-ways",
-    "title": "A note on R objects and their names",
-    "section": "The result of R’s ways",
-    "text": "The result of R’s ways\nSo take a look at what happens when we modify one but not the other\n\ny[[3]] &lt;- 4   ## I am following Wickham's style here, \n\n## instead you could have used y[3] &lt;- 4 \n## read as \"y's third element\" gets 4\n## because we have simple vector, in other places \n## y[[3]] &lt;- 4 is clearer, but we're not there yet\n\nx\n\n[1] 1 2 3\n\ny\n\n[1] 1 2 4\n\n\nlet’s check the memory locations\n\nobj_addr(x)\n\n[1] \"0x128cf6e88\"\n\nobj_addr(y)\n\n[1] \"0x111dc5518\"\n\n\n(start Wickham again)\nModifying y clearly didn’t modify x. So what happened to the shared binding? While the value associated with y changed, the original object did not. Instead, R created a new object, 0xcd2, a copy of 0x74b with one value changed, then rebound y to that object.\n\n\n\n\n\n\n\n\nThis behaviour is called copy-on-modify. Understanding it will radically improve your intuition about the performance of R code.\n(end Wickham)\nDo you need to completely understand this to do well in Stats 20? Probably not BUT if you decide to learn Python or become a paid R programmer later (because all of the documentation assumes you understand R’s decision making in memory), it would help to understand what he is trying to tell you in Chapter 2 of the textbook Advanced R."
+    "text": "import numpy as np\nimport matplotlib.pyplot as plt\n\nplt.close(\"all\")\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\n# 2. Setup Figure\nfig, ax = plt.subplots(figsize=(10, 5))\n\n# Plot the points (open circles like R)\nax.scatter(model.fittedvalues, model.resid, facecolors='none', edgecolors='black')\n\n# Add the horizontal 'zero' line\nax.axhline(0, color='silver', linestyle=':', zorder=0)\n\n# 3. Add the Red Lowess Line (The 'R' special)\nlowess = sm.nonparametric.lowess(model.resid, model.fittedvalues, frac=2/3)\nax.plot(lowess[:, 0], lowess[:, 1], color='red', lw=1, alpha=0.8)\n\n# 4. Label the Top 3 Outliers\n# Find indices of the 3 largest absolute residuals\ntop_3_idx = np.abs(model.resid).sort_values(ascending=False).head(3).index\n\nfor i in top_3_idx:\n    ax.annotate(i, (model.fittedvalues[i], model.resid[i]), \n                xytext=(5, 5), textcoords='offset points', fontsize=9)\n\n# Formatting\nax.set_title(\"Residuals vs Fitted\")\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nplt.savefig(\"01_residuals_vs_fitted.png\")\n\n\n\n\n\n\n\nFigure 1: Residuals vs Fitted Plot"
   }
 ]
