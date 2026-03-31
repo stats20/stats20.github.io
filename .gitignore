@@ -1,0 +1,54 @@
+**/.DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+i# ---- Quarto build output ----
+
+_site/
+docs/
+.quarto/
+
+# ---- R / knitr / Quarto execution ----
+
+*_cache/
+*_files/
+.cache/
+.knitr_cache/
+
+# ---- Figures & rendered assets (if generated) ----
+
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*lectures/Lecture01/*.png
+
+# ---- RStudio / project files ----
+
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# ---- OS junk ----
+
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+
+*.log
+
+# ---- Temporary files ----
+
+*~
+*.tmp
+

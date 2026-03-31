@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://stats20.github.io/about.html</loc>
-    <lastmod>2026-02-01T10:44:45.590Z</lastmod>
+    <loc>https://stats20.github.io/lectures/Lecture01/Python_Plot_slides.html</loc>
+    <lastmod>2026-02-21T23:46:46.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stats20.github.io/lectures/Lecture01/Lecture01.html</loc>
+    <lastmod>2026-03-25T08:38:55.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stats20.github.io/lectures/Lecture01/activity3_lecture01/my_stat_20/my_first_quarto.html</loc>
+    <lastmod>2026-03-22T01:18:02.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stats20.github.io/lectures/Lecture01/mentimeter_test.html</loc>
+    <lastmod>2026-03-01T04:37:23.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stats20.github.io/index.html</loc>
+    <lastmod>2026-02-01T12:03:23.198Z</lastmod>
   </url>
   <url>
     <loc>https://stats20.github.io/activity/Week01test_drive.html</loc>
     <lastmod>2026-03-24T07:57:43.309Z</lastmod>
   </url>
   <url>
-    <loc>https://stats20.github.io/index.html</loc>
-    <lastmod>2026-02-01T12:03:23.198Z</lastmod>
+    <loc>https://stats20.github.io/about.html</loc>
+    <lastmod>2026-02-01T10:44:45.590Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stats20.github.io/lectures/Lecture01/Lecture01rev.html</loc>
+    <lastmod>2026-03-08T02:53:44.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stats20.github.io/lectures/Lecture01/binding_basics.html</loc>
+    <lastmod>2026-03-15T07:37:19.000Z</lastmod>
   </url>
 </urlset>
