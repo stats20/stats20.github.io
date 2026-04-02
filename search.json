@@ -88,7 +88,7 @@
     "href": "lectures/Lecture01/Lecture01old.html#r-v-python-example-1",
     "title": "Lecture 01",
     "section": "R v Python Example 1",
-    "text": "R v Python Example 1\nLet’s look at a bivariate (simple) regression: one Y (dependent), one X (independent). If you have forgotten see IMS Chapter 7.\n\nRPythonTakeawaysRPythonPython Plot Result\n\n\nIf you already have R running on your computer or copy and paste this to the activity, you can try this\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nsummary(model1)\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\nX = mtcars[\"wt\"]\nX = sm.add_constant(X)\nY = mtcars[\"mpg\"]\n\nfit = sm.OLS(Y, X).fit()\n\nprint(fit.summary())\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.753\nModel:                            OLS   Adj. R-squared:                  0.745\nMethod:                 Least Squares   F-statistic:                     91.38\nDate:                Tue, 31 Mar 2026   Prob (F-statistic):           1.29e-10\nTime:                        16:57:07   Log-Likelihood:                -80.015\nNo. Observations:                  32   AIC:                             164.0\nDf Residuals:                      30   BIC:                             167.0\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         37.2851      1.878     19.858      0.000      33.450      41.120\nwt            -5.3445      0.559     -9.559      0.000      -6.486      -4.203\n==============================================================================\nOmnibus:                        2.988   Durbin-Watson:                   1.252\nProb(Omnibus):                  0.225   Jarque-Bera (JB):                2.399\nSkew:                           0.668   Prob(JB):                        0.301\nKurtosis:                       2.877   Cond. No.                         12.7\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\n\n\n\nR has “built-in” data “data = mtcars”, Python does not, need a library.\nIn both situations, we are testing the same hypothesis: does MPG change in a predictable direction as WT changes?\nNotice the “&lt;-” in R this is called a “gets”, it is used for assignment. Could read it as “model 1 gets”\nPython uses “=” for both assignment and options\nYou can use “=” for assignment in R, but it is really meant to identify options\nR is written in a way comparable to how we think about things in statistics lm(mpg ~ wt, data = mtcars) lm() is the basic linear model FUNCTION (important word) and the () encloses its “arguments”. Functions do all of the “work” in R.\n~ could be read “as a function of” so we can read the code like “linear model(mpg as a function of wt the data is mtcars)” and “model1” “gets” the result.\nYou don’t need to print() explicitly in R, but you must explicity print() in Python to see results\n\n\n\nDiagnostic plots are part of the output of lm()\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nplot(model1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou want diagnostic plots? This is for ONE plot in Python:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\nfitted = model.fittedvalues\nresiduals = model.resid\n\ninfluence = model.get_influence()\nstandardized_resid = influence.resid_studentized_internal\nleverage = influence.hat_matrix_diag\ncooks = influence.cooks_distance[0]\n\nfig, ax = plt.subplots(figsize=(8, 5), dpi=100)\n\nax.scatter(model.fittedvalues, model.resid, alpha=0.7)\nax.axhline(0, color='red', linestyle='--')\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nax.set_title(\"Residuals vs Fitted\")\nplt.tight_layout()\n\n\n\n\nPython is very powerful and can make its plot look exactly like R’s plot!\nThis gives you a sense of the “swiss army knife” of Python"
+    "text": "R v Python Example 1\nLet’s look at a bivariate (simple) regression: one Y (dependent), one X (independent). If you have forgotten see IMS Chapter 7.\n\nRPythonTakeawaysRPythonPython Plot Result\n\n\nIf you already have R running on your computer or copy and paste this to the activity, you can try this\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nsummary(model1)\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\nX = mtcars[\"wt\"]\nX = sm.add_constant(X)\nY = mtcars[\"mpg\"]\n\nfit = sm.OLS(Y, X).fit()\n\nprint(fit.summary())\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.753\nModel:                            OLS   Adj. R-squared:                  0.745\nMethod:                 Least Squares   F-statistic:                     91.38\nDate:                Thu, 02 Apr 2026   Prob (F-statistic):           1.29e-10\nTime:                        02:12:41   Log-Likelihood:                -80.015\nNo. Observations:                  32   AIC:                             164.0\nDf Residuals:                      30   BIC:                             167.0\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         37.2851      1.878     19.858      0.000      33.450      41.120\nwt            -5.3445      0.559     -9.559      0.000      -6.486      -4.203\n==============================================================================\nOmnibus:                        2.988   Durbin-Watson:                   1.252\nProb(Omnibus):                  0.225   Jarque-Bera (JB):                2.399\nSkew:                           0.668   Prob(JB):                        0.301\nKurtosis:                       2.877   Cond. No.                         12.7\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\n\n\n\nR has “built-in” data “data = mtcars”, Python does not, need a library.\nIn both situations, we are testing the same hypothesis: does MPG change in a predictable direction as WT changes?\nNotice the “&lt;-” in R this is called a “gets”, it is used for assignment. Could read it as “model 1 gets”\nPython uses “=” for both assignment and options\nYou can use “=” for assignment in R, but it is really meant to identify options\nR is written in a way comparable to how we think about things in statistics lm(mpg ~ wt, data = mtcars) lm() is the basic linear model FUNCTION (important word) and the () encloses its “arguments”. Functions do all of the “work” in R.\n~ could be read “as a function of” so we can read the code like “linear model(mpg as a function of wt the data is mtcars)” and “model1” “gets” the result.\nYou don’t need to print() explicitly in R, but you must explicity print() in Python to see results\n\n\n\nDiagnostic plots are part of the output of lm()\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nplot(model1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou want diagnostic plots? This is for ONE plot in Python:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\nfitted = model.fittedvalues\nresiduals = model.resid\n\ninfluence = model.get_influence()\nstandardized_resid = influence.resid_studentized_internal\nleverage = influence.hat_matrix_diag\ncooks = influence.cooks_distance[0]\n\nfig, ax = plt.subplots(figsize=(8, 5), dpi=100)\n\nax.scatter(model.fittedvalues, model.resid, alpha=0.7)\nax.axhline(0, color='red', linestyle='--')\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nax.set_title(\"Residuals vs Fitted\")\nplt.tight_layout()\n\n\n\n\nPython is very powerful and can make its plot look exactly like R’s plot!\nThis gives you a sense of the “swiss army knife” of Python"
   },
   {
     "objectID": "lectures/Lecture01/Lecture01old.html#the-formula-vs.-the-matrix",
@@ -396,14 +396,14 @@
     "href": "lectures/Lecture01/binding_basics.html#from-chapter-2.2-binding-basics",
     "title": "A note on R objects and their names",
     "section": "from Chapter 2.2 “Binding Basics”",
-    "text": "from Chapter 2.2 “Binding Basics”\nConsider this code:\n\nx &lt;- c(1, 2, 3)\n\nIt’s easy to read it as: “create an object named ‘x’, containing the values 1, 2, and 3”. ( or R object ‘x’ gets the vector 1, 2, 3 ) Unfortunately, that’s a simplification that will lead to inaccurate predictions about what R is actually doing behind the scenes. It’s more accurate to say that this code is doing two things:\n\nIt’s creating an object, a vector of values, c(1, 2, 3).\nAnd it’s binding (associating) that object to a name, x.\n\nIn other words, the object, or value, (technically) doesn’t have a name; it’s actually the name x here that has a value 1, 2, 3.\nTo further clarify this distinction, I’ll draw diagrams like this:\n\n\n\n\n\n\n\n\nThe name, x, is drawn with a rounded rectangle. It has an arrow that points to (or binds or references) the value, the vector c(1, 2, 3). The arrow points in opposite direction to the assignment arrow: &lt;- creates a binding from the name on the left-hand side to the object on the right-hand side.\nThus, you can think of a name as a reference to a value. For example, if you run this code, you don’t get another copy of the value c(1, 2, 3), you get another binding to the existing object:\n\ny &lt;- x\n\n\n\n\n\n\n\n\n\nYou might have noticed that the value c(1, 2, 3) has a label: 0x74b. While the vector doesn’t have a name, I’ll occasionally need to refer to an object independent of its bindings. To make that possible, I’ll label values with a unique identifier. These identifiers have a special form that looks like the object’s memory “address”, i.e. the location in memory where the object is stored. But because the actual memory addresses changes every time the code is run, we use these identifiers instead.\nYou can access an object’s identifier with lobstr::obj_addr(). Doing so allows you to see that both x and y point to the same identifier:\n\nobj_addr(x)\n\n[1] \"0x128cf6e88\"\n\nobj_addr(y)\n\n[1] \"0x128cf6e88\"\n\n\nThese identifiers are long, and change every time you restart R.\nIt can take some time to get your head around the distinction between names and values, but understanding this is really helpful in functional programming where functions can have different names in different contexts.\n(end Wickham)"
+    "text": "from Chapter 2.2 “Binding Basics”\nConsider this code:\n\nx &lt;- c(1, 2, 3)\n\nIt’s easy to read it as: “create an object named ‘x’, containing the values 1, 2, and 3”. ( or R object ‘x’ gets the vector 1, 2, 3 ) Unfortunately, that’s a simplification that will lead to inaccurate predictions about what R is actually doing behind the scenes. It’s more accurate to say that this code is doing two things:\n\nIt’s creating an object, a vector of values, c(1, 2, 3).\nAnd it’s binding (associating) that object to a name, x.\n\nIn other words, the object, or value, (technically) doesn’t have a name; it’s actually the name x here that has a value 1, 2, 3.\nTo further clarify this distinction, I’ll draw diagrams like this:\n\n\n\n\n\n\n\n\nThe name, x, is drawn with a rounded rectangle. It has an arrow that points to (or binds or references) the value, the vector c(1, 2, 3). The arrow points in opposite direction to the assignment arrow: &lt;- creates a binding from the name on the left-hand side to the object on the right-hand side.\nThus, you can think of a name as a reference to a value. For example, if you run this code, you don’t get another copy of the value c(1, 2, 3), you get another binding to the existing object:\n\ny &lt;- x\n\n\n\n\n\n\n\n\n\nYou might have noticed that the value c(1, 2, 3) has a label: 0x74b. While the vector doesn’t have a name, I’ll occasionally need to refer to an object independent of its bindings. To make that possible, I’ll label values with a unique identifier. These identifiers have a special form that looks like the object’s memory “address”, i.e. the location in memory where the object is stored. But because the actual memory addresses changes every time the code is run, we use these identifiers instead.\nYou can access an object’s identifier with lobstr::obj_addr(). Doing so allows you to see that both x and y point to the same identifier:\n\nobj_addr(x)\n\n[1] \"0x127d3dac8\"\n\nobj_addr(y)\n\n[1] \"0x127d3dac8\"\n\n\nThese identifiers are long, and change every time you restart R.\nIt can take some time to get your head around the distinction between names and values, but understanding this is really helpful in functional programming where functions can have different names in different contexts.\n(end Wickham)"
   },
   {
     "objectID": "lectures/Lecture01/binding_basics.html#the-result-of-rs-ways",
     "href": "lectures/Lecture01/binding_basics.html#the-result-of-rs-ways",
     "title": "A note on R objects and their names",
     "section": "The result of R’s ways",
-    "text": "The result of R’s ways\nSo take a look at what happens when we modify one but not the other\n\ny[[3]] &lt;- 4   ## I am following Wickham's style here, \n\n## instead you could have used y[3] &lt;- 4 \n## read as \"y's third element\" gets 4\n## because we have simple vector, in other places \n## y[[3]] &lt;- 4 is clearer, but we're not there yet\n\nx\n\n[1] 1 2 3\n\ny\n\n[1] 1 2 4\n\n\nlet’s check the memory locations\n\nobj_addr(x)\n\n[1] \"0x128cf6e88\"\n\nobj_addr(y)\n\n[1] \"0x111dc5518\"\n\n\n(start Wickham again)\nModifying y clearly didn’t modify x. So what happened to the shared binding? While the value associated with y changed, the original object did not. Instead, R created a new object, 0xcd2, a copy of 0x74b with one value changed, then rebound y to that object.\n\n\n\n\n\n\n\n\nThis behaviour is called copy-on-modify. Understanding it will radically improve your intuition about the performance of R code.\n(end Wickham)\nDo you need to completely understand this to do well in Stats 20? Probably not BUT if you decide to learn Python or become a paid R programmer later (because all of the documentation assumes you understand R’s decision making in memory), it would help to understand what he is trying to tell you in Chapter 2 of the textbook Advanced R."
+    "text": "The result of R’s ways\nSo take a look at what happens when we modify one but not the other\n\ny[[3]] &lt;- 4   ## I am following Wickham's style here, \n\n## instead you could have used y[3] &lt;- 4 \n## read as \"y's third element\" gets 4\n## because we have simple vector, in other places \n## y[[3]] &lt;- 4 is clearer, but we're not there yet\n\nx\n\n[1] 1 2 3\n\ny\n\n[1] 1 2 4\n\n\nlet’s check the memory locations\n\nobj_addr(x)\n\n[1] \"0x127d3dac8\"\n\nobj_addr(y)\n\n[1] \"0x105a4af78\"\n\n\n(start Wickham again)\nModifying y clearly didn’t modify x. So what happened to the shared binding? While the value associated with y changed, the original object did not. Instead, R created a new object, 0xcd2, a copy of 0x74b with one value changed, then rebound y to that object.\n\n\n\n\n\n\n\n\nThis behaviour is called copy-on-modify. Understanding it will radically improve your intuition about the performance of R code.\n(end Wickham)\nDo you need to completely understand this to do well in Stats 20? Probably not BUT if you decide to learn Python or become a paid R programmer later (because all of the documentation assumes you understand R’s decision making in memory), it would help to understand what he is trying to tell you in Chapter 2 of the textbook Advanced R."
   },
   {
     "objectID": "lectures/Lecture01/Lecture01rev.html#hello-welcome-to-stats-20",
@@ -835,7 +835,7 @@
     "href": "lectures/Lecture01/Lecture01.html#r-v-python-example-1",
     "title": "Lecture 01",
     "section": "R v Python Example 1",
-    "text": "R v Python Example 1\nLet’s look at a bivariate (simple) regression: one Y (dependent), one X (independent). If you have forgotten see IMS Chapter 7.\n\nRPythonTakeawaysRPythonPython Plot Result\n\n\nIf you already have R running on your computer or copy and paste this to the activity, you can try this\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nsummary(model1)\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\nX = mtcars[\"wt\"]\nX = sm.add_constant(X)\nY = mtcars[\"mpg\"]\n\nfit = sm.OLS(Y, X).fit()\n\nprint(fit.summary())\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.753\nModel:                            OLS   Adj. R-squared:                  0.745\nMethod:                 Least Squares   F-statistic:                     91.38\nDate:                Tue, 31 Mar 2026   Prob (F-statistic):           1.29e-10\nTime:                        16:57:00   Log-Likelihood:                -80.015\nNo. Observations:                  32   AIC:                             164.0\nDf Residuals:                      30   BIC:                             167.0\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         37.2851      1.878     19.858      0.000      33.450      41.120\nwt            -5.3445      0.559     -9.559      0.000      -6.486      -4.203\n==============================================================================\nOmnibus:                        2.988   Durbin-Watson:                   1.252\nProb(Omnibus):                  0.225   Jarque-Bera (JB):                2.399\nSkew:                           0.668   Prob(JB):                        0.301\nKurtosis:                       2.877   Cond. No.                         12.7\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\n\n\n\nR has “built-in” data “data = mtcars”, Python does not, need a library.\nIn both situations, we are testing the same hypothesis: does MPG change in a predictable direction as WT changes?\nNotice the “&lt;-” in R this is called a “gets”, it is used for assignment. Could read it as “model 1 gets”\nPython uses “=” for both assignment and options\nYou can use “=” for assignment in R, but it is really meant to identify options\nR is written in a way comparable to how we think about things in statistics lm(mpg ~ wt, data = mtcars) lm() is the basic linear model FUNCTION (important word) and the () encloses its “arguments”. Functions do all of the “work” in R.\n~ could be read “as a function of” so we can read the code like “linear model(mpg as a function of wt the data is mtcars)” and “model1” “gets” the result.\nYou don’t need to print() explicitly in R, but you must explicity print() in Python to see results\n\n\n\nDiagnostic plots are part of the output of lm()\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nplot(model1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou want diagnostic plots? This is for ONE plot in Python:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\nfitted = model.fittedvalues\nresiduals = model.resid\n\ninfluence = model.get_influence()\nstandardized_resid = influence.resid_studentized_internal\nleverage = influence.hat_matrix_diag\ncooks = influence.cooks_distance[0]\n\nfig, ax = plt.subplots(figsize=(8, 5), dpi=100)\n\nax.scatter(model.fittedvalues, model.resid, alpha=0.7)\nax.axhline(0, color='red', linestyle='--')\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nax.set_title(\"Residuals vs Fitted\")\nplt.tight_layout()\n\n\n\n\nPython is very powerful and can make its plot look exactly like R’s plot!\nThis gives you a sense of the “swiss army knife” of Python",
+    "text": "R v Python Example 1\nLet’s look at a bivariate (simple) regression: one Y (dependent), one X (independent). If you have forgotten see IMS Chapter 7.\n\nRPythonTakeawaysRPythonPython Plot Result\n\n\nIf you already have R running on your computer or copy and paste this to the activity, you can try this\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nsummary(model1)\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\nX = mtcars[\"wt\"]\nX = sm.add_constant(X)\nY = mtcars[\"mpg\"]\n\nfit = sm.OLS(Y, X).fit()\n\nprint(fit.summary())\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.753\nModel:                            OLS   Adj. R-squared:                  0.745\nMethod:                 Least Squares   F-statistic:                     91.38\nDate:                Thu, 02 Apr 2026   Prob (F-statistic):           1.29e-10\nTime:                        02:12:26   Log-Likelihood:                -80.015\nNo. Observations:                  32   AIC:                             164.0\nDf Residuals:                      30   BIC:                             167.0\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         37.2851      1.878     19.858      0.000      33.450      41.120\nwt            -5.3445      0.559     -9.559      0.000      -6.486      -4.203\n==============================================================================\nOmnibus:                        2.988   Durbin-Watson:                   1.252\nProb(Omnibus):                  0.225   Jarque-Bera (JB):                2.399\nSkew:                           0.668   Prob(JB):                        0.301\nKurtosis:                       2.877   Cond. No.                         12.7\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\n\n\n\nR has “built-in” data “data = mtcars”, Python does not, need a library.\nIn both situations, we are testing the same hypothesis: does MPG change in a predictable direction as WT changes?\nNotice the “&lt;-” in R this is called a “gets”, it is used for assignment. Could read it as “model 1 gets”\nPython uses “=” for both assignment and options\nYou can use “=” for assignment in R, but it is really meant to identify options\nR is written in a way comparable to how we think about things in statistics lm(mpg ~ wt, data = mtcars) lm() is the basic linear model FUNCTION (important word) and the () encloses its “arguments”. Functions do all of the “work” in R.\n~ could be read “as a function of” so we can read the code like “linear model(mpg as a function of wt the data is mtcars)” and “model1” “gets” the result.\nYou don’t need to print() explicitly in R, but you must explicity print() in Python to see results\n\n\n\nDiagnostic plots are part of the output of lm()\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars)\n\nplot(model1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou want diagnostic plots? This is for ONE plot in Python:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\nfitted = model.fittedvalues\nresiduals = model.resid\n\ninfluence = model.get_influence()\nstandardized_resid = influence.resid_studentized_internal\nleverage = influence.hat_matrix_diag\ncooks = influence.cooks_distance[0]\n\nfig, ax = plt.subplots(figsize=(8, 5), dpi=100)\n\nax.scatter(model.fittedvalues, model.resid, alpha=0.7)\nax.axhline(0, color='red', linestyle='--')\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nax.set_title(\"Residuals vs Fitted\")\nplt.tight_layout()\n\n\n\n\nPython is very powerful and can make its plot look exactly like R’s plot!\nThis gives you a sense of the “swiss army knife” of Python",
     "crumbs": [
       "Lectures",
       "Lecture 01"
@@ -1012,5 +1012,544 @@
     "title": "presentation with python plot",
     "section": "",
     "text": "import numpy as np\nimport matplotlib.pyplot as plt\n\nplt.close(\"all\")\n\nimport statsmodels.api as sm\n\nmtcars = sm.datasets.get_rdataset(\"mtcars\").data\nX = sm.add_constant(mtcars[\"wt\"])\ny = mtcars[\"mpg\"]\nmodel = sm.OLS(y, X).fit()\n\n# 2. Setup Figure\nfig, ax = plt.subplots(figsize=(10, 5))\n\n# Plot the points (open circles like R)\nax.scatter(model.fittedvalues, model.resid, facecolors='none', edgecolors='black')\n\n# Add the horizontal 'zero' line\nax.axhline(0, color='silver', linestyle=':', zorder=0)\n\n# 3. Add the Red Lowess Line (The 'R' special)\nlowess = sm.nonparametric.lowess(model.resid, model.fittedvalues, frac=2/3)\nax.plot(lowess[:, 0], lowess[:, 1], color='red', lw=1, alpha=0.8)\n\n# 4. Label the Top 3 Outliers\n# Find indices of the 3 largest absolute residuals\ntop_3_idx = np.abs(model.resid).sort_values(ascending=False).head(3).index\n\nfor i in top_3_idx:\n    ax.annotate(i, (model.fittedvalues[i], model.resid[i]), \n                xytext=(5, 5), textcoords='offset points', fontsize=9)\n\n# Formatting\nax.set_title(\"Residuals vs Fitted\")\nax.set_xlabel(\"Fitted values\")\nax.set_ylabel(\"Residuals\")\nplt.savefig(\"01_residuals_vs_fitted.png\")\n\n\n\n\n\n\n\nFigure 1: Residuals vs Fitted Plot"
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#anonymous-activity-1",
+    "href": "lectures/Lecture01/Lecture02.html#anonymous-activity-1",
+    "title": "Lecture 02",
+    "section": "Anonymous Activity 1",
+    "text": "Anonymous Activity 1\nQR Code (try again)\nThis is optional, but helpful to Stats 20, Please scan this\n\nand there is a simple question. And you can ask for help.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#takeaways",
+    "href": "lectures/Lecture01/Lecture02.html#takeaways",
+    "title": "Lecture 02",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nStats 20 is an introduction to R and here – a Computational Thinking approach\nCourse specifics are in the syllabus, note the deliverables, please watch the video\nA little basic R - objects - everything in R is an object AND objects have names\noperators (e.g., +, -) are objects, vectors are objects, functions is(), str() and summary() are objects\nChoose your tools: specifically an IDE (RStudio, Positron, VS Code, etc.)\nDeveloping your computational thinking, applying computational thinking fundamentals using a language called R\nStatisticians apply procedures and are not limited to tools like R (e.g. Python, SQL, etc)\nSoftware comes and goes but your thinking skills will endure\nWe need to explain the steps and reasoning behind an analysis not just name the tools\nWhile it is acceptable in this section to use AI to assist, learn more than copying and pasting",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#where-are-we",
+    "href": "lectures/Lecture01/Lecture02.html#where-are-we",
+    "title": "Lecture 02",
+    "section": "Where are we?",
+    "text": "Where are we?\n\nLearn how to be a “System Architect” – someone who understands how code (regardless of the specific language) serves a specific business or research goal (this AI cannot do yet). Study/ understand the process in addition to trusting it.\nFocus on possessing AI Augmentation Skills – where AI is used as a tool to help humans do more, rather than replace humans. When coding in this class, AI is your helper to develop your computational thinking and broaden your understanding of the application of the code beyond the problem in front of us.\nAI is the best at “book learning” (explicit knowledge) so instead of competing – leverage AI to help you gain practical, hands-on experience through projects and then internships and then jobs. Show that you can apply what you have learned in the areas/industries/fields that you want to join.\nDevelop your “Tacit Knowledge” – an advanced form of pattern recognition that the brain does subconsciously after years of experience - having good judgment arising from “the feel” of a situation, for example - handling complex client interactions, dealing with “messiness” (when things do not go as planned). Develop your Spidey Senses for a situation.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#activity-2-please-greet-your-neighbors",
+    "href": "lectures/Lecture01/Lecture02.html#activity-2-please-greet-your-neighbors",
+    "title": "Lecture 02",
+    "section": "Activity #2: Please Greet Your Neighbor(s)",
+    "text": "Activity #2: Please Greet Your Neighbor(s)\n\n\n\nIf you missed the first lecture - your neighbors are VIPs\nYou need at least one different neighbor each week for your attendance credit\nIf you were not in class on Tuesday, this is your last chance for week 1\nYou cannot receive credit if it’s only you in the photo\nMeet your classmates, take a photograph. Here is an example, with their permission of course\n\n\n\n\n\nThe Mhen of Statistics",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#when-acquiring-a-new-skill",
+    "href": "lectures/Lecture01/Lecture02.html#when-acquiring-a-new-skill",
+    "title": "Lecture 02",
+    "section": "When acquiring a new skill",
+    "text": "When acquiring a new skill\n\nThe general wisdom is to “protect the downside first”, it’s psychological\nWhen starting out with R, we are going to build a safety net, here are the first two parts:\n\nRStudio is friendlier than Positron or VS Code\nKeep your work organized. In RStudio, use Projects (Positron/VS Code uses filenames and folders)\n\nLet’s take a look at RStudio\nIf you don’t a copy on your device yet, just follow along or make a friend with a neighbor who does.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#starting-rstudio-3-or-4-panes",
+    "href": "lectures/Lecture01/Lecture02.html#starting-rstudio-3-or-4-panes",
+    "title": "Lecture 02",
+    "section": "Starting RStudio 3 or 4 panes",
+    "text": "Starting RStudio 3 or 4 panes",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#a-new-project-the-project-menu",
+    "href": "lectures/Lecture01/Lecture02.html#a-new-project-the-project-menu",
+    "title": "Lecture 02",
+    "section": "A new project: the project menu",
+    "text": "A new project: the project menu",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#a-new-project-the-project-menu-alternate",
+    "href": "lectures/Lecture01/Lecture02.html#a-new-project-the-project-menu-alternate",
+    "title": "Lecture 02",
+    "section": "A new project: the project menu alternate",
+    "text": "A new project: the project menu alternate",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#either-way-enter-a-location-name",
+    "href": "lectures/Lecture01/Lecture02.html#either-way-enter-a-location-name",
+    "title": "Lecture 02",
+    "section": "Either Way: enter a location name",
+    "text": "Either Way: enter a location name",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#a-new-project-choose-new-project",
+    "href": "lectures/Lecture01/Lecture02.html#a-new-project-choose-new-project",
+    "title": "Lecture 02",
+    "section": "A new project: choose New Project",
+    "text": "A new project: choose New Project",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#name-and-create",
+    "href": "lectures/Lecture01/Lecture02.html#name-and-create",
+    "title": "Lecture 02",
+    "section": "Name and Create",
+    "text": "Name and Create",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#ready-to-use",
+    "href": "lectures/Lecture01/Lecture02.html#ready-to-use",
+    "title": "Lecture 02",
+    "section": "Ready to Use",
+    "text": "Ready to Use",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#create-your-first-r-script-program",
+    "href": "lectures/Lecture01/Lecture02.html#create-your-first-r-script-program",
+    "title": "Lecture 02",
+    "section": "Create your first R script (program)",
+    "text": "Create your first R script (program)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#modify-your-first-r-script",
+    "href": "lectures/Lecture01/Lecture02.html#modify-your-first-r-script",
+    "title": "Lecture 02",
+    "section": "Modify your first R script",
+    "text": "Modify your first R script",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#save-and-rename-your-first-r-script",
+    "href": "lectures/Lecture01/Lecture02.html#save-and-rename-your-first-r-script",
+    "title": "Lecture 02",
+    "section": "Save and Rename your first R script",
+    "text": "Save and Rename your first R script",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#source-executerun-your-r-script",
+    "href": "lectures/Lecture01/Lecture02.html#source-executerun-your-r-script",
+    "title": "Lecture 02",
+    "section": "Source (execute/run) your R script",
+    "text": "Source (execute/run) your R script",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#result",
+    "href": "lectures/Lecture01/Lecture02.html#result",
+    "title": "Lecture 02",
+    "section": "Result",
+    "text": "Result",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#notes-on-the-r-environment-pane",
+    "href": "lectures/Lecture01/Lecture02.html#notes-on-the-r-environment-pane",
+    "title": "Lecture 02",
+    "section": "Notes on the R Environment pane",
+    "text": "Notes on the R Environment pane\n\nValues, Data, functions that you have created, and more advanced objects are shown in that part of RStudio\nValues are vectors\nBuilt-in datasets in R (like mtcars or iris) do not appear in the Environment pane because they are part of the datasets package (like a toolkit), which is loaded when you startup R but is kept in its own separate environment.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#clear-the-console-control-l",
+    "href": "lectures/Lecture01/Lecture02.html#clear-the-console-control-l",
+    "title": "Lecture 02",
+    "section": "Clear the Console (Control-L)",
+    "text": "Clear the Console (Control-L)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#take-a-breath",
+    "href": "lectures/Lecture01/Lecture02.html#take-a-breath",
+    "title": "Lecture 02",
+    "section": "Take a breath",
+    "text": "Take a breath",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#notice-my-environment-was-empty",
+    "href": "lectures/Lecture01/Lecture02.html#notice-my-environment-was-empty",
+    "title": "Lecture 02",
+    "section": "Notice my environment was empty",
+    "text": "Notice my environment was empty\n\nLet’s talk about quitting and restarting R\nClick TOOLS - GLOBAL OPTIONS",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#clearing-your-environment",
+    "href": "lectures/Lecture01/Lecture02.html#clearing-your-environment",
+    "title": "Lecture 02",
+    "section": "Clearing Your Environment",
+    "text": "Clearing Your Environment\n\nThe easy (but not department sanctioned) way is to use the broom",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#an-important-outcome-is-reproducibility",
+    "href": "lectures/Lecture01/Lecture02.html#an-important-outcome-is-reproducibility",
+    "title": "Lecture 02",
+    "section": "AN IMPORTANT OUTCOME IS REPRODUCIBILITY",
+    "text": "AN IMPORTANT OUTCOME IS REPRODUCIBILITY\n\nls() lists the objects in the environment\nrm() removes the objects in the environment. You can remove them singly, for example rm(x) will remove just x\nOR combine rm() and ls() to remove everything rm(list = ls())",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#section",
+    "href": "lectures/Lecture01/Lecture02.html#section",
+    "title": "Lecture 02",
+    "section": "",
+    "text": "Steps to removing everything using rm() & ls()",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#quick-notes-on-the-other-panes",
+    "href": "lectures/Lecture01/Lecture02.html#quick-notes-on-the-other-panes",
+    "title": "Lecture 02",
+    "section": "Quick notes on the other panes",
+    "text": "Quick notes on the other panes\n\nHistory stores your executed commands\nFiles reveals the files in your current location on your computer (should be your project folder for now unless you are comfortable moving around your computer)\nPlots will store plots\nLet’s look at packages",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#activity-3-try-installing-the-package-praise-for-fun",
+    "href": "lectures/Lecture01/Lecture02.html#activity-3-try-installing-the-package-praise-for-fun",
+    "title": "Lecture 02",
+    "section": "Activity #3: Try Installing the package “praise” for fun",
+    "text": "Activity #3: Try Installing the package “praise” for fun\n\nPraise is a little package\nTry installing it by typing install.packages(“praise”) at the Console prompt\nThen issue a library(praise)\nThen issue a praise() at the console prompt",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#install-packages---praise",
+    "href": "lectures/Lecture01/Lecture02.html#install-packages---praise",
+    "title": "Lecture 02",
+    "section": "Install Packages - Praise",
+    "text": "Install Packages - Praise",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#install-packages---praise-result",
+    "href": "lectures/Lecture01/Lecture02.html#install-packages---praise-result",
+    "title": "Lecture 02",
+    "section": "Install Packages - Praise result",
+    "text": "Install Packages - Praise result",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#install-packages---not-working",
+    "href": "lectures/Lecture01/Lecture02.html#install-packages---not-working",
+    "title": "Lecture 02",
+    "section": "Install Packages - not working?",
+    "text": "Install Packages - not working?",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#install-packages---check-options",
+    "href": "lectures/Lecture01/Lecture02.html#install-packages---check-options",
+    "title": "Lecture 02",
+    "section": "Install Packages - check options",
+    "text": "Install Packages - check options",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#successful-install",
+    "href": "lectures/Lecture01/Lecture02.html#successful-install",
+    "title": "Lecture 02",
+    "section": "Successful Install",
+    "text": "Successful Install",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#activate-any-package-with-library",
+    "href": "lectures/Lecture01/Lecture02.html#activate-any-package-with-library",
+    "title": "Lecture 02",
+    "section": "Activate any package with library()",
+    "text": "Activate any package with library()",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#using-a-library-function",
+    "href": "lectures/Lecture01/Lecture02.html#using-a-library-function",
+    "title": "Lecture 02",
+    "section": "Using a Library Function",
+    "text": "Using a Library Function",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#using-a-library-function-result",
+    "href": "lectures/Lecture01/Lecture02.html#using-a-library-function-result",
+    "title": "Lecture 02",
+    "section": "Using a Library Function – Result",
+    "text": "Using a Library Function – Result",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#activity-4",
+    "href": "lectures/Lecture01/Lecture02.html#activity-4",
+    "title": "Lecture 02",
+    "section": "Activity #4",
+    "text": "Activity #4\n\nInstall a library named “tinytex”\nTry creating a Quarto document?\nRender it to HTML?\nRender it to PDF? (You will need to install the library “tinytex” first)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#create-a-quarto-document",
+    "href": "lectures/Lecture01/Lecture02.html#create-a-quarto-document",
+    "title": "Lecture 02",
+    "section": "Create a Quarto document",
+    "text": "Create a Quarto document",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#choose-output-type-for-your-quarto-document",
+    "href": "lectures/Lecture01/Lecture02.html#choose-output-type-for-your-quarto-document",
+    "title": "Lecture 02",
+    "section": "Choose output type for your Quarto document",
+    "text": "Choose output type for your Quarto document",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#title-your-quarto-document",
+    "href": "lectures/Lecture01/Lecture02.html#title-your-quarto-document",
+    "title": "Lecture 02",
+    "section": "Title your Quarto document",
+    "text": "Title your Quarto document",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#render-your-quarto-document",
+    "href": "lectures/Lecture01/Lecture02.html#render-your-quarto-document",
+    "title": "Lecture 02",
+    "section": "Render your Quarto document",
+    "text": "Render your Quarto document",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#save-your-quarto-document",
+    "href": "lectures/Lecture01/Lecture02.html#save-your-quarto-document",
+    "title": "Lecture 02",
+    "section": "Save your Quarto document",
+    "text": "Save your Quarto document",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#rename-your-quarto-document",
+    "href": "lectures/Lecture01/Lecture02.html#rename-your-quarto-document",
+    "title": "Lecture 02",
+    "section": "Rename your Quarto document",
+    "text": "Rename your Quarto document",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#html-result-of-your-quarto-document",
+    "href": "lectures/Lecture01/Lecture02.html#html-result-of-your-quarto-document",
+    "title": "Lecture 02",
+    "section": "HTML result of your Quarto document",
+    "text": "HTML result of your Quarto document",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#for-a-quarto-to-pdf-result",
+    "href": "lectures/Lecture01/Lecture02.html#for-a-quarto-to-pdf-result",
+    "title": "Lecture 02",
+    "section": "For a Quarto to PDF result",
+    "text": "For a Quarto to PDF result\n\nYou will probably need to install the tinytex library\nThen choose PDF\nEverything else is the same, just render",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#pdf-result-of-your-quarto-document",
+    "href": "lectures/Lecture01/Lecture02.html#pdf-result-of-your-quarto-document",
+    "title": "Lecture 02",
+    "section": "PDF result of your Quarto document",
+    "text": "PDF result of your Quarto document",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#activity-5",
+    "href": "lectures/Lecture01/Lecture02.html#activity-5",
+    "title": "Lecture 02",
+    "section": "Activity #5",
+    "text": "Activity #5\n\n(We probably don’t have the time but) I’d like us to examine an R script (.R), an R Markdown document (.rmd), and a Quarto document (.qmd).\n\nThey do the same things generally but as a rule:\n\nUse documents/notebooks (.rmd/.qmd) when exploring, explaining, and communicating\nUse .R scripts when in production mode and scaling matters (execution and reuse)\nYou can easily convert .rmd/.qmd to .R and reverse",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#what-is-rmarkdown",
+    "href": "lectures/Lecture01/Lecture02.html#what-is-rmarkdown",
+    "title": "Lecture 02",
+    "section": "What is (R)Markdown?",
+    "text": "What is (R)Markdown?\n\nMarkdown is a markup language (a language for presenting information, not for analysis) for writing formatted text using plain text symbols.\nYou write something that easy to read, and software converts it into nicely formatted output like HTML, PDF, or slides.\nThe variant used by RStudio and Positron is “Pandoc Markdown” which has executable code chunks (R, but Python also) VS code uses “Common Mark” so a lot of the power of Pandoc is not default but can be added via extensions.\nThis slide presentation was written in Markdown using Quarto in Positron\nMany of your upper division stats courses will use RMarkdown in RStudio",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#communication-rmarkdownquarto",
+    "href": "lectures/Lecture01/Lecture02.html#communication-rmarkdownquarto",
+    "title": "Lecture 02",
+    "section": "Communication (RMarkdown/Quarto)",
+    "text": "Communication (RMarkdown/Quarto)\n\nFor a data engineer, the “code” or “script” is the product.\nFor a working statistician, the deliverable is the product.\nAn IDE such as RStudio running R with RMarkdown/Quarto (.rmd/.qmd) is designed to produce the deliverable\nAn IDE such as RStudio can also produce scripts (.R) which are “code”",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#please-try-the-following",
+    "href": "lectures/Lecture01/Lecture02.html#please-try-the-following",
+    "title": "Lecture 02",
+    "section": "Please try the following",
+    "text": "Please try the following\n\nYou will eventually learn to write scripts and Quarto files better than these for yourself. Do save these to your project folder if you aren’t comfortable with the file & directory structure of your computer.\n\nBasic R Script: A basic .R script example\nExample RMarkdown from RStudio:\nR Markdown example\nExample Quarto from RStudio:\nQuarto Example\nAnd the dataset, this is saved R Workspace known as a .RData file Saved R Workspace",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture01/Lecture02.html#takeaways-1",
+    "href": "lectures/Lecture01/Lecture02.html#takeaways-1",
+    "title": "Lecture 02",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nLearn how to navigate the IDE RStudio\nLearn how to install a package like “praise” or “tinytex”\nProjects and libraries (+++).\n\nKnow how to call a library using the library() function to access helpful and more advanced functions.\n\nProjects help you stay organized.\n\nUse notebooks (e.g., RMarkdown, Quarto preferred but even Jupyter will work if you are an advanced user) to generate deliverables\nKnow the difference between .R, .rmd, .qmd files, .rmd and .qmd are very similar, encourage you to use start using .qmd as it is more “modern”\nPerhaps read Chapter 1-2 of the Book of R (any edition) by the end of next week\nPerhaps read Chapter 1-2 of the Braun & Murdoch (any edition) as an alternative if Book of R is too easy or confusing",
+    "crumbs": [
+      "Lectures",
+      "Lecture 02"
+    ]
   }
 ]
