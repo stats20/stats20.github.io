@@ -1133,11 +1133,418 @@
     ]
   },
   {
+    "objectID": "activity/Week02vectors.html",
+    "href": "activity/Week02vectors.html",
+    "title": "Week 2 Functions and Vectors",
+    "section": "",
+    "text": "Recall this webpage using a tool called webr. This activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity. It does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#introduction",
+    "href": "activity/Week02vectors.html#introduction",
+    "title": "Week 2 Functions and Vectors",
+    "section": "",
+    "text": "Recall this webpage using a tool called webr. This activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity. It does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#how-this-page-works",
+    "href": "activity/Week02vectors.html#how-this-page-works",
+    "title": "Week 2 Functions and Vectors",
+    "section": "How this page works",
+    "text": "How this page works\nYou can run the R code chunks by clicking on the “Run Code” button that appears in the upper left of the “code chunks”. The other two icons on the upper right of the code chunk are for copying the code and for refreshing the window (which will clear all of your work and start you over). You can also modify the code in the code chunks and run it to see how it works.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#functions",
+    "href": "activity/Week02vectors.html#functions",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Functions",
+    "text": "Functions\nTry a few simple functions in the code chunk below. You can modify the code to try out different ones.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#vector-construction",
+    "href": "activity/Week02vectors.html#vector-construction",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Vector Construction",
+    "text": "Vector Construction\nSome of these vectors will print out, others will be stored in R objects that you will need to call by name to see the results. Try it out and see what happens when you run the code chunk below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRemember, typing an object name will reveal its contents\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry this - what do you think you will get if you run\nc(northern, southern)\nand assign it to a new named object (you choose a name)\nFirst think about what it should be, then try it out in the code chunk below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDid you get what you expected to get as a result? That is a fundamental skill in programming – you should have an idea of what to expect as a result of your code. If you got something different, try to understand why it differed. If you are confused, ask for help. This is a learning process and it is normal to be confused at first.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#built-in-vectors-in-r",
+    "href": "activity/Week02vectors.html#built-in-vectors-in-r",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Built-in vectors in R",
+    "text": "Built-in vectors in R\nThese serve as useful examples in teaching or in learning how to work with data in R. They are also useful for testing out functions and learning how to manipulate data in R.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#indexing-vectors",
+    "href": "activity/Week02vectors.html#indexing-vectors",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Indexing Vectors",
+    "text": "Indexing Vectors\nIf you don’t learn anything else in Stats 20, learn how to index vectors. This is a fundamental skill in R and it is essential for working with data in R. You can use the [] operator to index vectors. The indices start at 1 (not 0 like in some other programming languages). You can use positive integers to index specific values, negative integers to exclude specific values, and logical vectors to index values that meet certain conditions.\nFirst let’s use some existing vectors and make our own logical vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThen we can work them a bit:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#indexing-vectors-with-vectors",
+    "href": "activity/Week02vectors.html#indexing-vectors-with-vectors",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Indexing vectors with vectors",
+    "text": "Indexing vectors with vectors\n\nRecall there are no scalars in R, so length(rivers) is 141 which is a vector of length 1.\nSo we can also index vectors using other vectors of any length\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nWe can also use negation\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nIndexing with logical vectors\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nWork from the innermost out to understand what is happening here\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#test-yourself",
+    "href": "activity/Week02vectors.html#test-yourself",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Test Yourself",
+    "text": "Test Yourself\nWhat do you think will happen if you run this code chunk?\nrivers\n\nrivers_and &lt;- rivers[rivers &gt; 1000 & rivers &lt; 2000] # `&` (AND operator) are both true?\nrivers_or &lt;- rivers[rivers &gt; 3000 | rivers &lt; 200] # `|` (OR operator) is at least one of the conditions is true?",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#a-blank-chunk-for-you-to-use.",
+    "href": "activity/Week02vectors.html#a-blank-chunk-for-you-to-use.",
+    "title": "Week 2 Functions and Vectors",
+    "section": "A blank chunk for you to use.",
+    "text": "A blank chunk for you to use.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#math-with-vectors",
+    "href": "activity/Week02vectors.html#math-with-vectors",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Math with vectors",
+    "text": "Math with vectors\nTry a little math.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#recycling-example",
+    "href": "activity/Week02vectors.html#recycling-example",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Recycling Example",
+    "text": "Recycling Example\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#coercing-a-logical-to-integernumeric",
+    "href": "activity/Week02vectors.html#coercing-a-logical-to-integernumeric",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Coercing a Logical to Integer/Numeric",
+    "text": "Coercing a Logical to Integer/Numeric\n\nLogical (TRUE/FALSE) occupies the bottom of the hierarchy, it’s always coerced if combined with any non-Logical type of data.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#intnum",
+    "href": "activity/Week02vectors.html#intnum",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Int/Num",
+    "text": "Int/Num\n\nIntegers are whole numbers without a decimal point, numeric are numbers with a decimal point\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#logicalchar",
+    "href": "activity/Week02vectors.html#logicalchar",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Logical/Char",
+    "text": "Logical/Char\n\nIf you are combining logical and character only, TRUE FALSE will become “TRUE” and “FALSE”\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week02vectors.html#numchar",
+    "href": "activity/Week02vectors.html#numchar",
+    "title": "Week 2 Functions and Vectors",
+    "section": "Num/Char",
+    "text": "Num/Char\n\nIf you are combining numeric and character, the numbers become character\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe material on matrices is not something we spend a lot of time in Stats 20 but if you are planning to take upper division courses, I recommend spending time with matrices.",
+    "crumbs": [
+      "Activities",
+      "Lecture 3 Activity"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#anonymous-activity-1",
+    "href": "lectures/Lecture0304/Lecture03.html#anonymous-activity-1",
+    "title": "Lecture 03",
+    "section": "Anonymous Activity 1",
+    "text": "Anonymous Activity 1\nQR Code (yet another attempt)\nThis is optional, but helpful to Stats 20, Please scan this\n\nor here is a direct link\nand there is a simple question. And you can ask for help later."
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#takeaways",
+    "href": "lectures/Lecture0304/Lecture03.html#takeaways",
+    "title": "Lecture 03",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nPlease learn how to navigate the IDE RStudio\nPlease learn how to install library packages like “praise” or “tinytex”\nProjects and libraries (+++).\n\nKnow how to call a library using the library() function to access helpful and more advanced functions.\n\nProjects help you stay organized.\n\nUse notebooks (e.g., RMarkdown, Quarto preferred but even JuPYter will work if you are an advanced user) to generate deliverables\nKnow the difference between .R, .rmd, .qmd files, .rmd and .qmd are very similar, encourage you to use start using .qmd as it is more “modern”\nPerhaps read Chapter 1-2 of the Book of R (any edition) by the end of next week\nPerhaps read Chapter 1-2 of the Braun & Murdoch (any edition) as an alternative if Book of R is too easy or confusing"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#some-answers-to-questions-from-last-week",
+    "href": "lectures/Lecture0304/Lecture03.html#some-answers-to-questions-from-last-week",
+    "title": "Lecture 03",
+    "section": "Some answers to questions from last week",
+    "text": "Some answers to questions from last week\n\nR is a language comprised of expressions AKA functional programming language\nIn computing, expressions can be a mixture of constants, variables, operators and functions.\nCan you think of a constant or variable or operator or function?\nThe console prompt is different from an .R file (script) which is different from a document/notebook like a .qmd (Quarto) file BUT they all use R expressions in some manner (if asked what is the difference, could you answer correctly?)"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#more-answers-to-questions-from-last-week",
+    "href": "lectures/Lecture0304/Lecture03.html#more-answers-to-questions-from-last-week",
+    "title": "Lecture 03",
+    "section": "More answers to questions from last week",
+    "text": "More answers to questions from last week\n\nRStudio “panes” - Source, Console, Environment-History, Files-Plots-Packages\nSimplistic but useful “rule”: everything in R is an object.\n\nAn object is storage space (memory) with an associated name.\nFor Stats 20 an R object could be a constant, a variable, a data structure, a function (operators are functions) and they are reusable."
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#names-are-r-important",
+    "href": "lectures/Lecture0304/Lecture03.html#names-are-r-important",
+    "title": "Lecture 03",
+    "section": "Names are (R?) Important",
+    "text": "Names are (R?) Important\n\nR is case sensitive so the name junk is different from JUNK or juNk.\nR object names should start with a period OR a letter (and nothing else)\nso .first_value is a valid R object name and if a name starts with a period, a letter should follow.\nVariables and functions that you create have names with only lowercase letters, numbers, and _. Use underscores (_) (so called snake case) to separate words within a name. For example: this_is_my_first_variable &lt;- 1:1000\nWhile periods are legal, you may wish to avoid using them because R uses them to name its own functions and variables.\nR object names can have spaces and start with periods and numbers, but these names need to be quoted with backticks to be used. So if you have a variable name like Zip Code, when you access it, you will need to call it using `Zip Code`.\nThe overall goal is to be understood when sharing code. So clarity, readability and following common conventions are useful. The habit of good naming hygiene is important for Stats 102ABC."
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#the-basics-of-functions",
+    "href": "lectures/Lecture0304/Lecture03.html#the-basics-of-functions",
+    "title": "Lecture 03",
+    "section": "The basics of functions",
+    "text": "The basics of functions\n\nFunctions do all of the work in R. They typically produce results.\nFunctions, identifiable by their name (for example class) followed by a set of parentheses ()\nThe values inside the parentheses are the inputs to the function\nFunctions are versatile and can even accept other functions as inputs\nAnother way to say it: when we use (call) an R function, we pass arguments inside of its parentheses."
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#example",
+    "href": "lectures/Lecture0304/Lecture03.html#example",
+    "title": "Lecture 03",
+    "section": "Example",
+    "text": "Example\n\nYou can try running this, but it’s just an illustration\n\n\nlibrary(praise)\npraise() # sometimes functions just have empty parentheses\nls()\nrm(x) # sometimes functions have input value(s)\nrm(list=ls()) # sometimes they have a different function as input"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#getting-help-for-a-function",
+    "href": "lectures/Lecture0304/Lecture03.html#getting-help-for-a-function",
+    "title": "Lecture 03",
+    "section": "Getting help for a function",
+    "text": "Getting help for a function\n\nThis is a good time to think about obtaining help again. Suppose we want to compute a natural log of a number, what will work?\nhelp(log) at the console prompt will work\nalso ?log at the console prompt will work\nand you could type # q: in an R Script, .qmd or .rmd file\nexample: # q: please help me calculate a logarithm in R."
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#acceptable-use-of-ai",
+    "href": "lectures/Lecture0304/Lecture03.html#acceptable-use-of-ai",
+    "title": "Lecture 03",
+    "section": "Acceptable use of AI",
+    "text": "Acceptable use of AI\n\n\n\nacceptable AI"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#example-documentation---helplog",
+    "href": "lectures/Lecture0304/Lecture03.html#example-documentation---helplog",
+    "title": "Lecture 03",
+    "section": "Example documentation - help(log)",
+    "text": "Example documentation - help(log)\n\n\n\nresult of ?log"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#breaking-it-down",
+    "href": "lectures/Lecture0304/Lecture03.html#breaking-it-down",
+    "title": "Lecture 03",
+    "section": "Breaking it down",
+    "text": "Breaking it down\n\nUsage is how to use the function: the syntax (rules) and arguments\nArguments shows the values that you can pass to the function\n\n\n\n\nusage and arguments"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#a-deeper-dive-into-functions",
+    "href": "lectures/Lecture0304/Lecture03.html#a-deeper-dive-into-functions",
+    "title": "Lecture 03",
+    "section": "A deeper dive into functions",
+    "text": "A deeper dive into functions\n\nlog\n\nfunction (x, base = exp(1))  .Primitive(\"log\")\n\n\n\nEntering the log() function without parentheses shows us the definition of the log function (but will not actually calculate a log)\nWe see log() has two arguments: x, and base.\nbase has a default value, we see base = exp(1), which is \\(e^1 ≈ 2.72\\)\nREMEMBER - To learn more about any function get help inside of R by entering ?functionname or enter the function name in the Help tab (bottom right) in RStudio\nOr ask your AI assistant"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#an-even-deeper-divesorry",
+    "href": "lectures/Lecture0304/Lecture03.html#an-even-deeper-divesorry",
+    "title": "Lecture 03",
+    "section": "An even deeper dive(sorry)",
+    "text": "An even deeper dive(sorry)\n\nWhen I typed log without parentheses, I got:\n\nfunction (x, base = exp(1))  .Primitive(\"log\")\n\nlog is a primitive function in R, which means it is a built-in function that is implemented at a low level (the language of the computer hardware, not as human readable).\nA primitive function is written in a lower-level language, typically C or Fortran (R and Python are high-level languages in comparison) for efficiency and performance reasons."
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#last-one-of-these-promise",
+    "href": "lectures/Lecture0304/Lecture03.html#last-one-of-these-promise",
+    "title": "Lecture 03",
+    "section": "Last one of these (promise)",
+    "text": "Last one of these (promise)\n\nStill other functions are written in R or in a mix of R and another language\nThis is bleeding into computational statistics (102ABC) or higher or CS\nBeyond Stats 20, but something you should be made aware of as you move on\n\n\nrm\n\nfunction (..., list = character(), pos = -1, envir = as.environment(pos), \n    inherits = FALSE) \n{\n    if (...length()) {\n        dots &lt;- match.call(expand.dots = FALSE)$...\n        if (!all(vapply(dots, function(x) is.symbol(x) || is.character(x), \n            NA, USE.NAMES = FALSE))) \n            stop(\"... must contain names or character strings\")\n        list &lt;- .Primitive(\"c\")(list, vapply(dots, as.character, \n            \"\"))\n    }\n    .Internal(remove(list, envir, inherits))\n}\n&lt;bytecode: 0x110c7b318&gt;\n&lt;environment: namespace:base&gt;"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#activity-2-please-greet-your-neighbors",
+    "href": "lectures/Lecture0304/Lecture03.html#activity-2-please-greet-your-neighbors",
+    "title": "Lecture 03",
+    "section": "Activity #2: Please Greet Your Neighbor(s)",
+    "text": "Activity #2: Please Greet Your Neighbor(s)\n\n\n\nIf you missed the first week - your neighbors are VIPs\nYou need at least one different neighbor each week for your attendance credit (only one photo required)\nYou cannot receive credit if it’s only you in the photo, it is important to be sociable, even in STEM (or maybe especially in STEM)\nMeet your classmates, take a photograph. Here is an example, with their permission of course. Yes, you can have many people in your photograph.\n\n\n\n\n\nThe Mhen of Statistics"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#clarify-these-before-moving-on",
+    "href": "lectures/Lecture0304/Lecture03.html#clarify-these-before-moving-on",
+    "title": "Lecture 03",
+    "section": "Clarify these before moving on",
+    "text": "Clarify these before moving on\nWe are looking at many symbols today, these can be confusing but they have important roles in R\n\n\n\n\n\n\n\n\n\nSymbol\nName\nWhat it does\nShort version\n\n\n\n\n()\nParentheses\nCalls a function or controls order\nDoes things\n\n\n[]\nSingle brackets\nSelects one or more components\nGet (extract) parts from a whole\n\n\n[[]]\nDouble brackets\nExtract a single complete component\nGets a whole part\n\n\n$\nDollar sign\nExtract by name\nGet a component by its name\n\n\n{}\nCurly braces\n(much later) Groups multiple steps\nDo steps together\n\n\n::\nDouble colon\n(much later) Access function from a package\nLoad just this function"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#r-vectors-are-the-core-data-structure",
+    "href": "lectures/Lecture0304/Lecture03.html#r-vectors-are-the-core-data-structure",
+    "title": "Lecture 03",
+    "section": "R Vectors are the core data structure",
+    "text": "R Vectors are the core data structure\n\nOverviewVector ConstructionBuilt-insTakeaways\n\n\n\nWe can construct vectors, use built-in vectors, extract vectors from data structures (like a data frame) and generate vectors from other vectors and from functions\nvectors contain values of the same type (AKA atomic) and allow you operate on all of the values at once\nnumeric, integer, character, logical, complex, factor, raw are the basic vector types\nR functions typically operate on vectors and operate on their values all at once (vectorized operation)\nThis is not an exaggeration – all data in R can be conceptualized as being stored in a vector-like structure\n\n\n\n\nBasics: colon operator, seq(), rep(), and c() functions\nWe can use these to construct vectors from nothing. Sometimes vectors are the ouput of more advanced functions (LATER ON)\n\n\n1:10 # colon operator creates a sequence of integers from:to\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nseq(from = 1, to = 10, by = 3) # seq creates a sequence with a custom \"step\"\n\n[1]  1  4  7 10\n\nrep(1:2, times = 5) # replicates the values\n\n [1] 1 2 1 2 1 2 1 2 1 2\n\nsouthern &lt;- c(\"UCLA\", \"UCI\", \"UCR\", \"UCSD\", \"UCSB\") # a custom character vector with c\nnorthern &lt;- c(\"UCB\", \"UCSC\", \"UCD\", \"UCM\", \"UCSF\") # another custom character vector\nc(northern, southern) # combine vectors with c()\n\n [1] \"UCB\"  \"UCSC\" \"UCD\"  \"UCM\"  \"UCSF\" \"UCLA\" \"UCI\"  \"UCR\"  \"UCSD\" \"UCSB\"\n\nc(TRUE, FALSE, TRUE, TRUE, FALSE) # a custom logical vector\n\n[1]  TRUE FALSE  TRUE  TRUE FALSE\n\nc(pi, exp(1), sqrt(9), 2^3) # a custom numeric vector with function output\n\n[1] 3.141593 2.718282 3.000000 8.000000\n\n\n\n\n\nSome vectors are built into R\n\n\nletters # a built in character vector\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"p\" \"q\" \"r\" \"s\"\n[20] \"t\" \"u\" \"v\" \"w\" \"x\" \"y\" \"z\"\n\nLETTERS # another built in character vector\n\n [1] \"A\" \"B\" \"C\" \"D\" \"E\" \"F\" \"G\" \"H\" \"I\" \"J\" \"K\" \"L\" \"M\" \"N\" \"O\" \"P\" \"Q\" \"R\" \"S\"\n[20] \"T\" \"U\" \"V\" \"W\" \"X\" \"Y\" \"Z\"\n\nmonth.abb # yet another built in - don't use periods in your variable names\n\n [1] \"Jan\" \"Feb\" \"Mar\" \"Apr\" \"May\" \"Jun\" \"Jul\" \"Aug\" \"Sep\" \"Oct\" \"Nov\" \"Dec\"\n\nmonth.name # still more - don't use periods in your variable names\n\n [1] \"January\"   \"February\"  \"March\"     \"April\"     \"May\"       \"June\"     \n [7] \"July\"      \"August\"    \"September\" \"October\"   \"November\"  \"December\" \n\neuro # a built-in named numeric data vector\n\n        ATS         BEF         DEM         ESP         FIM         FRF \n  13.760300   40.339900    1.955830  166.386000    5.945730    6.559570 \n        IEP         ITL         LUF         NLG         PTE \n   0.787564 1936.270000   40.339900    2.203710  200.482000 \n\nrivers # a built-in numeric data vector\n\n  [1]  735  320  325  392  524  450 1459  135  465  600  330  336  280  315  870\n [16]  906  202  329  290 1000  600  505 1450  840 1243  890  350  407  286  280\n [31]  525  720  390  250  327  230  265  850  210  630  260  230  360  730  600\n [46]  306  390  420  291  710  340  217  281  352  259  250  470  680  570  350\n [61]  300  560  900  625  332 2348 1171 3710 2315 2533  780  280  410  460  260\n [76]  255  431  350  760  618  338  981 1306  500  696  605  250  411 1054  735\n [91]  233  435  490  310  460  383  375 1270  545  445 1885  380  300  380  377\n[106]  425  276  210  800  420  350  360  538 1100 1205  314  237  610  360  540\n[121] 1038  424  310  300  444  301  268  620  215  652  900  525  246  360  529\n[136]  500  720  270  430  671 1770\n\n\n\n\n\nVectors have different data types\nrivers is numeric, letters is called character, you saw a logical vector too\nVectors can be constructed in a number of ways, even from other vectors\nThe values (elements) of a vector are numbered\nYou might type is(month.abb) to see a vector’s type (remember is() is handy early on)\n\n\nis(month.abb)\n\n[1] \"character\"           \"vector\"              \"data.frameRowLabels\"\n[4] \"SuperClassMethod\"   \n\n\n\nif is() has too much information, can try class()\n\n\nclass(month.abb)\n\n[1] \"character\""
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#access-the-elements-of-a-vector-with-indexing",
+    "href": "lectures/Lecture0304/Lecture03.html#access-the-elements-of-a-vector-with-indexing",
+    "title": "Lecture 03",
+    "section": "Access the elements of a vector with indexing",
+    "text": "Access the elements of a vector with indexing\n\nNow we are going to combine the symbol [ ] (single square brackets) with vectors\nDo focus on the numbering today, it will be used to apply numeric INDEX values in a vector (there are also character and logical indices in R - later)\nThe basic idea: knowing how to subset (or filter) data (vectors) is a basic skill\nAnd indexing (identifying the values in a vector) is the way to do this in R\nIf it helps, you could think of [ ] as “extract” too\nWe start with the vector because it is the basic data format in R"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#on-indexing-vectors",
+    "href": "lectures/Lecture0304/Lecture03.html#on-indexing-vectors",
+    "title": "Lecture 03",
+    "section": "On Indexing Vectors",
+    "text": "On Indexing Vectors\n\n1 - indexlengthwith vectorsnegative indexmore indexing\n\n\n\nR is 1-indexed - the first element of a vector or any other data structure in R is accessed using the index 1\n\n\nrivers[1]\n\n[1] 735\n\nmonth.abb[1]\n\n[1] \"Jan\"\n\neuro[1]\n\n    ATS \n13.7603 \n\nmy_logical &lt;- c(FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE)\nmy_logical[1]\n\n[1] FALSE\n\n\n\n\n\nVectors have length. We can find it with length(vectorname) and this can be used to help us with indexing\n\n\nlength(rivers)\n\n[1] 141\n\nlength(month.abb)\n\n[1] 12\n\nlength(my_logical)\n\n[1] 7\n\nrivers[length(rivers)] # read it from the innermost value back out\n\n[1] 1770\n\nmonth.abb[4] # which month will it give?\n\n[1] \"Apr\"\n\nmy_logical[2]\n\n[1] FALSE\n\n\n\n\n\nRecall there are no scalars in R, so length(rivers) is 141 which is a vector of length 1.\nSo we can also index vectors using other vectors of any length\n\n\nrivers[1:10]\n\n [1]  735  320  325  392  524  450 1459  135  465  600\n\nmonth.abb[c(9, 10, 11, 5)]\n\n[1] \"Sep\" \"Oct\" \"Nov\" \"May\"\n\nmy_logical[seq(1, length(my_logical), by = 2)]\n\n[1] FALSE  TRUE FALSE FALSE\n\n\n\n\n\nThere is no zero index (has no effect) in R, but we can use negative indices.\nThe effect is the value(s) associated with the negative indices is(are) not extracted\nDon’t mix positive and negatives, choose one or the other\n\n\nmonth.abb[0] # empty character vector\n\ncharacter(0)\n\nmonth.abb[-4]  # we drop April\n\n [1] \"Jan\" \"Feb\" \"Mar\" \"May\" \"Jun\" \"Jul\" \"Aug\" \"Sep\" \"Oct\" \"Nov\" \"Dec\"\n\nmonth.abb[-(6:8)] # we drop the summer - do you know why we used parentheses here?\n\n[1] \"Jan\" \"Feb\" \"Mar\" \"Apr\" \"May\" \"Sep\" \"Oct\" \"Nov\" \"Dec\"\n\n# month.abb[c(-1, 2, -3, 4)] # this will result in an error\n\n\n\n\nrivers[rivers &gt; 1200] # there are 12 rivers &gt; 1200 km in length\n\n [1] 1459 1450 1243 2348 3710 2315 2533 1306 1270 1885 1205 1770\n\n\nlet’s take it apart\n\nrivers &gt; 1200 # a vector of length 141 which evaluates &gt; 1200 (logical)\n\n  [1] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE\n [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE\n [25]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n [49] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n [61] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE\n [73] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE\n [85] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n [97] FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n[109] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE\n[121] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n[133] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE\n\n\nThis is a powerful and quick way to extract whatever you need from a vector (e.g., income level, sales, height)"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#test-yourself",
+    "href": "lectures/Lecture0304/Lecture03.html#test-yourself",
+    "title": "Lecture 03",
+    "section": "Test Yourself",
+    "text": "Test Yourself\nIdeally, by the end of the quarter, I could ask you to examine some lines of code and you could answer questions like the following without running the code.\n\nrivers\n\n  [1]  735  320  325  392  524  450 1459  135  465  600  330  336  280  315  870\n [16]  906  202  329  290 1000  600  505 1450  840 1243  890  350  407  286  280\n [31]  525  720  390  250  327  230  265  850  210  630  260  230  360  730  600\n [46]  306  390  420  291  710  340  217  281  352  259  250  470  680  570  350\n [61]  300  560  900  625  332 2348 1171 3710 2315 2533  780  280  410  460  260\n [76]  255  431  350  760  618  338  981 1306  500  696  605  250  411 1054  735\n [91]  233  435  490  310  460  383  375 1270  545  445 1885  380  300  380  377\n[106]  425  276  210  800  420  350  360  538 1100 1205  314  237  610  360  540\n[121] 1038  424  310  300  444  301  268  620  215  652  900  525  246  360  529\n[136]  500  720  270  430  671 1770\n\nrivers_and &lt;- rivers[rivers &gt; 1000 & rivers &lt; 2000] # `&` (AND operator) are both true?\nrivers_or &lt;- rivers[rivers &gt; 3000 | rivers &lt; 200] # `|` (OR operator) is at least one of the conditions is true? \n\nWhat do you think rivers_and and rivers_or contain?"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#always-ask-questions.",
+    "href": "lectures/Lecture0304/Lecture03.html#always-ask-questions.",
+    "title": "Lecture 03",
+    "section": "Always ask questions.",
+    "text": "Always ask questions.\n\nor here is a direct link"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#math-with-vectors",
+    "href": "lectures/Lecture0304/Lecture03.html#math-with-vectors",
+    "title": "Lecture 03",
+    "section": "Math with Vectors",
+    "text": "Math with Vectors\n\nOverviewSimple ExampleWarningsRecycling ExampleRecycling\n\n\n\nR operates on entire vectors. This feature extends infinitely in every direction and it makes processing rapid.\nAnother name for this is vectorization, in other words, entire vectors are passed through an R function using a single call instead of calling the R function repeatedly for each element of a vector.\n\n\n\n\na12 &lt;- 1:12\nb12 &lt;- c(6, 8, 18, 5, 7, 1, 13, 12, 4, 10, 20, 11)\n\na12^2\n\n [1]   1   4   9  16  25  36  49  64  81 100 121 144\n\nb12 + 10\n\n [1] 16 18 28 15 17 11 23 22 14 20 30 21\n\na12 + b12 # did either original change?\n\n [1]  7 10 21  9 12  7 20 20 13 20 31 23\n\na12^2 + b12\n\n [1]   7  12  27  21  32  37  62  76  85 110 141 155\n\nsqrt(a12 * b12)\n\n [1]  2.449490  4.000000  7.348469  4.472136  5.916080  2.449490  9.539392\n [8]  9.797959  6.000000 10.000000 14.832397 11.489125\n\n\n\n\n\nElement-wise execution in R can be treacherous because base R will perform math even when vectors differ in length (some packages prevent this from happening).\nR does not issue an error when vectors differ in length, instead shorter vectors in the expression are recycled as often as needed until they match the length of the longest vector.\nIf the lengths of your vectors differ, the result of the expression is a vector with the same length as the longest vector which occurs in the expression.\nR will only issue a warning if the longest is not a multiple of the shortest. This is neither good nor bad - just know that it happens\n\n\n\n\nc4 &lt;- c(100, 200, 300, 400)\nd5 &lt;- c(1000, 2000, 3000, 4000, 5000)\n\na12 + c4\n\n [1] 101 202 303 404 105 206 307 408 109 210 311 412\n\na12 + d5\n\nWarning in a12 + d5: longer object length is not a multiple of shorter object\nlength\n\n\n [1] 1001 2002 3003 4004 5005 1006 2007 3008 4009 5010 1011 2012\n\n\n\n\n\na good use of recycling is deliberate creation with recycling\nsuppose we were trying to create month-years\n\n\nmonths_numeric &lt;- 1:12\nyears &lt;- rep(2007:2005, each = 12)\n\nwill_it_work &lt;- c(months_numeric, years) # nope, computers do what you tell them to do.\nhow_about_this &lt;- months_numeric*10000 + years # maybe\na_possibility &lt;- paste(month.abb, years) # OK but what happened?\n\nwill_it_work\n\n [1]    1    2    3    4    5    6    7    8    9   10   11   12 2007 2007 2007\n[16] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2006 2006 2006 2006 2006 2006\n[31] 2006 2006 2006 2006 2006 2006 2005 2005 2005 2005 2005 2005 2005 2005 2005\n[46] 2005 2005 2005\n\nhow_about_this\n\n [1]  12007  22007  32007  42007  52007  62007  72007  82007  92007 102007\n[11] 112007 122007  12006  22006  32006  42006  52006  62006  72006  82006\n[21]  92006 102006 112006 122006  12005  22005  32005  42005  52005  62005\n[31]  72005  82005  92005 102005 112005 122005\n\na_possibility\n\n [1] \"Jan 2007\" \"Feb 2007\" \"Mar 2007\" \"Apr 2007\" \"May 2007\" \"Jun 2007\"\n [7] \"Jul 2007\" \"Aug 2007\" \"Sep 2007\" \"Oct 2007\" \"Nov 2007\" \"Dec 2007\"\n[13] \"Jan 2006\" \"Feb 2006\" \"Mar 2006\" \"Apr 2006\" \"May 2006\" \"Jun 2006\"\n[19] \"Jul 2006\" \"Aug 2006\" \"Sep 2006\" \"Oct 2006\" \"Nov 2006\" \"Dec 2006\"\n[25] \"Jan 2005\" \"Feb 2005\" \"Mar 2005\" \"Apr 2005\" \"May 2005\" \"Jun 2005\"\n[31] \"Jul 2005\" \"Aug 2005\" \"Sep 2005\" \"Oct 2005\" \"Nov 2005\" \"Dec 2005\""
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#what-is-happening-here",
+    "href": "lectures/Lecture0304/Lecture03.html#what-is-happening-here",
+    "title": "Lecture 03",
+    "section": "What is happening here?",
+    "text": "What is happening here?\n\nIn the attempt to create a vector combining months and years we had a not useful result, a possiblity and then something that looked like month-year a combination of character month and numeric year.\nWe saw that the final combination is character\n\n\nis(will_it_work) \n\n[1] \"integer\"             \"double\"              \"numeric\"            \n[4] \"vector\"              \"data.frameRowLabels\"\n\nis(how_about_this) \n\n[1] \"numeric\" \"vector\" \n\nis(a_possibility)\n\n[1] \"character\"           \"vector\"              \"data.frameRowLabels\"\n[4] \"SuperClassMethod\"   \n\n\nThis action is called “coercion” and in the future you may see functions preceded by an “as.” for example, as.numeric(). It is an easily overlooked action but important to understand in order to predict R’s behavior in more advanced situations."
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#coercion",
+    "href": "lectures/Lecture0304/Lecture03.html#coercion",
+    "title": "Lecture 03",
+    "section": "Coercion",
+    "text": "Coercion\n\nTypes againLogicalInt/NumLogical/CharNum/Char\n\n\n\nRecall there are different data types, when combining types, R follows a hierarchy\n\n\nLogical (TRUE/FALSE) is the lowest\nInteger\nNumeric (double)\nComplex (probably not in Stats 20)\nCharacter\nFactor (later)\nRaw (not in Stats 20) is the highest\n\nWhen you combine different types of vectors, R will coerce them to the type that is higher in the hierarchy. Some functions in R behave this way – coercing data types to suit its needs.\n\n\n\nLogical (TRUE/FALSE) occupies the bottom of the hierarchy, it’s always coerced if combined with any non-Logical type of data.\n\n\nlogical_vector &lt;- c(TRUE, FALSE)\ninteger_vector &lt;- 1:10 # colon operator generates integers\n\nlogical_c_integer &lt;- c(logical_vector, integer_vector)\n\nlogical_plus_integer &lt;- logical_vector + integer_vector # recycled too\n\nlogical_c_integer\n\n [1]  1  0  1  2  3  4  5  6  7  8  9 10\n\nis(logical_c_integer)\n\n[1] \"integer\"             \"double\"              \"numeric\"            \n[4] \"vector\"              \"data.frameRowLabels\"\n\nlogical_plus_integer\n\n [1]  2  2  4  4  6  6  8  8 10 10\n\nis(logical_plus_integer)\n\n[1] \"integer\"             \"double\"              \"numeric\"            \n[4] \"vector\"              \"data.frameRowLabels\"\n\n\n\n\n\nIntegers are whole numbers without a decimal point, numeric are numbers with a decimal point\n\n\ninteger_vector &lt;- 1001:1010\nnumeric_vector &lt;- c(pi, exp(1), Inf, -Inf, NaN)\n\ninteger_c_numeric &lt;- c(integer_vector, numeric_vector)\ninteger_plus_numeric &lt;- integer_vector + numeric_vector # how long do you think this will be?\n\nis(integer_vector)\n\n[1] \"integer\"             \"double\"              \"numeric\"            \n[4] \"vector\"              \"data.frameRowLabels\"\n\nis(numeric_vector)\n\n[1] \"numeric\" \"vector\" \n\nis(integer_c_numeric)\n\n[1] \"numeric\" \"vector\" \n\ninteger_c_numeric\n\n [1] 1001.000000 1002.000000 1003.000000 1004.000000 1005.000000 1006.000000\n [7] 1007.000000 1008.000000 1009.000000 1010.000000    3.141593    2.718282\n[13]         Inf        -Inf         NaN\n\nis(integer_plus_numeric)\n\n[1] \"numeric\" \"vector\" \n\ninteger_plus_numeric\n\n [1] 1004.142 1004.718      Inf     -Inf      NaN 1009.142 1009.718      Inf\n [9]     -Inf      NaN\n\n\n\n\n\nIf you are combining logical and character only, TRUE FALSE will become “TRUE” and “FALSE”\n\n\ncharacter_vector &lt;- c(northern, southern)\n\nlogical_c_character &lt;- c(logical_vector, character_vector)\n\nis(logical_c_character)\n\n[1] \"character\"           \"vector\"              \"data.frameRowLabels\"\n[4] \"SuperClassMethod\"   \n\nlogical_c_character\n\n [1] \"TRUE\"  \"FALSE\" \"UCB\"   \"UCSC\"  \"UCD\"   \"UCM\"   \"UCSF\"  \"UCLA\"  \"UCI\"  \n[10] \"UCR\"   \"UCSD\"  \"UCSB\" \n\n\n\n\n\nIf you are combining numeric and character, the numbers become character\n\n\ntricky_character &lt;- c(\"1\", \"2\", \"3\", \"4\", \"5\") # these numbers are characters\nis(tricky_character)\n\n[1] \"character\"           \"vector\"              \"data.frameRowLabels\"\n[4] \"SuperClassMethod\"   \n\ntricky_character_c_numeric_vector &lt;- c(tricky_character, numeric_vector)\n\nis(tricky_character_c_numeric_vector) # it's character\n\n[1] \"character\"           \"vector\"              \"data.frameRowLabels\"\n[4] \"SuperClassMethod\"   \n\ntricky_character_c_numeric_vector # note the quotation marks\n\n [1] \"1\"                \"2\"                \"3\"                \"4\"               \n [5] \"5\"                \"3.14159265358979\" \"2.71828182845905\" \"Inf\"             \n [9] \"-Inf\"             \"NaN\""
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#why",
+    "href": "lectures/Lecture0304/Lecture03.html#why",
+    "title": "Lecture 03",
+    "section": "Why? 🤦🏻‍♀️",
+    "text": "Why? 🤦🏻‍♀️\n\nWe are about to switch to data frames (AKA lists) which is what “real” data looks like (think Spotify)\nAnd in the real world of data – numbers, letters live side by side or are sometimes combined like a street address for example.\nKnowing the decisions R makes will help you to better predict outcomes, troubleshoot and correct errors\nand to help assess whether the answer given to you by an AI assistant is optimal or not."
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#matrices-in-r",
+    "href": "lectures/Lecture0304/Lecture03.html#matrices-in-r",
+    "title": "Lecture 03",
+    "section": "Matrices in R",
+    "text": "Matrices in R\n\nOverviewExampleFunctionsExtractionArray\n\n\n\nBraun and Murdoch give a section in Chapter 2 and Book of R gives a whole Chapter 3\nAnd you can read entire books on matrix algebra (lower division) then linear algebra (upper division)\nThe emphasis you wish to give will depend heavily on your career trajectory\nA matrix could be thought of as a vector with row and column dimensions imposed on it\nMatrices then are rectangular\nMatrices, like vectors, must be a single data type (will coerce data if not)\nThe matrix() function needs a vector and at least one dimension to construct a matrix.\nAn array is just a multidimensional matrix in R\n\n\n\n\nmy_matrix &lt;- matrix(1:24, nrow=4)\nis(my_matrix)\n\n[1] \"matrix\"    \"array\"     \"structure\" \"vector\"   \n\nmy_matrix # default populate the column from top (row 1) to bottom (nrow) then from left to right column\n\n     [,1] [,2] [,3] [,4] [,5] [,6]\n[1,]    1    5    9   13   17   21\n[2,]    2    6   10   14   18   22\n[3,]    3    7   11   15   19   23\n[4,]    4    8   12   16   20   24\n\n\n\n\n\nIt is good to have a basic understanding of the characteristics of a matrix\n\n\nlength(my_matrix) # total number of elements like a vector\n\n[1] 24\n\ndim(my_matrix) # row, column\n\n[1] 4 6\n\nnrow(my_matrix) # number of rows\n\n[1] 4\n\nncol(my_matrix) # number of columns\n\n[1] 6\n\ncolSums(my_matrix) # sum of the column values\n\n[1] 10 26 42 58 74 90\n\nrowSums(my_matrix) # sum of the row values\n\n[1] 66 72 78 84\n\ncolMeans(my_matrix) # mean of each column \n\n[1]  2.5  6.5 10.5 14.5 18.5 22.5\n\nrowMeans(my_matrix) # mean of each row\n\n[1] 11 12 13 14\n\n\n\n\n\nWe can extract parts of a matrix using our dimensions to help us.\n\nBecause a matrix has 2 dimensions, we need to specify two dimensions when extracting\nExtraction looks like matrixname[rownumber, columnnumber] if you want the entire row or column leave it blank (implies all)\n\n\nmy_matrix[1, ] # row 1 all columns - this is a vector\n\n[1]  1  5  9 13 17 21\n\nmy_matrix[ , 2] # column 2 all rows - this is a vector\n\n[1] 5 6 7 8\n\nmy_matrix[1, 3] # row 1, column 3 this is a single cell and a vector\n\n[1] 9\n\nmy_matrix[1:2, ] # multiple rows -- this is a matrix\n\n     [,1] [,2] [,3] [,4] [,5] [,6]\n[1,]    1    5    9   13   17   21\n[2,]    2    6   10   14   18   22\n\nmy_matrix[ , 1:2] # multiple columns -- this is a matrix\n\n     [,1] [,2]\n[1,]    1    5\n[2,]    2    6\n[3,]    3    7\n[4,]    4    8\n\nmy_matrix[1:2, 1:2] # a matrix from a matrix\n\n     [,1] [,2]\n[1,]    1    5\n[2,]    2    6\n\n\n\n\n\nJust a peek at one, it’s a collection of matrices basically\n\n\nis.array(Titanic)\n\n[1] TRUE\n\nTitanic\n\n, , Age = Child, Survived = No\n\n      Sex\nClass  Male Female\n  1st     0      0\n  2nd     0      0\n  3rd    35     17\n  Crew    0      0\n\n, , Age = Adult, Survived = No\n\n      Sex\nClass  Male Female\n  1st   118      4\n  2nd   154     13\n  3rd   387     89\n  Crew  670      3\n\n, , Age = Child, Survived = Yes\n\n      Sex\nClass  Male Female\n  1st     5      1\n  2nd    11     13\n  3rd    13     14\n  Crew    0      0\n\n, , Age = Adult, Survived = Yes\n\n      Sex\nClass  Male Female\n  1st    57    140\n  2nd    14     80\n  3rd    75     76\n  Crew  192     20"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#data-frames",
+    "href": "lectures/Lecture0304/Lecture03.html#data-frames",
+    "title": "Lecture 03",
+    "section": "Data Frames",
+    "text": "Data Frames\n\nThe Matrix and working it leads us into the Data Frame\nMost real data in R are stored as data frames, they are like spreadsheets\nWe saw the built-in iris. Iris is rectangular. But Iris has mixed numeric and non-numeric information. Matrices are only one data type.\n\n\nis(iris)\n\n[1] \"data.frame\" \"list\"       \"oldClass\"   \"vector\"    \n\nstr(iris)\n\n'data.frame':   150 obs. of  5 variables:\n $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...\n $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...\n $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...\n $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...\n $ Species     : Factor w/ 3 levels \"setosa\",\"versicolor\",..: 1 1 1 1 1 1 1 1 1 1 ...\n\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#matrix-like-behavior",
+    "href": "lectures/Lecture0304/Lecture03.html#matrix-like-behavior",
+    "title": "Lecture 03",
+    "section": "Matrix-like Behavior",
+    "text": "Matrix-like Behavior\n\nWhat if I just wanted to know the the size of matrix-like iris?\n\n\ndim(iris)\n\n[1] 150   5\n\nnrow(iris)\n\n[1] 150\n\nncol(iris)\n\n[1] 5\n\n\n\nWhat about some statistics? Doesn’t make sense for rows, but columns\n\n\ncolMeans(iris[, 1:4]) # mean of each column \n\nSepal.Length  Sepal.Width Petal.Length  Petal.Width \n    5.843333     3.057333     3.758000     1.199333"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#data-frame-behavior",
+    "href": "lectures/Lecture0304/Lecture03.html#data-frame-behavior",
+    "title": "Lecture 03",
+    "section": "Data Frame Behavior",
+    "text": "Data Frame Behavior\n\nData Frames have named columns, we can use those names, but first the column names\n\n\ncolnames(iris)\n\n[1] \"Sepal.Length\" \"Sepal.Width\"  \"Petal.Length\" \"Petal.Width\"  \"Species\"     \n\n\n\nData frames also have rows and they have names, sometimes with useful information, sometimes not:\n\n\nrownames(iris)\n\n  [1] \"1\"   \"2\"   \"3\"   \"4\"   \"5\"   \"6\"   \"7\"   \"8\"   \"9\"   \"10\"  \"11\"  \"12\" \n [13] \"13\"  \"14\"  \"15\"  \"16\"  \"17\"  \"18\"  \"19\"  \"20\"  \"21\"  \"22\"  \"23\"  \"24\" \n [25] \"25\"  \"26\"  \"27\"  \"28\"  \"29\"  \"30\"  \"31\"  \"32\"  \"33\"  \"34\"  \"35\"  \"36\" \n [37] \"37\"  \"38\"  \"39\"  \"40\"  \"41\"  \"42\"  \"43\"  \"44\"  \"45\"  \"46\"  \"47\"  \"48\" \n [49] \"49\"  \"50\"  \"51\"  \"52\"  \"53\"  \"54\"  \"55\"  \"56\"  \"57\"  \"58\"  \"59\"  \"60\" \n [61] \"61\"  \"62\"  \"63\"  \"64\"  \"65\"  \"66\"  \"67\"  \"68\"  \"69\"  \"70\"  \"71\"  \"72\" \n [73] \"73\"  \"74\"  \"75\"  \"76\"  \"77\"  \"78\"  \"79\"  \"80\"  \"81\"  \"82\"  \"83\"  \"84\" \n [85] \"85\"  \"86\"  \"87\"  \"88\"  \"89\"  \"90\"  \"91\"  \"92\"  \"93\"  \"94\"  \"95\"  \"96\" \n [97] \"97\"  \"98\"  \"99\"  \"100\" \"101\" \"102\" \"103\" \"104\" \"105\" \"106\" \"107\" \"108\"\n[109] \"109\" \"110\" \"111\" \"112\" \"113\" \"114\" \"115\" \"116\" \"117\" \"118\" \"119\" \"120\"\n[121] \"121\" \"122\" \"123\" \"124\" \"125\" \"126\" \"127\" \"128\" \"129\" \"130\" \"131\" \"132\"\n[133] \"133\" \"134\" \"135\" \"136\" \"137\" \"138\" \"139\" \"140\" \"141\" \"142\" \"143\" \"144\"\n[145] \"145\" \"146\" \"147\" \"148\" \"149\" \"150\"\n\nrownames(mtcars)\n\n [1] \"Mazda RX4\"           \"Mazda RX4 Wag\"       \"Datsun 710\"         \n [4] \"Hornet 4 Drive\"      \"Hornet Sportabout\"   \"Valiant\"            \n [7] \"Duster 360\"          \"Merc 240D\"           \"Merc 230\"           \n[10] \"Merc 280\"            \"Merc 280C\"           \"Merc 450SE\"         \n[13] \"Merc 450SL\"          \"Merc 450SLC\"         \"Cadillac Fleetwood\" \n[16] \"Lincoln Continental\" \"Chrysler Imperial\"   \"Fiat 128\"           \n[19] \"Honda Civic\"         \"Toyota Corolla\"      \"Toyota Corona\"      \n[22] \"Dodge Challenger\"    \"AMC Javelin\"         \"Camaro Z28\"         \n[25] \"Pontiac Firebird\"    \"Fiat X1-9\"           \"Porsche 914-2\"      \n[28] \"Lotus Europa\"        \"Ford Pantera L\"      \"Ferrari Dino\"       \n[31] \"Maserati Bora\"       \"Volvo 142E\""
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#extract-like-a-matrix",
+    "href": "lectures/Lecture0304/Lecture03.html#extract-like-a-matrix",
+    "title": "Lecture 03",
+    "section": "Extract Like a Matrix",
+    "text": "Extract Like a Matrix\n\nMatrix-like extraction of a column (and all rows) can be very useful\n\n\niris_1 &lt;- iris[ , 1] # numeric indexes and data frames are more useful for larger more complex situations\nhead(iris_1)\n\n[1] 5.1 4.9 4.7 4.6 5.0 5.4\n\n\n\nMatrix-like extraction of multiple columns (and all rows)\n\n\niris_24 &lt;- iris[ , c(2, 4)] # numeric indexes and data frames are more useful for larger more complex situations\nhead(iris_24)\n\n  Sepal.Width Petal.Width\n1         3.5         0.2\n2         3.0         0.2\n3         3.2         0.2\n4         3.1         0.2\n5         3.6         0.2\n6         3.9         0.4\n\n\n\nWhat do you suppose…\n\n\niris_what &lt;- iris[seq(1, 150, by = 3), c(2, 4)]  # what do you think iris_what will contain?\nhead(iris_what)"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#extract-using-names",
+    "href": "lectures/Lecture0304/Lecture03.html#extract-using-names",
+    "title": "Lecture 03",
+    "section": "Extract Using Names",
+    "text": "Extract Using Names\n\nWe can put those column names to use to give the data frame a more user friendly feel:\n\n\niris_dollar_sign_name &lt;- iris$Sepal.Length # you will probably use this version early on because its friendlier\nhead(iris_dollar_sign_name) # the result is a numeric vector\n\n[1] 5.1 4.9 4.7 4.6 5.0 5.4\n\n\n\nBut dollar sign allows just one name, this will also work and is closer in spirit to the matrix extraction style:\n\n\niris_square_bracket_vector_names &lt;- iris[c(\"Sepal.Length\", \"Petal.Length\")] # multiple columns\nhead(iris_square_bracket_vector_names) # the result is a data frame\n\n  Sepal.Length Petal.Length\n1          5.1          1.4\n2          4.9          1.4\n3          4.7          1.3\n4          4.6          1.5\n5          5.0          1.4\n6          5.4          1.7"
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#advanced-list-extraction",
+    "href": "lectures/Lecture0304/Lecture03.html#advanced-list-extraction",
+    "title": "Lecture 03",
+    "section": "(advanced) List Extraction",
+    "text": "(advanced) List Extraction\n\nWhat you will learn in the near future is that a Data Frame is a type of data structure known as a list\nJust keep the idea in your mind that a Data Frame is a blend of types because of the data it contains (mixed number and non-numbers)\n\n\niris[[1]] # unlikely to use this version until later in the quarter if at all\n\n  [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1\n [19] 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0\n [37] 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5\n [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1\n [73] 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5\n [91] 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3\n[109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2\n[127] 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8\n[145] 6.7 6.7 6.3 6.5 6.2 5.9\n\n\n\nData Frames are very versatile and this partly explains the number of ways we can extract from it."
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture03.html#you-can-never-have-enough-practice",
+    "href": "lectures/Lecture0304/Lecture03.html#you-can-never-have-enough-practice",
+    "title": "Lecture 03",
+    "section": "You can never have enough practice",
+    "text": "You can never have enough practice\n\nIf we have time today, let’s work on where we are\nThere is a folder available on BruinLearn, Week 2 module under Tuesday\nShould have a downloadable .RData and .qmd (and also .rmd for you fans of RMarkdown)"
   },
   {
     "objectID": "lectures/Lecture01/Lecture01rev.html#hello-welcome-to-stats-20",
