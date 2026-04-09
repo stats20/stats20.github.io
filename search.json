@@ -1001,136 +1001,11 @@
     "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to Statistics 20",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "This site was produced with Quarto and WebR using Positron and is currently hosted by GitHub. It was created for the students of Statistics 20 for use inside and outside of the classroom.\nTo learn more about Quarto websites please visit https://quarto.org/docs/websites.\nTo learn more about WebR please visit https://docs.r-wasm.org/webr/latest/\nAnd about its Quarto extension also please visit https://quarto-webr.thecoatlessprofessor.com/\nAnd https://github.com/coatless/quarto-webr\nAnd this site is hosted by GitHub (free) and easy setup and maintenance https://pages.github.com/",
-    "crumbs": [
-      "Start Here",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "activity/Week01test_drive.html",
-    "href": "activity/Week01test_drive.html",
-    "title": "Week 1 Getting Started",
-    "section": "",
-    "text": "This is a “test drive” activity for Week 1 using a tool called webr. The goal of this activity is to help you become familiar R and some of the tools we will be using in this course.\nThis activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity.\nwebr allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io",
-    "crumbs": [
-      "Activities",
-      "Lecture 1 Activity"
-    ]
-  },
-  {
-    "objectID": "activity/Week01test_drive.html#introduction",
-    "href": "activity/Week01test_drive.html#introduction",
-    "title": "Week 1 Getting Started",
-    "section": "",
-    "text": "This is a “test drive” activity for Week 1 using a tool called webr. The goal of this activity is to help you become familiar R and some of the tools we will be using in this course.\nThis activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity.\nwebr allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io",
-    "crumbs": [
-      "Activities",
-      "Lecture 1 Activity"
-    ]
-  },
-  {
-    "objectID": "activity/Week01test_drive.html#how-this-page-works",
-    "href": "activity/Week01test_drive.html#how-this-page-works",
-    "title": "Week 1 Getting Started",
-    "section": "How this page works",
-    "text": "How this page works\nYou can run the R code chunks by clicking on the “Run Code” button that appears in the upper left of the “code chunks”. The other two icons on the upper right of the code chunk are for copying the code and for refreshing the window (which will clear all of your work and start you over). You can also modify the code in the code chunks and run it to see how it works.",
-    "crumbs": [
-      "Activities",
-      "Lecture 1 Activity"
-    ]
-  },
-  {
-    "objectID": "activity/Week01test_drive.html#first-steps-r-the-calculator",
-    "href": "activity/Week01test_drive.html#first-steps-r-the-calculator",
-    "title": "Week 1 Getting Started",
-    "section": "First Steps: R the Calculator",
-    "text": "First Steps: R the Calculator\nR is a sophisticated calculator. Try the basic calculations in the code chunk below, just click Run Code when you are ready. You can modify the code and try different calculations too. Parentheses will work as expected, and R follows the standard order of operations (PEMDAS). Please try it.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWhat you might notice is that R isn’t storing the results anywhere except to print the results to your screen so you can see it (notice, you don’t need to type print() to see the results). The [1] that you see printed is just an index that R uses to indicate the position of the first element in the output. Since we are just doing simple calculations and there is only one element in the output, it is indexed as [1]. If you were to do a calculation that resulted in multiple values, you would see multiple indices.\nR also uses new lines to separate the outputs of different calculations (or complete each expression generally). When you run the code chunk above, you will also see the results of each calculation on a new line.\nIf you want to save the results, you need to assign them to a variable (think math). You can use the assignment operator (read “gets”) &lt;- to associate a value (name) with a variable. Try it out below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBut you don’t see any results when you run the code right? That’s because you are just associating the values with the variables named x, y, and z. If you want to see the results, in R, you can just type the variable name and run it.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry this - what do you think you will get if you type x + y + z and run it? First think about what it should be, then try it out in the code chunk below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDid you get what you expected to get as a result? That is a fundamental skill in programming – you should have an idea of what to expect as a result of your code. If you got something different, try to understand why it differed. If you are confused, ask for help. This is a learning process and it is normal to be confused at first.\nWe will see more operators in the future, for today, just the simplest",
-    "crumbs": [
-      "Activities",
-      "Lecture 1 Activity"
-    ]
-  },
-  {
-    "objectID": "activity/Week01test_drive.html#built-in-datasets-in-r",
-    "href": "activity/Week01test_drive.html#built-in-datasets-in-r",
-    "title": "Week 1 Getting Started",
-    "section": "Built-in datasets in R",
-    "text": "Built-in datasets in R\nNo one is going to hire you to program calculations like the ones above, but they will hire you to work with data. R has a lot of built-in data that you can use to practice your data manipulation and analysis skills.\nLet’s examine iris which is a built-in data set. You can run the code chunk below to see what it looks like.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s unpack this! You can modify my code above in the browser, try modifying the box above with head(iris) instead of just iris and see what happens. head() is a function.\nFunctions\nFunctions do all of the work in R. Functions have a function name followed by parentheses. Functions can have arguments and options within the parentheses. So head(iris) reveals the first few rows of the built-in data iris. This is a way to get a quick look at the data without overwhelming you (or anyone else) with all 150 rows.\nExamine iris\nNotice the row numbering on the left and the column names at the top. The row numbering is just for reference and is not part of the data. By convention, rows typically (not always) represent an observation. The column names are important because they tell you what each column represents. In this case, we have measurements of different parts of the iris flower (sepal length, sepal width, petal length, petal width) and the species of the flower.\nA handy function when you are starting out in R is is() (seriously). It tells you what is this iris thing?\nAn object is something that R recognizes and knows how to store it in memory and work with when you request the R object by its name. iris is a built-in R object that contains data. We can ask R what type of R object iris is:",
-    "crumbs": [
-      "Activities",
-      "Lecture 1 Activity"
-    ]
-  },
-  {
-    "objectID": "activity/Week01test_drive.html#what-is-iris",
-    "href": "activity/Week01test_drive.html#what-is-iris",
-    "title": "Week 1 Getting Started",
-    "section": "What is() iris?",
-    "text": "What is() iris?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nfor now, just understand that iris is data. In R, iris is a \"data.frame\" which is a type of R object that is designed to store data in rows and columns (like a spreadsheet).",
-    "crumbs": [
-      "Activities",
-      "Lecture 1 Activity"
-    ]
-  },
-  {
-    "objectID": "activity/Week01test_drive.html#not-for-today",
-    "href": "activity/Week01test_drive.html#not-for-today",
-    "title": "Week 1 Getting Started",
-    "section": "Not for today",
-    "text": "Not for today\niris is also a “vector” and also a “list” and it is part of the “OldClass” of R objects.\nWe will learn more about data frames later, but for now, just know that it is a way for R to store data for processing and analysis.",
-    "crumbs": [
-      "Activities",
-      "Lecture 1 Activity"
-    ]
-  },
-  {
-    "objectID": "activity/Week01test_drive.html#try-this-what-are-or-is-x-y-and-z",
-    "href": "activity/Week01test_drive.html#try-this-what-are-or-is-x-y-and-z",
-    "title": "Week 1 Getting Started",
-    "section": "Try this: what are (or is…) x, y, and z?",
-    "text": "Try this: what are (or is…) x, y, and z?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Activities",
-      "Lecture 1 Activity"
-    ]
-  },
-  {
-    "objectID": "activity/Week01test_drive.html#the-vector",
-    "href": "activity/Week01test_drive.html#the-vector",
-    "title": "Week 1 Getting Started",
-    "section": "The vector",
-    "text": "The vector\nIn the example of x, y and z, a numeric vector is a sequence of values that are all of the same type (in this case, numbers). In R, the vector (there are different types, later…) is the fundamental data structure.\nNotice that for a single number, R still treats it as a vector of length 1 (there are no scalars in R) with index [1]. This is a common source of confusion for those new to R. R is 1-indexed, meaning enumeration starts at 1. It is like the way we count. Python, C / C++, Java, JavaScript and many other programming languages are 0-indexed, meaning enumeration starts at 0.\nYou can examine the built-in data set rivers to see an example of a numeric vector. Try it out below and notice the values of the indices between the [].\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHow many values are in the rivers data set? You can check your answer by using the length() function or (for understanding only) by looking at the indices of the last value in rivers.",
-    "crumbs": [
-      "Activities",
-      "Lecture 1 Activity"
-    ]
-  },
-  {
-    "objectID": "activity/Week01test_drive.html#back-to-iris",
-    "href": "activity/Week01test_drive.html#back-to-iris",
-    "title": "Week 1 Getting Started",
-    "section": "Back to iris",
-    "text": "Back to iris\nRemember iris above? It is a data frame, which is a more complex type of R object that consists of multiple vectors (columns) that can be of different types (numbers, characters, etc.). Another handy basic function in R is str() which gives you a quick overview of the structure of an R object. Try it on iris.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow we are getting a real look at data in R. We see that iris has 150 rows and 5 columns. The first four columns are numeric (the measurements of the flowers) and the last column is a factor (the species of the flower). We will learn more about factors later, but for now, just know that it is a way to store non-numeric (categorical) data (like species).\nI am going to leave you with two more useful basic functions, summary(), which gives you a quick summary of an R object. Try it on iris and just for fun, try it on rivers too. What happens and why?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nand finally help() which gives you the documentation for a function or a built in data set like rivers or iris. Try it on head() to see what head() can do and what additional arguments it can take.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Activities",
-      "Lecture 1 Activity"
-    ]
-  },
-  {
-    "objectID": "activity/Week01test_drive.html#takeaways",
-    "href": "activity/Week01test_drive.html#takeaways",
-    "title": "Week 1 Getting Started",
-    "section": "Takeaways",
-    "text": "Takeaways\n\nR is a fancy calculator that can do basic arithmetic and more complex calculations. Issue a help(\"Syntax\") to see the syntax for basic calculations in R.\nR uses line breaks to separate the outputs of different calculations (or complete each expression generally).\n\nYou can give a value a name (called a variable, like math), and then use that name (variable) in calculations and to store results.\nR has many built-in data sets such as iris and rivers that you can use to practice your data manipulation and analysis skills.\nFunctions do all of the work in R. They have arguments that you can modify to get different results. For example, head() is a function that takes an R (typically) data object as an argument (it can take other kinds of R objects).\nThe is() function tells you what type of R object you are working with.\nThe vector is the most basic type of data object in R, and it is a sequence of values that are all of the same type.\nThe data frame is a more complex type of R object that consists of multiple vectors (columns) that can be of different types (numbers, factors, etc.).\nR vectors are 1-indexed (numbered starting with 1), even when the vector only has one value (there are no scalars in R, only vectors).\nThe str() function gives you a quick overview of the structure of an R object.\nThe summary() function gives you a quick summary of the data in each vector (column) of a data frame.",
-    "crumbs": [
-      "Activities",
-      "Lecture 1 Activity"
-    ]
+    "text": "About this site"
   },
   {
     "objectID": "activity/Week02vectors.html",
@@ -1309,11 +1184,323 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "activity/Week01test_drive.html",
+    "href": "activity/Week01test_drive.html",
+    "title": "Week 1 Getting Started",
     "section": "",
-    "text": "About this site"
+    "text": "This is a “test drive” activity for Week 1 using a tool called webr. The goal of this activity is to help you become familiar R and some of the tools we will be using in this course.\nThis activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity.\nwebr allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#introduction",
+    "href": "activity/Week01test_drive.html#introduction",
+    "title": "Week 1 Getting Started",
+    "section": "",
+    "text": "This is a “test drive” activity for Week 1 using a tool called webr. The goal of this activity is to help you become familiar R and some of the tools we will be using in this course.\nThis activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity.\nwebr allows us to write R code in a way that is more interactive and user-friendly. It also does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#how-this-page-works",
+    "href": "activity/Week01test_drive.html#how-this-page-works",
+    "title": "Week 1 Getting Started",
+    "section": "How this page works",
+    "text": "How this page works\nYou can run the R code chunks by clicking on the “Run Code” button that appears in the upper left of the “code chunks”. The other two icons on the upper right of the code chunk are for copying the code and for refreshing the window (which will clear all of your work and start you over). You can also modify the code in the code chunks and run it to see how it works.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#first-steps-r-the-calculator",
+    "href": "activity/Week01test_drive.html#first-steps-r-the-calculator",
+    "title": "Week 1 Getting Started",
+    "section": "First Steps: R the Calculator",
+    "text": "First Steps: R the Calculator\nR is a sophisticated calculator. Try the basic calculations in the code chunk below, just click Run Code when you are ready. You can modify the code and try different calculations too. Parentheses will work as expected, and R follows the standard order of operations (PEMDAS). Please try it.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWhat you might notice is that R isn’t storing the results anywhere except to print the results to your screen so you can see it (notice, you don’t need to type print() to see the results). The [1] that you see printed is just an index that R uses to indicate the position of the first element in the output. Since we are just doing simple calculations and there is only one element in the output, it is indexed as [1]. If you were to do a calculation that resulted in multiple values, you would see multiple indices.\nR also uses new lines to separate the outputs of different calculations (or complete each expression generally). When you run the code chunk above, you will also see the results of each calculation on a new line.\nIf you want to save the results, you need to assign them to a variable (think math). You can use the assignment operator (read “gets”) &lt;- to associate a value (name) with a variable. Try it out below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBut you don’t see any results when you run the code right? That’s because you are just associating the values with the variables named x, y, and z. If you want to see the results, in R, you can just type the variable name and run it.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry this - what do you think you will get if you type x + y + z and run it? First think about what it should be, then try it out in the code chunk below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDid you get what you expected to get as a result? That is a fundamental skill in programming – you should have an idea of what to expect as a result of your code. If you got something different, try to understand why it differed. If you are confused, ask for help. This is a learning process and it is normal to be confused at first.\nWe will see more operators in the future, for today, just the simplest",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#built-in-datasets-in-r",
+    "href": "activity/Week01test_drive.html#built-in-datasets-in-r",
+    "title": "Week 1 Getting Started",
+    "section": "Built-in datasets in R",
+    "text": "Built-in datasets in R\nNo one is going to hire you to program calculations like the ones above, but they will hire you to work with data. R has a lot of built-in data that you can use to practice your data manipulation and analysis skills.\nLet’s examine iris which is a built-in data set. You can run the code chunk below to see what it looks like.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s unpack this! You can modify my code above in the browser, try modifying the box above with head(iris) instead of just iris and see what happens. head() is a function.\nFunctions\nFunctions do all of the work in R. Functions have a function name followed by parentheses. Functions can have arguments and options within the parentheses. So head(iris) reveals the first few rows of the built-in data iris. This is a way to get a quick look at the data without overwhelming you (or anyone else) with all 150 rows.\nExamine iris\nNotice the row numbering on the left and the column names at the top. The row numbering is just for reference and is not part of the data. By convention, rows typically (not always) represent an observation. The column names are important because they tell you what each column represents. In this case, we have measurements of different parts of the iris flower (sepal length, sepal width, petal length, petal width) and the species of the flower.\nA handy function when you are starting out in R is is() (seriously). It tells you what is this iris thing?\nAn object is something that R recognizes and knows how to store it in memory and work with when you request the R object by its name. iris is a built-in R object that contains data. We can ask R what type of R object iris is:",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#what-is-iris",
+    "href": "activity/Week01test_drive.html#what-is-iris",
+    "title": "Week 1 Getting Started",
+    "section": "What is() iris?",
+    "text": "What is() iris?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nfor now, just understand that iris is data. In R, iris is a \"data.frame\" which is a type of R object that is designed to store data in rows and columns (like a spreadsheet).",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#not-for-today",
+    "href": "activity/Week01test_drive.html#not-for-today",
+    "title": "Week 1 Getting Started",
+    "section": "Not for today",
+    "text": "Not for today\niris is also a “vector” and also a “list” and it is part of the “OldClass” of R objects.\nWe will learn more about data frames later, but for now, just know that it is a way for R to store data for processing and analysis.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#try-this-what-are-or-is-x-y-and-z",
+    "href": "activity/Week01test_drive.html#try-this-what-are-or-is-x-y-and-z",
+    "title": "Week 1 Getting Started",
+    "section": "Try this: what are (or is…) x, y, and z?",
+    "text": "Try this: what are (or is…) x, y, and z?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#the-vector",
+    "href": "activity/Week01test_drive.html#the-vector",
+    "title": "Week 1 Getting Started",
+    "section": "The vector",
+    "text": "The vector\nIn the example of x, y and z, a numeric vector is a sequence of values that are all of the same type (in this case, numbers). In R, the vector (there are different types, later…) is the fundamental data structure.\nNotice that for a single number, R still treats it as a vector of length 1 (there are no scalars in R) with index [1]. This is a common source of confusion for those new to R. R is 1-indexed, meaning enumeration starts at 1. It is like the way we count. Python, C / C++, Java, JavaScript and many other programming languages are 0-indexed, meaning enumeration starts at 0.\nYou can examine the built-in data set rivers to see an example of a numeric vector. Try it out below and notice the values of the indices between the [].\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHow many values are in the rivers data set? You can check your answer by using the length() function or (for understanding only) by looking at the indices of the last value in rivers.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#back-to-iris",
+    "href": "activity/Week01test_drive.html#back-to-iris",
+    "title": "Week 1 Getting Started",
+    "section": "Back to iris",
+    "text": "Back to iris\nRemember iris above? It is a data frame, which is a more complex type of R object that consists of multiple vectors (columns) that can be of different types (numbers, characters, etc.). Another handy basic function in R is str() which gives you a quick overview of the structure of an R object. Try it on iris.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow we are getting a real look at data in R. We see that iris has 150 rows and 5 columns. The first four columns are numeric (the measurements of the flowers) and the last column is a factor (the species of the flower). We will learn more about factors later, but for now, just know that it is a way to store non-numeric (categorical) data (like species).\nI am going to leave you with two more useful basic functions, summary(), which gives you a quick summary of an R object. Try it on iris and just for fun, try it on rivers too. What happens and why?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nand finally help() which gives you the documentation for a function or a built in data set like rivers or iris. Try it on head() to see what head() can do and what additional arguments it can take.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week01test_drive.html#takeaways",
+    "href": "activity/Week01test_drive.html#takeaways",
+    "title": "Week 1 Getting Started",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nR is a fancy calculator that can do basic arithmetic and more complex calculations. Issue a help(\"Syntax\") to see the syntax for basic calculations in R.\nR uses line breaks to separate the outputs of different calculations (or complete each expression generally).\n\nYou can give a value a name (called a variable, like math), and then use that name (variable) in calculations and to store results.\nR has many built-in data sets such as iris and rivers that you can use to practice your data manipulation and analysis skills.\nFunctions do all of the work in R. They have arguments that you can modify to get different results. For example, head() is a function that takes an R (typically) data object as an argument (it can take other kinds of R objects).\nThe is() function tells you what type of R object you are working with.\nThe vector is the most basic type of data object in R, and it is a sequence of values that are all of the same type.\nThe data frame is a more complex type of R object that consists of multiple vectors (columns) that can be of different types (numbers, factors, etc.).\nR vectors are 1-indexed (numbered starting with 1), even when the vector only has one value (there are no scalars in R, only vectors).\nThe str() function gives you a quick overview of the structure of an R object.\nThe summary() function gives you a quick summary of the data in each vector (column) of a data frame.",
+    "crumbs": [
+      "Activities",
+      "Lecture 1 Activity"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to Statistics 20",
+    "section": "",
+    "text": "This site was produced with Quarto and WebR using Positron and is currently hosted by GitHub. It was created for the students of Statistics 20 for use inside and outside of the classroom.\nTo learn more about Quarto websites please visit https://quarto.org/docs/websites.\nTo learn more about WebR please visit https://docs.r-wasm.org/webr/latest/\nAnd about its Quarto extension also please visit https://quarto-webr.thecoatlessprofessor.com/\nAnd https://github.com/coatless/quarto-webr\nAnd this site is hosted by GitHub (free) and easy setup and maintenance https://pages.github.com/",
+    "crumbs": [
+      "Start Here",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#anonymous-activity-1",
+    "href": "lectures/Lecture0304/Lecture04.html#anonymous-activity-1",
+    "title": "Lecture 04",
+    "section": "Anonymous Activity 1",
+    "text": "Anonymous Activity 1\nQR Code (it’s getting better)\nThis is anonymous & optional, but helpful to Stats 20,\nThere are no questions from me today, just here if you have any\n\nor here is a direct link",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#matrices-in-r",
+    "href": "lectures/Lecture0304/Lecture04.html#matrices-in-r",
+    "title": "Lecture 04",
+    "section": "Matrices in R",
+    "text": "Matrices in R\nOverview\n\nBraun and Murdoch give a section in Chapter 2 and Book of R gives a whole Chapter 3\nAnd you can read entire books on matrix algebra (lower division) then linear algebra (upper division)\nThe emphasis you wish to give will depend heavily on your career trajectory\nA matrix could be thought of as a vector with row and column dimensions imposed on it\nMatrices then are rectangular\nMatrices, like vectors, must be a single data type (will coerce data if not)\nThe matrix() function needs a vector and at least one dimension to construct a matrix.\nAn array is just a multidimensional matrix in R",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#examples",
+    "href": "lectures/Lecture0304/Lecture04.html#examples",
+    "title": "Lecture 04",
+    "section": "Examples",
+    "text": "Examples\n\nConstructionFunctionsExtractionBuilt-in MatrixBuilt-in ArrayViz\n\n\n\nmy_matrix &lt;- matrix(1:24, nrow=4) # implies ncol=6\nis(my_matrix)\n\n[1] \"matrix\"    \"array\"     \"structure\" \"vector\"   \n\nmy_matrix # default populate the column from top (row 1) to bottom (nrow) then from left to right column\n\n     [,1] [,2] [,3] [,4] [,5] [,6]\n[1,]    1    5    9   13   17   21\n[2,]    2    6   10   14   18   22\n[3,]    3    7   11   15   19   23\n[4,]    4    8   12   16   20   24\n\n\n\n\n\nIt is good to have a basic understanding of the characteristics of a matrix\n\n\nlength(my_matrix) # total number of elements like a vector\n\n[1] 24\n\ndim(my_matrix) # row, column\n\n[1] 4 6\n\nnrow(my_matrix) # number of rows\n\n[1] 4\n\nncol(my_matrix) # number of columns\n\n[1] 6\n\ncolSums(my_matrix) # sum of the column values\n\n[1] 10 26 42 58 74 90\n\nrowSums(my_matrix) # sum of the row values\n\n[1] 66 72 78 84\n\ncolMeans(my_matrix) # mean of each column \n\n[1]  2.5  6.5 10.5 14.5 18.5 22.5\n\nrowMeans(my_matrix) # mean of each row\n\n[1] 11 12 13 14\n\n\n\n\n\nWe can extract parts of a matrix using our dimensions to help us.\n\nBecause a matrix has 2 dimensions, we need to specify two dimensions when extracting\nExtraction looks like matrixname[rownumber, columnnumber] but if you want the entire row or column leave it blank (implies all)\n\n\nmy_matrix[1, ] # row 1 all columns - this is a vector\n\n[1]  1  5  9 13 17 21\n\nmy_matrix[ , 2] # column 2 all rows - this is a vector\n\n[1] 5 6 7 8\n\nmy_matrix[1, 3] # row 1, column 3 this is a single cell and a vector\n\n[1] 9\n\nmy_matrix[1:2, ] # multiple rows -- this is a matrix\n\n     [,1] [,2] [,3] [,4] [,5] [,6]\n[1,]    1    5    9   13   17   21\n[2,]    2    6   10   14   18   22\n\nmy_matrix[ , 1:2] # multiple columns -- this is a matrix\n\n     [,1] [,2]\n[1,]    1    5\n[2,]    2    6\n[3,]    3    7\n[4,]    4    8\n\nmy_matrix[1:2, 1:2] # a matrix from a matrix\n\n     [,1] [,2]\n[1,]    1    5\n[2,]    2    6\n\n\n\n\n\nis(volcano) # volcano is a built-in matrix\n\n[1] \"matrix\"    \"array\"     \"structure\" \"vector\"   \n\ndim(volcano) # 87 rows, 61 columns\n\n[1] 87 61\n\nvolcano[1:3, 1:12] # take a look\n\n     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]\n[1,]  100  100  101  101  101  101  101  100  100   100   101   101\n[2,]  101  101  102  102  102  102  102  101  101   101   102   102\n[3,]  102  102  103  103  103  103  103  102  102   102   103   103\n\n\n\n\n\nJust a peek at one, it’s a collection of matrices basically\n\n\nis.array(Titanic)\n\n[1] TRUE\n\ndim(Titanic)\n\n[1] 4 2 2 2\n\nTitanic\n\n, , Age = Child, Survived = No\n\n      Sex\nClass  Male Female\n  1st     0      0\n  2nd     0      0\n  3rd    35     17\n  Crew    0      0\n\n, , Age = Adult, Survived = No\n\n      Sex\nClass  Male Female\n  1st   118      4\n  2nd   154     13\n  3rd   387     89\n  Crew  670      3\n\n, , Age = Child, Survived = Yes\n\n      Sex\nClass  Male Female\n  1st     5      1\n  2nd    11     13\n  3rd    13     14\n  Crew    0      0\n\n, , Age = Adult, Survived = Yes\n\n      Sex\nClass  Male Female\n  1st    57    140\n  2nd    14     80\n  3rd    75     76\n  Crew  192     20\n\n\n\n\n\n\n\narray example",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#takeaways",
+    "href": "lectures/Lecture0304/Lecture04.html#takeaways",
+    "title": "Lecture 04",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nA data scientist typically works on:\n\n\nacquiring and storing data transforming data into analyzable data modeling relationships in a dataset generating accurate predictions\n\n\nAll of these can be expressed as:\n\n\noperations on vectors and matrices\n\nLinear algebra is the language of data science",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#data-frames",
+    "href": "lectures/Lecture0304/Lecture04.html#data-frames",
+    "title": "Lecture 04",
+    "section": "Data Frames",
+    "text": "Data Frames\n\nThe Matrix and working with it leads us into the Data Frame\nMost real data in R are stored as data frames, they are like spreadsheets\nWe saw the built-in iris. Iris is rectangular like a matrix.\n\nBut Iris has mixed numeric and non-numeric information. Matrices are only one data type either via construction or coercion.\n\n\nis(iris)\n\n[1] \"data.frame\" \"list\"       \"oldClass\"   \"vector\"    \n\nstr(iris)\n\n'data.frame':   150 obs. of  5 variables:\n $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...\n $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...\n $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...\n $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...\n $ Species     : Factor w/ 3 levels \"setosa\",\"versicolor\",..: 1 1 1 1 1 1 1 1 1 1 ...\n\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#matrix-like-behavior",
+    "href": "lectures/Lecture0304/Lecture04.html#matrix-like-behavior",
+    "title": "Lecture 04",
+    "section": "Matrix-like Behavior",
+    "text": "Matrix-like Behavior\n\nWhat if I just wanted to know the the size of matrix-like iris?\n\n\ndim(iris)\n\n[1] 150   5\n\nnrow(iris)\n\n[1] 150\n\nncol(iris)\n\n[1] 5\n\n\n\nWhat about some statistics? Doesn’t make sense for rows, but columns\n\n\ncolMeans(iris[, 1:4]) # mean of each column for the first four only\n\nSepal.Length  Sepal.Width Petal.Length  Petal.Width \n    5.843333     3.057333     3.758000     1.199333",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#data-frame-behavior",
+    "href": "lectures/Lecture0304/Lecture04.html#data-frame-behavior",
+    "title": "Lecture 04",
+    "section": "Data Frame Behavior",
+    "text": "Data Frame Behavior\n\nData Frames have named columns, we can use those names, but first the column names\n\n\ncolnames(iris)\n\n[1] \"Sepal.Length\" \"Sepal.Width\"  \"Petal.Length\" \"Petal.Width\"  \"Species\"     \n\n\n\nData frames also have rows and they have names, sometimes with useful information, sometimes not:\n\n\nrownames(iris)\n\n  [1] \"1\"   \"2\"   \"3\"   \"4\"   \"5\"   \"6\"   \"7\"   \"8\"   \"9\"   \"10\"  \"11\"  \"12\" \n [13] \"13\"  \"14\"  \"15\"  \"16\"  \"17\"  \"18\"  \"19\"  \"20\"  \"21\"  \"22\"  \"23\"  \"24\" \n [25] \"25\"  \"26\"  \"27\"  \"28\"  \"29\"  \"30\"  \"31\"  \"32\"  \"33\"  \"34\"  \"35\"  \"36\" \n [37] \"37\"  \"38\"  \"39\"  \"40\"  \"41\"  \"42\"  \"43\"  \"44\"  \"45\"  \"46\"  \"47\"  \"48\" \n [49] \"49\"  \"50\"  \"51\"  \"52\"  \"53\"  \"54\"  \"55\"  \"56\"  \"57\"  \"58\"  \"59\"  \"60\" \n [61] \"61\"  \"62\"  \"63\"  \"64\"  \"65\"  \"66\"  \"67\"  \"68\"  \"69\"  \"70\"  \"71\"  \"72\" \n [73] \"73\"  \"74\"  \"75\"  \"76\"  \"77\"  \"78\"  \"79\"  \"80\"  \"81\"  \"82\"  \"83\"  \"84\" \n [85] \"85\"  \"86\"  \"87\"  \"88\"  \"89\"  \"90\"  \"91\"  \"92\"  \"93\"  \"94\"  \"95\"  \"96\" \n [97] \"97\"  \"98\"  \"99\"  \"100\" \"101\" \"102\" \"103\" \"104\" \"105\" \"106\" \"107\" \"108\"\n[109] \"109\" \"110\" \"111\" \"112\" \"113\" \"114\" \"115\" \"116\" \"117\" \"118\" \"119\" \"120\"\n[121] \"121\" \"122\" \"123\" \"124\" \"125\" \"126\" \"127\" \"128\" \"129\" \"130\" \"131\" \"132\"\n[133] \"133\" \"134\" \"135\" \"136\" \"137\" \"138\" \"139\" \"140\" \"141\" \"142\" \"143\" \"144\"\n[145] \"145\" \"146\" \"147\" \"148\" \"149\" \"150\"\n\nrownames(mtcars)\n\n [1] \"Mazda RX4\"           \"Mazda RX4 Wag\"       \"Datsun 710\"         \n [4] \"Hornet 4 Drive\"      \"Hornet Sportabout\"   \"Valiant\"            \n [7] \"Duster 360\"          \"Merc 240D\"           \"Merc 230\"           \n[10] \"Merc 280\"            \"Merc 280C\"           \"Merc 450SE\"         \n[13] \"Merc 450SL\"          \"Merc 450SLC\"         \"Cadillac Fleetwood\" \n[16] \"Lincoln Continental\" \"Chrysler Imperial\"   \"Fiat 128\"           \n[19] \"Honda Civic\"         \"Toyota Corolla\"      \"Toyota Corona\"      \n[22] \"Dodge Challenger\"    \"AMC Javelin\"         \"Camaro Z28\"         \n[25] \"Pontiac Firebird\"    \"Fiat X1-9\"           \"Porsche 914-2\"      \n[28] \"Lotus Europa\"        \"Ford Pantera L\"      \"Ferrari Dino\"       \n[31] \"Maserati Bora\"       \"Volvo 142E\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#extract-like-a-matrix",
+    "href": "lectures/Lecture0304/Lecture04.html#extract-like-a-matrix",
+    "title": "Lecture 04",
+    "section": "Extract Like a Matrix",
+    "text": "Extract Like a Matrix\n\nMatrix-like extraction of a column (and all rows) can be very useful\n\n\niris_1 &lt;- iris[ , 1] # numeric indexes and data frames are more useful for larger more complex situations\nhead(iris_1)\n\n[1] 5.1 4.9 4.7 4.6 5.0 5.4\n\n\n\nMatrix-like extraction of multiple columns (and all rows)\n\n\niris_24 &lt;- iris[ , c(2, 4)] # numeric indexes and data frames are more useful for larger more complex situations\nhead(iris_24)\n\n  Sepal.Width Petal.Width\n1         3.5         0.2\n2         3.0         0.2\n3         3.2         0.2\n4         3.1         0.2\n5         3.6         0.2\n6         3.9         0.4\n\n\n\nWhat do you suppose…\n\n\niris_what &lt;- iris[seq(1, 150, by = 3), c(2, 4)]  # what do you think iris_what will contain?\nhead(iris_what)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#extract-using-names",
+    "href": "lectures/Lecture0304/Lecture04.html#extract-using-names",
+    "title": "Lecture 04",
+    "section": "Extract Using Names",
+    "text": "Extract Using Names\n\nWe can put those column names to use to give the data frame a more user friendly feel:\n\n\niris_dollar_sign_name &lt;- iris$Sepal.Length # you will probably use this version early on because its friendlier\nhead(iris_dollar_sign_name) # the result is a numeric vector\n\n[1] 5.1 4.9 4.7 4.6 5.0 5.4\n\n\n\nBut dollar sign allows just one name, this will also work and is closer in spirit to the matrix extraction style:\n\n\niris_square_bracket_vector_names &lt;- iris[c(\"Sepal.Length\", \"Petal.Length\")] # multiple columns\nhead(iris_square_bracket_vector_names) # the result is a data frame\n\n  Sepal.Length Petal.Length\n1          5.1          1.4\n2          4.9          1.4\n3          4.7          1.3\n4          4.6          1.5\n5          5.0          1.4\n6          5.4          1.7",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#advanced-list-extraction",
+    "href": "lectures/Lecture0304/Lecture04.html#advanced-list-extraction",
+    "title": "Lecture 04",
+    "section": "(advanced) List Extraction",
+    "text": "(advanced) List Extraction\n\nWhat you will learn in the near future is that a Data Frame is a type of data structure known as a list\nJust keep the idea in your mind that a Data Frame is a blend of types because of the data it contains (mixed number and non-numbers)\n\n\niris[[1]] # unlikely to use this version until later in the quarter if at all\n\n  [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1\n [19] 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0\n [37] 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5\n [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1\n [73] 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5\n [91] 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3\n[109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2\n[127] 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8\n[145] 6.7 6.7 6.3 6.5 6.2 5.9\n\n\n\nData Frames are very versatile and this partly explains the number of ways we can extract from it.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#data-structures-summarized",
+    "href": "lectures/Lecture0304/Lecture04.html#data-structures-summarized",
+    "title": "Lecture 04",
+    "section": "Data Structures Summarized",
+    "text": "Data Structures Summarized\nThis is from Wickham’s “Advanced R” but it is useful for seeing the bigger picture with respect to data in R:\n\n\n\nData Structures",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#attendance-opportunity",
+    "href": "lectures/Lecture0304/Lecture04.html#attendance-opportunity",
+    "title": "Lecture 04",
+    "section": "Attendance Opportunity",
+    "text": "Attendance Opportunity\nActivity #2: Please Greet Your Neighbor(s)\n\nIf you missed the first week - your neighbors are VIPs\nYou need at least one different neighbor each week for your attendance credit (only one photo required)\nYou cannot receive credit if it’s only you in the photo, it is important to be sociable, even in STEM (or maybe especially in STEM)\nMeet your classmates, take a photograph.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#you-can-never-have-enough-practice",
+    "href": "lectures/Lecture0304/Lecture04.html#you-can-never-have-enough-practice",
+    "title": "Lecture 04",
+    "section": "You can never have enough practice",
+    "text": "You can never have enough practice\n\nThere is a folder available on BruinLearn, Week 2 module under Thursday\nShould have a downloadable .RData and .qmd (and also .rmd for you fans of RMarkdown)\nactivity_lecture04_quarto.qmd or activity_lecture04_RMarkdown.rmd will both work and will both create HTML and PDF",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#applying-what-you-have-learned",
+    "href": "lectures/Lecture0304/Lecture04.html#applying-what-you-have-learned",
+    "title": "Lecture 04",
+    "section": "Applying what you have learned",
+    "text": "Applying what you have learned\n\nProject 1 is due April 20 at 11:59pm, there is a grace period which ends at 12:30am on April 21st.\nIf you have not turned it in by that time, you can still upload it as a comment but it wil identified as late.\nLate uploads will be graded with a 10% deduction per day late unless you have an official university approved accommodation OR if you have kind of documented emergency",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#project-1-1",
+    "href": "lectures/Lecture0304/Lecture04.html#project-1-1",
+    "title": "Lecture 04",
+    "section": "Project 1",
+    "text": "Project 1\n\nPlease find the link to the assignment\nWe will go through the template(s)\nAnd the assignment/expectations",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#what-is-a-low-level-language-assembly-v-r",
+    "href": "lectures/Lecture0304/Lecture04.html#what-is-a-low-level-language-assembly-v-r",
+    "title": "Lecture 04",
+    "section": "What is a low level language? Assembly v R",
+    "text": "What is a low level language? Assembly v R\n\n\n.model small\n.stack 100h\n\n.data\na dw 2\nb dw 5\n\n.code\nmain proc\n    mov ax, @data\n    mov ds, ax\n\n    mov ax, a\n    mov bx, b\n    add ax, bx\n\n    add al, 30h\n    mov dl, al\n    mov ah, 02h\n    int 21h\n\n    mov ah, 4Ch\n    int 21h\nmain endp\nend main\n\na &lt;- 2\nb &lt;- 5\n\na + b",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0304/Lecture04.html#for-your-consideration",
+    "href": "lectures/Lecture0304/Lecture04.html#for-your-consideration",
+    "title": "Lecture 04",
+    "section": "For your consideration",
+    "text": "For your consideration\n\nIn assembly, we must tell the computer every tiny step. Assembly required humans to think/communicate like machines.\nIn R, Python, and other modern languages, we write what we want in a compact and more natural form\nProgramming languages evolved to let humans think less about machine details and more about ideas, data, and problems.\nLLMs are part of the same long arc of evolution. They allow us to express intent in ordinary language. So “please add 2 and 5” as in the previous slide.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 03"
+    ]
   },
   {
     "objectID": "lectures/Lecture0304/Lecture03.html#anonymous-activity-1",
