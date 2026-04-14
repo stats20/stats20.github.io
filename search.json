@@ -1305,6 +1305,138 @@
     ]
   },
   {
+    "objectID": "activity/Week03data.html",
+    "href": "activity/Week03data.html",
+    "title": "Week 3 Data Part 1",
+    "section": "",
+    "text": "Recall this webpage using a tool called webr. This activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity. It does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data.html#introduction",
+    "href": "activity/Week03data.html#introduction",
+    "title": "Week 3 Data Part 1",
+    "section": "",
+    "text": "Recall this webpage using a tool called webr. This activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity. It does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data.html#reading-data",
+    "href": "activity/Week03data.html#reading-data",
+    "title": "Week 3 Data Part 1",
+    "section": "Reading Data",
+    "text": "Reading Data\nWe will read 3 different file formats (csv, tsv, and txt) from the same source. We will read the data into R using the appropriate functions for each format and then check if they are the same. You may encounter different file formats and you need to know how to read them into R.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data.html#access-the-data",
+    "href": "activity/Week03data.html#access-the-data",
+    "title": "Week 3 Data Part 1",
+    "section": "Access the data",
+    "text": "Access the data\nThe data will be stored in R objects that you will need to call by name to see the results. Try it out and see what happens when you run the code chunk below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRemember, typing an object name will reveal its contents\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nI am not sure this will run in webr but try it out and see what happens when you run the code chunk below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIf everything ran, excellent! All we could not do was save the data frames to this environment but we were able to read the data into R and check if they were the same. This is a good start to working with data in R.",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data.html#reading-from-google-docs",
+    "href": "activity/Week03data.html#reading-from-google-docs",
+    "title": "Week 3 Data Part 1",
+    "section": "Reading from Google Docs",
+    "text": "Reading from Google Docs\nI am not sure if this will work.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data.html#an-imperfect-read",
+    "href": "activity/Week03data.html#an-imperfect-read",
+    "title": "Week 3 Data Part 1",
+    "section": "An imperfect read",
+    "text": "An imperfect read\nComputer managed and generated data is usually pretty clean unless there is a human component.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe see the presence of NA here.",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data.html#what-is-na-in-r",
+    "href": "activity/Week03data.html#what-is-na-in-r",
+    "title": "Week 3 Data Part 1",
+    "section": "What is NA in R?",
+    "text": "What is NA in R?\n\nNA represents unknown or unavailable data\nIt is NOT positive\nIt is NOT negative\nIt is not zero\nnot a number at all\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data.html#correcting-a-mistake",
+    "href": "activity/Week03data.html#correcting-a-mistake",
+    "title": "Week 3 Data Part 1",
+    "section": "Correcting A Mistake",
+    "text": "Correcting A Mistake\nRemember, this is a tiny dataset, so we can easily correct the mistake by hand. We will replace the NA with the correct values.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNotice we are using our indexing skills to select the row and columns we want to change and then we are assigning new values to that selection. This is a common way to correct mistakes in data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data.html#if-the-row-numbering-issue-makes-you-uncomfortable",
+    "href": "activity/Week03data.html#if-the-row-numbering-issue-makes-you-uncomfortable",
+    "title": "Week 3 Data Part 1",
+    "section": "If the row numbering issue makes you uncomfortable",
+    "text": "If the row numbering issue makes you uncomfortable\nif you must… this is more sequence generating and substitution:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data.html#reading-json",
+    "href": "activity/Week03data.html#reading-json",
+    "title": "Week 3 Data Part 1",
+    "section": "Reading JSON",
+    "text": "Reading JSON\nFirst, the simple example, a saved static JSON file. This is a common format for data on the web.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data.html#using-an-api",
+    "href": "activity/Week03data.html#using-an-api",
+    "title": "Week 3 Data Part 1",
+    "section": "Using an API",
+    "text": "Using an API\nIf this works, I will be amazed. This JSON is generated dynamically by an API (application programming interface).APIs are a way for different software applications to communicate with each other. They often return data in JSON format because it is easy to read.\n\nSF Film Locations\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data.html#result",
+    "href": "activity/Week03data.html#result",
+    "title": "Week 3 Data Part 1",
+    "section": "Result",
+    "text": "Result\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 5 Activity"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to Statistics 20",
@@ -1775,6 +1907,402 @@
     "crumbs": [
       "Lectures",
       "Lecture 03"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#anonymous-activity-1",
+    "href": "lectures/Lecture0506/Lecture05.html#anonymous-activity-1",
+    "title": "Lecture 05",
+    "section": "Anonymous Activity 1",
+    "text": "Anonymous Activity 1\nQR Code (it’s getting better)\nThis is anonymous & optional, but helpful to Stats 20,\n\nor here is a direct link",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#answers-to-questions-i-have-received",
+    "href": "lectures/Lecture0506/Lecture05.html#answers-to-questions-i-have-received",
+    "title": "Lecture 05",
+    "section": "Answers to questions I have received",
+    "text": "Answers to questions I have received\n\ntablesload()save()Where?ExampleLaterDataCamp\n\n\n\nIf you like pretty tables, there are several libraries that you can utilize.\nkableExtra\ngt written by the folks at RStudio\ndt typically use with dashboards or online\nYou can make reasonably nice tables in Quarto\n\n\n\n\nYes, you should know how to load a saved R workspace and you should probably learn how to save one though I won’t test you on it (others might):\n\n\n## Assumes you have a .RData file with this name in your project folder (AKA current working directory)\n\nload(\"spotify_songs.RData\")\nls() # a check to make sure something loaded \n\n[1] \"spotify_songs\"\n\n\n\nThe R objects stored inside of a saved R workspace have no necessary relationship to the external file name of the workspace. Hence ls() to check.\n\n\n\n\nYes, you can save a workspace, if you want to be lazy, just issue a save.image() at end of your R session and it will save everything you created, the good and the not so good:\n\nsave.image()\n\nIMO is better to have a more controlled/mindful save()\n\nx &lt;- runif(20)\ny &lt;- c(1, TRUE, \"FALSE\")\nsave(x, y, file = \"junk.RData\")\n\n\n\nWhere R objects are saved can be confusing and is valuable to understand if you plan to perform more computation in an upper division course (e.g., 102 series) in the future.\n\n\ngetwd() # what is the current working directory/folder\n\n[1] \"/Users/vivian/Desktop/SP26Stats20/website/lectures/Lecture0506\"\n\nlist.files() # what is in the working directory\n\n [1] \"_extensions\"                     \"activity_lecture05_quarto_files\"\n [3] \"activity_lecture05_quarto.aux\"   \"activity_lecture05_quarto.log\"  \n [5] \"activity_lecture05_quarto.qmd\"   \"activity_lecture05_quarto.tex\"  \n [7] \"images\"                          \"Lecture05.qmd\"                  \n [9] \"Lecture05.rmarkdown\"             \"my_folder\"                      \n[11] \"spotify_songs.RData\"             \"starwars.RData\"                 \n\n\n\nWhat is important is to know how to tell R how to find something, like a data file or an image file. Or to validate that a file is there. Or to create one if its not.\nI don’t ask you to do that, but if you want practice, create a sub-directory or a subfolder on your computer drive and put something in it, like an image file or an R Data file\nThen try to read it into R\n\n\n\n\nHow do we create a folder from within R and why would we do this?\nYou could store output in an orderly manner knowing how to do this\n\n\nx &lt;- seq(from = 1, to = 1000, by = 2)\ny &lt;- rnorm(n = 160, mean = 120, sd = 15)\n\ndir.create(\"my_folder\") # if it already exists it will throw a FALSE but not an error\n\nWarning in dir.create(\"my_folder\"): 'my_folder' already exists\n\nsave(x, y, file = \"my_folder/xy.RData\") # Save the file \"xy.RData\" in the \"my_folder\"\n\n\n\n\nFor those of you who are just dying in here because I move too slow, eventually I will want you to be able to read and understand this also possibly write something similar (esp. for 102):\n\n\n# Check if the folder \"my_folder\" exists, if not, create it.\nif (!dir.exists(\"my_folder\")) {\n  dir.create(\"my_folder\")\n}\n# Save the file \"xy.RData\" in the \"my_folder\" if it does not exist\n# otherwise (else) tell me it is already there.\nif (!file.exists(\"my_folder/xy.RData\")) {\n  save(x, y, file = \"my_folder/xy.RData\")\n  cat(\"The file was created and saved successfully.\\n\")\n} else {\n  cat(\"The file already exists.\\n\")\n}\n\nThe file already exists.\n\n## prove it to me\n{cat(\"These are the files in the folder:\\n\")\nfiles_in_folder &lt;- list.files(\"my_folder\")\nfiles_in_folder}\n\nThese are the files in the folder:\n\n\n[1] \"xy.RData\"\n\n\n\nWe will visit flow control then functions after we look at data and visualization\n\n\n\n\nI don’t assign homework, I think projects are more realistic\nBut DataCamp is there to give you extra practice. I curate their “chapters” as best as I can to match the subjects in lecture\nDataCamp is structured to let you do things at your own pace\nSo I just need to see that you attempted the assignment\nYou do not need to complete everything and you do not need to get it 100% correct\nThe deadlines are there so you can pace yourselves, I will only calculate completion at the end of the quarter\nThe Intro to Stats module is there for the kind students who let me know that they have forgotten a lot of their intro stats training. I appreciate honesty.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#what-is-a-low-level-language-assembly-v-r",
+    "href": "lectures/Lecture0506/Lecture05.html#what-is-a-low-level-language-assembly-v-r",
+    "title": "Lecture 05",
+    "section": "What is a low level language? Assembly v R",
+    "text": "What is a low level language? Assembly v R\n\nAssembly invented in 1947, R 1993, fyi: Python 1989\n\n\n\n.model small\n.stack 100h\n\n.data\na dw 2\nb dw 5\n\n.code\nmain proc\n    mov ax, @data\n    mov ds, ax\n\n    mov ax, a\n    mov bx, b\n    add ax, bx\n\n    add al, 30h\n    mov dl, al\n    mov ah, 02h\n    int 21h\n\n    mov ah, 4Ch\n    int 21h\nmain endp\nend main\n\n\nIn R\n\na &lt;- 2\nb &lt;- 5\n\na + b\n\nExtra (binary, the OG), 2 and 5, represented, not added yet\n\n0000000000000010\n0000000000000101\n\nAnd the representation for 7 may make sense to you\n\n0000000000000111",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#for-your-consideration",
+    "href": "lectures/Lecture0506/Lecture05.html#for-your-consideration",
+    "title": "Lecture 05",
+    "section": "For your consideration",
+    "text": "For your consideration\n\nIn assembly, we must tell the computer every tiny step. Assembly required humans to think/communicate like machines.\nIn R, Python, and other modern languages, we write what we want in a compact and more natural form\nProgramming languages evolved to let humans think less about machine details and more about ideas, data, and problems.\nLLMs are part of the same long arc of evolution. They allow us to express intent in ordinary language. So “please add 2 and 5” as in the previous slide\nAssembly -&gt; C -&gt; Python -&gt; LLMs(?) older languages were not completely replaced – but their application may be narrower",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#a-final-thought-on-this",
+    "href": "lectures/Lecture0506/Lecture05.html#a-final-thought-on-this",
+    "title": "Lecture 05",
+    "section": "A final thought on this",
+    "text": "A final thought on this\n\nIf you ask an LLM (I asked ChatGPT) what languages it rests upon, perhaps this answer is not too surprising:\n\nHuman language\n   ↓\nPython (or similar high-level language)\n   ↓\nC / C++ (fast execution)\n   ↓\nAssembly\n   ↓\nMachine code (binary)\n\nit relies on many different tools for many different applications",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#attendance-opportunity",
+    "href": "lectures/Lecture0506/Lecture05.html#attendance-opportunity",
+    "title": "Lecture 05",
+    "section": "Attendance Opportunity",
+    "text": "Attendance Opportunity\nActivity #2: Please Greet Your Neighbor(s)\n\nYou are experts at greeting your neighbors now.\nYou need at least one different neighbor each week for your attendance credit (only one photo required)\nYou cannot receive credit if it’s only you in the photo\nSocial Connection has value\nMeet a new classmate, take a photograph.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#what-are-they-looking-for",
+    "href": "lectures/Lecture0506/Lecture05.html#what-are-they-looking-for",
+    "title": "Lecture 05",
+    "section": "What are they looking for?",
+    "text": "What are they looking for?\n\nRed Bull Internship\nBooz Allen Hamilton\nTikTok\nFirst American (Title)\nPetco",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#depends-but",
+    "href": "lectures/Lecture0506/Lecture05.html#depends-but",
+    "title": "Lecture 05",
+    "section": "Depends, but",
+    "text": "Depends, but\n\nCan you work with real data (messy, large, multiple sources)\nCan you write a script (or more advanced, model outcomes)\nCan you communicate your findings (present, tell a story, connect)\nDo you have the an understanding of the business context?",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#what-to-focus-on-this-week",
+    "href": "lectures/Lecture0506/Lecture05.html#what-to-focus-on-this-week",
+    "title": "Lecture 05",
+    "section": "What to focus on this week",
+    "text": "What to focus on this week\n\nWorking with real data\nKnowing how to “data wrangle” – basic making messy data suitable for analysis\n\nHandling missing values\nConverting data types\nReshaping data (going from wide format to long and back)\nJoining data\nCleaning text or categories",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#recall-workflow-in-research",
+    "href": "lectures/Lecture0506/Lecture05.html#recall-workflow-in-research",
+    "title": "Lecture 05",
+    "section": "Recall: Workflow (in research)",
+    "text": "Recall: Workflow (in research)\n\n\n\nA Data Science Workflow",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#recall-workflow-in-workplaces",
+    "href": "lectures/Lecture0506/Lecture05.html#recall-workflow-in-workplaces",
+    "title": "Lecture 05",
+    "section": "Recall: Workflow (in workplaces)",
+    "text": "Recall: Workflow (in workplaces)\n\n\n\nFrom Google",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#its-only-data",
+    "href": "lectures/Lecture0506/Lecture05.html#its-only-data",
+    "title": "Lecture 05",
+    "section": "It’s only data…",
+    "text": "It’s only data…\n\nThe content of all four of these are exactly the same (your Project 1 dataset), the formatting is different:\n\ncomma separated values (.csv)\ntab separated values (.tsv)\nwhite space delimited values (.txt)\njson example – extra",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#read-into-r",
+    "href": "lectures/Lecture0506/Lecture05.html#read-into-r",
+    "title": "Lecture 05",
+    "section": "Read into R",
+    "text": "Read into R\n\nWe do not need to load any special libraries/install packages for the first three. We will read the fourth one later.\nWe will use base R (core R, what is available at installation) and the functions read.csv(), read.delim(), and read.table()\nThese are relatively simple to read because they are DELIMITED (have a separator) between variables (AKA fields)\nThere is a logical workflow (1) need to know their location (2) need a function to convert the data into an R data frame (3A) need to check my work - did they get read (3B) are all 3 the same?",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#code",
+    "href": "lectures/Lecture0506/Lecture05.html#code",
+    "title": "Lecture 05",
+    "section": "Code",
+    "text": "Code\n\nPlease turn to RStudio\nWe are going to work through an R script named remote_delimited.R you can find it in Week 3 under Tuesday\nRead data off the web and save data to your to your drive\nIf you don’t have RStudio today, you can copy and paste most of this to Web-R\nBut it is nice to have a friend so you don’t get lost because the Web-R will have some problems.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#saving-your-workspace",
+    "href": "lectures/Lecture0506/Lecture05.html#saving-your-workspace",
+    "title": "Lecture 05",
+    "section": "Saving your workspace",
+    "text": "Saving your workspace\n\nYou should know how to save your work, save() works just fine, here is a multiple object example:\n\n\nsave(pokemon_data_csv, pokemon_data_tsv, pokemon_data_txt, file = \"all_my_pokemon.RData\")\n\n\nWhen you load(\"all_my_pokemon.RData\") in another session, all 3 data frames will be restored to your global environment.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#excel-and-others",
+    "href": "lectures/Lecture0506/Lecture05.html#excel-and-others",
+    "title": "Lecture 05",
+    "section": "Excel and Others",
+    "text": "Excel and Others\n\nThere are special libraries that we can use to read Excel files (later). You could also convert your Excel file to .csv for example\nBut we can read Google sheets using R as long as we own them or have been given permission to read them:\n\n\nin_n_out_locs &lt;- read.csv(\"https://docs.google.com/spreadsheets/d/1eTkMGK4Bsab5cN-UtQgqdosGDlLPtWj7UtC4F5BsQ8E/export?format=csv&gid=50145464\")\nin_n_out_latlon &lt;- read.csv(\"https://docs.google.com/spreadsheets/d/1eTkMGK4Bsab5cN-UtQgqdosGDlLPtWj7UtC4F5BsQ8E/export?format=csv&gid=1610759547\")\n\nnames(in_n_out_locs)\n\n[1] \"name\"    \"address\" \"city\"    \"state\"   \"zip\"    \n\nnames(in_n_out_latlon)\n\n[1] \"name\"      \"zip\"       \"latitude\"  \"longitude\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#still-others",
+    "href": "lectures/Lecture0506/Lecture05.html#still-others",
+    "title": "Lecture 05",
+    "section": "Still Others",
+    "text": "Still Others\n\n\n\nsome competitors",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#who-are-they",
+    "href": "lectures/Lecture0506/Lecture05.html#who-are-they",
+    "title": "Lecture 05",
+    "section": "Who are they?",
+    "text": "Who are they?\n\nThese are specialized statistical packages\nThey almost all have “bridges” to Python and/or R.\nSAS 1976 (pharma); SPSS 1968 (psychologists); Stata 1985 (economists)\nI won’t ask you about these. I am OK if you point and click your way to a solution or ask AI.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#what-happens-when-data-is-not-perfectly-read",
+    "href": "lectures/Lecture0506/Lecture05.html#what-happens-when-data-is-not-perfectly-read",
+    "title": "Lecture 05",
+    "section": "What happens when data is not perfectly read?",
+    "text": "What happens when data is not perfectly read?\n\nIt is getting more difficult to show you an example as computers don’t usually make mistakes in collecting/constructing data, but people do:\n\n\ncolleges &lt;- read.delim(\"https://raw.githubusercontent.com/lewv/data-for-example/refs/heads/main/colleges.txt\")\ncolleges\n\n         Name Quality Academics Sports Cost Overall\n1   Princeton       1         3     11   75       1\n2         UNC      46        22     10   31       2\n3    Stanford       4         5      1  110       3\n4        Yale      14         4      5  100       4\n5    Virginia      24        30     29   41       5\n6    Williams       2        25     19   80       6\n7    Michigan      38        24      9   64       7\n8   NotreDame       6        31     32   73       8\n9  California      50        15     20   61       9\n10    Harvard      12         1     39   98      10\n11       UCLA      67        20      2   66      11\n12   Columbia      33         9     35   79      12\n13       USNA      28        88     45    1      13\n14       Duke       5        10     48  104      14\n15    Amherst       3        28     50   88      15\n16      Texas     106        36     12   18      16\n17    Florida      71        38     59    7      17\n18       Rice      19        11     89   58      18\n19  Dartmouth      11        14     52  103      19\n20 Middlebury      21        40     15  108      20\n21  NewJersey      44       102     14   25      21\n22  PennState      69        56     17   44      22\n23   Oklahoma      77        86     22    9      23\n24    CalTech      NA        17      6  106      65\n25         23      NA        NA     NA   NA      NA\n26   Maryland      91        46     28   34      25\n27        LSU      75        99     13   12      25\n\n\n\nNotice no warning. You should always check a data read.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#what-is-na-in-r",
+    "href": "lectures/Lecture0506/Lecture05.html#what-is-na-in-r",
+    "title": "Lecture 05",
+    "section": "What is NA in R?",
+    "text": "What is NA in R?\n\nNA represents unknown or unavailable data\nIt is NOT positive\nIt is NOT negative\nIt is not zero\nnot a number at all\n\n\nThere should be a value here, but we don’t know what it is.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#what-does-na-mean-to-r",
+    "href": "lectures/Lecture0506/Lecture05.html#what-does-na-mean-to-r",
+    "title": "Lecture 05",
+    "section": "What does NA mean to R?",
+    "text": "What does NA mean to R?\n\n5 + NA # NA\n\n[1] NA\n\nNA == 5 # NA\n\n[1] NA\n\nNA == NA # NA\n\n[1] NA\n\nis.na(NA) # TRUE\n\n[1] TRUE\n\n\n\nBy not substituting a value, R lets the user decide how to address NA",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#what-happens-when-data-is-not-perfect",
+    "href": "lectures/Lecture0506/Lecture05.html#what-happens-when-data-is-not-perfect",
+    "title": "Lecture 05",
+    "section": "What happens when data is not perfect?",
+    "text": "What happens when data is not perfect?\n\nWith a tiny dataset like this, it’s easy to find the problem\n\n\n\n\ndataset with mistakes",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#what-happens-when-data-is-not-perfect-contd",
+    "href": "lectures/Lecture0506/Lecture05.html#what-happens-when-data-is-not-perfect-contd",
+    "title": "Lecture 05",
+    "section": "What happens when data is not perfect (cont’d)",
+    "text": "What happens when data is not perfect (cont’d)\n\napply correction, typically by substitution (but could drop the observation)\nbut usually by filtering/subsetting (next lecture) first though locate the error\nin our tiny example, we are going the correct the two rows that are incorrect\nwe haven’t gotten to all of the details here, but we will\n\n\ncolleges[24, 2:6] # has a mistake\n\n   Quality Academics Sports Cost Overall\n24      NA        17      6  106      65\n\ncolleges[24, 2:6] &lt;- c(17, 6, 106, 65, 23) # overwrite\ncolleges # check\n\n         Name Quality Academics Sports Cost Overall\n1   Princeton       1         3     11   75       1\n2         UNC      46        22     10   31       2\n3    Stanford       4         5      1  110       3\n4        Yale      14         4      5  100       4\n5    Virginia      24        30     29   41       5\n6    Williams       2        25     19   80       6\n7    Michigan      38        24      9   64       7\n8   NotreDame       6        31     32   73       8\n9  California      50        15     20   61       9\n10    Harvard      12         1     39   98      10\n11       UCLA      67        20      2   66      11\n12   Columbia      33         9     35   79      12\n13       USNA      28        88     45    1      13\n14       Duke       5        10     48  104      14\n15    Amherst       3        28     50   88      15\n16      Texas     106        36     12   18      16\n17    Florida      71        38     59    7      17\n18       Rice      19        11     89   58      18\n19  Dartmouth      11        14     52  103      19\n20 Middlebury      21        40     15  108      20\n21  NewJersey      44       102     14   25      21\n22  PennState      69        56     17   44      22\n23   Oklahoma      77        86     22    9      23\n24    CalTech      17         6    106   65      23\n25         23      NA        NA     NA   NA      NA\n26   Maryland      91        46     28   34      25\n27        LSU      75        99     13   12      25",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#how-do-we-remove-a-row-or-rows",
+    "href": "lectures/Lecture0506/Lecture05.html#how-do-we-remove-a-row-or-rows",
+    "title": "Lecture 05",
+    "section": "How do we remove a row (or rows)?",
+    "text": "How do we remove a row (or rows)?\n\nusually in a larger dataset, we apply a condition\nhere, we are just going to drop the one row\n\n\nfix_colleges &lt;- colleges[-25, ] # copy the original, don't clobber it\nfix_colleges # the numbering is off\n\n         Name Quality Academics Sports Cost Overall\n1   Princeton       1         3     11   75       1\n2         UNC      46        22     10   31       2\n3    Stanford       4         5      1  110       3\n4        Yale      14         4      5  100       4\n5    Virginia      24        30     29   41       5\n6    Williams       2        25     19   80       6\n7    Michigan      38        24      9   64       7\n8   NotreDame       6        31     32   73       8\n9  California      50        15     20   61       9\n10    Harvard      12         1     39   98      10\n11       UCLA      67        20      2   66      11\n12   Columbia      33         9     35   79      12\n13       USNA      28        88     45    1      13\n14       Duke       5        10     48  104      14\n15    Amherst       3        28     50   88      15\n16      Texas     106        36     12   18      16\n17    Florida      71        38     59    7      17\n18       Rice      19        11     89   58      18\n19  Dartmouth      11        14     52  103      19\n20 Middlebury      21        40     15  108      20\n21  NewJersey      44       102     14   25      21\n22  PennState      69        56     17   44      22\n23   Oklahoma      77        86     22    9      23\n24    CalTech      17         6    106   65      23\n26   Maryland      91        46     28   34      25\n27        LSU      75        99     13   12      25",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#renumbering-your-row-names-extra",
+    "href": "lectures/Lecture0506/Lecture05.html#renumbering-your-row-names-extra",
+    "title": "Lecture 05",
+    "section": "Renumbering your row names (extra)",
+    "text": "Renumbering your row names (extra)\n\nif you must… this is more sequence generating:\n\n\nrownames(fix_colleges) # we lost row 25 \n\n [1] \"1\"  \"2\"  \"3\"  \"4\"  \"5\"  \"6\"  \"7\"  \"8\"  \"9\"  \"10\" \"11\" \"12\" \"13\" \"14\" \"15\"\n[16] \"16\" \"17\" \"18\" \"19\" \"20\" \"21\" \"22\" \"23\" \"24\" \"26\" \"27\"\n\nrownames(fix_colleges) &lt;- 1:26 # numeric vector \nrownames(fix_colleges) # coerced to character\n\n [1] \"1\"  \"2\"  \"3\"  \"4\"  \"5\"  \"6\"  \"7\"  \"8\"  \"9\"  \"10\" \"11\" \"12\" \"13\" \"14\" \"15\"\n[16] \"16\" \"17\" \"18\" \"19\" \"20\" \"21\" \"22\" \"23\" \"24\" \"25\" \"26\"\n\nfix_colleges\n\n         Name Quality Academics Sports Cost Overall\n1   Princeton       1         3     11   75       1\n2         UNC      46        22     10   31       2\n3    Stanford       4         5      1  110       3\n4        Yale      14         4      5  100       4\n5    Virginia      24        30     29   41       5\n6    Williams       2        25     19   80       6\n7    Michigan      38        24      9   64       7\n8   NotreDame       6        31     32   73       8\n9  California      50        15     20   61       9\n10    Harvard      12         1     39   98      10\n11       UCLA      67        20      2   66      11\n12   Columbia      33         9     35   79      12\n13       USNA      28        88     45    1      13\n14       Duke       5        10     48  104      14\n15    Amherst       3        28     50   88      15\n16      Texas     106        36     12   18      16\n17    Florida      71        38     59    7      17\n18       Rice      19        11     89   58      18\n19  Dartmouth      11        14     52  103      19\n20 Middlebury      21        40     15  108      20\n21  NewJersey      44       102     14   25      21\n22  PennState      69        56     17   44      22\n23   Oklahoma      77        86     22    9      23\n24    CalTech      17         6    106   65      23\n25   Maryland      91        46     28   34      25\n26        LSU      75        99     13   12      25",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#takeaways",
+    "href": "lectures/Lecture0506/Lecture05.html#takeaways",
+    "title": "Lecture 05",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nData can be imperfect; you might not be warned\nThere are multiple solutions; weigh the pros and cons\nThe corrections gave no feedback; therefore always check your results\nSmall datasets like this example are easy; we must be clever about finding mistakes and correcting them in larger ones",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#data-is-everywhere",
+    "href": "lectures/Lecture0506/Lecture05.html#data-is-everywhere",
+    "title": "Lecture 05",
+    "section": "Data is Everywhere",
+    "text": "Data is Everywhere\n\nIf you would turn to Week 3 Module, Tuesday\nKaggle\nUCI Machine Learning Repository\netc.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#what-is-json",
+    "href": "lectures/Lecture0506/Lecture05.html#what-is-json",
+    "title": "Lecture 05",
+    "section": "What is JSON?",
+    "text": "What is JSON?\n\nJSON stands for JavaScript Object Notation\nJSON is a data-interchange format\nJSON is language independent text so it can be used by different software\nJSON is “human readable” and easy to understand\nJSON structure is (or can be) hierarchical (values within values)\nJSON is short and easy to write\nJSON syntax is a subset of the JavaScript syntax.\nThe file type for JSON files is “.json”",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#simple-example",
+    "href": "lectures/Lecture0506/Lecture05.html#simple-example",
+    "title": "Lecture 05",
+    "section": "Simple Example",
+    "text": "Simple Example\n\nThis is not meant to be definitive exploration of json files.\n\nI like the jsonlite package mostly because I know the maintainer personally.\nFirst, install then activate the jsonlite library. library(jsonlite) and you will need library(httr) for my second example to work\nBut try the first example with a fromJSON before moving to more complex forms",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#code-result",
+    "href": "lectures/Lecture0506/Lecture05.html#code-result",
+    "title": "Lecture 05",
+    "section": "Code & Result",
+    "text": "Code & Result\n\nlibrary(jsonlite)\n\nurl_films &lt;- \"https://gist.githubusercontent.com/saniyusuf/406b843afdfb9c6a86e25753fe2761f4/raw/075b6aaba5ee43554ecd55006e5d080a8acf08fe/Film.JSON\"\n\nfilms &lt;- fromJSON(url_films)\n\nhead(films)\n\n                    Title Year Rated    Released Runtime\n1                  Avatar 2009 PG-13 18 Dec 2009 162 min\n2             I Am Legend 2007 PG-13 14 Dec 2007 101 min\n3                     300 2006     R 09 Mar 2007 117 min\n4            The Avengers 2012 PG-13 04 May 2012 143 min\n5 The Wolf of Wall Street 2013     R 25 Dec 2013 180 min\n6            Interstellar 2014 PG-13 07 Nov 2014 169 min\n                       Genre          Director\n1 Action, Adventure, Fantasy     James Cameron\n2      Drama, Horror, Sci-Fi  Francis Lawrence\n3     Action, Drama, Fantasy       Zack Snyder\n4   Action, Sci-Fi, Thriller       Joss Whedon\n5   Biography, Comedy, Crime   Martin Scorsese\n6   Adventure, Drama, Sci-Fi Christopher Nolan\n                                                                                                                                        Writer\n1                                                                                                                                James Cameron\n2       Mark Protosevich (screenplay), Akiva Goldsman (screenplay), Richard Matheson (novel), John William Corrington, Joyce Hooper Corrington\n3 Zack Snyder (screenplay), Kurt Johnstad (screenplay), Michael Gordon (screenplay), Frank Miller (graphic novel), Lynn Varley (graphic novel)\n4                                                                              Joss Whedon (screenplay), Zak Penn (story), Joss Whedon (story)\n5                                                                                           Terence Winter (screenplay), Jordan Belfort (book)\n6                                                                                                            Jonathan Nolan, Christopher Nolan\n                                                              Actors\n1       Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\n2 Will Smith, Alice Braga, Charlie Tahan, Salli Richardson-Whitfield\n3             Gerard Butler, Lena Headey, Dominic West, David Wenham\n4      Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth\n5  Leonardo DiCaprio, Jonah Hill, Margot Robbie, Matthew McConaughey\n6    Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\n                                                                                                                                                                         Plot\n1             A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\n2                   Years after a plague kills most of humanity and transforms the rest into monsters, the sole survivor in New York City struggles valiantly to find a cure.\n3                                                                                King Leonidas of Sparta and a force of 300 men fight the Persians at Thermopylae in 480 B.C.\n4               Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.\n5 Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.\n6                                                                         A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\n          Language Country\n1 English, Spanish USA, UK\n2          English     USA\n3          English     USA\n4 English, Russian     USA\n5  English, French     USA\n6          English USA, UK\n                                                      Awards\n1           Won 3 Oscars. Another 80 wins & 121 nominations.\n2                                   9 wins & 21 nominations.\n3                                  16 wins & 42 nominations.\n4   Nominated for 1 Oscar. Another 34 wins & 75 nominations.\n5 Nominated for 5 Oscars. Another 35 wins & 154 nominations.\n6            Won 1 Oscar. Another 39 wins & 134 nominations.\n                                                                                                         Poster\n1              http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\n2 https://m.media-amazon.com/images/M/MV5BMGE1OWZkZmItNmVhMC00YzAxLTgxOTctNjg3NWExM2RmOWJkXkEyXkFqcGc@._V1_.jpg\n3                  http://ia.media-imdb.com/images/M/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3._V1_SX300.jpg\n4              http://ia.media-imdb.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_SX300.jpg\n5              http://ia.media-imdb.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg\n6              http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\n  Metascore imdbRating imdbVotes    imdbID  Type Response\n1        83        7.9   890,617 tt0499549 movie     True\n2        65        7.2   533,874 tt0480249 movie     True\n3        52        7.7   611,046 tt0416449 movie     True\n4        69        8.1 1,003,301 tt0848228 movie     True\n5        75        8.2   786,985 tt0993846 movie     True\n6        74        8.6   937,412 tt0816692 movie     True\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Images\n1  https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BNzM2MDk3MTcyMV5BMl5BanBnXkFtZTcwNjg0MTUzNA@@._V1_SX1777_CR0,0,1777,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTY2ODQ3NjMyMl5BMl5BanBnXkFtZTcwODg0MTUzNA@@._V1_SX1777_CR0,0,1777,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxOTEwNDcxN15BMl5BanBnXkFtZTcwOTg0MTUzNA@@._V1_SX1777_CR0,0,1777,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMDg1Nzk1MV5BMl5BanBnXkFtZTcwMDk0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg\n2                                                                                                                                                                                                                                                       https://images-na.ssl-images-amazon.com/images/M/MV5BMTI0NTI4NjE3NV5BMl5BanBnXkFtZTYwMDA0Nzc4._V1_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTIwMDg2MDU4M15BMl5BanBnXkFtZTYwMTA0Nzc4._V1_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTc5MDM1OTU5OV5BMl5BanBnXkFtZTYwMjA0Nzc4._V1_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTA0MTI2NjMzMzFeQTJeQWpwZ15BbWU2MDMwNDc3OA@@._V1_.jpg\n3                                                                                                                                                                                                                                                                            https://images-na.ssl-images-amazon.com/images/M/MV5BMTMwNTg5MzMwMV5BMl5BanBnXkFtZTcwMzA2NTIyMw@@._V1_SX1777_CR0,0,1777,937_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTQwNTgyNTMzNF5BMl5BanBnXkFtZTcwNDA2NTIyMw@@._V1_SX1777_CR0,0,1777,935_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTc0MjQzOTEwMV5BMl5BanBnXkFtZTcwMzE2NTIyMw@@._V1_SX1777_CR0,0,1777,947_AL_.jpg\n4  https://images-na.ssl-images-amazon.com/images/M/MV5BMTA0NjY0NzE4OTReQTJeQWpwZ15BbWU3MDczODg2Nzc@._V1_SX1777_CR0,0,1777,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMjE1MzEzMjcyM15BMl5BanBnXkFtZTcwNDM4ODY3Nw@@._V1_SX1777_CR0,0,1777,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMjMwMzM2MTg1M15BMl5BanBnXkFtZTcwNjM4ODY3Nw@@._V1_SX1777_CR0,0,1777,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ4NzM2Mjc5MV5BMl5BanBnXkFtZTcwMTkwOTY3Nw@@._V1_SX1777_CR0,0,1777,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTc3MzQ3NjA5N15BMl5BanBnXkFtZTcwMzY5OTY3Nw@@._V1_SX1777_CR0,0,1777,999_AL_.jpg\n5 https://images-na.ssl-images-amazon.com/images/M/MV5BNDIwMDIxNzk3Ml5BMl5BanBnXkFtZTgwMTg0MzQ4MDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTc0NzAxODAyMl5BMl5BanBnXkFtZTgwMDg0MzQ4MDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMDk1MDE4NzVeQTJeQWpwZ15BbWU4MDM4NDM0ODAx._V1_SX1500_CR0,0,1500,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTg3MTY4NDk4Nl5BMl5BanBnXkFtZTgwNjc0MzQ4MDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTgzMTg4MDI0Ml5BMl5BanBnXkFtZTgwOTY0MzQ4MDE@._V1_SY1000_CR0,0,1553,1000_AL_.jpg\n6  https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3NTEwOTMxMV5BMl5BanBnXkFtZTgwMjMyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMzQ5ODE2MzEwM15BMl5BanBnXkFtZTgwMTMyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4Njk4MzY0Nl5BMl5BanBnXkFtZTgwMzIyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BMzE3MTM0MTc3Ml5BMl5BanBnXkFtZTgwMDIyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg, https://images-na.ssl-images-amazon.com/images/M/MV5BNjYzNjE2NDk3N15BMl5BanBnXkFtZTgwNzEyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg\n  totalSeasons ComingSoon\n1         &lt;NA&gt;         NA\n2         &lt;NA&gt;         NA\n3         &lt;NA&gt;         NA\n4         &lt;NA&gt;         NA\n5         &lt;NA&gt;         NA\n6         &lt;NA&gt;         NA",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#practical-example",
+    "href": "lectures/Lecture0506/Lecture05.html#practical-example",
+    "title": "Lecture 05",
+    "section": "Practical Example",
+    "text": "Practical Example\n\nSF Film Locations\n\n\nlibrary(httr)  # need this to get the URL\nlibrary(jsonlite) # need this to convert the json to a data frame\n\nurl_sf &lt;- \"https://data.sfgov.org/resource/yitu-d5am.json\"\n\n# first, make sure the URL is valid\ncheck &lt;- GET(url_sf, verbose())\nstatus_code(check) # should return 200\n\n[1] 200\n\n# we see there are limits imposed, only 1000\nlocations_check &lt;- fromJSON(content(check, \"text\"), flatten = TRUE)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#result",
+    "href": "lectures/Lecture0506/Lecture05.html#result",
+    "title": "Lecture 05",
+    "section": "Result",
+    "text": "Result\n\nhead(locations_check)\n\n                           title release_year             locations\n1                           Milk         2008     El Camino Del Mar\n2                Chance Season 2         2017            Coit Tower\n3                      Red Widow         2013 Mason & Sacramento St\n4 A Taiwanese Tale of Two Cities         2018                Pier 5\n5                      Americana         2015   Palace of Fine Arts\n6             Desperate Measures         1998                  &lt;NA&gt;\n         production_company                         distributor\n1            Focus Features                      Focus Features\n2      TVM Productions Inc.                                Hulu\n3                Beyond Pix American Broadcasting Company (ABC)\n4 Envision Productions Inc.                             Netflix\n5           Sutro Films LLC                                &lt;NA&gt;\n6    Mandalay Entertainment                    TriStar Pictures\n          director                                                writer\n1     Gus Van Sant                                    Dustin Lance Black\n2    Rozann Dawson                                  Alexandra Cunningham\n3      Alon Aranya                                     Melissa Rosenberg\n4     Tien-Lun Yeh Ling-Hui Chen, Nancy Chen, Chih-Chi Fan, Chia-Hui Lin\n5    Zachary Shedd                                         Zachary Shedd\n6 Barbet Schroeder                                           David Klass\n         actor_1          actor_2    longitude   latitude analysis_neighborhood\n1      Sean Penn     Emile Hirsch -122.4962354 37.7857806          Lincoln Park\n2    Hugh Laurie        Greta Lee -122.4058222 37.8023949           North Beach\n3 Radha Mitchell Sterling Beaumon -122.4110311 37.7927806              Nob Hill\n4    Tammy Cheng      Peggy Tseng -122.3960343 37.7980698                  &lt;NA&gt;\n5   Kelli Garner   Jack Davenport -122.4484231 37.8029308                Marina\n6 Michael Keaton      Andy Garcia         &lt;NA&gt;       &lt;NA&gt;                  &lt;NA&gt;\n  supervisor_district              data_as_of          data_loaded_at\n1                   1 2026-02-20T16:37:46.000 2026-02-20T16:44:43.000\n2                   3 2026-02-20T16:37:46.000 2026-02-20T16:44:43.000\n3                   3 2026-02-20T16:37:46.000 2026-02-20T16:44:43.000\n4                &lt;NA&gt; 2026-02-20T16:37:46.000 2026-02-20T16:44:43.000\n5                   2 2026-02-20T16:37:46.000 2026-02-20T16:44:43.000\n6                &lt;NA&gt; 2026-02-20T16:37:46.000 2026-02-20T16:44:43.000\n  :@computed_region_6qbp_sg9q :@computed_region_ajp5_b2md\n1                           7                          17\n2                          18                          23\n3                          16                          21\n4                          77                        &lt;NA&gt;\n5                          17                          13\n6                        &lt;NA&gt;                        &lt;NA&gt;\n  :@computed_region_26cr_cadq             actor_3 fun_facts point.type\n1                           4                &lt;NA&gt;      &lt;NA&gt;      Point\n2                           3        Ethan Suplee      &lt;NA&gt;      Point\n3                           3 Clifton Collins Jr.      &lt;NA&gt;      Point\n4                        &lt;NA&gt;        Shen-Hao Wen      &lt;NA&gt;      Point\n5                           6        Peter Coyote      &lt;NA&gt;      Point\n6                        &lt;NA&gt;        Raven-Symone      &lt;NA&gt;       &lt;NA&gt;\n     point.coordinates\n1 -122.49624, 37.78578\n2 -122.40582, 37.80239\n3 -122.41103, 37.79278\n4 -122.39603, 37.79807\n5 -122.44842, 37.80293\n6                 NULL",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#interpretation",
+    "href": "lectures/Lecture0506/Lecture05.html#interpretation",
+    "title": "Lecture 05",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nGET() sends an HTTP request\nWe receive a response object with status code (200 - understood, 404 - not found, etc.) headers and content (the JSON)\nfromJSON() converts the response to a data frame\nThey store the larger data, we access it in a legal orderly fashion.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#bigger-challenges---multiple-files",
+    "href": "lectures/Lecture0506/Lecture05.html#bigger-challenges---multiple-files",
+    "title": "Lecture 05",
+    "section": "Bigger Challenges - Multiple files",
+    "text": "Bigger Challenges - Multiple files\n\nYelp Open Data\nLA City Parking Meters\nand their locations\nbut really, for next time",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#for-your-consideration-1",
+    "href": "lectures/Lecture0506/Lecture05.html#for-your-consideration-1",
+    "title": "Lecture 05",
+    "section": "For your consideration",
+    "text": "For your consideration\n\nThis is a simplified version pre-pandemic\n\n\n\n\nOld Data Science Workflow",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture0506/Lecture05.html#takeaways-1",
+    "href": "lectures/Lecture0506/Lecture05.html#takeaways-1",
+    "title": "Lecture 05",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nRectangular format of csv, tsv, txt, Excel is older\nThere are even older forms of data that are seen in specific disciplines\nJSON is transitional and is used in many places\nNewer formats (e.g., parquet, arrow, etc.) exist for size & speed and for non-rectangular forms (later)\nBut data is just data, don’t let the different formats scare/stop you",
+    "crumbs": [
+      "Lectures",
+      "Lecture 05"
     ]
   },
   {
