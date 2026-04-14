@@ -1419,7 +1419,7 @@
     "href": "activity/Week03data.html#using-an-api",
     "title": "Week 3 Data Part 1",
     "section": "Using an API",
-    "text": "Using an API\nIf this works, I will be amazed. This JSON is generated dynamically by an API (application programming interface).APIs are a way for different software applications to communicate with each other. They often return data in JSON format because it is easy to read.\n\nSF Film Locations\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "Using an API\nTHIS WON’T WORK IN webr-r This JSON is generated dynamically by an API (application programming interface).APIs are a way for different software applications to communicate with each other. They often return data in JSON format because it is easy to read.\n\nSF Film Locations\n\ndon’t run the last two\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Activities",
       "Lecture 5 Activity"
