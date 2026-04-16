@@ -2123,6 +2123,83 @@
     ]
   },
   {
+    "objectID": "activity/Week03data2.html",
+    "href": "activity/Week03data2.html",
+    "title": "Week 3 Data Part 2",
+    "section": "",
+    "text": "Recall this webpage using a tool called webr. This activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity. It does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io",
+    "crumbs": [
+      "Activities",
+      "Lecture 6 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data2.html#introduction",
+    "href": "activity/Week03data2.html#introduction",
+    "title": "Week 3 Data Part 2",
+    "section": "",
+    "text": "Recall this webpage using a tool called webr. This activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity. It does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io",
+    "crumbs": [
+      "Activities",
+      "Lecture 6 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data2.html#reading-data",
+    "href": "activity/Week03data2.html#reading-data",
+    "title": "Week 3 Data Part 2",
+    "section": "Reading Data",
+    "text": "Reading Data\nIt is a little tricky but you can read a .RData file stored on GitHub\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 6 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data2.html#access-the-data",
+    "href": "activity/Week03data2.html#access-the-data",
+    "title": "Week 3 Data Part 2",
+    "section": "Access the data",
+    "text": "Access the data\nThis saved R workspace/saved R environment contains many things, we can take a look at the names of the objects in this environment to see what we have access to. This is a good practice when you load a saved R environment, it helps you understand what you have access to and what you can work with.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThis might be a little long:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry to extract something from state_data, for example the state_stats (this isa matrix) or center (this is a data frame):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 6 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data2.html#appending-multiple-data-frames",
+    "href": "activity/Week03data2.html#appending-multiple-data-frames",
+    "title": "Week 3 Data Part 2",
+    "section": "Appending multiple data frames",
+    "text": "Appending multiple data frames\nWe have some data from Box Office Mojo split across 3 files. We can store their URLS in an R object and then read them into R. This is a common way to read data from the web, you store the URL in an object and then use that object to read the data. This way you can easily change the URL if needed without having to change the code that reads the data. It also makes your code more readable and easier to understand.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThen we can read the data into R using the read.csv() function. This function reads a CSV file and creates a data frame in R. We can check the names of the columns, the dimensions of the data frame, and the first few rows to make sure we read the data correctly.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIn base R, a way to append datata frames is to use the rbind() function. This function takes two or more data frames and combines them by rows. The data frames must have the same columns (same names and same types) for this to work.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 6 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data2.html#trying-a-visualization",
+    "href": "activity/Week03data2.html#trying-a-visualization",
+    "title": "Week 3 Data Part 2",
+    "section": "Trying a visualization",
+    "text": "Trying a visualization\nI am not sure if this will work but we will examine plots next week:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 6 Activity"
+    ]
+  },
+  {
+    "objectID": "activity/Week03data2.html#finally-can-we-webscrape-here",
+    "href": "activity/Week03data2.html#finally-can-we-webscrape-here",
+    "title": "Week 3 Data Part 2",
+    "section": "Finally, can we webscrape here?",
+    "text": "Finally, can we webscrape here?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry reading the research and development spending data:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nCombine the two on their State column:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nClean up the data a little\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRun a correlation and a regression\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Activities",
+      "Lecture 6 Activity"
+    ]
+  },
+  {
     "objectID": "activity/Week02vectors.html",
     "href": "activity/Week02vectors.html",
     "title": "Week 2 Functions and Vectors",
