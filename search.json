@@ -2310,266 +2310,418 @@
     "href": "lectures/Lecture0506/Lecture06.html#anonymous-activity-1",
     "title": "Lecture 06",
     "section": "Anonymous Activity 1",
-    "text": "Anonymous Activity 1\nQR Code (it’s getting better)\nThis is anonymous & optional, but helpful to Stats 20,\n\nor here is a direct link"
+    "text": "Anonymous Activity 1\nQR Code (it’s getting better)\nThis is anonymous & optional, but helpful to Stats 20,\n\nor here is a direct link",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#what-is-a-list",
     "href": "lectures/Lecture0506/Lecture06.html#what-is-a-list",
     "title": "Lecture 06",
     "section": "What is a list?",
-    "text": "What is a list?\n\nWe have seen vectors and matrices (only one type of data)\nWe have seen data frames (can store multiple types)\nNow the list\n\n\nis.list(rivers) # no this a vector\n\n[1] FALSE\n\nis.list(iris)\n\n[1] TRUE\n\n\n\niris is a data frame but all data frames are lists\n\n\nis(iris)\n\n[1] \"data.frame\" \"list\"       \"oldClass\"   \"vector\""
+    "text": "What is a list?\n\nWe have seen vectors and matrices (only one type of data)\nWe have seen data frames (can store multiple types)\nNow the list\n\n\nis.list(rivers) # no this a vector\n\n[1] FALSE\n\nis.list(iris)\n\n[1] TRUE\n\n\n\niris is a data frame but all data frames are lists\n\n\nis(iris)\n\n[1] \"data.frame\" \"list\"       \"oldClass\"   \"vector\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#list",
     "href": "lectures/Lecture0506/Lecture06.html#list",
     "title": "Lecture 06",
     "section": "List",
-    "text": "List\nFrom the original documentation\n\nLists are another kind of data storage. Lists have elements, each of which can contain any type of R object, i.e. the elements of a list do not have to be of the same type. List elements are accessed through three different indexing operations. These are explained in detail in Indexing.\n\nLists are called “generic vectors”, and the basic vector types (e.g., integer, numeric, character etc.) that we have been using are referred to as “atomic vectors”."
+    "text": "List\nFrom the original documentation\n\nLists are another kind of data storage. Lists have elements, each of which can contain any type of R object, i.e. the elements of a list do not have to be of the same type. List elements are accessed through three different indexing operations. These are explained in detail in Indexing.\n\nLists are called “generic vectors”, and the basic vector types (e.g., integer, numeric, character etc.) that we have been using are referred to as “atomic vectors”.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#recall",
     "href": "lectures/Lecture0506/Lecture06.html#recall",
     "title": "Lecture 06",
     "section": "Recall",
-    "text": "Recall\n\nThe data type in our simple vector must be all the same (all numeric, all character, all logical)\nIf there is mixing, we say that R “coerces” the vector to be one type.\nBut if data are stored in a list, they can maintain their own type."
+    "text": "Recall\n\nThe data type in our simple vector must be all the same (all numeric, all character, all logical)\nIf there is mixing, we say that R “coerces” the vector to be one type.\nBut if data are stored in a list, they can maintain their own type.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#examples",
     "href": "lectures/Lecture0506/Lecture06.html#examples",
     "title": "Lecture 06",
     "section": "Examples",
-    "text": "Examples\nRecall, an .RData file is a saved environment or a saved workspace. It can contain multiple items\n\nload(\"state_database.RData\")\nls()\n\n [1] \"euro\"           \"iris\"           \"rivers\"         \"state_data\"    \n [5] \"state.abb\"      \"state.area\"     \"state.center\"   \"state.division\"\n [9] \"state.name\"     \"state.region\"   \"state.x77\"     \n\n\nLet’s examine the list called state_data\n\nstr(state_data)\n\nList of 10\n $ name       : chr [1:50] \"Alabama\" \"Alaska\" \"Arizona\" \"Arkansas\" ...\n $ abbrev     : chr [1:50] \"AL\" \"AK\" \"AZ\" \"AR\" ...\n $ state_stats: num [1:50, 1:8] 3615 365 2212 2110 21198 ...\n  ..- attr(*, \"dimnames\")=List of 2\n  .. ..$ : chr [1:50] \"Alabama\" \"Alaska\" \"Arizona\" \"Arkansas\" ...\n  .. ..$ : chr [1:8] \"Population\" \"Income\" \"Illiteracy\" \"Life Exp\" ...\n $ region     : Factor w/ 4 levels \"Northeast\",\"South\",..: 2 4 4 2 4 4 1 2 2 2 ...\n $ division   : Factor w/ 9 levels \"New England\",..: 4 9 8 5 9 8 1 3 3 3 ...\n $ center     :'data.frame':    50 obs. of  2 variables:\n  ..$ x: num [1:50] -86.8 -127.2 -111.6 -92.3 -119.8 ...\n  ..$ y: num [1:50] 32.6 49.2 34.2 34.7 36.5 ...\n $ area       : num [1:50] 51609 589757 113909 53104 158693 ...\n $ euro       : Named num [1:11] 13.76 40.34 1.96 166.39 5.95 ...\n  ..- attr(*, \"names\")= chr [1:11] \"ATS\" \"BEF\" \"DEM\" \"ESP\" ...\n $ rivers     : num [1:141] 735 320 325 392 524 ...\n $ iris       :'data.frame':    150 obs. of  5 variables:\n  ..$ Sepal.Length: num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...\n  ..$ Sepal.Width : num [1:150] 3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...\n  ..$ Petal.Length: num [1:150] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...\n  ..$ Petal.Width : num [1:150] 0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...\n  ..$ Species     : Factor w/ 3 levels \"setosa\",\"versicolor\",..: 1 1 1 1 1 1 1 1 1 1 ..."
+    "text": "Examples\nRecall, an .RData file is a saved environment or a saved workspace. It can contain multiple items\n\nload(\"state_database.RData\")\nls()\n\n [1] \"euro\"           \"iris\"           \"rivers\"         \"state_data\"    \n [5] \"state.abb\"      \"state.area\"     \"state.center\"   \"state.division\"\n [9] \"state.name\"     \"state.region\"   \"state.x77\"     \n\n\nLet’s examine the list called state_data\n\nstr(state_data)\n\nList of 10\n $ name       : chr [1:50] \"Alabama\" \"Alaska\" \"Arizona\" \"Arkansas\" ...\n $ abbrev     : chr [1:50] \"AL\" \"AK\" \"AZ\" \"AR\" ...\n $ state_stats: num [1:50, 1:8] 3615 365 2212 2110 21198 ...\n  ..- attr(*, \"dimnames\")=List of 2\n  .. ..$ : chr [1:50] \"Alabama\" \"Alaska\" \"Arizona\" \"Arkansas\" ...\n  .. ..$ : chr [1:8] \"Population\" \"Income\" \"Illiteracy\" \"Life Exp\" ...\n $ region     : Factor w/ 4 levels \"Northeast\",\"South\",..: 2 4 4 2 4 4 1 2 2 2 ...\n $ division   : Factor w/ 9 levels \"New England\",..: 4 9 8 5 9 8 1 3 3 3 ...\n $ center     :'data.frame':    50 obs. of  2 variables:\n  ..$ x: num [1:50] -86.8 -127.2 -111.6 -92.3 -119.8 ...\n  ..$ y: num [1:50] 32.6 49.2 34.2 34.7 36.5 ...\n $ area       : num [1:50] 51609 589757 113909 53104 158693 ...\n $ euro       : Named num [1:11] 13.76 40.34 1.96 166.39 5.95 ...\n  ..- attr(*, \"names\")= chr [1:11] \"ATS\" \"BEF\" \"DEM\" \"ESP\" ...\n $ rivers     : num [1:141] 735 320 325 392 524 ...\n $ iris       :'data.frame':    150 obs. of  5 variables:\n  ..$ Sepal.Length: num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...\n  ..$ Sepal.Width : num [1:150] 3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...\n  ..$ Petal.Length: num [1:150] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...\n  ..$ Petal.Width : num [1:150] 0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...\n  ..$ Species     : Factor w/ 3 levels \"setosa\",\"versicolor\",..: 1 1 1 1 1 1 1 1 1 1 ...",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#what-the-load-should-reveal",
     "href": "lectures/Lecture0506/Lecture06.html#what-the-load-should-reveal",
     "title": "Lecture 06",
     "section": "What the load() should reveal",
-    "text": "What the load() should reveal"
+    "text": "What the load() should reveal",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#how-to-index-extract-elements-from-a-list",
     "href": "lectures/Lecture0506/Lecture06.html#how-to-index-extract-elements-from-a-list",
     "title": "Lecture 06",
     "section": "How to index (extract) elements from a list",
-    "text": "How to index (extract) elements from a list\n\nIf you thought to use your tools ($, []) from a data frame you have great instincts, a list offers us many possibilities:\n\n\nstate_data$abbrev ## must be a named element\n\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\nstate_data[2] ## why only one value and not [r,c] \n\n$abbrev\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\nstate_data[\"abbrev\"] ## because [] returns a list so\n\n$abbrev\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\nstate_data[c(2, 7)] ## works, the $ and the [[]] cannot do this\n\n$abbrev\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\n$area\n [1]  51609 589757 113909  53104 158693 104247   5009   2057  58560  58876\n[11]   6450  83557  56400  36291  56290  82264  40395  48523  33215  10577\n[21]   8257  58216  84068  47716  69686 147138  77227 110540   9304   7836\n[31] 121666  49576  52586  70665  41222  69919  96981  45333   1214  31055\n[41]  77047  42244 267339  84916   9609  40815  68192  24181  56154  97914\n\nstate_data[c(\"abbrev\", \"area\")] ## also works same as the previous line\n\n$abbrev\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\n$area\n [1]  51609 589757 113909  53104 158693 104247   5009   2057  58560  58876\n[11]   6450  83557  56400  36291  56290  82264  40395  48523  33215  10577\n[21]   8257  58216  84068  47716  69686 147138  77227 110540   9304   7836\n[31] 121666  49576  52586  70665  41222  69919  96981  45333   1214  31055\n[41]  77047  42244 267339  84916   9609  40815  68192  24181  56154  97914\n\nstate_data[[2]] ## the double square bracket structure -- different\n\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\nstate_data[[\"abbrev\"]] ## returns a vector, not a list any more\n\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\""
+    "text": "How to index (extract) elements from a list\n\nIf you thought to use your tools ($, []) from a data frame you have great instincts, a list offers us many possibilities:\n\n\nstate_data$abbrev ## must be a named element\n\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\nstate_data[2] ## why only one value and not [r,c] \n\n$abbrev\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\nstate_data[\"abbrev\"] ## because [] returns a list so\n\n$abbrev\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\nstate_data[c(2, 7)] ## works, the $ and the [[]] cannot do this\n\n$abbrev\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\n$area\n [1]  51609 589757 113909  53104 158693 104247   5009   2057  58560  58876\n[11]   6450  83557  56400  36291  56290  82264  40395  48523  33215  10577\n[21]   8257  58216  84068  47716  69686 147138  77227 110540   9304   7836\n[31] 121666  49576  52586  70665  41222  69919  96981  45333   1214  31055\n[41]  77047  42244 267339  84916   9609  40815  68192  24181  56154  97914\n\nstate_data[c(\"abbrev\", \"area\")] ## also works same as the previous line\n\n$abbrev\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\n$area\n [1]  51609 589757 113909  53104 158693 104247   5009   2057  58560  58876\n[11]   6450  83557  56400  36291  56290  82264  40395  48523  33215  10577\n[21]   8257  58216  84068  47716  69686 147138  77227 110540   9304   7836\n[31] 121666  49576  52586  70665  41222  69919  96981  45333   1214  31055\n[41]  77047  42244 267339  84916   9609  40815  68192  24181  56154  97914\n\nstate_data[[2]] ## the double square bracket structure -- different\n\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"\n\nstate_data[[\"abbrev\"]] ## returns a vector, not a list any more\n\n [1] \"AL\" \"AK\" \"AZ\" \"AR\" \"CA\" \"CO\" \"CT\" \"DE\" \"FL\" \"GA\" \"HI\" \"ID\" \"IL\" \"IN\" \"IA\"\n[16] \"KS\" \"KY\" \"LA\" \"ME\" \"MD\" \"MA\" \"MI\" \"MN\" \"MS\" \"MO\" \"MT\" \"NE\" \"NV\" \"NH\" \"NJ\"\n[31] \"NM\" \"NY\" \"NC\" \"ND\" \"OH\" \"OK\" \"OR\" \"PA\" \"RI\" \"SC\" \"SD\" \"TN\" \"TX\" \"UT\" \"VT\"\n[46] \"VA\" \"WA\" \"WV\" \"WI\" \"WY\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#study-the-results",
     "href": "lectures/Lecture0506/Lecture06.html#study-the-results",
     "title": "Lecture 06",
     "section": "Study the results",
-    "text": "Study the results\nNote the differences.\n\nis(state_data$abbrev)\n\n[1] \"character\"           \"vector\"              \"data.frameRowLabels\"\n[4] \"SuperClassMethod\"   \n\nis(state_data[2]) \n\n[1] \"list\"   \"vector\"\n\nis(state_data[\"abbrev\"])\n\n[1] \"list\"   \"vector\"\n\nis(state_data[c(2, 7)])\n\n[1] \"list\"   \"vector\"\n\nis(state_data[c(\"abbrev\", \"area\")])\n\n[1] \"list\"   \"vector\"\n\nis(state_data[[2]]) \n\n[1] \"character\"           \"vector\"              \"data.frameRowLabels\"\n[4] \"SuperClassMethod\"   \n\nis(state_data[[\"abbrev\"]])\n\n[1] \"character\"           \"vector\"              \"data.frameRowLabels\"\n[4] \"SuperClassMethod\""
+    "text": "Study the results\nNote the differences.\n\nis(state_data$abbrev)\n\n[1] \"character\"           \"vector\"              \"data.frameRowLabels\"\n[4] \"SuperClassMethod\"   \n\nis(state_data[2]) \n\n[1] \"list\"   \"vector\"\n\nis(state_data[\"abbrev\"])\n\n[1] \"list\"   \"vector\"\n\nis(state_data[c(2, 7)])\n\n[1] \"list\"   \"vector\"\n\nis(state_data[c(\"abbrev\", \"area\")])\n\n[1] \"list\"   \"vector\"\n\nis(state_data[[2]]) \n\n[1] \"character\"           \"vector\"              \"data.frameRowLabels\"\n[4] \"SuperClassMethod\"   \n\nis(state_data[[\"abbrev\"]])\n\n[1] \"character\"           \"vector\"              \"data.frameRowLabels\"\n[4] \"SuperClassMethod\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#different-question-extract-ca",
     "href": "lectures/Lecture0506/Lecture06.html#different-question-extract-ca",
     "title": "Lecture 06",
     "section": "Different question – extract “CA”",
-    "text": "Different question – extract “CA”\n\nA test of your understanding of extraction\n\n\nstate_data$abbrev[5]\n\n[1] \"CA\"\n\nstate_data[2][[1]][5] ## ask why?\n\n[1] \"CA\"\n\nstate_data[[2]][5]\n\n[1] \"CA\"\n\n\n\nWhat about “CA” and “NV”? (think sequences and extract by position)\n\n\nstate_data$abbrev[c(5, 28)]\n\n[1] \"CA\" \"NV\"\n\nstate_data[2][[1]][c(5,28)] \n\n[1] \"CA\" \"NV\"\n\nstate_data[[2]][c(5, 28)]\n\n[1] \"CA\" \"NV\""
+    "text": "Different question – extract “CA”\n\nA test of your understanding of extraction\n\n\nstate_data$abbrev[5]\n\n[1] \"CA\"\n\nstate_data[2][[1]][5] ## ask why?\n\n[1] \"CA\"\n\nstate_data[[2]][5]\n\n[1] \"CA\"\n\n\n\nWhat about “CA” and “NV”? (think sequences and extract by position)\n\n\nstate_data$abbrev[c(5, 28)]\n\n[1] \"CA\" \"NV\"\n\nstate_data[2][[1]][c(5,28)] \n\n[1] \"CA\" \"NV\"\n\nstate_data[[2]][c(5, 28)]\n\n[1] \"CA\" \"NV\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#must-be-named",
     "href": "lectures/Lecture0506/Lecture06.html#must-be-named",
     "title": "Lecture 06",
     "section": "Must be named",
-    "text": "Must be named\n\nIf we try to use names such as “CA” and “NV” instead of 5, 28 – our code will throw an error\nIf you have named vector, extraction by name or index number will work:\n\n\nstate_data$euro\n\n        ATS         BEF         DEM         ESP         FIM         FRF \n  13.760300   40.339900    1.955830  166.386000    5.945730    6.559570 \n        IEP         ITL         LUF         NLG         PTE \n   0.787564 1936.270000   40.339900    2.203710  200.482000 \n\nstate_data$euro[c(\"FRF\", \"DEM\")]\n\n    FRF     DEM \n6.55957 1.95583 \n\nstate_data[[\"euro\"]]\n\n        ATS         BEF         DEM         ESP         FIM         FRF \n  13.760300   40.339900    1.955830  166.386000    5.945730    6.559570 \n        IEP         ITL         LUF         NLG         PTE \n   0.787564 1936.270000   40.339900    2.203710  200.482000 \n\nstate_data[[\"euro\"]][c(\"FRF\", \"DEM\")]\n\n    FRF     DEM \n6.55957 1.95583"
+    "text": "Must be named\n\nIf we try to use names such as “CA” and “NV” instead of 5, 28 – our code will throw an error\nIf you have named vector, extraction by name or index number will work:\n\n\nstate_data$euro\n\n        ATS         BEF         DEM         ESP         FIM         FRF \n  13.760300   40.339900    1.955830  166.386000    5.945730    6.559570 \n        IEP         ITL         LUF         NLG         PTE \n   0.787564 1936.270000   40.339900    2.203710  200.482000 \n\nstate_data$euro[c(\"FRF\", \"DEM\")]\n\n    FRF     DEM \n6.55957 1.95583 \n\nstate_data[[\"euro\"]]\n\n        ATS         BEF         DEM         ESP         FIM         FRF \n  13.760300   40.339900    1.955830  166.386000    5.945730    6.559570 \n        IEP         ITL         LUF         NLG         PTE \n   0.787564 1936.270000   40.339900    2.203710  200.482000 \n\nstate_data[[\"euro\"]][c(\"FRF\", \"DEM\")]\n\n    FRF     DEM \n6.55957 1.95583",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#why-do-they-do-this-why-lists",
     "href": "lectures/Lecture0506/Lecture06.html#why-do-they-do-this-why-lists",
     "title": "Lecture 06",
     "section": "Why do they do this? Why lists?",
-    "text": "Why do they do this? Why lists?\n\nIf a programmer wants a single long and complex structure and also wants each piece of it to keep its original type, they use a list to contain all of the pieces.\nRecall vectors (atomic ones) coerce the data to keep the type with the highest priority (e.g., logical coerces to integer, integer to numeric, numeric to character etc.)\nMany important model objects are lists, like the results of a regression and more advanced models.\nMany heavily used functions produce lists"
+    "text": "Why do they do this? Why lists?\n\nIf a programmer wants a single long and complex structure and also wants each piece of it to keep its original type, they use a list to contain all of the pieces.\nRecall vectors (atomic ones) coerce the data to keep the type with the highest priority (e.g., logical coerces to integer, integer to numeric, numeric to character etc.)\nMany important model objects are lists, like the results of a regression and more advanced models.\nMany heavily used functions produce lists",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#example",
     "href": "lectures/Lecture0506/Lecture06.html#example",
     "title": "Lecture 06",
     "section": "Example",
-    "text": "Example\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars) # this is ols (ordinary least squares) in R\nis.list(model1)\n\n[1] TRUE\n\n\n\nusually the output of most modeling functions is a list because output is complicated (a mixture of vectors of different type and length)\n\n\nis.list(summary(model1))\n\n[1] TRUE\n\nsummary(model1) # what does it look like\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10"
+    "text": "Example\n\nmodel1 &lt;- lm(mpg ~ wt, data = mtcars) # this is ols (ordinary least squares) in R\nis.list(model1)\n\n[1] TRUE\n\n\n\nusually the output of most modeling functions is a list because output is complicated (a mixture of vectors of different type and length)\n\n\nis.list(summary(model1))\n\n[1] TRUE\n\nsummary(model1) # what does it look like\n\n\nCall:\nlm(formula = mpg ~ wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#examplecontd",
     "href": "lectures/Lecture0506/Lecture06.html#examplecontd",
     "title": "Lecture 06",
     "section": "Example(cont’d)",
-    "text": "Example(cont’d)\n\nWe can extract the specific output from a complex model by understanding lists\nThis becomes very important when we want to quanitify model stability by examining thousands of resampled or “bootstrapped” (101A, 101C) models – we would extract the coefficients from each model.\nWe see this in machine/statistical learning (101C)\n\n\nnames(model1)\n\n [1] \"coefficients\"  \"residuals\"     \"effects\"       \"rank\"         \n [5] \"fitted.values\" \"assign\"        \"qr\"            \"df.residual\"  \n [9] \"xlevels\"       \"call\"          \"terms\"         \"model\"        \n\nstr(model1) # do you think you could extract the coefficients from our model?\n\nList of 12\n $ coefficients : Named num [1:2] 37.29 -5.34\n  ..- attr(*, \"names\")= chr [1:2] \"(Intercept)\" \"wt\"\n $ residuals    : Named num [1:32] -2.28 -0.92 -2.09 1.3 -0.2 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ effects      : Named num [1:32] -113.65 -29.116 -1.661 1.631 0.111 ...\n  ..- attr(*, \"names\")= chr [1:32] \"(Intercept)\" \"wt\" \"\" \"\" ...\n $ rank         : int 2\n $ fitted.values: Named num [1:32] 23.3 21.9 24.9 20.1 18.9 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ assign       : int [1:2] 0 1\n $ qr           :List of 5\n  ..$ qr   : num [1:32, 1:2] -5.657 0.177 0.177 0.177 0.177 ...\n  .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. ..$ : chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n  .. .. ..$ : chr [1:2] \"(Intercept)\" \"wt\"\n  .. ..- attr(*, \"assign\")= int [1:2] 0 1\n  ..$ qraux: num [1:2] 1.18 1.05\n  ..$ pivot: int [1:2] 1 2\n  ..$ tol  : num 1e-07\n  ..$ rank : int 2\n  ..- attr(*, \"class\")= chr \"qr\"\n $ df.residual  : int 30\n $ xlevels      : Named list()\n $ call         : language lm(formula = mpg ~ wt, data = mtcars)\n $ terms        :Classes 'terms', 'formula'  language mpg ~ wt\n  .. ..- attr(*, \"variables\")= language list(mpg, wt)\n  .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. ..$ : chr [1:2] \"mpg\" \"wt\"\n  .. .. .. ..$ : chr \"wt\"\n  .. ..- attr(*, \"term.labels\")= chr \"wt\"\n  .. ..- attr(*, \"order\")= int 1\n  .. ..- attr(*, \"intercept\")= int 1\n  .. ..- attr(*, \"response\")= int 1\n  .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. ..- attr(*, \"predvars\")= language list(mpg, wt)\n  .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"wt\"\n $ model        :'data.frame':  32 obs. of  2 variables:\n  ..$ mpg: num [1:32] 21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...\n  ..$ wt : num [1:32] 2.62 2.88 2.32 3.21 3.44 ...\n  ..- attr(*, \"terms\")=Classes 'terms', 'formula'  language mpg ~ wt\n  .. .. ..- attr(*, \"variables\")= language list(mpg, wt)\n  .. .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. .. ..$ : chr [1:2] \"mpg\" \"wt\"\n  .. .. .. .. ..$ : chr \"wt\"\n  .. .. ..- attr(*, \"term.labels\")= chr \"wt\"\n  .. .. ..- attr(*, \"order\")= int 1\n  .. .. ..- attr(*, \"intercept\")= int 1\n  .. .. ..- attr(*, \"response\")= int 1\n  .. .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. .. ..- attr(*, \"predvars\")= language list(mpg, wt)\n  .. .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"wt\"\n - attr(*, \"class\")= chr \"lm\""
+    "text": "Example(cont’d)\n\nWe can extract the specific output from a complex model by understanding lists\nThis becomes very important when we want to quanitify model stability by examining thousands of resampled or “bootstrapped” (101A, 101C) models – we would extract the coefficients from each model.\nWe see this in machine/statistical learning (101C)\n\n\nnames(model1)\n\n [1] \"coefficients\"  \"residuals\"     \"effects\"       \"rank\"         \n [5] \"fitted.values\" \"assign\"        \"qr\"            \"df.residual\"  \n [9] \"xlevels\"       \"call\"          \"terms\"         \"model\"        \n\nstr(model1) # do you think you could extract the coefficients from our model?\n\nList of 12\n $ coefficients : Named num [1:2] 37.29 -5.34\n  ..- attr(*, \"names\")= chr [1:2] \"(Intercept)\" \"wt\"\n $ residuals    : Named num [1:32] -2.28 -0.92 -2.09 1.3 -0.2 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ effects      : Named num [1:32] -113.65 -29.116 -1.661 1.631 0.111 ...\n  ..- attr(*, \"names\")= chr [1:32] \"(Intercept)\" \"wt\" \"\" \"\" ...\n $ rank         : int 2\n $ fitted.values: Named num [1:32] 23.3 21.9 24.9 20.1 18.9 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ assign       : int [1:2] 0 1\n $ qr           :List of 5\n  ..$ qr   : num [1:32, 1:2] -5.657 0.177 0.177 0.177 0.177 ...\n  .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. ..$ : chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n  .. .. ..$ : chr [1:2] \"(Intercept)\" \"wt\"\n  .. ..- attr(*, \"assign\")= int [1:2] 0 1\n  ..$ qraux: num [1:2] 1.18 1.05\n  ..$ pivot: int [1:2] 1 2\n  ..$ tol  : num 1e-07\n  ..$ rank : int 2\n  ..- attr(*, \"class\")= chr \"qr\"\n $ df.residual  : int 30\n $ xlevels      : Named list()\n $ call         : language lm(formula = mpg ~ wt, data = mtcars)\n $ terms        :Classes 'terms', 'formula'  language mpg ~ wt\n  .. ..- attr(*, \"variables\")= language list(mpg, wt)\n  .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. ..$ : chr [1:2] \"mpg\" \"wt\"\n  .. .. .. ..$ : chr \"wt\"\n  .. ..- attr(*, \"term.labels\")= chr \"wt\"\n  .. ..- attr(*, \"order\")= int 1\n  .. ..- attr(*, \"intercept\")= int 1\n  .. ..- attr(*, \"response\")= int 1\n  .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. ..- attr(*, \"predvars\")= language list(mpg, wt)\n  .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"wt\"\n $ model        :'data.frame':  32 obs. of  2 variables:\n  ..$ mpg: num [1:32] 21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...\n  ..$ wt : num [1:32] 2.62 2.88 2.32 3.21 3.44 ...\n  ..- attr(*, \"terms\")=Classes 'terms', 'formula'  language mpg ~ wt\n  .. .. ..- attr(*, \"variables\")= language list(mpg, wt)\n  .. .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. .. ..$ : chr [1:2] \"mpg\" \"wt\"\n  .. .. .. .. ..$ : chr \"wt\"\n  .. .. ..- attr(*, \"term.labels\")= chr \"wt\"\n  .. .. ..- attr(*, \"order\")= int 1\n  .. .. ..- attr(*, \"intercept\")= int 1\n  .. .. ..- attr(*, \"response\")= int 1\n  .. .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. .. ..- attr(*, \"predvars\")= language list(mpg, wt)\n  .. .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"wt\"\n - attr(*, \"class\")= chr \"lm\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#suggestions",
     "href": "lectures/Lecture0506/Lecture06.html#suggestions",
     "title": "Lecture 06",
     "section": "Suggestions",
-    "text": "Suggestions\n\nPractice constructing sequences using the colon operator (:) and seq(). Those work on numeric data and can increment and decrement.\nPractice constructing any type (logical, character, numeric) using concatenate/combine with c() or even rep()\nPractice on simple vectors such as rivers or extract a vector from iris (e.g., iris$Sepal.Width) and then extract specific values\nPractice extracting from entire lists, for example, take a subset of rows or of column or both. Then parts of rows, parts of columns.\nWork your way up to the list.\nExtraction is a bit like solving a puzzle."
+    "text": "Suggestions\n\nPractice constructing sequences using the colon operator (:) and seq(). Those work on numeric data and can increment and decrement.\nPractice constructing any type (logical, character, numeric) using concatenate/combine with c() or even rep()\nPractice on simple vectors such as rivers or extract a vector from iris (e.g., iris$Sepal.Width) and then extract specific values\nPractice extracting from entire lists, for example, take a subset of rows or of column or both. Then parts of rows, parts of columns.\nWork your way up to the list.\nExtraction is a bit like solving a puzzle.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#attendance-opportunity",
     "href": "lectures/Lecture0506/Lecture06.html#attendance-opportunity",
     "title": "Lecture 06",
     "section": "Attendance Opportunity",
-    "text": "Attendance Opportunity\nActivity #2: Please Greet Your Neighbor(s)\n\nYou are experts at greeting your neighbors now.\nYou need at least one different neighbor each week for your attendance credit (only one photo required)\nYou cannot receive credit if it’s only you in the photo\nSocial Isolation and Loneliness are public health problems\nMeet a new classmate, take a photograph."
+    "text": "Attendance Opportunity\nActivity #2: Please Greet Your Neighbor(s)\n\nYou are experts at greeting your neighbors now.\nYou need at least one different neighbor each week for your attendance credit (only one photo required)\nYou cannot receive credit if it’s only you in the photo\nSocial Isolation and Loneliness are public health problems\nMeet a new classmate, take a photograph.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#appending---adding-rows---binding-rows",
     "href": "lectures/Lecture0506/Lecture06.html#appending---adding-rows---binding-rows",
     "title": "Lecture 06",
     "section": "Appending - Adding Rows - Binding Rows",
-    "text": "Appending - Adding Rows - Binding Rows"
+    "text": "Appending - Adding Rows - Binding Rows",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#the-context-the-why",
     "href": "lectures/Lecture0506/Lecture06.html#the-context-the-why",
     "title": "Lecture 06",
     "section": "The context, the why?",
-    "text": "The context, the why?\n\nYou might have data from multiple time periods (months, years, etc.)\nYou wish to combine them into one larger single file for analysis.\nExample: someone has given you 3 csv files for 3 different time periods\nThe columns are all the same, but the rows are different and the data covers different time periods\nThe data is from Box Office Mojo, a movie website\nWe take the web locations and save them as an R object\n\n\nbom00_09_url &lt;- \"https://raw.githubusercontent.com/lewv/data-for-example/refs/heads/main/BOM00_09.csv\"\nbom10_23_url &lt;- \"https://raw.githubusercontent.com/lewv/data-for-example/refs/heads/main/BOM10_23.csv\"\nbom24_url &lt;- \"https://raw.githubusercontent.com/lewv/data-for-example/refs/heads/main/BOM24.csv\""
+    "text": "The context, the why?\n\nYou might have data from multiple time periods (months, years, etc.)\nYou wish to combine them into one larger single file for analysis.\nExample: someone has given you 3 csv files for 3 different time periods\nThe columns are all the same, but the rows are different and the data covers different time periods\nThe data is from Box Office Mojo, a movie website\nWe take the web locations and save them as an R object\n\n\nbom00_09_url &lt;- \"https://raw.githubusercontent.com/lewv/data-for-example/refs/heads/main/BOM00_09.csv\"\nbom10_23_url &lt;- \"https://raw.githubusercontent.com/lewv/data-for-example/refs/heads/main/BOM10_23.csv\"\nbom24_url &lt;- \"https://raw.githubusercontent.com/lewv/data-for-example/refs/heads/main/BOM24.csv\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#the-data---3-files",
     "href": "lectures/Lecture0506/Lecture06.html#the-data---3-files",
     "title": "Lecture 06",
     "section": "The data - 3 files",
-    "text": "The data - 3 files\n\nBOM00_09 &lt;- read.csv(bom00_09_url)\nnames(BOM00_09)\n\n[1] \"Rank\"             \"Release.Group\"    \"Worldwide\"        \"Domestic\"        \n[5] \"Domestic_percent\" \"Foreign\"          \"Foreign_percent\"  \"year\"            \n\ndim(BOM00_09)\n\n[1] 2000    8\n\nhead(BOM00_09)\n\n  Rank                  Release.Group    Worldwide     Domestic\n1    0         Mission: Impossible II 54,63,88,108 21,54,09,889\n2    1                      Gladiator 46,05,83,960 18,77,05,427\n3    2                      Cast Away 42,96,32,142 23,36,32,142\n4    3                What Women Want 37,41,11,707 18,28,11,707\n5    4                       Dinosaur 34,98,22,765 13,77,48,063\n6    5 How the Grinch Stole Christmas 34,58,42,198 26,07,45,620\n  Domestic_percent      Foreign Foreign_percent year\n1           39.40% 33,09,78,219          60.60% 2000\n2           40.80% 27,28,78,533          59.20% 2000\n3           54.40% 19,60,00,000          45.60% 2000\n4           48.90% 19,13,00,000          51.10% 2000\n5           39.40% 21,20,74,702          60.60% 2000\n6           75.40%  8,50,96,578          24.60% 2000\n\nBOM10_23 &lt;- read.csv(bom10_23_url)\nnames(BOM10_23)\n\n[1] \"Rank\"             \"Release.Group\"    \"Worldwide\"        \"Domestic\"        \n[5] \"Domestic_percent\" \"Foreign\"          \"Foreign_percent\"  \"year\"            \n\ndim(BOM10_23)\n\n[1] 2800    8\n\nhead(BOM10_23)\n\n  Rank                                Release.Group      Worldwide     Domestic\n1    0                                  Toy Story 3 1,06,69,69,703 41,50,04,880\n2    1                          Alice in Wonderland 1,02,54,67,110 33,41,91,110\n3    2 Harry Potter and the Deathly Hallows: Part 1   96,02,83,305 29,59,83,305\n4    3                                    Inception   82,82,58,695 29,25,76,195\n5    4                          Shrek Forever After   75,26,00,867 23,87,36,787\n6    5                   The Twilight Saga: Eclipse   69,84,91,347 30,05,31,751\n  Domestic_percent      Foreign Foreign_percent year\n1           38.90% 65,19,64,823          61.10% 2010\n2           32.60% 69,12,76,000          67.40% 2010\n3           30.80% 66,43,00,000          69.20% 2010\n4           35.30% 53,56,82,500          64.70% 2010\n5           31.70% 51,38,64,080          68.30% 2010\n6              43% 39,79,59,596             57% 2010\n\nBOM24 &lt;- read.csv(bom24_url)\nnames(BOM24)\n\n[1] \"Rank\"             \"Release.Group\"    \"Worldwide\"        \"Domestic\"        \n[5] \"Domestic_percent\" \"Foreign\"          \"Foreign_percent\"  \"year\"            \n\ndim(BOM24)\n\n[1] 200   8\n\nhead(BOM24)\n\n  Rank                   Release.Group      Worldwide     Domestic\n1    0                    Inside Out 2 1,59,59,83,694 63,78,52,840\n2    1            Deadpool & Wolverine 1,04,31,80,185 50,69,37,007\n3    2                 Despicable Me 4   80,85,37,571 33,25,83,715\n4    3                  Dune: Part Two   71,18,44,358 28,21,44,358\n5    4 Godzilla x Kong: The New Empire   56,76,50,016 19,63,50,016\n6    5                 Kung Fu Panda 4   54,78,20,030 19,35,90,620\n  Domestic_percent      Foreign Foreign_percent year\n1              40% 95,81,30,854             60% 2024\n2           48.60% 53,62,43,178          51.40% 2024\n3           41.10% 47,59,53,856          58.90% 2024\n4           39.60% 42,97,00,000          60.40% 2024\n5           34.60% 37,13,00,000          65.40% 2024\n6           35.30% 35,42,29,410          64.70% 2024"
+    "text": "The data - 3 files\n\nBOM00_09 &lt;- read.csv(bom00_09_url)\nnames(BOM00_09)\n\n[1] \"Rank\"             \"Release.Group\"    \"Worldwide\"        \"Domestic\"        \n[5] \"Domestic_percent\" \"Foreign\"          \"Foreign_percent\"  \"year\"            \n\ndim(BOM00_09)\n\n[1] 2000    8\n\nhead(BOM00_09)\n\n  Rank                  Release.Group    Worldwide     Domestic\n1    0         Mission: Impossible II 54,63,88,108 21,54,09,889\n2    1                      Gladiator 46,05,83,960 18,77,05,427\n3    2                      Cast Away 42,96,32,142 23,36,32,142\n4    3                What Women Want 37,41,11,707 18,28,11,707\n5    4                       Dinosaur 34,98,22,765 13,77,48,063\n6    5 How the Grinch Stole Christmas 34,58,42,198 26,07,45,620\n  Domestic_percent      Foreign Foreign_percent year\n1           39.40% 33,09,78,219          60.60% 2000\n2           40.80% 27,28,78,533          59.20% 2000\n3           54.40% 19,60,00,000          45.60% 2000\n4           48.90% 19,13,00,000          51.10% 2000\n5           39.40% 21,20,74,702          60.60% 2000\n6           75.40%  8,50,96,578          24.60% 2000\n\nBOM10_23 &lt;- read.csv(bom10_23_url)\nnames(BOM10_23)\n\n[1] \"Rank\"             \"Release.Group\"    \"Worldwide\"        \"Domestic\"        \n[5] \"Domestic_percent\" \"Foreign\"          \"Foreign_percent\"  \"year\"            \n\ndim(BOM10_23)\n\n[1] 2800    8\n\nhead(BOM10_23)\n\n  Rank                                Release.Group      Worldwide     Domestic\n1    0                                  Toy Story 3 1,06,69,69,703 41,50,04,880\n2    1                          Alice in Wonderland 1,02,54,67,110 33,41,91,110\n3    2 Harry Potter and the Deathly Hallows: Part 1   96,02,83,305 29,59,83,305\n4    3                                    Inception   82,82,58,695 29,25,76,195\n5    4                          Shrek Forever After   75,26,00,867 23,87,36,787\n6    5                   The Twilight Saga: Eclipse   69,84,91,347 30,05,31,751\n  Domestic_percent      Foreign Foreign_percent year\n1           38.90% 65,19,64,823          61.10% 2010\n2           32.60% 69,12,76,000          67.40% 2010\n3           30.80% 66,43,00,000          69.20% 2010\n4           35.30% 53,56,82,500          64.70% 2010\n5           31.70% 51,38,64,080          68.30% 2010\n6              43% 39,79,59,596             57% 2010\n\nBOM24 &lt;- read.csv(bom24_url)\nnames(BOM24)\n\n[1] \"Rank\"             \"Release.Group\"    \"Worldwide\"        \"Domestic\"        \n[5] \"Domestic_percent\" \"Foreign\"          \"Foreign_percent\"  \"year\"            \n\ndim(BOM24)\n\n[1] 200   8\n\nhead(BOM24)\n\n  Rank                   Release.Group      Worldwide     Domestic\n1    0                    Inside Out 2 1,59,59,83,694 63,78,52,840\n2    1            Deadpool & Wolverine 1,04,31,80,185 50,69,37,007\n3    2                 Despicable Me 4   80,85,37,571 33,25,83,715\n4    3                  Dune: Part Two   71,18,44,358 28,21,44,358\n5    4 Godzilla x Kong: The New Empire   56,76,50,016 19,63,50,016\n6    5                 Kung Fu Panda 4   54,78,20,030 19,35,90,620\n  Domestic_percent      Foreign Foreign_percent year\n1              40% 95,81,30,854             60% 2024\n2           48.60% 53,62,43,178          51.40% 2024\n3           41.10% 47,59,53,856          58.90% 2024\n4           39.60% 42,97,00,000          60.40% 2024\n5           34.60% 37,13,00,000          65.40% 2024\n6           35.30% 35,42,29,410          64.70% 2024",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#rbind",
     "href": "lectures/Lecture0506/Lecture06.html#rbind",
     "title": "Lecture 06",
     "section": "rbind()",
-    "text": "rbind()\nShort for “row bind”, implies combining or “binding” data on the row dimension\n\nBOM0024 &lt;- rbind(BOM00_09, BOM10_23, BOM24)\nnames(BOM0024)\n\n[1] \"Rank\"             \"Release.Group\"    \"Worldwide\"        \"Domestic\"        \n[5] \"Domestic_percent\" \"Foreign\"          \"Foreign_percent\"  \"year\"            \n\ndim(BOM0024)\n\n[1] 5000    8\n\nhead(BOM0024)\n\n  Rank                  Release.Group    Worldwide     Domestic\n1    0         Mission: Impossible II 54,63,88,108 21,54,09,889\n2    1                      Gladiator 46,05,83,960 18,77,05,427\n3    2                      Cast Away 42,96,32,142 23,36,32,142\n4    3                What Women Want 37,41,11,707 18,28,11,707\n5    4                       Dinosaur 34,98,22,765 13,77,48,063\n6    5 How the Grinch Stole Christmas 34,58,42,198 26,07,45,620\n  Domestic_percent      Foreign Foreign_percent year\n1           39.40% 33,09,78,219          60.60% 2000\n2           40.80% 27,28,78,533          59.20% 2000\n3           54.40% 19,60,00,000          45.60% 2000\n4           48.90% 19,13,00,000          51.10% 2000\n5           39.40% 21,20,74,702          60.60% 2000\n6           75.40%  8,50,96,578          24.60% 2000\n\ntail(BOM0024)\n\n     Rank                               Release.Group Worldwide  Domestic\n4995  194 Jesus Thirsts: The Miracle of the Eucharist 29,27,121 29,27,121\n4996  195                       Buzz House: The Movie 29,10,112         0\n4997  196                                       We 12 28,64,154         0\n4998  197     Me Contro Te - Il film: Operazione Spie 27,98,501         0\n4999  198                              Menudas piezas 27,78,043         0\n5000  199                                 Silent Love 27,39,320         0\n     Domestic_percent   Foreign Foreign_percent year\n4995             100%         0               0 2024\n4996                0 29,10,112            100% 2024\n4997                0 28,64,154            100% 2024\n4998                0 27,98,501            100% 2024\n4999                0 27,78,043            100% 2024\n5000                0 27,39,320            100% 2024"
+    "text": "rbind()\nShort for “row bind”, implies combining or “binding” data on the row dimension\n\nBOM0024 &lt;- rbind(BOM00_09, BOM10_23, BOM24)\nnames(BOM0024)\n\n[1] \"Rank\"             \"Release.Group\"    \"Worldwide\"        \"Domestic\"        \n[5] \"Domestic_percent\" \"Foreign\"          \"Foreign_percent\"  \"year\"            \n\ndim(BOM0024)\n\n[1] 5000    8\n\nhead(BOM0024)\n\n  Rank                  Release.Group    Worldwide     Domestic\n1    0         Mission: Impossible II 54,63,88,108 21,54,09,889\n2    1                      Gladiator 46,05,83,960 18,77,05,427\n3    2                      Cast Away 42,96,32,142 23,36,32,142\n4    3                What Women Want 37,41,11,707 18,28,11,707\n5    4                       Dinosaur 34,98,22,765 13,77,48,063\n6    5 How the Grinch Stole Christmas 34,58,42,198 26,07,45,620\n  Domestic_percent      Foreign Foreign_percent year\n1           39.40% 33,09,78,219          60.60% 2000\n2           40.80% 27,28,78,533          59.20% 2000\n3           54.40% 19,60,00,000          45.60% 2000\n4           48.90% 19,13,00,000          51.10% 2000\n5           39.40% 21,20,74,702          60.60% 2000\n6           75.40%  8,50,96,578          24.60% 2000\n\ntail(BOM0024)\n\n     Rank                               Release.Group Worldwide  Domestic\n4995  194 Jesus Thirsts: The Miracle of the Eucharist 29,27,121 29,27,121\n4996  195                       Buzz House: The Movie 29,10,112         0\n4997  196                                       We 12 28,64,154         0\n4998  197     Me Contro Te - Il film: Operazione Spie 27,98,501         0\n4999  198                              Menudas piezas 27,78,043         0\n5000  199                                 Silent Love 27,39,320         0\n     Domestic_percent   Foreign Foreign_percent year\n4995             100%         0               0 2024\n4996                0 29,10,112            100% 2024\n4997                0 28,64,154            100% 2024\n4998                0 27,98,501            100% 2024\n4999                0 27,78,043            100% 2024\n5000                0 27,39,320            100% 2024",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#result",
     "href": "lectures/Lecture0506/Lecture06.html#result",
     "title": "Lecture 06",
     "section": "Result",
-    "text": "Result\n\ncan anyone tell me why only a few of the variables are numeric?\n\n\nstr(BOM0024)\n\n'data.frame':   5000 obs. of  8 variables:\n $ Rank            : int  0 1 2 3 4 5 6 7 8 9 ...\n $ Release.Group   : chr  \"Mission: Impossible II\" \"Gladiator\" \"Cast Away\" \"What Women Want\" ...\n $ Worldwide       : chr  \"54,63,88,108\" \"46,05,83,960\" \"42,96,32,142\" \"37,41,11,707\" ...\n $ Domestic        : chr  \"21,54,09,889\" \"18,77,05,427\" \"23,36,32,142\" \"18,28,11,707\" ...\n $ Domestic_percent: chr  \"39.40%\" \"40.80%\" \"54.40%\" \"48.90%\" ...\n $ Foreign         : chr  \"33,09,78,219\" \"27,28,78,533\" \"19,60,00,000\" \"19,13,00,000\" ...\n $ Foreign_percent : chr  \"60.60%\" \"59.20%\" \"45.60%\" \"51.10%\" ...\n $ year            : int  2000 2000 2000 2000 2000 2000 2000 2000 2000 2000 ..."
+    "text": "Result\n\ncan anyone tell me why only a few of the variables are numeric?\n\n\nstr(BOM0024)\n\n'data.frame':   5000 obs. of  8 variables:\n $ Rank            : int  0 1 2 3 4 5 6 7 8 9 ...\n $ Release.Group   : chr  \"Mission: Impossible II\" \"Gladiator\" \"Cast Away\" \"What Women Want\" ...\n $ Worldwide       : chr  \"54,63,88,108\" \"46,05,83,960\" \"42,96,32,142\" \"37,41,11,707\" ...\n $ Domestic        : chr  \"21,54,09,889\" \"18,77,05,427\" \"23,36,32,142\" \"18,28,11,707\" ...\n $ Domestic_percent: chr  \"39.40%\" \"40.80%\" \"54.40%\" \"48.90%\" ...\n $ Foreign         : chr  \"33,09,78,219\" \"27,28,78,533\" \"19,60,00,000\" \"19,13,00,000\" ...\n $ Foreign_percent : chr  \"60.60%\" \"59.20%\" \"45.60%\" \"51.10%\" ...\n $ year            : int  2000 2000 2000 2000 2000 2000 2000 2000 2000 2000 ...",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#solution-week-3",
     "href": "lectures/Lecture0506/Lecture06.html#solution-week-3",
     "title": "Lecture 06",
     "section": "Solution (Week 3)",
-    "text": "Solution (Week 3)\n\nRemove non-numeric characters first, then convert to numeric.\nWe could remove the characters (like the comma and percentage) in this manner\ngsub is a “global substitution” function, it searches for the character we specify and then removes all occurrences.\nmight be easiest understood reading from the innermost part of the R function\n\n\n# for commas |&gt; is a \"pipe\n# The pipe |&gt; means:\n# “Take the result on the left and pass it into the function on the right.”\"\n\nBOM0024$Worldwide &lt;- gsub(\",\", \"\", BOM0024$Worldwide) |&gt; as.numeric()\nBOM0024$Domestic  &lt;- gsub(\",\", \"\", BOM0024$Domestic) |&gt; as.numeric()\nBOM0024$Foreign   &lt;- gsub(\",\", \"\", BOM0024$Foreign) |&gt; as.numeric()\n\n# for percent we nested it instead to show the readability of |&gt;\nBOM0024$Domestic_percent &lt;- as.numeric(gsub(\"%\", \"\", BOM0024$Domestic_percent))/100\n\nWarning: NAs introduced by coercion\n\nBOM0024$Foreign_percent  &lt;- as.numeric(gsub(\"%\", \"\", BOM0024$Foreign_percent))/100\n\nWarning: NAs introduced by coercion"
+    "text": "Solution (Week 3)\n\nRemove non-numeric characters first, then convert to numeric.\nWe could remove the characters (like the comma and percentage) in this manner\ngsub is a “global substitution” function, it searches for the character we specify and then removes all occurrences.\nmight be easiest understood reading from the innermost part of the R function\n\n\n# for commas |&gt; is a \"pipe\n# The pipe |&gt; means:\n# “Take the result on the left and pass it into the function on the right.”\"\n\nBOM0024$Worldwide &lt;- gsub(\",\", \"\", BOM0024$Worldwide) |&gt; as.numeric()\nBOM0024$Domestic  &lt;- gsub(\",\", \"\", BOM0024$Domestic) |&gt; as.numeric()\nBOM0024$Foreign   &lt;- gsub(\",\", \"\", BOM0024$Foreign) |&gt; as.numeric()\n\n# for percent we nested it instead to show the readability of |&gt;\nBOM0024$Domestic_percent &lt;- as.numeric(gsub(\"%\", \"\", BOM0024$Domestic_percent))/100\n\nWarning: NAs introduced by coercion\n\nBOM0024$Foreign_percent  &lt;- as.numeric(gsub(\"%\", \"\", BOM0024$Foreign_percent))/100\n\nWarning: NAs introduced by coercion",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#substitution-result",
     "href": "lectures/Lecture0506/Lecture06.html#substitution-result",
     "title": "Lecture 06",
     "section": "Substitution result",
-    "text": "Substitution result\n\nAlways check your work!\n\n\nstr(BOM0024)\n\n'data.frame':   5000 obs. of  8 variables:\n $ Rank            : int  0 1 2 3 4 5 6 7 8 9 ...\n $ Release.Group   : chr  \"Mission: Impossible II\" \"Gladiator\" \"Cast Away\" \"What Women Want\" ...\n $ Worldwide       : num  5.46e+08 4.61e+08 4.30e+08 3.74e+08 3.50e+08 ...\n $ Domestic        : num  2.15e+08 1.88e+08 2.34e+08 1.83e+08 1.38e+08 ...\n $ Domestic_percent: num  0.394 0.408 0.544 0.489 0.394 0.754 0.503 0.556 0.531 0.533 ...\n $ Foreign         : num  3.31e+08 2.73e+08 1.96e+08 1.91e+08 2.12e+08 ...\n $ Foreign_percent : num  0.606 0.592 0.456 0.511 0.606 0.246 0.497 0.444 0.469 0.467 ...\n $ year            : int  2000 2000 2000 2000 2000 2000 2000 2000 2000 2000 ..."
+    "text": "Substitution result\n\nAlways check your work!\n\n\nstr(BOM0024)\n\n'data.frame':   5000 obs. of  8 variables:\n $ Rank            : int  0 1 2 3 4 5 6 7 8 9 ...\n $ Release.Group   : chr  \"Mission: Impossible II\" \"Gladiator\" \"Cast Away\" \"What Women Want\" ...\n $ Worldwide       : num  5.46e+08 4.61e+08 4.30e+08 3.74e+08 3.50e+08 ...\n $ Domestic        : num  2.15e+08 1.88e+08 2.34e+08 1.83e+08 1.38e+08 ...\n $ Domestic_percent: num  0.394 0.408 0.544 0.489 0.394 0.754 0.503 0.556 0.531 0.533 ...\n $ Foreign         : num  3.31e+08 2.73e+08 1.96e+08 1.91e+08 2.12e+08 ...\n $ Foreign_percent : num  0.606 0.592 0.456 0.511 0.606 0.246 0.497 0.444 0.469 0.467 ...\n $ year            : int  2000 2000 2000 2000 2000 2000 2000 2000 2000 2000 ...",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#looking-ahead-to-next-week",
     "href": "lectures/Lecture0506/Lecture06.html#looking-ahead-to-next-week",
     "title": "Lecture 06",
     "section": "Looking ahead to next week",
-    "text": "Looking ahead to next week\n\nProbably needs more work but… a glimpse of next week\nWe log to normalize the variable with a long right tail\nhist() will plot a histogram of a numeric variable\nthe rest is about beauty\n\n\nlog_domestic &lt;- log(BOM0024$Domestic)\n\npar(mfrow = c(2,1)) # change default to 2 rows of plots, one column\nhist(BOM0024$Domestic, freq = FALSE, col = c(\"blue\", \"gold\"))\nhist(log_domestic, freq = FALSE, col = c(\"blue\", \"gold\"))\nbox()\npar(mfrow = c(1,1)) # change back to a single plot"
+    "text": "Looking ahead to next week\n\nProbably needs more work but… a glimpse of next week\nWe log to normalize the variable with a long right tail\nhist() will plot a histogram of a numeric variable\nthe rest is about beauty\n\n\nlog_domestic &lt;- log(BOM0024$Domestic)\n\npar(mfrow = c(2,1)) # change default to 2 rows of plots, one column\nhist(BOM0024$Domestic, freq = FALSE, col = c(\"blue\", \"gold\"))\nhist(log_domestic, freq = FALSE, col = c(\"blue\", \"gold\"))\nbox()\npar(mfrow = c(1,1)) # change back to a single plot",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#result-1",
     "href": "lectures/Lecture0506/Lecture06.html#result-1",
     "title": "Lecture 06",
     "section": "Result",
-    "text": "Result"
+    "text": "Result",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#joiningmerging",
     "href": "lectures/Lecture0506/Lecture06.html#joiningmerging",
     "title": "Lecture 06",
     "section": "Joining/Merging",
-    "text": "Joining/Merging\n\nThis a fundamental data handling skill which borders on intermediate\nAs in the previous example, data are broken up into separate files. BUT the information in the columns is different each file and the rows are the same (or mostly the same)\nThis is a situation where one is trying to augment data on existing observations with additional data on the column dimension (added characteristics, added variables).\nGenerally, you should want a “key” or an identifier variable/column that you can match your datasets on before doing this.\nWe are going to get some data for this one"
+    "text": "Joining/Merging\n\nThis a fundamental data handling skill which borders on intermediate\nAs in the previous example, data are broken up into separate files. BUT the information in the columns is different each file and the rows are the same (or mostly the same)\nThis is a situation where one is trying to augment data on existing observations with additional data on the column dimension (added characteristics, added variables).\nGenerally, you should want a “key” or an identifier variable/column that you can match your datasets on before doing this.\nWe are going to get some data for this one",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#a-little-webscraping",
     "href": "lectures/Lecture0506/Lecture06.html#a-little-webscraping",
     "title": "Lecture 06",
     "section": "A little webscraping",
-    "text": "A little webscraping\n\nGET SOME (FREE) DATA FROM THE WEB!\n\nMaybe violate EULAs and other things (so you don’t need to run this part)\nBut it’s easy in R (BTW Python is the preferred tool here)\nYou will to install.packages(\"rvest\") and then load(rvest)\nThis one is easy, we are going to grab some tables of US data (acquisition)\nMaybe clean them up a little (preparation)\nSave them as R Data Frames\nThen join them to make a more complete dataset"
+    "text": "A little webscraping\n\nGET SOME (FREE) DATA FROM THE WEB!\n\nMaybe violate EULAs and other things (so you don’t need to run this part)\nBut it’s easy in R (BTW Python is the preferred tool here)\nYou will to install.packages(\"rvest\") and then load(rvest)\nThis one is easy, we are going to grab some tables of US data (acquisition)\nMaybe clean them up a little (preparation)\nSave them as R Data Frames\nThen join them to make a more complete dataset",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#a-wikipedia-page-on-the-us",
     "href": "lectures/Lecture0506/Lecture06.html#a-wikipedia-page-on-the-us",
     "title": "Lecture 06",
     "section": "A Wikipedia page on the US",
-    "text": "A Wikipedia page on the US\n\n\n\nmillionaire stats"
+    "text": "A Wikipedia page on the US\n\n\n\nmillionaire stats",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#another-wikipedia-page-on-the-us",
     "href": "lectures/Lecture0506/Lecture06.html#another-wikipedia-page-on-the-us",
     "title": "Lecture 06",
     "section": "Another Wikipedia page on the US",
-    "text": "Another Wikipedia page on the US\n\n\n\nresearch & development"
+    "text": "Another Wikipedia page on the US\n\n\n\nresearch & development",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#activate-library-create-constants",
     "href": "lectures/Lecture0506/Lecture06.html#activate-library-create-constants",
     "title": "Lecture 06",
     "section": "Activate library, create constants",
-    "text": "Activate library, create constants\n\nlibrary(rvest)\n\nmillionaires_page &lt;- \"https://en.wikipedia.org/wiki/List_of_U.S._states_by_the_number_of_millionaire_households#List\"\n\nrd_page &lt;- \"https://en.wikipedia.org/wiki/List_of_U.S._states_by_research_and_development_spending#List\"\n\nSee rvest.tidyverse.org more explanations\n\nThe rvest library has a little function read_html() basically reads the web location you give it.\nTypically, when scraping Wikipedia, you want their tables, so we search for tables\n\n\nmillionaires &lt;- read_html(millionaires_page)\n\nmillionaires |&gt; html_elements(\"table\") \n\n{xml_nodeset (2)}\n[1] &lt;table class=\"wikitable nowrap sortable\"&gt;\\n&lt;caption&gt;States by number and  ...\n[2] &lt;table class=\"nowraplinks hlist mw-collapsible mw-collapsed navbox-inner\" ...\n\n\n\nIt turns out to be the first element"
+    "text": "Activate library, create constants\n\nlibrary(rvest)\n\nmillionaires_page &lt;- \"https://en.wikipedia.org/wiki/List_of_U.S._states_by_the_number_of_millionaire_households#List\"\n\nrd_page &lt;- \"https://en.wikipedia.org/wiki/List_of_U.S._states_by_research_and_development_spending#List\"\n\nSee rvest.tidyverse.org more explanations\n\nThe rvest library has a little function read_html() basically reads the web location you give it.\nTypically, when scraping Wikipedia, you want their tables, so we search for tables\n\n\nmillionaires &lt;- read_html(millionaires_page)\n\nmillionaires |&gt; html_elements(\"table\") \n\n{xml_nodeset (2)}\n[1] &lt;table class=\"wikitable nowrap sortable\"&gt;\\n&lt;caption&gt;States by number and  ...\n[2] &lt;table class=\"nowraplinks hlist mw-collapsible mw-collapsed navbox-inner\" ...\n\n\n\nIt turns out to be the first element",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#extract-the-data-table-with-html_table",
     "href": "lectures/Lecture0506/Lecture06.html#extract-the-data-table-with-html_table",
     "title": "Lecture 06",
     "section": "Extract the data table with html_table()",
-    "text": "Extract the data table with html_table()\n\nWe decide to extract the first table. Do the same for r_d.\nAnd check the results, these are data frames\n\n\nmillionaires &lt;- read_html(millionaires_page) %&gt;%\n  html_table() %&gt;%\n  .[[1]]\nhead(millionaires)\n\n# A tibble: 6 × 4\n   Rank State        `Number of millionaire households` Share of millionaire h…¹\n  &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;                              &lt;chr&gt;                   \n1     1 California   1,147,251                          8.51%                   \n2     2 Texas        650,216                            6.32%                   \n3     3 New York     570,456                            7.52%                   \n4     4 Florida      496,971                            5.87%                   \n5     5 Illinois     346,873                            7.13%                   \n6     6 Pennsylvania 328,859                            6.44%                   \n# ℹ abbreviated name: ¹​`Share of millionaire households`\n\nis(millionaires)\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\" \"list\"       \"oldClass\"  \n[6] \"vector\"    \n\nr_d &lt;- read_html(rd_page) %&gt;%\n  html_table() %&gt;%\n  .[[1]]\nhead(r_d)\n\n# A tibble: 6 × 6\n  Nationalrank State         Expenditures on R&D (milli…¹ Expenditures on R&D …²\n  &lt;chr&gt;        &lt;chr&gt;         &lt;chr&gt;                        &lt;chr&gt;                 \n1 1            California    217,976                      4,220                 \n2 2            Washington    46,392                       4,496                 \n3 3            Massachusetts 44,907                       5,188                 \n4 4            New York      36,559                       1,343                 \n5 5            Texas         34,589                       950                   \n6 6            Maryland      27,853                       3,864                 \n# ℹ abbreviated names: ¹​`Expenditures on R&D (millions of US$)[1]`,\n#   ²​`Expenditures on R&D per capita in US$[2]`\n# ℹ 2 more variables: `Federal government share in %[3]` &lt;dbl&gt;,\n#   `Expenditures on R&D in % of GDP[1]` &lt;chr&gt;\n\nis(r_d)\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\" \"list\"       \"oldClass\"  \n[6] \"vector\""
+    "text": "Extract the data table with html_table()\n\nWe decide to extract the first table. Do the same for r_d.\nAnd check the results, these are data frames\n\n\nmillionaires &lt;- read_html(millionaires_page) %&gt;%\n  html_table() %&gt;%\n  .[[1]]\nhead(millionaires)\n\n# A tibble: 6 × 4\n   Rank State        `Number of millionaire households` Share of millionaire h…¹\n  &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;                              &lt;chr&gt;                   \n1     1 California   1,147,251                          8.51%                   \n2     2 Texas        650,216                            6.32%                   \n3     3 New York     570,456                            7.52%                   \n4     4 Florida      496,971                            5.87%                   \n5     5 Illinois     346,873                            7.13%                   \n6     6 Pennsylvania 328,859                            6.44%                   \n# ℹ abbreviated name: ¹​`Share of millionaire households`\n\nis(millionaires)\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\" \"list\"       \"oldClass\"  \n[6] \"vector\"    \n\nr_d &lt;- read_html(rd_page) %&gt;%\n  html_table() %&gt;%\n  .[[1]]\nhead(r_d)\n\n# A tibble: 6 × 6\n  Nationalrank State         Expenditures on R&D (milli…¹ Expenditures on R&D …²\n  &lt;chr&gt;        &lt;chr&gt;         &lt;chr&gt;                        &lt;chr&gt;                 \n1 1            California    217,976                      4,220                 \n2 2            Washington    46,392                       4,496                 \n3 3            Massachusetts 44,907                       5,188                 \n4 4            New York      36,559                       1,343                 \n5 5            Texas         34,589                       950                   \n6 6            Maryland      27,853                       3,864                 \n# ℹ abbreviated names: ¹​`Expenditures on R&D (millions of US$)[1]`,\n#   ²​`Expenditures on R&D per capita in US$[2]`\n# ℹ 2 more variables: `Federal government share in %[3]` &lt;dbl&gt;,\n#   `Expenditures on R&D in % of GDP[1]` &lt;chr&gt;\n\nis(r_d)\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\" \"list\"       \"oldClass\"  \n[6] \"vector\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#joinmerge-two-data-frames",
     "href": "lectures/Lecture0506/Lecture06.html#joinmerge-two-data-frames",
     "title": "Lecture 06",
     "section": "Join/Merge two data frames",
-    "text": "Join/Merge two data frames\n\nThe next slide shows a merge in base R, I will show you a “join” in a different package later.\nThis is the simplest type, the intersection of two datasets matched on a specific row value(s), typically an ID (state)\nBy convention, X (left, first dataset) and Y (right, second dataset)\nWe want the intersection of the two\nIn our particular example, States and their measurements (why would we care to do such a thing?)"
+    "text": "Join/Merge two data frames\n\nThe next slide shows a merge in base R, I will show you a “join” in a different package later.\nThis is the simplest type, the intersection of two datasets matched on a specific row value(s), typically an ID (state)\nBy convention, X (left, first dataset) and Y (right, second dataset)\nWe want the intersection of the two\nIn our particular example, States and their measurements (why would we care to do such a thing?)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#code",
     "href": "lectures/Lecture0506/Lecture06.html#code",
     "title": "Lecture 06",
     "section": "Code",
-    "text": "Code\n\nrich_n_research &lt;- merge(millionaires, r_d, by = \"State\")\nstr(rich_n_research)\n\n'data.frame':   51 obs. of  9 variables:\n $ State                                   : chr  \"Alabama\" \"Alaska\" \"Arizona\" \"Arkansas\" ...\n $ Rank                                    : int  26 47 18 34 1 16 23 45 43 4 ...\n $ Number of millionaire households        : chr  \"94,259\" \"22,302\" \"161,014\" \"51,532\" ...\n $ Share of millionaire households         : chr  \"4.87%\" \"8.18%\" \"6.03%\" \"4.33%\" ...\n $ Nationalrank                            : chr  \"26\" \"50\" \"20\" \"42\" ...\n $ Expenditures on R&D (millions of US$)[1]: chr  \"5,701\" \"339\" \"9,056\" \"892\" ...\n $ Expenditures on R&D per capita in US$[2]: chr  \"1,006\" \"410\" \"1,079\" \"286\" ...\n $ Federal government share in %[3]        : num  25.3 25.7 2.9 4.6 1.6 6.1 0.2 0.1 58.3 6.4 ...\n $ Expenditures on R&D in % of GDP[1]      : chr  \"2.54%\" \"0.67%\" \"2.43%\" \"0.69%\" ...\n\nhead(rich_n_research)\n\n       State Rank Number of millionaire households\n1    Alabama   26                           94,259\n2     Alaska   47                           22,302\n3    Arizona   18                          161,014\n4   Arkansas   34                           51,532\n5 California    1                        1,147,251\n6   Colorado   16                          170,223\n  Share of millionaire households Nationalrank\n1                           4.87%           26\n2                           8.18%           50\n3                           6.03%           20\n4                           4.33%           42\n5                           8.51%            1\n6                           7.48%           18\n  Expenditures on R&D (millions of US$)[1]\n1                                    5,701\n2                                      339\n3                                    9,056\n4                                      892\n5                                  217,976\n6                                   10,297\n  Expenditures on R&D per capita in US$[2] Federal government share in %[3]\n1                                    1,006                             25.3\n2                                      410                             25.7\n3                                    1,079                              2.9\n4                                      286                              4.6\n5                                    4,220                              1.6\n6                                    1,356                              6.1\n  Expenditures on R&D in % of GDP[1]\n1                              2.54%\n2                              0.67%\n3                              2.43%\n4                              0.69%\n5                              7.05%\n6                              2.64%"
+    "text": "Code\n\nrich_n_research &lt;- merge(millionaires, r_d, by = \"State\")\nstr(rich_n_research)\n\n'data.frame':   51 obs. of  9 variables:\n $ State                                   : chr  \"Alabama\" \"Alaska\" \"Arizona\" \"Arkansas\" ...\n $ Rank                                    : int  26 47 18 34 1 16 23 45 43 4 ...\n $ Number of millionaire households        : chr  \"94,259\" \"22,302\" \"161,014\" \"51,532\" ...\n $ Share of millionaire households         : chr  \"4.87%\" \"8.18%\" \"6.03%\" \"4.33%\" ...\n $ Nationalrank                            : chr  \"26\" \"50\" \"20\" \"42\" ...\n $ Expenditures on R&D (millions of US$)[1]: chr  \"5,701\" \"339\" \"9,056\" \"892\" ...\n $ Expenditures on R&D per capita in US$[2]: chr  \"1,006\" \"410\" \"1,079\" \"286\" ...\n $ Federal government share in %[3]        : num  25.3 25.7 2.9 4.6 1.6 6.1 0.2 0.1 58.3 6.4 ...\n $ Expenditures on R&D in % of GDP[1]      : chr  \"2.54%\" \"0.67%\" \"2.43%\" \"0.69%\" ...\n\nhead(rich_n_research)\n\n       State Rank Number of millionaire households\n1    Alabama   26                           94,259\n2     Alaska   47                           22,302\n3    Arizona   18                          161,014\n4   Arkansas   34                           51,532\n5 California    1                        1,147,251\n6   Colorado   16                          170,223\n  Share of millionaire households Nationalrank\n1                           4.87%           26\n2                           8.18%           50\n3                           6.03%           20\n4                           4.33%           42\n5                           8.51%            1\n6                           7.48%           18\n  Expenditures on R&D (millions of US$)[1]\n1                                    5,701\n2                                      339\n3                                    9,056\n4                                      892\n5                                  217,976\n6                                   10,297\n  Expenditures on R&D per capita in US$[2] Federal government share in %[3]\n1                                    1,006                             25.3\n2                                      410                             25.7\n3                                    1,079                              2.9\n4                                      286                              4.6\n5                                    4,220                              1.6\n6                                    1,356                              6.1\n  Expenditures on R&D in % of GDP[1]\n1                              2.54%\n2                              0.67%\n3                              2.43%\n4                              0.69%\n5                              7.05%\n6                              2.64%",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#need-to-clean-the-data",
     "href": "lectures/Lecture0506/Lecture06.html#need-to-clean-the-data",
     "title": "Lecture 06",
     "section": "Need to “clean” the data",
-    "text": "Need to “clean” the data\n\nMore of this next week but to give you an idea, we are going to create nicely named variables from the old mess ones and clean up the commas\nAlways check\n\n\nrich_n_research$expenditures_rd &lt;- as.numeric(gsub(\",\", \"\", \n  rich_n_research$`Expenditures on R&D (millions of US$)[1]`))\nrich_n_research$millionaire_households &lt;- as.numeric(gsub(\",\", \"\", \n  rich_n_research$`Number of millionaire households`))\n\nsummary(rich_n_research)\n\n    State                Rank      Number of millionaire households\n Length:51          Min.   : 1.0   Length:51                       \n Class :character   1st Qu.:13.5   Class :character                \n Mode  :character   Median :26.0   Mode  :character                \n                    Mean   :26.0                                   \n                    3rd Qu.:38.5                                   \n                    Max.   :51.0                                   \n Share of millionaire households Nationalrank      \n Length:51                       Length:51         \n Class :character                Class :character  \n Mode  :character                Mode  :character  \n                                                   \n                                                   \n                                                   \n Expenditures on R&D (millions of US$)[1]\n Length:51                               \n Class :character                        \n Mode  :character                        \n                                         \n                                         \n                                         \n Expenditures on R&D per capita in US$[2] Federal government share in %[3]\n Length:51                                Min.   : 0.100                  \n Class :character                         1st Qu.: 1.400                  \n Mode  :character                         Median : 2.600                  \n                                          Mean   : 7.516                  \n                                          3rd Qu.: 9.000                  \n                                          Max.   :58.300                  \n Expenditures on R&D in % of GDP[1] expenditures_rd  millionaire_households\n Length:51                          Min.   :   339   Min.   :  12849       \n Class :character                   1st Qu.:  1472   1st Qu.:  42416       \n Mode  :character                   Median :  5701   Median :  94259       \n                                    Mean   : 13957   Mean   : 164441       \n                                    3rd Qu.: 12602   3rd Qu.: 228604       \n                                    Max.   :217976   Max.   :1147251"
+    "text": "Need to “clean” the data\n\nMore of this next week but to give you an idea, we are going to create nicely named variables from the old mess ones and clean up the commas\nAlways check\n\n\nrich_n_research$expenditures_rd &lt;- as.numeric(gsub(\",\", \"\", \n  rich_n_research$`Expenditures on R&D (millions of US$)[1]`))\nrich_n_research$millionaire_households &lt;- as.numeric(gsub(\",\", \"\", \n  rich_n_research$`Number of millionaire households`))\n\nsummary(rich_n_research)\n\n    State                Rank      Number of millionaire households\n Length:51          Min.   : 1.0   Length:51                       \n Class :character   1st Qu.:13.5   Class :character                \n Mode  :character   Median :26.0   Mode  :character                \n                    Mean   :26.0                                   \n                    3rd Qu.:38.5                                   \n                    Max.   :51.0                                   \n Share of millionaire households Nationalrank      \n Length:51                       Length:51         \n Class :character                Class :character  \n Mode  :character                Mode  :character  \n                                                   \n                                                   \n                                                   \n Expenditures on R&D (millions of US$)[1]\n Length:51                               \n Class :character                        \n Mode  :character                        \n                                         \n                                         \n                                         \n Expenditures on R&D per capita in US$[2] Federal government share in %[3]\n Length:51                                Min.   : 0.100                  \n Class :character                         1st Qu.: 1.400                  \n Mode  :character                         Median : 2.600                  \n                                          Mean   : 7.516                  \n                                          3rd Qu.: 9.000                  \n                                          Max.   :58.300                  \n Expenditures on R&D in % of GDP[1] expenditures_rd  millionaire_households\n Length:51                          Min.   :   339   Min.   :  12849       \n Class :character                   1st Qu.:  1472   1st Qu.:  42416       \n Mode  :character                   Median :  5701   Median :  94259       \n                                    Mean   : 13957   Mean   : 164441       \n                                    3rd Qu.: 12602   3rd Qu.: 228604       \n                                    Max.   :217976   Max.   :1147251",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#some-stats-and-modeling",
     "href": "lectures/Lecture0506/Lecture06.html#some-stats-and-modeling",
     "title": "Lecture 06",
     "section": "Some stats and modeling",
-    "text": "Some stats and modeling\n\nWe are heading towards Stats 101A but…\n\n\ncor(rich_n_research$expenditures_rd, rich_n_research$millionaire_households)\n\n[1] 0.8521751\n\nrd_rich_model &lt;- lm(millionaire_households ~ expenditures_rd,\n            data = rich_n_research)\n\nsummary(rd_rich_model)\n\n\nCall:\nlm(formula = millionaire_households ~ expenditures_rd, data = rich_n_research)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-128186  -67975  -31506   19937  373420 \n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     8.844e+04  1.626e+04    5.44 1.68e-06 ***\nexpenditures_rd 5.446e+00  4.777e-01   11.40 2.18e-15 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 105900 on 49 degrees of freedom\nMultiple R-squared:  0.7262,    Adjusted R-squared:  0.7206 \nF-statistic:   130 on 1 and 49 DF,  p-value: 2.178e-15"
+    "text": "Some stats and modeling\n\nWe are heading towards Stats 101A but…\n\n\ncor(rich_n_research$expenditures_rd, rich_n_research$millionaire_households)\n\n[1] 0.8521751\n\nrd_rich_model &lt;- lm(millionaire_households ~ expenditures_rd,\n            data = rich_n_research)\n\nsummary(rd_rich_model)\n\n\nCall:\nlm(formula = millionaire_households ~ expenditures_rd, data = rich_n_research)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-128186  -67975  -31506   19937  373420 \n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     8.844e+04  1.626e+04    5.44 1.68e-06 ***\nexpenditures_rd 5.446e+00  4.777e-01   11.40 2.18e-15 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 105900 on 49 degrees of freedom\nMultiple R-squared:  0.7262,    Adjusted R-squared:  0.7206 \nF-statistic:   130 on 1 and 49 DF,  p-value: 2.178e-15",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#but",
     "href": "lectures/Lecture0506/Lecture06.html#but",
     "title": "Lecture 06",
     "section": "BUT…",
-    "text": "BUT…\n\nWhy we try to visualize our data\n\n\nplot(rich_n_research$expenditures_rd, rich_n_research$millionaire_households)\nabline(rd_rich_model, col = \"blue\", lwd = 2)\n\n\n\n\n\n\n\n\n\nClearly an outlier"
+    "text": "BUT…\n\nWhy we try to visualize our data\n\n\nplot(rich_n_research$expenditures_rd, rich_n_research$millionaire_households)\nabline(rd_rich_model, col = \"blue\", lwd = 2)\n\n\n\n\n\n\n\n\n\nClearly an outlier",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#address-the-outlier",
     "href": "lectures/Lecture0506/Lecture06.html#address-the-outlier",
     "title": "Lecture 06",
     "section": "Address the outlier",
-    "text": "Address the outlier\n\nI am going to remove the outlier and then model again without it\n\n\nno_california &lt;- rich_n_research[which(!rich_n_research$State %in% c(\"California\")), ]\n\ncor(no_california$expenditures_rd, no_california$millionaire_households)\n\n[1] 0.7634\n\nno_ca_rd_rich_model &lt;- lm(millionaire_households ~ expenditures_rd,\n                    data = no_california)\n\nsummary(no_ca_rd_rich_model)\n\n\nCall:\nlm(formula = millionaire_households ~ expenditures_rd, data = no_california)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-256309  -37791  -12882   22082  333196 \n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     51562.491  17525.503   2.942  0.00501 ** \nexpenditures_rd     9.439      1.153   8.188 1.15e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 94210 on 48 degrees of freedom\nMultiple R-squared:  0.5828,    Adjusted R-squared:  0.5741 \nF-statistic: 67.05 on 1 and 48 DF,  p-value: 1.146e-10\n\n\n\nLeaving California out moved the regression line a lot"
+    "text": "Address the outlier\n\nI am going to remove the outlier and then model again without it\n\n\nno_california &lt;- rich_n_research[which(!rich_n_research$State %in% c(\"California\")), ]\n\ncor(no_california$expenditures_rd, no_california$millionaire_households)\n\n[1] 0.7634\n\nno_ca_rd_rich_model &lt;- lm(millionaire_households ~ expenditures_rd,\n                    data = no_california)\n\nsummary(no_ca_rd_rich_model)\n\n\nCall:\nlm(formula = millionaire_households ~ expenditures_rd, data = no_california)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-256309  -37791  -12882   22082  333196 \n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     51562.491  17525.503   2.942  0.00501 ** \nexpenditures_rd     9.439      1.153   8.188 1.15e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 94210 on 48 degrees of freedom\nMultiple R-squared:  0.5828,    Adjusted R-squared:  0.5741 \nF-statistic: 67.05 on 1 and 48 DF,  p-value: 1.146e-10\n\n\n\nLeaving California out moved the regression line a lot",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#one-more-plot-to-show-the-difference",
     "href": "lectures/Lecture0506/Lecture06.html#one-more-plot-to-show-the-difference",
     "title": "Lecture 06",
     "section": "One more plot to show the difference",
-    "text": "One more plot to show the difference\n\nplot(x = rich_n_research$expenditures_rd, \n     y = rich_n_research$millionaire_households, \n     main = \"Millionaire Households vs R&D Expenditures\", \n     xlab = \"R&D Expenditures (millions of US$)\", \n     ylab = \"Number of Millionaire Households\")\nabline(rd_rich_model, col = \"blue\", lwd = 2)\nabline(no_ca_rd_rich_model, col = \"red\", lwd = 2)\nlegend(\"topleft\",\n       legend = c(\"All States\", \"No CA\"),\n       col = c(\"blue\", \"red\"),\n       lwd = 2,\n       bty = \"o\")"
+    "text": "One more plot to show the difference\n\nplot(x = rich_n_research$expenditures_rd, \n     y = rich_n_research$millionaire_households, \n     main = \"Millionaire Households vs R&D Expenditures\", \n     xlab = \"R&D Expenditures (millions of US$)\", \n     ylab = \"Number of Millionaire Households\")\nabline(rd_rich_model, col = \"blue\", lwd = 2)\nabline(no_ca_rd_rich_model, col = \"red\", lwd = 2)\nlegend(\"topleft\",\n       legend = c(\"All States\", \"No CA\"),\n       col = c(\"blue\", \"red\"),\n       lwd = 2,\n       bty = \"o\")",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture0506/Lecture06.html#takeaways",
     "href": "lectures/Lecture0506/Lecture06.html#takeaways",
     "title": "Lecture 06",
     "section": "Takeaways",
-    "text": "Takeaways\n\nThe list, a more complex data structure in R\nWorking with multiple data frames in R\n\nappending (adding more rows or lengthing the columns)\njoining (adding more columns or widening the rows)\n\nGot a peek at a data visualization comparing two histograms\nThrew in webscraping using rvest"
+    "text": "Takeaways\n\nThe list, a more complex data structure in R\nWorking with multiple data frames in R\n\nappending (adding more rows or lengthing the columns)\njoining (adding more columns or widening the rows)\n\nGot a peek at a data visualization comparing two histograms\nThrew in webscraping using rvest",
+    "crumbs": [
+      "Lectures",
+      "Lecture 06"
+    ]
   },
   {
     "objectID": "lectures/Lecture01/Lecture01rev.html#hello-welcome-to-stats-20",
