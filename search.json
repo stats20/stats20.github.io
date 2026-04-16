@@ -2193,7 +2193,7 @@
     "href": "activity/Week03data2.html#finally-can-we-webscrape-here",
     "title": "Week 3 Data Part 2",
     "section": "Finally, can we webscrape here?",
-    "text": "Finally, can we webscrape here?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry reading the research and development spending data:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nCombine the two on their State column:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nClean up the data a little\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRun a correlation and a regression\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "Finally, can we webscrape here?\nNope, this is a little too much for webr, but I will show you how to do it in R and you can try it on your own device later.",
     "crumbs": [
       "Activities",
       "Lecture 6 Activity"
