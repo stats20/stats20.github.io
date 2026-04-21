@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.8.26">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="For Spring 2026 Stats 20">
-<title>Week 2 Functions and Vectors – Statistics 20</title>
+<title>Week 4 Data Viz Part 1 – Statistics 20</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,41 +17,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -400,7 +365,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"ls()\nrm(x) # sometimes functions have input value(s)\nrm(list=ls()) # sometimes they have a different function as input","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"1:10 # colon operator creates a sequence of integers from:to\nseq(from = 1, to = 10, by = 3) # seq creates a sequence with a custom \"step\"\nrep(1:2, times = 5) # replicates the values\nsouthern <- c(\"UCLA\", \"UCI\", \"UCR\", \"UCSD\", \"UCSB\") # a custom character vector with c\nnorthern <- c(\"UCB\", \"UCSC\", \"UCD\", \"UCM\", \"UCSF\") # another custom character vector\nc(northern, southern) # combine vectors with c()\nc(TRUE, FALSE, TRUE, TRUE, FALSE) # a custom logical vector\nc(pi, exp(1), sqrt(9), 2^3) # a custom numeric vector with function output","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"southern\nnorthern","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"## You can make more space for yourself","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"letters # a built in character vector\nLETTERS # another built in character vector\nmonth.abb # yet another built in - don't use periods in your variable names\nmonth.name # still more - don't use periods in your variable names\neuro # a built-in named numeric data vector\nrivers # a built-in numeric data vector","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rivers[1]\nmonth.abb[1]\neuro[1]\nmy_logical <- c(FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE)\nmy_logical[1]","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"length(rivers)\nlength(month.abb)\nlength(my_logical)\n\nrivers[length(rivers)] # read it from the innermost value back out\nmonth.abb[4] # which month will it give?\nmy_logical[2]","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rivers[1:10]\nmonth.abb[c(9, 10, 11, 5)]\nmy_logical[seq(1, length(my_logical), by = 2)]","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"month.abb[0] # empty character vector\nmonth.abb[-4]  # we drop April\nmonth.abb[-(6:8)] # we drop the summer - do you know why we used parentheses here?","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rivers[rivers > 1200] # there are 12 rivers > 1200 km in length","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rivers > 1200 # a vector of length 141 which evaluates > 1200 (logical)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"## a free chunk for you to use for trying out other things.  \n ","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"a12 <- 1:12\nb12 <- c(6, 8, 18, 5, 7, 1, 13, 12, 4, 10, 20, 11)\n\na12^2\nb12 + 10\na12 + b12 # did either original change?\na12^2 + b12\nsqrt(a12 * b12)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"c4 <- c(100, 200, 300, 400)\nd5 <- c(1000, 2000, 3000, 4000, 5000)\n\na12 + c4\na12 + d5","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"logical_vector <- c(TRUE, FALSE)\ninteger_vector <- 1:10 # colon operator generates integers\n\nlogical_c_integer <- c(logical_vector, integer_vector)\n\nlogical_plus_integer <- logical_vector + integer_vector # recycled too\n\nlogical_c_integer\nis(logical_c_integer)\n\nlogical_plus_integer\nis(logical_plus_integer)","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"integer_vector <- 1001:1010\nnumeric_vector <- c(pi, exp(1), Inf, -Inf, NaN)\n\ninteger_c_numeric <- c(integer_vector, numeric_vector)\ninteger_plus_numeric <- integer_vector + numeric_vector # how long do you think this will be?\n\nis(integer_vector)\nis(numeric_vector)\nis(integer_c_numeric)\ninteger_c_numeric\nis(integer_plus_numeric)\ninteger_plus_numeric","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"character_vector <- c(northern, southern)\n\nlogical_c_character <- c(logical_vector, character_vector)\n\nis(logical_c_character)\nlogical_c_character","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"tricky_character <- c(\"1\", \"2\", \"3\", \"4\", \"5\") # these numbers are characters\nis(tricky_character)\n\ntricky_character_c_numeric_vector <- c(tricky_character, numeric_vector)\n\nis(tricky_character_c_numeric_vector) # it's character\n\ntricky_character_c_numeric_vector # note the quotation marks","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"plot(rivers)","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"head(cars)\nplot(cars)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"plot(trees)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"pairs(trees, row1attop = FALSE)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"plot(iris$Sepal.Length, iris$Petal.Length, main = \"No argument names\") \n\nplot(x = iris$Sepal.Length, y = iris$Petal.Length, main = \"Argument names\") \n\nplot(y = iris$Petal.Length, x = iris$Sepal.Length, main = \"Argument names, any order\") ","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"par() |> unlist()","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"plot(\n    Sepal.Width ~ Sepal.Length,\n    data = iris, \n    main = \"An Iris Plot\",\n    sub = \"Sepal Width on Sepal.Length\",\n    xlab = \"Sepal Length\",\n    ylab = \"Sepal Width\",\n    pch = 19, # change default symbol\n    col = c(\"#2774AE\", \"#FFD100\"), # change default color, this will recycle the colors for each point\n    cex = 1.5 # change default sizex\n  )","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(quantmod)\ntsla = getSymbols(\"TSLA\", auto.assign = FALSE, warnings = F)\ntsla_daily <- dailyReturn(Ad(tsla), subset = \"2025::\")\nplot(tsla_daily)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"plot(tsla_daily, type = \"l\", col = \"blue\", lwd =0.7, lty = 1,\n     main = \"Daily Returns of TSLA since 1/1/2025\", \n     xlab = \"Date\", \n     ylab = \"Daily Return\")","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"vl <- c(\"DATE\",\"TIME\",\"ET\", \"GT\",\"MAG\",\"M\",\"LAT\",\"LON\",\"DEPTH\",\"Q\",\"EVID\",\"NPH\",\"NGRM\")\neq <- read.table(\"https://service.scedc.caltech.edu/ftp/catalogs/SCEC_DC/2025.catalog\", col.names = vl)\nhead(eq)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"hist(eq$MAG, freq = FALSE, col = \"turquoise\", xlab = \"Magnitude\", main = \"Distribution of Earthquake Magnitude\")\nabline(v=mean(eq$MAG), col=\"red\", lwd=3)\nabline(v=median(eq$MAG), col=\"blue\", lwd=3) ","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"par(mfrow=c(2,1))\nboxplot (eq$DEPTH ~ eq$Q, \n         main = \"Boxplot of Depth over Quality\", \n         xlab = \"Depth\",\n         ylab = \"Quality\",\n         col=\"saddlebrown\", \n         horizontal=TRUE)\nboxplot (eq$MAG ~ eq$ET, \n         main = \"Boxplot of Magnitude over Type\", \n         col=\"royalblue1\", \n         xlab = \"Magnitude\",\n         ylab = \"Type\",\n         notch=TRUE, \n         horizontal=TRUE)\npar(mfrow=c(1,1))","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"barplot(table(eq$ET), main = \"Earthquake Type Distribution\", xlab = \"Type\", col = \"lightblue\")\nbarplot(table(eq$Q), main = \"Earthquake Quality Distribution\", xlab = \"Quality\", col = \"lightgreen\")\ntable(eq$ET, eq$Q) |> prop.table() |> barplot(\n  main = \"Stacked Barplot - Proportions\",\n  xlab = \"Quality\",\n  col = c(\"red\", \"yellow\", \"orange\", \"green\", \"blue\"),\n  legend.text = TRUE\n)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"par(mfrow = c(1, 2))\nVADeaths |> barplot(\n  beside = TRUE,\n  col = c(\"lightblue\", \"mistyrose\", \"lightcyan\", \"lavender\", \"cornsilk\"),\n  legend.text = rownames(VADeaths),\n  args.legend = list(\"topleft\", cex = 0.6),\n  cex.names = 0.5\n)\nVADeaths |> t() |> barplot(\n  beside = TRUE,\n  col = c(\"red\", \"orange\",  \"yellow\", \"green\"),\n  legend.text = colnames(VADeaths),\n  args.legend = list(x = 10, y = 70, cex = 0.6)\n)\npar(mfrow = c(1, 1))","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script><script type="module">
 // Declare startupMessageQWebR globally
@@ -1648,7 +1613,7 @@ globalThis.qwebrExecuteCode = async function (
 }
 
 </script>
-<meta property="og:title" content="Week 2 Functions and Vectors – Statistics 20">
+<meta property="og:title" content="Week 4 Data Viz Part 1 – Statistics 20">
 <meta property="og:description" content="Homepage for STATS 20 - Introduction to Statistical Programming with R, Spring 2026">
 <meta property="og:site_name" content="Statistics 20">
 </head>
@@ -1821,7 +1786,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activity/Week01test_drive.html">Activities</a></li><li class="breadcrumb-item"><a href="../activity/Week02vectors.html">Lecture 3 Activity</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activity/Week01test_drive.html">Activities</a></li><li class="breadcrumb-item"><a href="../activity/Week04viz1.html">Lecture 7 Activity</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1934,7 +1899,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../activity/Week02vectors.html" class="sidebar-item-text sidebar-link active">
+  <a href="../activity/Week02vectors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 3 Activity</span></a>
   </div>
 </li>
@@ -1952,7 +1917,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../activity/Week04viz1.html" class="sidebar-item-text sidebar-link">
+  <a href="../activity/Week04viz1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lecture 7 Activity</span></a>
   </div>
 </li>
@@ -1996,20 +1961,13 @@ globalThis.qwebrExecuteCode = async function (
    
   <ul>
 <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#how-this-page-works" id="toc-how-this-page-works" class="nav-link" data-scroll-target="#how-this-page-works">How this page works</a></li>
-  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
-  <li><a href="#vector-construction" id="toc-vector-construction" class="nav-link" data-scroll-target="#vector-construction">Vector Construction</a></li>
-  <li><a href="#built-in-vectors-in-r" id="toc-built-in-vectors-in-r" class="nav-link" data-scroll-target="#built-in-vectors-in-r">Built-in vectors in R</a></li>
-  <li><a href="#indexing-vectors" id="toc-indexing-vectors" class="nav-link" data-scroll-target="#indexing-vectors">Indexing Vectors</a></li>
-  <li><a href="#indexing-vectors-with-vectors" id="toc-indexing-vectors-with-vectors" class="nav-link" data-scroll-target="#indexing-vectors-with-vectors">Indexing vectors with vectors</a></li>
-  <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself">Test Yourself</a></li>
-  <li><a href="#a-blank-chunk-for-you-to-use." id="toc-a-blank-chunk-for-you-to-use." class="nav-link" data-scroll-target="#a-blank-chunk-for-you-to-use.">A blank chunk for you to use.</a></li>
-  <li><a href="#math-with-vectors" id="toc-math-with-vectors" class="nav-link" data-scroll-target="#math-with-vectors">Math with vectors</a></li>
-  <li><a href="#recycling-example" id="toc-recycling-example" class="nav-link" data-scroll-target="#recycling-example">Recycling Example</a></li>
-  <li><a href="#coercing-a-logical-to-integernumeric" id="toc-coercing-a-logical-to-integernumeric" class="nav-link" data-scroll-target="#coercing-a-logical-to-integernumeric">Coercing a Logical to Integer/Numeric</a></li>
-  <li><a href="#intnum" id="toc-intnum" class="nav-link" data-scroll-target="#intnum">Int/Num</a></li>
-  <li><a href="#logicalchar" id="toc-logicalchar" class="nav-link" data-scroll-target="#logicalchar">Logical/Char</a></li>
-  <li><a href="#numchar" id="toc-numchar" class="nav-link" data-scroll-target="#numchar">Num/Char</a></li>
+  <li><a href="#plotting-in-base-r-with-plot" id="toc-plotting-in-base-r-with-plot" class="nav-link" data-scroll-target="#plotting-in-base-r-with-plot">Plotting in Base R with plot()</a></li>
+  <li><a href="#extracting-specific-data-vectors" id="toc-extracting-specific-data-vectors" class="nav-link" data-scroll-target="#extracting-specific-data-vectors">Extracting Specific Data Vectors</a></li>
+  <li><a href="#the-graphical-parameters" id="toc-the-graphical-parameters" class="nav-link" data-scroll-target="#the-graphical-parameters">The Graphical Parameters</a></li>
+  <li><a href="#quantmod-this-will-not-run-online" id="toc-quantmod-this-will-not-run-online" class="nav-link" data-scroll-target="#quantmod-this-will-not-run-online">Quantmod (this will not run online)</a></li>
+  <li><a href="#histogram-and-boxplot" id="toc-histogram-and-boxplot" class="nav-link" data-scroll-target="#histogram-and-boxplot">Histogram and Boxplot</a></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot">Boxplot</a></li>
+  <li><a href="#barplot" id="toc-barplot" class="nav-link" data-scroll-target="#barplot">Barplot</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -2293,8 +2251,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   };
   
 }
-</script><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activity/Week01test_drive.html">Activities</a></li><li class="breadcrumb-item"><a href="../activity/Week02vectors.html">Lecture 3 Activity</a></li></ol></nav><div class="quarto-title">
-<h1 class="title">Week 2 Functions and Vectors</h1>
+</script><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activity/Week01test_drive.html">Activities</a></li><li class="breadcrumb-item"><a href="../activity/Week04viz1.html">Lecture 7 Activity</a></li></ol></nav><div class="quarto-title">
+<h1 class="title">Week 4 Data Viz Part 1</h1>
 </div>
 
 
@@ -2316,101 +2274,83 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 </header><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Recall this webpage using a tool called <code>webr</code>. This activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity. It does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io</p>
-</section><section id="how-this-page-works" class="level2"><h2 class="anchored" data-anchor-id="how-this-page-works">How this page works</h2>
-<p>You can run the R code chunks by clicking on the “Run Code” button that appears in the upper left of the “code chunks”. The other two icons on the upper right of the code chunk are for copying the code and for refreshing the window (which will clear all of your work and start you over). You can also modify the code in the code chunks and run it to see how it works.</p>
-</section><section id="functions" class="level2"><h2 class="anchored" data-anchor-id="functions">Functions</h2>
-<p>Try a few simple functions in the code chunk below. You can modify the code to try out different ones.</p>
+</section><section id="plotting-in-base-r-with-plot" class="level2"><h2 class="anchored" data-anchor-id="plotting-in-base-r-with-plot">Plotting in Base R with plot()</h2>
+<p>The function plot() is the place to start because many other basic graphing functions use its arguments. plot() is a generic function, which means that it can be used to create many different types of plots depending on the type of data you give it. For example, <code>rivers</code> is a simple vector of the lengths of 141 rivers in the United States. If you give it to plot() it will create a scatterplot of the lengths of the rivers. The x-axis will be the index of the river (1, 2, 3, etc.) and the y-axis will be the length of the river.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="vector-construction" class="level2"><h2 class="anchored" data-anchor-id="vector-construction">Vector Construction</h2>
-<p>Some of these vectors will print out, others will be stored in R objects that you will need to call by name to see the results. Try it out and see what happens when you run the code chunk below.</p>
+<p>Compare it to <code>cars</code> which is a simple data frame consisting of two columns:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Remember, typing an object name will reveal its contents</p>
+<p>You could insert an entire data frame into plot() and it will create a scatterplot matrix (this can also be accomplished with the function pairs()):</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Try this - what do you think you will get if you run</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>c(northern, southern)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>and assign it to a new named object (you choose a name)</p>
-<p>First think about what it should be, then try it out in the code chunk below.</p>
+<p>one has slightly more control of the appearance with pairs</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p><code>Did you get what you expected to get as a result?</code> That is a fundamental skill in programming – you should have an idea of what to expect as a result of your code. If you got something different, try to understand why it differed. If you are confused, ask for help. This is a learning process and it is normal to be confused at first.</p>
-</section><section id="built-in-vectors-in-r" class="level2"><h2 class="anchored" data-anchor-id="built-in-vectors-in-r">Built-in vectors in R</h2>
-<p>These serve as useful examples in teaching or in learning how to work with data in R. They are also useful for testing out functions and learning how to manipulate data in R.</p>
+</section><section id="extracting-specific-data-vectors" class="level2"><h2 class="anchored" data-anchor-id="extracting-specific-data-vectors">Extracting Specific Data Vectors</h2>
+<p>Typically, we have many more columns than our last two examples. In that case, we need to extract the specific columns we want to plot. For example, suppose we wish to plot the relationship between Sepal.Length and Petal.Length in the iris data set. We can extract these columns using the $ operator and then plot them against each other. All three of the next plots are the same, only the manner of calling each vector is different.</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="indexing-vectors" class="level2"><h2 class="anchored" data-anchor-id="indexing-vectors">Indexing Vectors</h2>
-<p>If you don’t learn anything else in Stats 20, learn how to index vectors. This is a fundamental skill in R and it is essential for working with data in R. You can use the <code>[]</code> operator to index vectors. The indices start at 1 (not 0 like in some other programming languages). You can use positive integers to index specific values, negative integers to exclude specific values, and logical vectors to index values that meet certain conditions.</p>
-<p>First let’s use some existing vectors and make our own logical vector.</p>
+<p>The second option, with ordered argument names is the clearest and most preferred. But the others will work.</p>
+</section><section id="the-graphical-parameters" class="level2"><h2 class="anchored" data-anchor-id="the-graphical-parameters">The Graphical Parameters</h2>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Then we can work them a bit:</p>
+<p>There are over 100, but you would only change a few. Most likely (no particular order):</p>
+<ul>
+<li>
+<code>col</code> (color of points, lines, etc.)</li>
+<li>
+<code>pch</code> (point character, the shape of the points)</li>
+<li>
+<code>cex</code> (character expansion, the size of points, lines, etc.)</li>
+<li>
+<code>lwd</code> (line width, the thickness of lines)</li>
+<li>
+<code>lty</code> (line type, the style of lines)</li>
+<li>
+<code>main</code> (main title of the plot)</li>
+<li>
+<code>xlab</code> (x-axis label)</li>
+<li>
+<code>ylab</code> (y-axis label)</li>
+<li>
+<code>xlim</code> (x-axis limits)</li>
+<li>
+<code>ylim</code> (y-axis limits)</li>
+<li>
+<code>las</code> (label axis style, the orientation of axis labels)</li>
+</ul>
+<p>What follows are some examples.</p>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="indexing-vectors-with-vectors" class="level2"><h2 class="anchored" data-anchor-id="indexing-vectors-with-vectors">Indexing vectors with vectors</h2>
-<ul>
-<li>Recall there are no scalars in R, so <code>length(rivers)</code> is 141 which is a vector of length 1.</li>
-<li>So we can also index vectors using other vectors of any length</li>
-</ul>
+</section><section id="quantmod-this-will-not-run-online" class="level2"><h2 class="anchored" data-anchor-id="quantmod-this-will-not-run-online">Quantmod (this will not run online)</h2>
+<p>You will need to copy the code and run it on your own computer.</p>
+<p>This library is used for financial data. We will use it to plot the stock price of TSLA since the start of 2025.</p>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<ul>
-<li>We can also use negation</li>
-</ul>
+<p>For lines, usually, we would be interested in changing color, thickness and type.</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<ul>
-<li>Indexing with logical vectors</li>
-</ul>
+<p>Line types can either be specified as an integer (0=blank, 1=solid (default), 2=dashed, 3=dotted, 4=dotdash, 5=longdash, 6=twodash) or as one of the character strings “blank”, “solid”, “dashed”, “dotted”, “dotdash”, “longdash”, or “twodash”, where “blank” uses ‘invisible lines’ (i.e., does not draw lines).</p>
+</section><section id="histogram-and-boxplot" class="level2"><h2 class="anchored" data-anchor-id="histogram-and-boxplot">Histogram and Boxplot</h2>
+<p>(unfortunately, we cannot access the earthquake data from this page, but you can copy the code and run it on your own computer)</p>
+<p>For general exploration of data, these are useful. Histograms for continuous data (ideally) and Boxplots for continuous data across categories. We will use earthquake data from the Southern California Earthquake Data Center (SCECDC) to illustrate these plots. The data is from 2025 and contains information about earthquakes in Southern California.</p>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<ul>
-<li>Work from the innermost out to understand what is happening here</li>
-</ul>
+<p>If the imported data looks good, let’s examine a histogram of the magnitude of the earthquakes. We can add a vertical line for the mean and median to see where they fall in the distribution.</p>
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="test-yourself" class="level2"><h2 class="anchored" data-anchor-id="test-yourself">Test Yourself</h2>
-<p>What do you think will happen if you run this code chunk?</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rivers</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>rivers_and &lt;- rivers<span class="co">[</span><span class="ot">rivers &gt; 1000 &amp; rivers &lt; 2000</span><span class="co">]</span> # <span class="in">`&amp;`</span> (AND operator) are both true?</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>rivers_or &lt;- rivers<span class="co">[</span><span class="ot">rivers &gt; 3000 | rivers &lt; 200</span><span class="co">]</span> # <span class="in">`|`</span> (OR operator) is at least one of the conditions is true? </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="a-blank-chunk-for-you-to-use." class="level2"><h2 class="anchored" data-anchor-id="a-blank-chunk-for-you-to-use.">A blank chunk for you to use.</h2>
+<p>This is an example of high level and low level plotting functions working together. A histogram is a high level function that creates a plot and low level functions like abline() can be used to add lines to the existing plot.</p>
+</section><section id="boxplot" class="level2"><h2 class="anchored" data-anchor-id="boxplot">Boxplot</h2>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="math-with-vectors" class="level2"><h2 class="anchored" data-anchor-id="math-with-vectors">Math with vectors</h2>
-<p>Try a little math.</p>
+</section><section id="barplot" class="level2"><h2 class="anchored" data-anchor-id="barplot">Barplot</h2>
+<p>Barplots work best when we have summarized (tabled) categories. So for example, the earthquake type is categorical and we can count the number of earthquakes of each type and then plot that. The same goes for the quality of the earthquake data. We can also look at the relationship between quality and type by creating a table of both variables and then plotting that as a stacked barplot.</p>
 <div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="recycling-example" class="level2"><h2 class="anchored" data-anchor-id="recycling-example">Recycling Example</h2>
+<p>Barplots can also be created from matrices:</p>
 <div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="coercing-a-logical-to-integernumeric" class="level2"><h2 class="anchored" data-anchor-id="coercing-a-logical-to-integernumeric">Coercing a Logical to Integer/Numeric</h2>
-<ul>
-<li>Logical (TRUE/FALSE) occupies the bottom of the hierarchy, it’s always coerced if combined with any non-Logical type of data.</li>
-</ul>
-<div id="qwebr-insertion-location-15"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="intnum" class="level2"><h2 class="anchored" data-anchor-id="intnum">Int/Num</h2>
-<ul>
-<li>Integers are whole numbers without a decimal point, numeric are numbers with a decimal point</li>
-</ul>
-<div id="qwebr-insertion-location-16"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="logicalchar" class="level2"><h2 class="anchored" data-anchor-id="logicalchar">Logical/Char</h2>
-<ul>
-<li>If you are combining logical and character only, TRUE FALSE will become “TRUE” and “FALSE”</li>
-</ul>
-<div id="qwebr-insertion-location-17"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="numchar" class="level2"><h2 class="anchored" data-anchor-id="numchar">Num/Char</h2>
-<ul>
-<li>If you are combining numeric and character, the numbers become character</li>
-</ul>
-<div id="qwebr-insertion-location-18"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The material on matrices is not something we spend a lot of time in Stats 20 but if you are planning to take upper division courses, I recommend spending time with matrices.</p>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
