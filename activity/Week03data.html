@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="For Spring 2026 Stats 20">
+
 <title>Week 3 Data Part 1 – Statistics 20</title>
 <style>
 code{white-space: pre-wrap;}
@@ -19,6 +22,7 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
+
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -40,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-ff15834a49140127e309677fd44ae99f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-563888666ae54a9a56390d5846458a8c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-ff15834a49140127e309677fd44ae99f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-ff15834a49140127e309677fd44ae99f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -66,8 +71,10 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/editor/editor.main.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+}</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/editor/editor.main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
 <style type="text/css">
 .monaco-editor pre {
   background-color: unset !important;
@@ -367,7 +374,8 @@ globalThis.qwebrCustomizedWebROptions = {
 // Store cell data
 globalThis.qwebrCellDetails = [{"code":"## 1. Save the URLs to variables\n\n## csv version\npokemon_csv_url <- \"https://raw.githubusercontent.com/lewv/data-for-example/refs/heads/main/pokemon.csv\"\n\n## tsv version\npokemon_tsv_url <- \"https://raw.githubusercontent.com/lewv/data-for-example/refs/heads/main/pokemon.tsv\"\n\n## txt version\npokemon_txt_url <- \"https://raw.githubusercontent.com/lewv/data-for-example/refs/heads/main/pokemon.txt\"","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"## 2. Read the data into R using the appropriate function\n## Note: read.csv() is for comma-separated values, read.delim() is for tab-separated values, and read.table() can be used for both but requires specifying the separator.\n\npokemon_data_csv <- read.csv(pokemon_csv_url)\n\npokemon_data_tsv <- read.delim(pokemon_tsv_url)\n\npokemon_data_txt <- read.table(pokemon_txt_url, header = TRUE, sep = \" \")","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"head(pokemon_data_csv)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"## 3A. Check, did they read successfully?\n\nls()","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"## 3B. Check, are they the same?\n## identical() is the strictest.  the data frames must be exactly the same in terms of content, order, and structure to return TRUE.\n\nidentical(pokemon_data_csv, pokemon_data_tsv)\nidentical(pokemon_data_csv, pokemon_data_txt)\n\n## all.equal() is more flexible. It checks if the data frames are equal in terms of content, allowing for differences in attributes (like row names) and ordering of rows/columns. It returns TRUE if they are considered equal, or a message describing the differences if they are not.\n\nall.equal(pokemon_data_csv, pokemon_data_tsv)\nall.equal(pokemon_data_csv, pokemon_data_txt) ","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"in_n_out_locs <- read.csv(\"https://docs.google.com/spreadsheets/d/1eTkMGK4Bsab5cN-UtQgqdosGDlLPtWj7UtC4F5BsQ8E/export?format=csv&gid=50145464\")\nin_n_out_latlon <- read.csv(\"https://docs.google.com/spreadsheets/d/1eTkMGK4Bsab5cN-UtQgqdosGDlLPtWj7UtC4F5BsQ8E/export?format=csv&gid=1610759547\")\n\nnames(in_n_out_locs)\nnames(in_n_out_latlon)","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"colleges <- read.delim(\"https://raw.githubusercontent.com/lewv/data-for-example/refs/heads/main/colleges.txt\")\ncolleges","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"NA > 0 # NA \n\n5 + NA # NA\n\nNA == 5 # NA\n\nNA == NA # NA\n\nis.na(NA) # TRUE","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"colleges[24, 2:6] # has a mistake\ncolleges[24, 2:6] <- c(17, 6, 106, 65, 23) # overwrite\ncolleges # check","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"fix_colleges <- colleges[-25, ] # copy the original, don't clobber it\nfix_colleges # the numbering is off","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rownames(fix_colleges) # we lost row 25 \nrownames(fix_colleges) <- 1:26 # numeric vector \nrownames(fix_colleges) # coerced to character\nfix_colleges","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(jsonlite)\n\nurl_films <- \"https://gist.githubusercontent.com/saniyusuf/406b843afdfb9c6a86e25753fe2761f4/raw/075b6aaba5ee43554ecd55006e5d080a8acf08fe/Film.JSON\"\n\nfilms <- fromJSON(url_films)\n\nhead(films)","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(httr)  # need this to GET the URL\nlibrary(jsonlite) # need this to convert the json to a data frame\n\n# had to add a limit because it's too resource intensive\nurl_sf <- \"https://data.sfgov.org/resource/yitu-d5am.json?$limit=100\"\n\n# If I wanted the  next chunk\n# url_sf <- \"https://data.sfgov.org/resource/yitu-d5am.json?$limit=100&$offset=100\"\n\n# first, make sure the URL is valid\ncheck <- GET(url_sf, verbose())\nstatus_code(check) # should return 200\n\n# check\nlocations_check <- fromJSON(content(check, \"text\"), flatten = TRUE)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"head(locations_check)","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
-</script><script type="module">
+</script>
+<script type="module">
 // Declare startupMessageQWebR globally
 globalThis.qwebrStartupMessage = document.createElement("p");
 
@@ -736,7 +744,8 @@ qwebrAddCommandHistoryModal();
 
 displayStartupMessage(qwebrShowStartupMessage, qwebrShowHeaderMessage);
 qwebrOffScreenCanvasSupportWarningMessage();
-</script><script type="module">
+</script>
+<script type="module">
 // Define a global storage and retrieval solution ----
 
 // Store commands executed in R
@@ -847,7 +856,8 @@ window.onclick = function(event) {
 command_history_download_btn.onclick = function() {
     downloadRHistory();
 };
-</script><script type="module">
+</script>
+<script type="module">
 // Supported Evaluation Types for Context
 globalThis.EvalTypes = Object.freeze({
   Interactive: 'interactive',
@@ -1122,7 +1132,8 @@ globalThis.createLoadingContainer = function(qwebrCounter) {
 
   return container;
 }
-</script><script type="module">
+</script>
+<script type="module">
 // Function to install a single package
 async function qwebrInstallRPackage(packageName) {
   await mainWebR.evalRVoid(`webr::install('${packageName}');`);
@@ -1222,7 +1233,8 @@ globalThis.qwebrInstance = import(qwebrCustomizedWebROptions.baseURL + "webr.mjs
 // Stop timer
 const initializeWebRTimerEnd = performance.now();
 
-</script><script type="module">
+</script>
+<script type="module">
 // Function to verify a given JavaScript Object is empty
 globalThis.qwebrIsObjectEmpty = function (arr) {
     return Object.keys(arr).length === 0;
@@ -1613,10 +1625,13 @@ globalThis.qwebrExecuteCode = async function (
 }
 
 </script>
+
+
 <meta property="og:title" content="Week 3 Data Part 1 – Statistics 20">
 <meta property="og:description" content="Homepage for STATS 20 - Introduction to Statistical Programming with R, Spring 2026">
 <meta property="og:site_name" content="Statistics 20">
 </head>
+
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -1782,7 +1797,9 @@ globalThis.qwebrExecuteCode = async function (
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -1793,9 +1810,13 @@ globalThis.qwebrExecuteCode = async function (
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Statistics 20</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -1812,7 +1833,7 @@ globalThis.qwebrExecuteCode = async function (
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Start Here</span></a>
@@ -1820,15 +1841,15 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -1837,8 +1858,8 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/Lecture01/Lecture01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 01</span></a>
@@ -1904,8 +1925,14 @@ globalThis.qwebrExecuteCode = async function (
  <span class="menu-text">Lecture 11</span></a>
   </div>
 </li>
-      </ul>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/Lecture1112/Lecture12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 12</span></a>
+  </div>
 </li>
+      </ul>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -1914,8 +1941,8 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../activity/Week01test_drive.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 1 Activity</span></a>
@@ -1958,7 +1985,7 @@ globalThis.qwebrExecuteCode = async function (
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
@@ -1967,8 +1994,8 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://ggplot2-book.org/" class="sidebar-item-text sidebar-link" target="_blank">
  <span class="menu-text">ggplot2 Elegant Graphics for Data Analysis (3e)</span></a>
@@ -1987,16 +2014,18 @@ globalThis.qwebrExecuteCode = async function (
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data">Reading Data</a></li>
   <li><a href="#access-the-data" id="toc-access-the-data" class="nav-link" data-scroll-target="#access-the-data">Access the data</a></li>
   <li><a href="#reading-from-google-docs" id="toc-reading-from-google-docs" class="nav-link" data-scroll-target="#reading-from-google-docs">Reading from Google Docs</a></li>
@@ -2007,10 +2036,14 @@ globalThis.qwebrExecuteCode = async function (
   <li><a href="#reading-json" id="toc-reading-json" class="nav-link" data-scroll-target="#reading-json">Reading JSON</a></li>
   <li><a href="#using-an-api" id="toc-using-an-api" class="nav-link" data-scroll-target="#using-an-api">Using an API</a></li>
   <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result">Result</a></li>
-  </ul></nav>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script><script type="module" id="qwebr-monaco-editor-init">
+<main class="content" id="quarto-document-content">
+
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
+<script type="module" id="qwebr-monaco-editor-init">
 
   // Configure the Monaco Editor's loader
   require.config({
@@ -2018,7 +2051,8 @@ globalThis.qwebrExecuteCode = async function (
       'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs'
     }
   });
-</script><script type="module">
+</script>
+<script type="module">
 // Function to update Monaco Editors when body class changes
 function updateMonacoEditorsOnBodyClassChange() {
     // Select the body element
@@ -2061,7 +2095,8 @@ function updateMonacoEditorTheme() {
 
 // Call the function to start observing changes to body class
 updateMonacoEditorsOnBodyClassChange();
-</script><script type="module">
+</script>
+<script type="module">
 // Global array to store Monaco Editor instances
 globalThis.qwebrEditorInstances = [];
 
@@ -2290,7 +2325,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   };
   
 }
-</script><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activity/Week01test_drive.html">Activities</a></li><li class="breadcrumb-item"><a href="../activity/Week03data.html">Lecture 5 Activity</a></li></ol></nav><div class="quarto-title">
+</script>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activity/Week01test_drive.html">Activities</a></li><li class="breadcrumb-item"><a href="../activity/Week03data.html">Lecture 5 Activity</a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title">Week 3 Data Part 1</h1>
 </div>
 
@@ -2311,13 +2349,21 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   
 
 
-</header><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Recall this webpage using a tool called <code>webr</code>. This activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity. It does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io</p>
-</section><section id="reading-data" class="level2"><h2 class="anchored" data-anchor-id="reading-data">Reading Data</h2>
+</section>
+<section id="reading-data" class="level2">
+<h2 class="anchored" data-anchor-id="reading-data">Reading Data</h2>
 <p>We will read 3 different file formats (csv, tsv, and txt) from the same source. We will read the data into R using the appropriate functions for each format and then check if they are the same. You may encounter different file formats and you need to know how to read them into R.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="access-the-data" class="level2"><h2 class="anchored" data-anchor-id="access-the-data">Access the data</h2>
+</section>
+<section id="access-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="access-the-data">Access the data</h2>
 <p>The data will be stored in R objects that you will need to call by name to see the results. Try it out and see what happens when you run the code chunk below.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -2330,16 +2376,22 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>If everything ran, excellent! All we could not do was save the data frames to this environment but we were able to read the data into R and check if they were the same. This is a good start to working with data in R.</p>
-</section><section id="reading-from-google-docs" class="level2"><h2 class="anchored" data-anchor-id="reading-from-google-docs">Reading from Google Docs</h2>
+</section>
+<section id="reading-from-google-docs" class="level2">
+<h2 class="anchored" data-anchor-id="reading-from-google-docs">Reading from Google Docs</h2>
 <p>I am not sure if this will work.</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="an-imperfect-read" class="level2"><h2 class="anchored" data-anchor-id="an-imperfect-read">An imperfect read</h2>
+</section>
+<section id="an-imperfect-read" class="level2">
+<h2 class="anchored" data-anchor-id="an-imperfect-read">An imperfect read</h2>
 <p>Computer managed and generated data is usually pretty clean unless there is a human component.</p>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>We see the presence of NA here.</p>
-</section><section id="what-is-na-in-r" class="level2"><h2 class="anchored" data-anchor-id="what-is-na-in-r">What is NA in R?</h2>
+</section>
+<section id="what-is-na-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-na-in-r">What is NA in R?</h2>
 <ul>
 <li>NA represents unknown or unavailable data</li>
 <li>It is NOT positive</li>
@@ -2349,22 +2401,30 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ul>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="correcting-a-mistake" class="level2"><h2 class="anchored" data-anchor-id="correcting-a-mistake">Correcting A Mistake</h2>
+</section>
+<section id="correcting-a-mistake" class="level2">
+<h2 class="anchored" data-anchor-id="correcting-a-mistake">Correcting A Mistake</h2>
 <p>Remember, this is a tiny dataset, so we can easily correct the mistake by hand. We will replace the NA with the correct values.</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Notice we are using our indexing skills to select the row and columns we want to change and then we are assigning new values to that selection. This is a common way to correct mistakes in data.</p>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="if-the-row-numbering-issue-makes-you-uncomfortable" class="level2"><h2 class="anchored" data-anchor-id="if-the-row-numbering-issue-makes-you-uncomfortable">If the row numbering issue makes you uncomfortable</h2>
+</section>
+<section id="if-the-row-numbering-issue-makes-you-uncomfortable" class="level2">
+<h2 class="anchored" data-anchor-id="if-the-row-numbering-issue-makes-you-uncomfortable">If the row numbering issue makes you uncomfortable</h2>
 <p>if you must… this is more sequence generating and substitution:</p>
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="reading-json" class="level2"><h2 class="anchored" data-anchor-id="reading-json">Reading JSON</h2>
+</section>
+<section id="reading-json" class="level2">
+<h2 class="anchored" data-anchor-id="reading-json">Reading JSON</h2>
 <p>First, the simple example, a saved static JSON file. This is a common format for data on the web.</p>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="using-an-api" class="level2"><h2 class="anchored" data-anchor-id="using-an-api">Using an API</h2>
+</section>
+<section id="using-an-api" class="level2">
+<h2 class="anchored" data-anchor-id="using-an-api">Using an API</h2>
 <p>THIS WON’T WORK IN webr-r This JSON is generated dynamically by an API (application programming interface).APIs are a way for different software applications to communicate with each other. They often return data in JSON format because it is easy to read.</p>
 <ul>
 <li><a href="https://data.sfgov.org/Culture-and-Recreation/Film-Locations-in-San-Francisco/yitu-d5am/about_data">SF Film Locations</a></li>
@@ -2372,12 +2432,17 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p><strong>don’t run the last two</strong></p>
 <div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section><section id="result" class="level2"><h2 class="anchored" data-anchor-id="result">Result</h2>
+</section>
+<section id="result" class="level2">
+<h2 class="anchored" data-anchor-id="result">Result</h2>
 <div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -2791,7 +2856,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2026, Vivian L.</p>
 </div>   
@@ -2802,7 +2868,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
       &nbsp;
     </div>
   </div>
-</footer><script type="module">
+</footer>
+<script type="module">
 // Handle cell initialization initialization
 qwebrCellDetails.map(
   (entry) => {
@@ -2918,6 +2985,8 @@ qwebrInstance.then(
   }
 );
 </script>
+
+
 
 
 </body></html>
