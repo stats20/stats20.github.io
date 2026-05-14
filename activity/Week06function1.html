@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="For Spring 2026 Stats 20">
-
 <title>Week 6 Functions Part 1 – Statistics 20</title>
 <style>
 code{white-space: pre-wrap;}
@@ -22,7 +19,6 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -44,8 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-ff15834a49140127e309677fd44ae99f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-563888666ae54a9a56390d5846458a8c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-ff15834a49140127e309677fd44ae99f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-ff15834a49140127e309677fd44ae99f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -71,10 +66,8 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/editor/editor.main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/editor/editor.main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style type="text/css">
 .monaco-editor pre {
   background-color: unset !important;
@@ -374,8 +367,7 @@ globalThis.qwebrCustomizedWebROptions = {
 // Store cell data
 globalThis.qwebrCellDetails = [{"code":"load(url(\"https://raw.githubusercontent.com/lewv/data-for-example/main/pokemon.RData\"))","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"dieA <- c(1, 2, 3, 4, 5, 6)\ndieB <- 1:6\ndieC <- seq_len(6)\n\nall.equal(dieA, dieB)\nall.equal(dieA, dieC)\n\ndieA\ndieB\ndieC","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sample(x = dieA) # a permutation\nsample(x = dieA) # a different permutation","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sample(x = dieA, size = 2, replace = TRUE)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sample(x = dieA, size = 2, replace = TRUE)\nsample(x = dieA, size = 2, replace = TRUE)\nsample(x = dieA, size = 2, replace = TRUE)\nsample(x = dieA, size = 2, replace = TRUE)\n\n## sum 2 two outcomes\nsample(x = dieA, size = 2, replace = TRUE) |> sum()\nsample(x = dieA, size = 2, replace = TRUE) |> sum()\nsample(x = dieA, size = 2, replace = TRUE) |> sum()\nsample(x = dieA, size = 2, replace = TRUE) |> sum()","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"roll <- function(){\n  die <- 1:6\n  dice <- sample(die, size =2, replace = TRUE)\n  sum(dice) # notice this wasn't assigned to an object\n} # notice no response/result from R\n\n# oh oh, we are repeating ourselves again...\n\nroll() # notice what prints out\nroll()\nroll()\nroll()","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"set.seed(1) # this will give you the exact results every time, comment it to get a different set of values\ntrials <- 10000\nresults <- numeric(trials)  # need to store the results - creates zero vector of length 10000\nstr(results)\n\nfor (i in seq_len(trials)) {  # generates a numeric sequence as long as trials      \n    results[i] <- roll()  \n  }\n\nstr(results)\ntable(results)  ","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"table(results) |> prop.table()\nhist(results,  breaks = seq(1.5, 12.5, by = 1), main = \"10000 Simulated Rolls of Two Die\", freq = FALSE,\nxlab = \"Sum\", ylab = \"Density\",  sub = \"with normal density overlay\",\nxlim = c(1,13), col = \"cyan\",  xaxt = \"n\" ) # xaxt = no default x-axis\n \naxis(1, at = 2:12)  # x axis with ticks at every integer\nmu <- mean(results)\nsigma <- sd(results)\n\ncurve(\n  dnorm(x, mean = mu, sd = sigma),\n  add = TRUE,\n  col = \"blue\",\n  lwd = 2\n)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ls()\nfor (i in seq_len(42)) {\nsome_result <- i # created object inside the loop, not outside\n}\nls()\nsome_result","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
-</script>
-<script type="module">
+</script><script type="module">
 // Declare startupMessageQWebR globally
 globalThis.qwebrStartupMessage = document.createElement("p");
 
@@ -744,8 +736,7 @@ qwebrAddCommandHistoryModal();
 
 displayStartupMessage(qwebrShowStartupMessage, qwebrShowHeaderMessage);
 qwebrOffScreenCanvasSupportWarningMessage();
-</script>
-<script type="module">
+</script><script type="module">
 // Define a global storage and retrieval solution ----
 
 // Store commands executed in R
@@ -856,8 +847,7 @@ window.onclick = function(event) {
 command_history_download_btn.onclick = function() {
     downloadRHistory();
 };
-</script>
-<script type="module">
+</script><script type="module">
 // Supported Evaluation Types for Context
 globalThis.EvalTypes = Object.freeze({
   Interactive: 'interactive',
@@ -1132,8 +1122,7 @@ globalThis.createLoadingContainer = function(qwebrCounter) {
 
   return container;
 }
-</script>
-<script type="module">
+</script><script type="module">
 // Function to install a single package
 async function qwebrInstallRPackage(packageName) {
   await mainWebR.evalRVoid(`webr::install('${packageName}');`);
@@ -1233,8 +1222,7 @@ globalThis.qwebrInstance = import(qwebrCustomizedWebROptions.baseURL + "webr.mjs
 // Stop timer
 const initializeWebRTimerEnd = performance.now();
 
-</script>
-<script type="module">
+</script><script type="module">
 // Function to verify a given JavaScript Object is empty
 globalThis.qwebrIsObjectEmpty = function (arr) {
     return Object.keys(arr).length === 0;
@@ -1625,13 +1613,10 @@ globalThis.qwebrExecuteCode = async function (
 }
 
 </script>
-
-
 <meta property="og:title" content="Week 6 Functions Part 1 – Statistics 20">
 <meta property="og:description" content="Homepage for STATS 20 - Introduction to Statistical Programming with R, Spring 2026">
 <meta property="og:site_name" content="Statistics 20">
 </head>
-
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -1797,9 +1782,7 @@ globalThis.qwebrExecuteCode = async function (
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -1810,13 +1793,9 @@ globalThis.qwebrExecuteCode = async function (
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Statistics 20</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -1833,7 +1812,7 @@ globalThis.qwebrExecuteCode = async function (
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Start Here</span></a>
@@ -1841,15 +1820,15 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -1858,8 +1837,8 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/Lecture01/Lecture01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 01</span></a>
@@ -1937,8 +1916,14 @@ globalThis.qwebrExecuteCode = async function (
  <span class="menu-text">Lecture 13</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/Lecture1314/Lecture14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 14</span></a>
+  </div>
+</li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -1947,8 +1932,8 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../activity/Week01test_drive.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 1 Activity</span></a>
@@ -1997,7 +1982,7 @@ globalThis.qwebrExecuteCode = async function (
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
@@ -2006,8 +1991,8 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://ggplot2-book.org/" class="sidebar-item-text sidebar-link" target="_blank">
  <span class="menu-text">ggplot2 Elegant Graphics for Data Analysis (3e)</span></a>
@@ -2032,18 +2017,16 @@ globalThis.qwebrExecuteCode = async function (
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#reading-the-pokemon-data-for-later" id="toc-reading-the-pokemon-data-for-later" class="nav-link" data-scroll-target="#reading-the-pokemon-data-for-later">Reading The Pokemon Data (for later)</a></li>
   <li><a href="#simulating-a-6-sided-die" id="toc-simulating-a-6-sided-die" class="nav-link" data-scroll-target="#simulating-a-6-sided-die">Simulating a 6 sided die</a></li>
   <li><a href="#how-to-use-sample-to-produce-permutations" id="toc-how-to-use-sample-to-produce-permutations" class="nav-link" data-scroll-target="#how-to-use-sample-to-produce-permutations">How to use sample() to produce permutations</a></li>
@@ -2055,14 +2038,10 @@ globalThis.qwebrExecuteCode = async function (
   <li><a href="#very-important-notes-about-loops" id="toc-very-important-notes-about-loops" class="nav-link" data-scroll-target="#very-important-notes-about-loops">Very important notes about loops</a></li>
   <li><a href="#suggestions" id="toc-suggestions" class="nav-link" data-scroll-target="#suggestions">Suggestions</a></li>
   <li><a href="#points-to-note" id="toc-points-to-note" class="nav-link" data-scroll-target="#points-to-note">Points to note</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
-<script type="module" id="qwebr-monaco-editor-init">
+<main class="content" id="quarto-document-content"><script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script><script type="module" id="qwebr-monaco-editor-init">
 
   // Configure the Monaco Editor's loader
   require.config({
@@ -2070,8 +2049,7 @@ globalThis.qwebrExecuteCode = async function (
       'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs'
     }
   });
-</script>
-<script type="module">
+</script><script type="module">
 // Function to update Monaco Editors when body class changes
 function updateMonacoEditorsOnBodyClassChange() {
     // Select the body element
@@ -2114,8 +2092,7 @@ function updateMonacoEditorTheme() {
 
 // Call the function to start observing changes to body class
 updateMonacoEditorsOnBodyClassChange();
-</script>
-<script type="module">
+</script><script type="module">
 // Global array to store Monaco Editor instances
 globalThis.qwebrEditorInstances = [];
 
@@ -2344,10 +2321,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   };
   
 }
-</script>
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activity/Week01test_drive.html">Activities</a></li><li class="breadcrumb-item"><a href="../activity/Week06function1.html">Lecture 11 Activity</a></li></ol></nav>
-<div class="quarto-title">
+</script><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activity/Week01test_drive.html">Activities</a></li><li class="breadcrumb-item"><a href="../activity/Week06function1.html">Lecture 11 Activity</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Week 6 Functions Part 1</h1>
 </div>
 
@@ -2368,49 +2342,31 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   
 
 
-</header>
-
-
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+</header><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Recall this webpage using a tool called <code>webr</code>. This activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity. It does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io</p>
-</section>
-<section id="reading-the-pokemon-data-for-later" class="level2">
-<h2 class="anchored" data-anchor-id="reading-the-pokemon-data-for-later">Reading The Pokemon Data (for later)</h2>
+</section><section id="reading-the-pokemon-data-for-later" class="level2"><h2 class="anchored" data-anchor-id="reading-the-pokemon-data-for-later">Reading The Pokemon Data (for later)</h2>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="simulating-a-6-sided-die" class="level2">
-<h2 class="anchored" data-anchor-id="simulating-a-6-sided-die">Simulating a 6 sided die</h2>
+</section><section id="simulating-a-6-sided-die" class="level2"><h2 class="anchored" data-anchor-id="simulating-a-6-sided-die">Simulating a 6 sided die</h2>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="how-to-use-sample-to-produce-permutations" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-sample-to-produce-permutations">How to use sample() to produce permutations</h2>
+</section><section id="how-to-use-sample-to-produce-permutations" class="level2"><h2 class="anchored" data-anchor-id="how-to-use-sample-to-produce-permutations">How to use sample() to produce permutations</h2>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="how-to-use-sample-effectively-to-simulate-the-roll-of-2-die" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-sample-effectively-to-simulate-the-roll-of-2-die">How to use sample() effectively to simulate the roll of 2 die</h2>
+</section><section id="how-to-use-sample-effectively-to-simulate-the-roll-of-2-die" class="level2"><h2 class="anchored" data-anchor-id="how-to-use-sample-effectively-to-simulate-the-roll-of-2-die">How to use sample() effectively to simulate the roll of 2 die</h2>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="additional-rolls" class="level2">
-<h2 class="anchored" data-anchor-id="additional-rolls">Additional rolls</h2>
+</section><section id="additional-rolls" class="level2"><h2 class="anchored" data-anchor-id="additional-rolls">Additional rolls</h2>
 <p>You should begin to see that “there must be a better way” to generate repeated rolls of a simulated die</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="writing-functions-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="writing-functions-in-r">Writing Functions in R</h2>
-<p>Use the function function() see <code>help("function")</code></p>
+</section><section id="writing-functions-in-r" class="level2"><h2 class="anchored" data-anchor-id="writing-functions-in-r">Writing Functions in R</h2>
+<p>Use the function function() see <code><a href="https://rdrr.io/r/base/function.html">help("function")</a></code></p>
 <p>Functions have 3 parts: (1) a name (2) a body between the {} and (3) arguments between the (). In R, functions do not necessarily produce a visible object.</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Just because we can write functions does not automatically mean we have eliminated the repetitiveness of our tasks.</p>
-</section>
-<section id="flow-control-and-the-for-loop" class="level2">
-<h2 class="anchored" data-anchor-id="flow-control-and-the-for-loop">Flow Control and The <code>for()</code> loop</h2>
+</section><section id="flow-control-and-the-for-loop" class="level2"><h2 class="anchored" data-anchor-id="flow-control-and-the-for-loop">Flow Control and The <code>for()</code> loop</h2>
 <ul>
 <li>In programming, a loop is called a “loop” because it forces the computer to repeat a specific block of code, jumping back to a previous instruction and running it again.</li>
 <li>This programming structure creates a circular, repetitive path that continues until a specified condition is met, preventing the need to write the same code multiple times. Hence “loop” and how we avoid writing <code>roll()</code> thousands or millions of times.</li>
@@ -2421,16 +2377,11 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <ul>
 <li>it is easy to modify the number of trials, also easy to modify our roll function to accommodate more sides on a pair of dice or more dice rolled at any one moment.</li>
-</ul>
-</section>
-<section id="visualize-your-results" class="level2">
-<h2 class="anchored" data-anchor-id="visualize-your-results">Visualize your results</h2>
+</ul></section><section id="visualize-your-results" class="level2"><h2 class="anchored" data-anchor-id="visualize-your-results">Visualize your results</h2>
 <p>A good visualization is worth many thousands of words.</p>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="very-important-notes-about-loops" class="level2">
-<h2 class="anchored" data-anchor-id="very-important-notes-about-loops">Very important notes about loops</h2>
+</section><section id="very-important-notes-about-loops" class="level2"><h2 class="anchored" data-anchor-id="very-important-notes-about-loops">Very important notes about loops</h2>
 <ul>
 <li>Objects created inside the loop will exist in your global environment. They are not hidden.</li>
 </ul>
@@ -2439,22 +2390,15 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <ul>
 <li>Note the value of “some_result”, it is the value of i at the end of loop</li>
 <li>If you haven’t created a vector of some_result outside of the loop, only the last value is saved.</li>
-</ul>
-</section>
-<section id="suggestions" class="level2">
-<h2 class="anchored" data-anchor-id="suggestions">Suggestions</h2>
+</ul></section><section id="suggestions" class="level2"><h2 class="anchored" data-anchor-id="suggestions">Suggestions</h2>
 <ol type="1">
 <li>Try modifying roll() to accommodate a 20 sided die</li>
 <li>Try modifying roll() to add a third six sided die (used in games like Mahjong) - what does your understanding of expectation suggest about the most likely outcome?</li>
 <li>Try to construct a z-score function</li>
-</ol>
-</section>
-<section id="points-to-note" class="level2">
-<h2 class="anchored" data-anchor-id="points-to-note">Points to note</h2>
+</ol></section><section id="points-to-note" class="level2"><h2 class="anchored" data-anchor-id="points-to-note">Points to note</h2>
 <ol type="1">
 <li><p>Not all code needs to be converted to functions</p></li>
-<li><p>Under the correct conditions, a <code>replicate()</code>is a good substitute for a <code>for()</code>since replicate is vectorized and for() is not.<br>
-</p></li>
+<li><p>Under the correct conditions, a <code><a href="https://rdrr.io/r/base/lapply.html">replicate()</a></code>is a good substitute for a <code>for()</code>since replicate is vectorized and for() is not.<br></p></li>
 <li><p>The output of the last command in the body is the output of the function.</p></li>
 <li><p>If the last command does not have an output nothing will be returned</p></li>
 <li><p>R does have a return() statement that is optional. An R function with a return() will output whatever you specify and then immediately exit/end the function.</p></li>
@@ -2462,10 +2406,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -2879,8 +2820,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2026, Vivian L.</p>
 </div>   
@@ -2891,8 +2831,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
       &nbsp;
     </div>
   </div>
-</footer>
-<script type="module">
+</footer><script type="module">
 // Handle cell initialization initialization
 qwebrCellDetails.map(
   (entry) => {
@@ -3008,8 +2947,6 @@ qwebrInstance.then(
   }
 );
 </script>
-
-
 
 
 </body></html>

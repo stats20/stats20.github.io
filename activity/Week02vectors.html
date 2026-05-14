@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="For Spring 2026 Stats 20">
-
 <title>Week 2 Functions and Vectors – Statistics 20</title>
 <style>
 code{white-space: pre-wrap;}
@@ -58,7 +55,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -79,8 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-ff15834a49140127e309677fd44ae99f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-563888666ae54a9a56390d5846458a8c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-ff15834a49140127e309677fd44ae99f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-ff15834a49140127e309677fd44ae99f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -106,10 +101,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/editor/editor.main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/editor/editor.main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style type="text/css">
 .monaco-editor pre {
   background-color: unset !important;
@@ -409,8 +402,7 @@ globalThis.qwebrCustomizedWebROptions = {
 // Store cell data
 globalThis.qwebrCellDetails = [{"code":"ls()\nrm(x) # sometimes functions have input value(s)\nrm(list=ls()) # sometimes they have a different function as input","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"1:10 # colon operator creates a sequence of integers from:to\nseq(from = 1, to = 10, by = 3) # seq creates a sequence with a custom \"step\"\nrep(1:2, times = 5) # replicates the values\nsouthern <- c(\"UCLA\", \"UCI\", \"UCR\", \"UCSD\", \"UCSB\") # a custom character vector with c\nnorthern <- c(\"UCB\", \"UCSC\", \"UCD\", \"UCM\", \"UCSF\") # another custom character vector\nc(northern, southern) # combine vectors with c()\nc(TRUE, FALSE, TRUE, TRUE, FALSE) # a custom logical vector\nc(pi, exp(1), sqrt(9), 2^3) # a custom numeric vector with function output","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"southern\nnorthern","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"## You can make more space for yourself","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"letters # a built in character vector\nLETTERS # another built in character vector\nmonth.abb # yet another built in - don't use periods in your variable names\nmonth.name # still more - don't use periods in your variable names\neuro # a built-in named numeric data vector\nrivers # a built-in numeric data vector","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rivers[1]\nmonth.abb[1]\neuro[1]\nmy_logical <- c(FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE)\nmy_logical[1]","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"length(rivers)\nlength(month.abb)\nlength(my_logical)\n\nrivers[length(rivers)] # read it from the innermost value back out\nmonth.abb[4] # which month will it give?\nmy_logical[2]","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rivers[1:10]\nmonth.abb[c(9, 10, 11, 5)]\nmy_logical[seq(1, length(my_logical), by = 2)]","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"month.abb[0] # empty character vector\nmonth.abb[-4]  # we drop April\nmonth.abb[-(6:8)] # we drop the summer - do you know why we used parentheses here?","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rivers[rivers > 1200] # there are 12 rivers > 1200 km in length","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rivers > 1200 # a vector of length 141 which evaluates > 1200 (logical)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"## a free chunk for you to use for trying out other things.  \n ","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"a12 <- 1:12\nb12 <- c(6, 8, 18, 5, 7, 1, 13, 12, 4, 10, 20, 11)\n\na12^2\nb12 + 10\na12 + b12 # did either original change?\na12^2 + b12\nsqrt(a12 * b12)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"c4 <- c(100, 200, 300, 400)\nd5 <- c(1000, 2000, 3000, 4000, 5000)\n\na12 + c4\na12 + d5","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"logical_vector <- c(TRUE, FALSE)\ninteger_vector <- 1:10 # colon operator generates integers\n\nlogical_c_integer <- c(logical_vector, integer_vector)\n\nlogical_plus_integer <- logical_vector + integer_vector # recycled too\n\nlogical_c_integer\nis(logical_c_integer)\n\nlogical_plus_integer\nis(logical_plus_integer)","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"integer_vector <- 1001:1010\nnumeric_vector <- c(pi, exp(1), Inf, -Inf, NaN)\n\ninteger_c_numeric <- c(integer_vector, numeric_vector)\ninteger_plus_numeric <- integer_vector + numeric_vector # how long do you think this will be?\n\nis(integer_vector)\nis(numeric_vector)\nis(integer_c_numeric)\ninteger_c_numeric\nis(integer_plus_numeric)\ninteger_plus_numeric","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"character_vector <- c(northern, southern)\n\nlogical_c_character <- c(logical_vector, character_vector)\n\nis(logical_c_character)\nlogical_c_character","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"tricky_character <- c(\"1\", \"2\", \"3\", \"4\", \"5\") # these numbers are characters\nis(tricky_character)\n\ntricky_character_c_numeric_vector <- c(tricky_character, numeric_vector)\n\nis(tricky_character_c_numeric_vector) # it's character\n\ntricky_character_c_numeric_vector # note the quotation marks","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
-</script>
-<script type="module">
+</script><script type="module">
 // Declare startupMessageQWebR globally
 globalThis.qwebrStartupMessage = document.createElement("p");
 
@@ -779,8 +771,7 @@ qwebrAddCommandHistoryModal();
 
 displayStartupMessage(qwebrShowStartupMessage, qwebrShowHeaderMessage);
 qwebrOffScreenCanvasSupportWarningMessage();
-</script>
-<script type="module">
+</script><script type="module">
 // Define a global storage and retrieval solution ----
 
 // Store commands executed in R
@@ -891,8 +882,7 @@ window.onclick = function(event) {
 command_history_download_btn.onclick = function() {
     downloadRHistory();
 };
-</script>
-<script type="module">
+</script><script type="module">
 // Supported Evaluation Types for Context
 globalThis.EvalTypes = Object.freeze({
   Interactive: 'interactive',
@@ -1167,8 +1157,7 @@ globalThis.createLoadingContainer = function(qwebrCounter) {
 
   return container;
 }
-</script>
-<script type="module">
+</script><script type="module">
 // Function to install a single package
 async function qwebrInstallRPackage(packageName) {
   await mainWebR.evalRVoid(`webr::install('${packageName}');`);
@@ -1268,8 +1257,7 @@ globalThis.qwebrInstance = import(qwebrCustomizedWebROptions.baseURL + "webr.mjs
 // Stop timer
 const initializeWebRTimerEnd = performance.now();
 
-</script>
-<script type="module">
+</script><script type="module">
 // Function to verify a given JavaScript Object is empty
 globalThis.qwebrIsObjectEmpty = function (arr) {
     return Object.keys(arr).length === 0;
@@ -1660,13 +1648,10 @@ globalThis.qwebrExecuteCode = async function (
 }
 
 </script>
-
-
 <meta property="og:title" content="Week 2 Functions and Vectors – Statistics 20">
 <meta property="og:description" content="Homepage for STATS 20 - Introduction to Statistical Programming with R, Spring 2026">
 <meta property="og:site_name" content="Statistics 20">
 </head>
-
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -1832,9 +1817,7 @@ globalThis.qwebrExecuteCode = async function (
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -1845,13 +1828,9 @@ globalThis.qwebrExecuteCode = async function (
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Statistics 20</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -1868,7 +1847,7 @@ globalThis.qwebrExecuteCode = async function (
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Start Here</span></a>
@@ -1876,15 +1855,15 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -1893,8 +1872,8 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/Lecture01/Lecture01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 01</span></a>
@@ -1972,8 +1951,14 @@ globalThis.qwebrExecuteCode = async function (
  <span class="menu-text">Lecture 13</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/Lecture1314/Lecture14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 14</span></a>
+  </div>
+</li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -1982,8 +1967,8 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../activity/Week01test_drive.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 1 Activity</span></a>
@@ -2032,7 +2017,7 @@ globalThis.qwebrExecuteCode = async function (
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
@@ -2041,8 +2026,8 @@ globalThis.qwebrExecuteCode = async function (
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://ggplot2-book.org/" class="sidebar-item-text sidebar-link" target="_blank">
  <span class="menu-text">ggplot2 Elegant Graphics for Data Analysis (3e)</span></a>
@@ -2067,18 +2052,16 @@ globalThis.qwebrExecuteCode = async function (
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#how-this-page-works" id="toc-how-this-page-works" class="nav-link" data-scroll-target="#how-this-page-works">How this page works</a></li>
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
   <li><a href="#vector-construction" id="toc-vector-construction" class="nav-link" data-scroll-target="#vector-construction">Vector Construction</a></li>
@@ -2093,14 +2076,10 @@ globalThis.qwebrExecuteCode = async function (
   <li><a href="#intnum" id="toc-intnum" class="nav-link" data-scroll-target="#intnum">Int/Num</a></li>
   <li><a href="#logicalchar" id="toc-logicalchar" class="nav-link" data-scroll-target="#logicalchar">Logical/Char</a></li>
   <li><a href="#numchar" id="toc-numchar" class="nav-link" data-scroll-target="#numchar">Num/Char</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
-<script type="module" id="qwebr-monaco-editor-init">
+<main class="content" id="quarto-document-content"><script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script><script type="module" id="qwebr-monaco-editor-init">
 
   // Configure the Monaco Editor's loader
   require.config({
@@ -2108,8 +2087,7 @@ globalThis.qwebrExecuteCode = async function (
       'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs'
     }
   });
-</script>
-<script type="module">
+</script><script type="module">
 // Function to update Monaco Editors when body class changes
 function updateMonacoEditorsOnBodyClassChange() {
     // Select the body element
@@ -2152,8 +2130,7 @@ function updateMonacoEditorTheme() {
 
 // Call the function to start observing changes to body class
 updateMonacoEditorsOnBodyClassChange();
-</script>
-<script type="module">
+</script><script type="module">
 // Global array to store Monaco Editor instances
 globalThis.qwebrEditorInstances = [];
 
@@ -2382,10 +2359,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   };
   
 }
-</script>
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activity/Week01test_drive.html">Activities</a></li><li class="breadcrumb-item"><a href="../activity/Week02vectors.html">Lecture 3 Activity</a></li></ol></nav>
-<div class="quarto-title">
+</script><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activity/Week01test_drive.html">Activities</a></li><li class="breadcrumb-item"><a href="../activity/Week02vectors.html">Lecture 3 Activity</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Week 2 Functions and Vectors</h1>
 </div>
 
@@ -2406,25 +2380,15 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   
 
 
-</header>
-
-
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+</header><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Recall this webpage using a tool called <code>webr</code>. This activity is not a substitute for using RStudio BUT exists for those times when you do not have a device running R during lecture BUT we still want you to experience a “hands on” activity. It does not require an installation of R on your device. It should run on your laptop browser and it may run on your phone browser (it runs on my iPhone, I have not tested other brands). If you try to run this on a tablet you may need to turn off lockdown mode (security) for stats20.github.io</p>
-</section>
-<section id="how-this-page-works" class="level2">
-<h2 class="anchored" data-anchor-id="how-this-page-works">How this page works</h2>
+</section><section id="how-this-page-works" class="level2"><h2 class="anchored" data-anchor-id="how-this-page-works">How this page works</h2>
 <p>You can run the R code chunks by clicking on the “Run Code” button that appears in the upper left of the “code chunks”. The other two icons on the upper right of the code chunk are for copying the code and for refreshing the window (which will clear all of your work and start you over). You can also modify the code in the code chunks and run it to see how it works.</p>
-</section>
-<section id="functions" class="level2">
-<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+</section><section id="functions" class="level2"><h2 class="anchored" data-anchor-id="functions">Functions</h2>
 <p>Try a few simple functions in the code chunk below. You can modify the code to try out different ones.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="vector-construction" class="level2">
-<h2 class="anchored" data-anchor-id="vector-construction">Vector Construction</h2>
+</section><section id="vector-construction" class="level2"><h2 class="anchored" data-anchor-id="vector-construction">Vector Construction</h2>
 <p>Some of these vectors will print out, others will be stored in R objects that you will need to call by name to see the results. Try it out and see what happens when you run the code chunk below.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -2438,15 +2402,11 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p><code>Did you get what you expected to get as a result?</code> That is a fundamental skill in programming – you should have an idea of what to expect as a result of your code. If you got something different, try to understand why it differed. If you are confused, ask for help. This is a learning process and it is normal to be confused at first.</p>
-</section>
-<section id="built-in-vectors-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="built-in-vectors-in-r">Built-in vectors in R</h2>
+</section><section id="built-in-vectors-in-r" class="level2"><h2 class="anchored" data-anchor-id="built-in-vectors-in-r">Built-in vectors in R</h2>
 <p>These serve as useful examples in teaching or in learning how to work with data in R. They are also useful for testing out functions and learning how to manipulate data in R.</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="indexing-vectors" class="level2">
-<h2 class="anchored" data-anchor-id="indexing-vectors">Indexing Vectors</h2>
+</section><section id="indexing-vectors" class="level2"><h2 class="anchored" data-anchor-id="indexing-vectors">Indexing Vectors</h2>
 <p>If you don’t learn anything else in Stats 20, learn how to index vectors. This is a fundamental skill in R and it is essential for working with data in R. You can use the <code>[]</code> operator to index vectors. The indices start at 1 (not 0 like in some other programming languages). You can use positive integers to index specific values, negative integers to exclude specific values, and logical vectors to index values that meet certain conditions.</p>
 <p>First let’s use some existing vectors and make our own logical vector.</p>
 <div id="qwebr-insertion-location-6"></div>
@@ -2454,9 +2414,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Then we can work them a bit:</p>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="indexing-vectors-with-vectors" class="level2">
-<h2 class="anchored" data-anchor-id="indexing-vectors-with-vectors">Indexing vectors with vectors</h2>
+</section><section id="indexing-vectors-with-vectors" class="level2"><h2 class="anchored" data-anchor-id="indexing-vectors-with-vectors">Indexing vectors with vectors</h2>
 <ul>
 <li>Recall there are no scalars in R, so <code>length(rivers)</code> is 141 which is a vector of length 1.</li>
 <li>So we can also index vectors using other vectors of any length</li>
@@ -2478,57 +2436,41 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ul>
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="test-yourself" class="level2">
-<h2 class="anchored" data-anchor-id="test-yourself">Test Yourself</h2>
+</section><section id="test-yourself" class="level2"><h2 class="anchored" data-anchor-id="test-yourself">Test Yourself</h2>
 <p>What do you think will happen if you run this code chunk?</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rivers</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>rivers_and &lt;- rivers<span class="co">[</span><span class="ot">rivers &gt; 1000 &amp; rivers &lt; 2000</span><span class="co">]</span> # <span class="in">`&amp;`</span> (AND operator) are both true?</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>rivers_or &lt;- rivers<span class="co">[</span><span class="ot">rivers &gt; 3000 | rivers &lt; 200</span><span class="co">]</span> # <span class="in">`|`</span> (OR operator) is at least one of the conditions is true? </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="a-blank-chunk-for-you-to-use." class="level2">
-<h2 class="anchored" data-anchor-id="a-blank-chunk-for-you-to-use.">A blank chunk for you to use.</h2>
+</section><section id="a-blank-chunk-for-you-to-use." class="level2"><h2 class="anchored" data-anchor-id="a-blank-chunk-for-you-to-use.">A blank chunk for you to use.</h2>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="math-with-vectors" class="level2">
-<h2 class="anchored" data-anchor-id="math-with-vectors">Math with vectors</h2>
+</section><section id="math-with-vectors" class="level2"><h2 class="anchored" data-anchor-id="math-with-vectors">Math with vectors</h2>
 <p>Try a little math.</p>
 <div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="recycling-example" class="level2">
-<h2 class="anchored" data-anchor-id="recycling-example">Recycling Example</h2>
+</section><section id="recycling-example" class="level2"><h2 class="anchored" data-anchor-id="recycling-example">Recycling Example</h2>
 <div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="coercing-a-logical-to-integernumeric" class="level2">
-<h2 class="anchored" data-anchor-id="coercing-a-logical-to-integernumeric">Coercing a Logical to Integer/Numeric</h2>
+</section><section id="coercing-a-logical-to-integernumeric" class="level2"><h2 class="anchored" data-anchor-id="coercing-a-logical-to-integernumeric">Coercing a Logical to Integer/Numeric</h2>
 <ul>
 <li>Logical (TRUE/FALSE) occupies the bottom of the hierarchy, it’s always coerced if combined with any non-Logical type of data.</li>
 </ul>
 <div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="intnum" class="level2">
-<h2 class="anchored" data-anchor-id="intnum">Int/Num</h2>
+</section><section id="intnum" class="level2"><h2 class="anchored" data-anchor-id="intnum">Int/Num</h2>
 <ul>
 <li>Integers are whole numbers without a decimal point, numeric are numbers with a decimal point</li>
 </ul>
 <div id="qwebr-insertion-location-16"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="logicalchar" class="level2">
-<h2 class="anchored" data-anchor-id="logicalchar">Logical/Char</h2>
+</section><section id="logicalchar" class="level2"><h2 class="anchored" data-anchor-id="logicalchar">Logical/Char</h2>
 <ul>
 <li>If you are combining logical and character only, TRUE FALSE will become “TRUE” and “FALSE”</li>
 </ul>
 <div id="qwebr-insertion-location-17"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="numchar" class="level2">
-<h2 class="anchored" data-anchor-id="numchar">Num/Char</h2>
+</section><section id="numchar" class="level2"><h2 class="anchored" data-anchor-id="numchar">Num/Char</h2>
 <ul>
 <li>If you are combining numeric and character, the numbers become character</li>
 </ul>
@@ -2537,10 +2479,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>The material on matrices is not something we spend a lot of time in Stats 20 but if you are planning to take upper division courses, I recommend spending time with matrices.</p>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -2954,8 +2893,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2026, Vivian L.</p>
 </div>   
@@ -2966,8 +2904,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
       &nbsp;
     </div>
   </div>
-</footer>
-<script type="module">
+</footer><script type="module">
 // Handle cell initialization initialization
 qwebrCellDetails.map(
   (entry) => {
@@ -3083,8 +3020,6 @@ qwebrInstance.then(
   }
 );
 </script>
-
-
 
 
 </body></html>
