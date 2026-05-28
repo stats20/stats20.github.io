@@ -3806,6 +3806,41 @@
     ]
   },
   {
+    "objectID": "lectures/Lecture1718/quiz9instructions.html",
+    "href": "lectures/Lecture1718/quiz9instructions.html",
+    "title": "Quiz 9 Ames Technical",
+    "section": "",
+    "text": "This is a re-working of a technical interview provided by a former Stats 20 TA. It’s a rich dataset and a good example of a take-home final in terms of expectations. There are two datasets to read (their data descriptions are at the bottom)\names_homesales2024.RData - this is the data on homes, their updated salesprices, their features ames_neighborhood2024.csv - these are the neighborhoods represented in the home data, their walk, transit and bike scores"
+  },
+  {
+    "objectID": "lectures/Lecture1718/quiz9instructions.html#a-visit-to-ames-ia",
+    "href": "lectures/Lecture1718/quiz9instructions.html#a-visit-to-ames-ia",
+    "title": "Quiz 9 Ames Technical",
+    "section": "",
+    "text": "This is a re-working of a technical interview provided by a former Stats 20 TA. It’s a rich dataset and a good example of a take-home final in terms of expectations. There are two datasets to read (their data descriptions are at the bottom)\names_homesales2024.RData - this is the data on homes, their updated salesprices, their features ames_neighborhood2024.csv - these are the neighborhoods represented in the home data, their walk, transit and bike scores"
+  },
+  {
+    "objectID": "lectures/Lecture1718/quiz9instructions.html#the-packages-you-may-load-to-solve-the-problems-in-addition-to-base-r",
+    "href": "lectures/Lecture1718/quiz9instructions.html#the-packages-you-may-load-to-solve-the-problems-in-addition-to-base-r",
+    "title": "Quiz 9 Ames Technical",
+    "section": "The packages you may load to solve the problems in addition to base R",
+    "text": "The packages you may load to solve the problems in addition to base R\nThe take-home portion of the final exam in Stats 20 will open at 9pm PDT Thursday June 4th and close on Tuesday June 9th at 9pm PDT unless you have a prior arrangement with UCLA, then your end time will reflect that arrangement. Project 3 is good practice/preparation with two major differences (1) I will give you the data and (2) I will restrict you to base R and a few other libraries (use of other libraries is optional)\n\nlibrary(readr)\nlibrary(ggplot2)\nlibrary(gridExtra)\nlibrary(dplyr)\nlibrary(knitr)\n\nAI Policy: You may use as much or as little AI on this quiz as you like."
+  },
+  {
+    "objectID": "lectures/Lecture1718/quiz9instructions.html#interview-modified-to-make-it-easier",
+    "href": "lectures/Lecture1718/quiz9instructions.html#interview-modified-to-make-it-easier",
+    "title": "Quiz 9 Ames Technical",
+    "section": "Interview (modified to make it easier)",
+    "text": "Interview (modified to make it easier)\nPrompt: You will be analyzing a classic machine learning dataset of housing sales in Ames, Iowa with prices updated to 2024 dollars. There are a few tasks that you need to perform to prep the data.\n1. The dataset with the field (variable) of greatest interest (est_saleprice_2024) can be found in ames_homesales2024.RData and the descriptions for each field (variable) are supplied below. Each row of data contains one home sale. Please set a seed using the last 3 digits of your student ID number and create a random sample of 70% of the data (so 1,022 rows) and use that for the analysis.\n2. There is a second dataset called ames_neighborhood2024.csv which contains walk score, transit score and bike score reflecting the neighborhood level alternative transit information. We want you to add this information to your 70% sample of the home sales data.\n3. Some fields (variables) were incorrectly saved as factors. Please either demonstrate your ability to write a single function or use an lapply() (or combine both) to correct all of the variables which were incorrectly saved as factors.\n4. Please review the combined dataset, determine if there are outliers or bad values, give justification for any observations that you choose to omit or alter and then answer the following questions.\nQuestions\nA. What is the average estimated 2024 sale price for homes which were sold in Ames? Calculate this metric for each neighborhood as well as the minimum and maximum estimated 2024 sale price and display it as a table with the following column labels:\n\n\n\n\n\n\n\n\n\nNeighborhood\nAverage Sales Price\nMinimum\nMaximum\nNumber Sold\n\n\n\n\n\n\n\n\n\nB. What is the median sale price for homes sold which have an indoor square footage of greater than or equal to 2000 ft (excluding porches, garages, decks, basements, and veneers)? What percentage of homes meet this criterion? Calculate this metric for each neighborhood (proportion with an indoor square footage greater than or equal to 2000ft) and display it as a table with the following column labels.\n\n\n\n\n\n\n\nNeighborhood\nMedian sale price\nPercentage with square foot &gt;= 2000\n\n\n\n\n\n\n\nC. A client approaches you with a question about the local housing market. They’re interested in whether more homes are sold at certain times of year than others? In other words, is there seasonality present in the data? Provide a visualization which the client will understand (it should be simple, easy to interpret and correct) and a brief description of your findings.\nD. You’re a contractor consulting for a client who wants to remodel their home and then sell it on the market. Based on your analysis of the data, what variables should they consider in their remodel and what is your justification for recommending these variables?"
+  },
+  {
+    "objectID": "lectures/Lecture1718/quiz9instructions.html#the-other-details",
+    "href": "lectures/Lecture1718/quiz9instructions.html#the-other-details",
+    "title": "Quiz 9 Ames Technical",
+    "section": "The other details",
+    "text": "The other details\nWhen you submit for the actual final exam (not this quiz), please be prepared to submit an .Rmd or .qmd file and the .pdf that was the result of knitting/rendering it. For the quiz, just answer the question on how you would score your response.\nI will post a possible solution (there are very many depending on your approach) to this quiz over the weekend.\nData Description ames_neighborhood2024.csv\nneighborhood: Name of Neighborhood\n\nwalk_score: range is 0 - 100. 100 is very walkable. It based on the walking distance \nfrom  restaurants, groceries, schools, entertainment, and more.   \n\ntransit_score: range is 0 - 100, 100 is perfect. Transit Score measures how well \na location is served by public transit.   \n\nbike_score: range is 0 - 100, 100 is perfect. The Bike Score measures how well \na location is set up for bike transit.  \nData Description ames_homesales2024.RData\nMSSubClass: Identifies the type of dwelling involved in the sale.   \n\n        20  1-STORY 1946 & NEWER ALL STYLES\n        30  1-STORY 1945 & OLDER\n        40  1-STORY W/FINISHED ATTIC ALL AGES\n        45  1-1/2 STORY - UNFINISHED ALL AGES\n        50  1-1/2 STORY FINISHED ALL AGES\n        60  2-STORY 1946 & NEWER\n        70  2-STORY 1945 & OLDER\n        75  2-1/2 STORY ALL AGES\n        80  SPLIT OR MULTI-LEVEL\n        85  SPLIT FOYER\n        90  DUPLEX - ALL STYLES AND AGES\n       120  1-STORY PUD (Planned Unit Development) - 1946 & NEWER\n       150  1-1/2 STORY PUD - ALL AGES\n       160  2-STORY PUD - 1946 & NEWER\n       180  PUD - MULTILEVEL - INCL SPLIT LEV/FOYER\n       190  2 FAMILY CONVERSION - ALL STYLES AND AGES\n\nMSZoning: Identifies the general zoning classification of the sale.\n        \n       A    Agriculture\n       C    Commercial\n       FV   Floating Village Residential\n       I    Industrial\n       RH   Residential High Density\n       RL   Residential Low Density\n       RP   Residential Low Density Park \n       RM   Residential Medium Density\n    \nLotFrontage: Linear feet of street connected to property\n\nLotArea: Lot size in square feet\n\nStreet: Type of road access to property\n\n       Grvl Gravel  \n       Pave Paved\n        \nAlley: Type of alley access to property\n\n       Grvl Gravel\n       Pave Paved\n       NA   No alley access\n        \nLotShape: General shape of property\n\n       Reg  Regular \n       IR1  Slightly irregular\n       IR2  Moderately Irregular\n       IR3  Irregular\n       \nLandContour: Flatness of the property\n\n       Lvl  Near Flat/Level \n       Bnk  Banked - Quick and significant rise from street grade to building\n       HLS  Hillside - Significant slope from side to side\n       Low  Depression\n        \nUtilities: Type of utilities available\n        \n       AllPub   All public Utilities (E,G,W,& S)    \n       NoSewr   Electricity, Gas, and Water (Septic Tank)\n       NoSeWa   Electricity and Gas Only\n       ELO  Electricity only    \n    \nLotConfig: Lot configuration\n\n       Inside   Inside lot\n       Corner   Corner lot\n       CulDSac  Cul-de-sac\n       FR2  Frontage on 2 sides of property\n       FR3  Frontage on 3 sides of property\n    \nLandSlope: Slope of property\n        \n       Gtl  Gentle slope\n       Mod  Moderate Slope  \n       Sev  Severe Slope\n    \nNeighborhood: Physical locations within Ames city limits\n\n       Blmngtn  Bloomington Heights\n       Blueste  Bluestem\n       BrDale   Briardale\n       BrkSide  Brookside\n       ClearCr  Clear Creek\n       CollgCr  College Creek\n       Crawfor  Crawford\n       Edwards  Edwards\n       Gilbert  Gilbert\n       IDOTRR   Iowa DOT and Rail Road\n       MeadowV  Meadow Village\n       Mitchel  Mitchell\n       Names    North Ames\n       NoRidge  Northridge\n       NPkVill  Northpark Villa\n       NridgHt  Northridge Heights\n       NWAmes   Northwest Ames\n       OldTown  Old Town\n       SWISU    South & West of Iowa State University\n       Sawyer   Sawyer\n       SawyerW  Sawyer West\n       Somerst  Somerset\n       StoneBr  Stone Brook\n       Timber   Timberland\n       Veenker  Veenker\n            \nCondition1: Proximity to various conditions\n    \n       Artery   Adjacent to arterial street\n       Feedr    Adjacent to feeder street   \n       Norm Normal  \n       RRNn Within 200' of North-South Railroad\n       RRAn Adjacent to North-South Railroad\n       PosN Near positive off-site feature--park, greenbelt, etc.\n       PosA Adjacent to postive off-site feature\n       RRNe Within 200' of East-West Railroad\n       RRAe Adjacent to East-West Railroad\n    \nCondition2: Proximity to various conditions (if more than one is present)\n        \n       Artery   Adjacent to arterial street\n       Feedr    Adjacent to feeder street   \n       Norm Normal  \n       RRNn Within 200' of North-South Railroad\n       RRAn Adjacent to North-South Railroad\n       PosN Near positive off-site feature--park, greenbelt, etc.\n       PosA Adjacent to postive off-site feature\n       RRNe Within 200' of East-West Railroad\n       RRAe Adjacent to East-West Railroad\n    \nBldgType: Type of dwelling\n        \n       1Fam Single-family Detached  \n       2FmCon   Two-family Conversion; originally built as one-family dwelling\n       Duplx    Duplex\n       TwnhsE   Townhouse End Unit\n       TwnhsI   Townhouse Inside Unit\n    \nHouseStyle: Style of dwelling\n    \n       1Story   One story\n       1.5Fin   One and one-half story: 2nd level finished\n       1.5Unf   One and one-half story: 2nd level unfinished\n       2Story   Two story\n       2.5Fin   Two and one-half story: 2nd level finished\n       2.5Unf   Two and one-half story: 2nd level unfinished\n       SFoyer   Split Foyer\n       SLvl Split Level\n    \nOverallQual: Rates the overall material and finish of the house\n\n       10   Very Excellent\n       9    Excellent\n       8    Very Good\n       7    Good\n       6    Above Average\n       5    Average\n       4    Below Average\n       3    Fair\n       2    Poor\n       1    Very Poor\n    \nOverallCond: Rates the overall condition of the house\n\n       10   Very Excellent\n       9    Excellent\n       8    Very Good\n       7    Good\n       6    Above Average   \n       5    Average\n       4    Below Average   \n       3    Fair\n       2    Poor\n       1    Very Poor\n        \nYearBuilt: Original construction date\n\nYearRemodAdd: Remodel date (same as construction date if no remodeling or additions)\n\nRoofStyle: Type of roof\n\n       Flat Flat\n       Gable    Gable\n       Gambrel  Gabrel (Barn)\n       Hip  Hip\n       Mansard  Mansard\n       Shed Shed\n        \nRoofMatl: Roof material\n\n       ClyTile  Clay or Tile\n       CompShg  Standard (Composite) Shingle\n       Membran  Membrane\n       Metal    Metal\n       Roll Roll\n       Tar&Grv  Gravel & Tar\n       WdShake  Wood Shakes\n       WdShngl  Wood Shingles\n        \nExterior1st: Exterior covering on house\n\n       AsbShng  Asbestos Shingles\n       AsphShn  Asphalt Shingles\n       BrkComm  Brick Common\n       BrkFace  Brick Face\n       CBlock   Cinder Block\n       CemntBd  Cement Board\n       HdBoard  Hard Board\n       ImStucc  Imitation Stucco\n       MetalSd  Metal Siding\n       Other    Other\n       Plywood  Plywood\n       PreCast  PreCast \n       Stone    Stone\n       Stucco   Stucco\n       VinylSd  Vinyl Siding\n       Wd Sdng  Wood Siding\n       WdShing  Wood Shingles\n    \nExterior2nd: Exterior covering on house (if more than one material)\n\n       AsbShng  Asbestos Shingles\n       AsphShn  Asphalt Shingles\n       BrkComm  Brick Common\n       BrkFace  Brick Face\n       CBlock   Cinder Block\n       CemntBd  Cement Board\n       HdBoard  Hard Board\n       ImStucc  Imitation Stucco\n       MetalSd  Metal Siding\n       Other    Other\n       Plywood  Plywood\n       PreCast  PreCast\n       Stone    Stone\n       Stucco   Stucco\n       VinylSd  Vinyl Siding\n       Wd Sdng  Wood Siding\n       WdShing  Wood Shingles\n    \nMasVnrType: Masonry veneer type\n\n       BrkCmn   Brick Common\n       BrkFace  Brick Face\n       CBlock   Cinder Block\n       None None\n       Stone    Stone\n    \nMasVnrArea: Masonry veneer area in square feet\n\nExterQual: Evaluates the quality of the material on the exterior \n        \n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       Po   Poor\n        \nExterCond: Evaluates the present condition of the material on the exterior\n        \n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       Po   Poor\n        \nFoundation: Type of foundation\n        \n       BrkTil   Brick & Tile\n       CBlock   Cinder Block\n       PConc    Poured Contrete \n       Slab Slab\n       Stone    Stone\n       Wood Wood\n        \nBsmtQual: Evaluates the height of the basement\n\n       Ex   Excellent (100+ inches) \n       Gd   Good (90-99 inches)\n       TA   Typical (80-89 inches)\n       Fa   Fair (70-79 inches)\n       Po   Poor (&lt;70 inches\n       NA   No Basement\n        \nBsmtCond: Evaluates the general condition of the basement\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical - slight dampness allowed\n       Fa   Fair - dampness or some cracking or settling\n       Po   Poor - Severe cracking, settling, or wetness\n       NA   No Basement\n    \nBsmtExposure: Refers to walkout or garden level walls\n\n       Gd   Good Exposure\n       Av   Average Exposure (split levels or foyers typically score average or above)  \n       Mn   Mimimum Exposure\n       No   No Exposure\n       NA   No Basement\n    \nBsmtFinType1: Rating of basement finished area\n\n       GLQ  Good Living Quarters\n       ALQ  Average Living Quarters\n       BLQ  Below Average Living Quarters   \n       Rec  Average Rec Room\n       LwQ  Low Quality\n       Unf  Unfinshed\n       NA   No Basement\n        \nBsmtFinSF1: Type 1 finished square feet\n\nBsmtFinType2: Rating of basement finished area (if multiple types)\n\n       GLQ  Good Living Quarters\n       ALQ  Average Living Quarters\n       BLQ  Below Average Living Quarters   \n       Rec  Average Rec Room\n       LwQ  Low Quality\n       Unf  Unfinshed\n       NA   No Basement\n\nBsmtFinSF2: Type 2 finished square feet\n\nBsmtUnfSF: Unfinished square feet of basement area\n\nTotalBsmtSF: Total square feet of basement area\n\nHeating: Type of heating\n        \n       Floor    Floor Furnace\n       GasA Gas forced warm air furnace\n       GasW Gas hot water or steam heat\n       Grav Gravity furnace \n       OthW Hot water or steam heat other than gas\n       Wall Wall furnace\n        \nHeatingQC: Heating quality and condition\n\n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       Po   Poor\n        \nCentralAir: Central air conditioning\n\n       N    No\n       Y    Yes\n        \nElectrical: Electrical system\n\n       SBrkr    Standard Circuit Breakers & Romex\n       FuseA    Fuse Box over 60 AMP and all Romex wiring (Average) \n       FuseF    60 AMP Fuse Box and mostly Romex wiring (Fair)\n       FuseP    60 AMP Fuse Box and mostly knob & tube wiring (poor)\n       Mix  Mixed\n        \n1stFlrSF: First Floor square feet\n \n2ndFlrSF: Second floor square feet\n\nLowQualFinSF: Low quality finished square feet (all floors)\n\nGrLivArea: Above grade (ground) living area square feet\n\nBsmtFullBath: Basement full bathrooms\n\nBsmtHalfBath: Basement half bathrooms\n\nFullBath: Full bathrooms above grade\n\nHalfBath: Half baths above grade\n\nBedroom: Bedrooms above grade (does NOT include basement bedrooms)\n\nKitchen: Kitchens above grade\n\nKitchenQual: Kitchen quality\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical/Average\n       Fa   Fair\n       Po   Poor\n        \nTotRmsAbvGrd: Total rooms above grade (does not include bathrooms)\n\nFunctional: Home functionality (Assume typical unless deductions are warranted)\n\n       Typ  Typical Functionality\n       Min1 Minor Deductions 1\n       Min2 Minor Deductions 2\n       Mod  Moderate Deductions\n       Maj1 Major Deductions 1\n       Maj2 Major Deductions 2\n       Sev  Severely Damaged\n       Sal  Salvage only\n        \nFireplaces: Number of fireplaces\n\nFireplaceQu: Fireplace quality\n\n       Ex   Excellent - Exceptional Masonry Fireplace\n       Gd   Good - Masonry Fireplace in main level\n       TA   Average - Prefabricated Fireplace in main living area or Masonry Fireplace in basement\n       Fa   Fair - Prefabricated Fireplace in basement\n       Po   Poor - Ben Franklin Stove\n       NA   No Fireplace\n        \nGarageType: Garage location\n        \n       2Types   More than one type of garage\n       Attchd   Attached to home\n       Basment  Basement Garage\n       BuiltIn  Built-In (Garage part of house - typically has room above garage)\n       CarPort  Car Port\n       Detchd   Detached from home\n       NA   No Garage\n        \nGarageYrBlt: Year garage was built\n        \nGarageFinish: Interior finish of the garage\n\n       Fin  Finished\n       RFn  Rough Finished  \n       Unf  Unfinished\n       NA   No Garage\n        \nGarageCars: Size of garage in car capacity\n\nGarageArea: Size of garage in square feet\n\nGarageQual: Garage quality\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical/Average\n       Fa   Fair\n       Po   Poor\n       NA   No Garage\n        \nGarageCond: Garage condition\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical/Average\n       Fa   Fair\n       Po   Poor\n       NA   No Garage\n        \nPavedDrive: Paved driveway\n\n       Y    Paved \n       P    Partial Pavement\n       N    Dirt/Gravel\n        \nWoodDeckSF: Wood deck area in square feet\n\nOpenPorchSF: Open porch area in square feet\n\nEnclosedPorch: Enclosed porch area in square feet\n\n3SsnPorch: Three season porch area in square feet\n\nScreenPorch: Screen porch area in square feet\n\nPoolArea: Pool area in square feet\n\nPoolQC: Pool quality\n        \n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       NA   No Pool\n        \nFence: Fence quality\n        \n       GdPrv    Good Privacy\n       MnPrv    Minimum Privacy\n       GdWo Good Wood\n       MnWw Minimum Wood/Wire\n       NA   No Fence\n    \nMiscFeature: Miscellaneous feature not covered in other categories\n        \n       Elev Elevator\n       Gar2 2nd Garage (if not described in garage section)\n       Othr Other\n       Shed Shed (over 100 SF)\n       TenC Tennis Court\n       NA   None\n        \nMiscVal: $Value of miscellaneous feature\n\nMoSold: Month Sold \n\nSaleType: Type of sale\n        \n       WD   Warranty Deed - Conventional\n       CWD  Warranty Deed - Cash\n       VWD  Warranty Deed - VA Loan\n       New  Home just constructed and sold\n       COD  Court Officer Deed/Estate\n       Con  Contract 15% Down payment regular terms\n       ConLw    Contract Low Down payment and low interest\n       ConLI    Contract Low Interest\n       ConLD    Contract Low Down\n       Oth  Other\n        \nSaleCondition: Condition of sale\n\n       Normal   Normal Sale\n       Abnorml  Abnormal Sale -  trade, foreclosure, short sale\n       AdjLand  Adjoining Land Purchase\n       Alloca   Allocation - two linked properties with separate deeds, typically condo with a garage unit  \n       Family   Sale between family members\n       Partial  Home was not completed when last assessed (associated with New Homes)\n\nest_saleprice_2024 the estimated sales price for this home in 2024"
+  },
+  {
     "objectID": "lectures/Lecture1112/Lecture12.html#activity-1-always-anonymous",
     "href": "lectures/Lecture1112/Lecture12.html#activity-1-always-anonymous",
     "title": "Lecture 12",
@@ -7165,6 +7200,556 @@
     "crumbs": [
       "Lectures",
       "Lecture 11"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#what-are-factors",
+    "href": "lectures/Lecture1718/Lecture18.html#what-are-factors",
+    "title": "Lecture 18",
+    "section": "What are Factors?",
+    "text": "What are Factors?\n\nFactors are variables in R which take on a limited number of different values, typically they are called non-numerical or “categorical” variables.\nWe use factors in statistical modeling because non-numerical variables (e.g., ancestry — African, Asian, European, Other) enter into statistical models differently than numerical variables.\nDesignating non-numerical data as factors insures that the modeling functions in R will treat these types of variables correctly.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#underneath-a-factor",
+    "href": "lectures/Lecture1718/Lecture18.html#underneath-a-factor",
+    "title": "Lecture 18",
+    "section": "Underneath a Factor",
+    "text": "Underneath a Factor\n\nFactors in R are stored as a vector of integer values mapped to a corresponding set of character values. The character values are actually what gets displayed.\nThis is an efficient way to store character values, because each character value is stored only one time, and the data values are stored as a vector of integers. This requires far fewer computing resources.\nThis mechanism behind R’s factors and an AI’s chat window is the same: mapping human-readable text to machine-readable integers using a lookup dictionary.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#take-a-look-at-factors",
+    "href": "lectures/Lecture1718/Lecture18.html#take-a-look-at-factors",
+    "title": "Lecture 18",
+    "section": "Take a look at Factors",
+    "text": "Take a look at Factors\n\nprint(paste(\"variable Species in iris is a:\", class(iris$Species)))\n\n[1] \"variable Species in iris is a: factor\"\n\nprint(levels(iris$Species))\n\n[1] \"setosa\"     \"versicolor\" \"virginica\" \n\nprint(as.numeric(iris$Species))\n\n  [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n [38] 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2\n [75] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3\n[112] 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3\n[149] 3 3",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#bivariate-iris",
+    "href": "lectures/Lecture1718/Lecture18.html#bivariate-iris",
+    "title": "Lecture 18",
+    "section": "Bivariate Iris",
+    "text": "Bivariate Iris\n\nmodel1 &lt;- lm(iris$Petal.Length ~ iris$Sepal.Length)\nsummary(model1)\n\n\nCall:\nlm(formula = iris$Petal.Length ~ iris$Sepal.Length)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-2.47747 -0.59072 -0.00668  0.60484  2.49512 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       -7.10144    0.50666  -14.02   &lt;2e-16 ***\niris$Sepal.Length  1.85843    0.08586   21.65   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.8678 on 148 degrees of freedom\nMultiple R-squared:   0.76, Adjusted R-squared:  0.7583 \nF-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#multiple-regression-iris-with-factor",
+    "href": "lectures/Lecture1718/Lecture18.html#multiple-regression-iris-with-factor",
+    "title": "Lecture 18",
+    "section": "Multiple Regression Iris with Factor",
+    "text": "Multiple Regression Iris with Factor\n\nmodel2 &lt;- lm(iris$Petal.Length ~ iris$Sepal.Length + iris$Species)\nsummary(model2)\n\n\nCall:\nlm(formula = iris$Petal.Length ~ iris$Sepal.Length + iris$Species)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.76390 -0.17875  0.00716  0.17461  0.79954 \n\nCoefficients:\n                       Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)            -1.70234    0.23013  -7.397 1.01e-11 ***\niris$Sepal.Length       0.63211    0.04527  13.962  &lt; 2e-16 ***\niris$Speciesversicolor  2.21014    0.07047  31.362  &lt; 2e-16 ***\niris$Speciesvirginica   3.09000    0.09123  33.870  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.2826 on 146 degrees of freedom\nMultiple R-squared:  0.9749,    Adjusted R-squared:  0.9744 \nF-statistic:  1890 on 3 and 146 DF,  p-value: &lt; 2.2e-16",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#when-bad-things-happen",
+    "href": "lectures/Lecture1718/Lecture18.html#when-bad-things-happen",
+    "title": "Lecture 18",
+    "section": "When bad things happen",
+    "text": "When bad things happen\n\nFactors can be troublesome if one doesn’t understand their behavior\n\n\niris$Sepal_Width_FACTOR &lt;- as.factor(iris$Sepal.Width)\nlevels(iris$Sepal_Width_FACTOR) # 23 levels representing the unique values\n\n [1] \"2\"   \"2.2\" \"2.3\" \"2.4\" \"2.5\" \"2.6\" \"2.7\" \"2.8\" \"2.9\" \"3\"   \"3.1\" \"3.2\"\n[13] \"3.3\" \"3.4\" \"3.5\" \"3.6\" \"3.7\" \"3.8\" \"3.9\" \"4\"   \"4.1\" \"4.2\" \"4.4\"\n\nmean(iris$Sepal_Width_FACTOR) # error\n\nWarning in mean.default(iris$Sepal_Width_FACTOR): argument is not numeric or\nlogical: returning NA\n\n\n[1] NA\n\nas.numeric(iris$Sepal_Width_FACTOR) |&gt; mean() # some fix it this way, don't\n\n[1] 10.57333\n\nmean(iris$Sepal.Width) # totall different\n\n[1] 3.057333\n\nas.character(iris$Sepal_Width_FACTOR) |&gt; as.numeric() |&gt; mean() # this is clunky but works\n\n[1] 3.057333",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#underneath-the-factor",
+    "href": "lectures/Lecture1718/Lecture18.html#underneath-the-factor",
+    "title": "Lecture 18",
+    "section": "Underneath the factor",
+    "text": "Underneath the factor\n\niris$Sepal_Width_to_numeric &lt;- as.numeric(iris$Sepal_Width_FACTOR)\niris$Sepal_Width_to_character_numeric &lt;- as.character(iris$Sepal_Width_FACTOR) |&gt; as.numeric()\nhead(iris[, c(2, 6, 7, 8)], n = 50)\n\n   Sepal.Width Sepal_Width_FACTOR Sepal_Width_to_numeric\n1          3.5                3.5                     15\n2          3.0                  3                     10\n3          3.2                3.2                     12\n4          3.1                3.1                     11\n5          3.6                3.6                     16\n6          3.9                3.9                     19\n7          3.4                3.4                     14\n8          3.4                3.4                     14\n9          2.9                2.9                      9\n10         3.1                3.1                     11\n11         3.7                3.7                     17\n12         3.4                3.4                     14\n13         3.0                  3                     10\n14         3.0                  3                     10\n15         4.0                  4                     20\n16         4.4                4.4                     23\n17         3.9                3.9                     19\n18         3.5                3.5                     15\n19         3.8                3.8                     18\n20         3.8                3.8                     18\n21         3.4                3.4                     14\n22         3.7                3.7                     17\n23         3.6                3.6                     16\n24         3.3                3.3                     13\n25         3.4                3.4                     14\n26         3.0                  3                     10\n27         3.4                3.4                     14\n28         3.5                3.5                     15\n29         3.4                3.4                     14\n30         3.2                3.2                     12\n31         3.1                3.1                     11\n32         3.4                3.4                     14\n33         4.1                4.1                     21\n34         4.2                4.2                     22\n35         3.1                3.1                     11\n36         3.2                3.2                     12\n37         3.5                3.5                     15\n38         3.6                3.6                     16\n39         3.0                  3                     10\n40         3.4                3.4                     14\n41         3.5                3.5                     15\n42         2.3                2.3                      3\n43         3.2                3.2                     12\n44         3.5                3.5                     15\n45         3.8                3.8                     18\n46         3.0                  3                     10\n47         3.8                3.8                     18\n48         3.2                3.2                     12\n49         3.7                3.7                     17\n50         3.3                3.3                     13\n   Sepal_Width_to_character_numeric\n1                               3.5\n2                               3.0\n3                               3.2\n4                               3.1\n5                               3.6\n6                               3.9\n7                               3.4\n8                               3.4\n9                               2.9\n10                              3.1\n11                              3.7\n12                              3.4\n13                              3.0\n14                              3.0\n15                              4.0\n16                              4.4\n17                              3.9\n18                              3.5\n19                              3.8\n20                              3.8\n21                              3.4\n22                              3.7\n23                              3.6\n24                              3.3\n25                              3.4\n26                              3.0\n27                              3.4\n28                              3.5\n29                              3.4\n30                              3.2\n31                              3.1\n32                              3.4\n33                              4.1\n34                              4.2\n35                              3.1\n36                              3.2\n37                              3.5\n38                              3.6\n39                              3.0\n40                              3.4\n41                              3.5\n42                              2.3\n43                              3.2\n44                              3.5\n45                              3.8\n46                              3.0\n47                              3.8\n48                              3.2\n49                              3.7\n50                              3.3",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#usefulness-of-factors",
+    "href": "lectures/Lecture1718/Lecture18.html#usefulness-of-factors",
+    "title": "Lecture 18",
+    "section": "Usefulness of factors",
+    "text": "Usefulness of factors\n\nThere exist cut() from base R and a variant in dplyr called ntile()\nIf you understand factors after today, you might find these two useful.\n\n\nload(\"spotify_songs.RData\")\n\n## base R cut the values of variable into quartiles\npop_quartile &lt;- cut(\n      spotify_songs$track_popularity,\n      breaks = quantile(spotify_songs$track_popularity, probs = seq(0, 1, 0.25)),\n      include.lowest = TRUE\n    )\nis.factor(pop_quartile)\n\n[1] TRUE\n\n## base R cut the values according to custom breaks\n\npop_custom &lt;- cut(\n    spotify_songs$track_popularity,\n    breaks = c(0, 25, 50, 75, 100),\n    include.lowest = TRUE\n)\nis.factor(pop_custom)\n\n[1] TRUE",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#visualized",
+    "href": "lectures/Lecture1718/Lecture18.html#visualized",
+    "title": "Lecture 18",
+    "section": "visualized",
+    "text": "visualized\n\nNotice, we are not required to table the factor values in base R\n\n\nold_par &lt;- par(no.readonly = TRUE) # Save current settings\npar(mfrow=c(1,2))\nplot(pop_quartile, main=\"result of quartile breaks\", col = \"blue\")\nplot(pop_custom, main = \"result of cuts at custom values\", col = \"gold\")\n\n\n\n\n\n\n\npar(old_par) # Restore original settings",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#compare-dplyr-ntile",
+    "href": "lectures/Lecture1718/Lecture18.html#compare-dplyr-ntile",
+    "title": "Lecture 18",
+    "section": "compare dplyr ntile()",
+    "text": "compare dplyr ntile()\n\nntile() is very exact, cut() can be sloppy and is better used if you do not need perfect balance\n\n\nlibrary(dplyr)\npop_ntile &lt;- ntile(spotify_songs$track_popularity, 4) # forces balance\nis(pop_ntile) # not a factor\n\n[1] \"integer\"             \"double\"              \"numeric\"            \n[4] \"vector\"              \"data.frameRowLabels\"\n\ntable(pop_ntile)\n\npop_ntile\n   1    2    3    4 \n8209 8208 8208 8208",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#visualized-1",
+    "href": "lectures/Lecture1718/Lecture18.html#visualized-1",
+    "title": "Lecture 18",
+    "section": "visualized",
+    "text": "visualized\n\nbarplot(table(pop_ntile), main = \"result of ntile quarters\", col = \"cyan\")",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#understanding",
+    "href": "lectures/Lecture1718/Lecture18.html#understanding",
+    "title": "Lecture 18",
+    "section": "Understanding",
+    "text": "Understanding\n\nComputers cannot do math on letters. So whether you are estimating a model in R in 101A or interacting with Claude/ChatGPT/etc., the system requires numbers to do its job.\nIn R (Factors): If you have a column of survey data with “Low,” “Medium,” and “High,” R assigns integers to represent the values (e.g., 1, 2, 3). It then attaches a dictionary called levels to remember that 1 means “Low.” This mapping allows statistical algorithms (like regression) to perform calculations on categories.\nIn AI (Tokenization): When you type a sentence into a chat window, the AI chops your words into chunks and assigns each chunk an ID number (e.g., “The” = 464, “cat” = 3432). It aslo uses a dictionary to remember what each number meant. This mapping allows the underlying models to perform linear algebra on your prompt.\nIn both cases, integers are used as placeholder for a string to save memory and enable complex math.\nOf course they diverge tremendously: AI chunks words into fragments (e.g., “un” “remark” “able”) and the numeric values assigned to the fragments have no order. The dictionaries AI uses are also massive (e.g., 100,000 times larger than a factor’s levels in R)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#additional-info-regarding-factors",
+    "href": "lectures/Lecture1718/Lecture18.html#additional-info-regarding-factors",
+    "title": "Lecture 18",
+    "section": "Additional Info regarding factors",
+    "text": "Additional Info regarding factors\n\nWe can create factors using factor() BUT ALSO R can automatically designate variables as factors during certain types of data import or other forms of data reading.\nBoth numeric and character variables can be converted into factors, but a factor’s values (known as levels) will always be displayed as character values - for example numbers will have quotes around them because they are being displayed as character\nSo beware of numbers with quotes around them, it is a signal.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#straight-out-of-the-documentation",
+    "href": "lectures/Lecture1718/Lecture18.html#straight-out-of-the-documentation",
+    "title": "Lecture 18",
+    "section": "Straight out of the documentation",
+    "text": "Straight out of the documentation\nDescription\nSort (or order) a vector or factor (partially) into ascending or descending order. For ordering along more than one variable, e.g., for sorting data frames, see order.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#sort-the-values",
+    "href": "lectures/Lecture1718/Lecture18.html#sort-the-values",
+    "title": "Lecture 18",
+    "section": "sort() the values",
+    "text": "sort() the values\nExample\n\nx &lt;- c(8, 6, 7, 5, 3, 0, 9)\nx\n\n[1] 8 6 7 5 3 0 9\n\n\nresult of sort()\n\nsort(x)\n\n[1] 0 3 5 6 7 8 9\n\n\nif you need to save the results, you will need to assign the sort to an object, below x is not sorted because we didn’t save it sorted, we can also demonstrate a decreasing sort and save it to y:\n\nx\n\n[1] 8 6 7 5 3 0 9\n\ny &lt;- sort(x, decreasing = TRUE)\ny\n\n[1] 9 8 7 6 5 3 0",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#sorting-data-frames",
+    "href": "lectures/Lecture1718/Lecture18.html#sorting-data-frames",
+    "title": "Lecture 18",
+    "section": "Sorting Data Frames",
+    "text": "Sorting Data Frames\nWhat happens if you try to sort a data.frame column? Suppose you wanted to sort Sepal.Length in the data frame iris:\n\nsort(iris$Sepal.Length)\n\n  [1] 4.3 4.4 4.4 4.4 4.5 4.6 4.6 4.6 4.6 4.7 4.7 4.8 4.8 4.8 4.8 4.8 4.9 4.9\n [19] 4.9 4.9 4.9 4.9 5.0 5.0 5.0 5.0 5.0 5.0 5.0 5.0 5.0 5.0 5.1 5.1 5.1 5.1\n [37] 5.1 5.1 5.1 5.1 5.1 5.2 5.2 5.2 5.2 5.3 5.4 5.4 5.4 5.4 5.4 5.4 5.5 5.5\n [55] 5.5 5.5 5.5 5.5 5.5 5.6 5.6 5.6 5.6 5.6 5.6 5.7 5.7 5.7 5.7 5.7 5.7 5.7\n [73] 5.7 5.8 5.8 5.8 5.8 5.8 5.8 5.8 5.9 5.9 5.9 6.0 6.0 6.0 6.0 6.0 6.0 6.1\n [91] 6.1 6.1 6.1 6.1 6.1 6.2 6.2 6.2 6.2 6.3 6.3 6.3 6.3 6.3 6.3 6.3 6.3 6.3\n[109] 6.4 6.4 6.4 6.4 6.4 6.4 6.4 6.5 6.5 6.5 6.5 6.5 6.6 6.6 6.7 6.7 6.7 6.7\n[127] 6.7 6.7 6.7 6.7 6.8 6.8 6.8 6.9 6.9 6.9 6.9 7.0 7.1 7.2 7.2 7.2 7.3 7.4\n[145] 7.6 7.7 7.7 7.7 7.7 7.9\n\n\nThis is not too useful on its own. What happens when we try to sort the data frame, don’t do this:\n\nsort(iris)\n\nError in `xtfrm.data.frame()`:\n! cannot xtfrm data frames",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#order-is-used-to-sort-rearrange-data-frames",
+    "href": "lectures/Lecture1718/Lecture18.html#order-is-used-to-sort-rearrange-data-frames",
+    "title": "Lecture 18",
+    "section": "order() is used to sort (rearrange) data frames",
+    "text": "order() is used to sort (rearrange) data frames\nThe next statement sorts iris on the basis of Sepal.Length and saves the re-ordered result to a new data frame:\n\nlibrary(knitr)\niris2 &lt;- iris[order(iris$Sepal.Length), ] \nhead(iris2) |&gt;  kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal_Width_FACTOR\nSepal_Width_to_numeric\nSepal_Width_to_character_numeric\n\n\n\n\n14\n4.3\n3.0\n1.1\n0.1\nsetosa\n3\n10\n3.0\n\n\n9\n4.4\n2.9\n1.4\n0.2\nsetosa\n2.9\n9\n2.9\n\n\n39\n4.4\n3.0\n1.3\n0.2\nsetosa\n3\n10\n3.0\n\n\n43\n4.4\n3.2\n1.3\n0.2\nsetosa\n3.2\n12\n3.2\n\n\n42\n4.5\n2.3\n1.3\n0.3\nsetosa\n2.3\n3\n2.3\n\n\n4\n4.6\n3.1\n1.5\n0.2\nsetosa\n3.1\n11\n3.1",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#arrange-in-dplyr",
+    "href": "lectures/Lecture1718/Lecture18.html#arrange-in-dplyr",
+    "title": "Lecture 18",
+    "section": "arrange in dplyr:",
+    "text": "arrange in dplyr:\n\nlibrary(dplyr)\niris %&gt;% arrange(Sepal.Length) %&gt;% head() %&gt;% kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal_Width_FACTOR\nSepal_Width_to_numeric\nSepal_Width_to_character_numeric\n\n\n\n\n4.3\n3.0\n1.1\n0.1\nsetosa\n3\n10\n3.0\n\n\n4.4\n2.9\n1.4\n0.2\nsetosa\n2.9\n9\n2.9\n\n\n4.4\n3.0\n1.3\n0.2\nsetosa\n3\n10\n3.0\n\n\n4.4\n3.2\n1.3\n0.2\nsetosa\n3.2\n12\n3.2\n\n\n4.5\n2.3\n1.3\n0.3\nsetosa\n2.3\n3\n2.3\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n3.1\n11\n3.1",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#decreasing-sort",
+    "href": "lectures/Lecture1718/Lecture18.html#decreasing-sort",
+    "title": "Lecture 18",
+    "section": "Decreasing sort()",
+    "text": "Decreasing sort()\nWe can also add decreasing=TRUE to order (base R with a pipe):\n\niris3 &lt;- iris2[order(iris2$Sepal.Length, decreasing = TRUE) , ]\nhead(iris3) |&gt; kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal_Width_FACTOR\nSepal_Width_to_numeric\nSepal_Width_to_character_numeric\n\n\n\n\n132\n7.9\n3.8\n6.4\n2.0\nvirginica\n3.8\n18\n3.8\n\n\n118\n7.7\n3.8\n6.7\n2.2\nvirginica\n3.8\n18\n3.8\n\n\n119\n7.7\n2.6\n6.9\n2.3\nvirginica\n2.6\n6\n2.6\n\n\n123\n7.7\n2.8\n6.7\n2.0\nvirginica\n2.8\n8\n2.8\n\n\n136\n7.7\n3.0\n6.1\n2.3\nvirginica\n3\n10\n3.0\n\n\n106\n7.6\n3.0\n6.6\n2.1\nvirginica\n3\n10\n3.0",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#decreasing-arrange",
+    "href": "lectures/Lecture1718/Lecture18.html#decreasing-arrange",
+    "title": "Lecture 18",
+    "section": "Decreasing arrange()",
+    "text": "Decreasing arrange()\nWe can also add descending to arrange (the dplyr way):\n\niris3 &lt;- iris %&gt;% arrange(desc(Sepal.Length)) \nhead(iris3) %&gt;% kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal_Width_FACTOR\nSepal_Width_to_numeric\nSepal_Width_to_character_numeric\n\n\n\n\n7.9\n3.8\n6.4\n2.0\nvirginica\n3.8\n18\n3.8\n\n\n7.7\n3.8\n6.7\n2.2\nvirginica\n3.8\n18\n3.8\n\n\n7.7\n2.6\n6.9\n2.3\nvirginica\n2.6\n6\n2.6\n\n\n7.7\n2.8\n6.7\n2.0\nvirginica\n2.8\n8\n2.8\n\n\n7.7\n3.0\n6.1\n2.3\nvirginica\n3\n10\n3.0\n\n\n7.6\n3.0\n6.6\n2.1\nvirginica\n3\n10\n3.0",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#using-multiple-values-in-base-r",
+    "href": "lectures/Lecture1718/Lecture18.html#using-multiple-values-in-base-r",
+    "title": "Lecture 18",
+    "section": "Using multiple values in base R",
+    "text": "Using multiple values in base R\nWe can order on multiple values, here we sort both Petal.Width and Sepal.Length in increasing order using Base R:\n\niris2 &lt;- iris[order(iris$Petal.Width, iris$Sepal.Length) ,]\nhead(iris2) |&gt; kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal_Width_FACTOR\nSepal_Width_to_numeric\nSepal_Width_to_character_numeric\n\n\n\n\n14\n4.3\n3.0\n1.1\n0.1\nsetosa\n3\n10\n3.0\n\n\n13\n4.8\n3.0\n1.4\n0.1\nsetosa\n3\n10\n3.0\n\n\n10\n4.9\n3.1\n1.5\n0.1\nsetosa\n3.1\n11\n3.1\n\n\n38\n4.9\n3.6\n1.4\n0.1\nsetosa\n3.6\n16\n3.6\n\n\n33\n5.2\n4.1\n1.5\n0.1\nsetosa\n4.1\n21\n4.1\n\n\n9\n4.4\n2.9\n1.4\n0.2\nsetosa\n2.9\n9\n2.9",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#multiple-the-dplyr-way",
+    "href": "lectures/Lecture1718/Lecture18.html#multiple-the-dplyr-way",
+    "title": "Lecture 18",
+    "section": "Multiple, the dplyr way",
+    "text": "Multiple, the dplyr way\n\niris3 &lt;- iris %&gt;% arrange(Petal.Width, Sepal.Length) \nhead(iris3) %&gt;% kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal_Width_FACTOR\nSepal_Width_to_numeric\nSepal_Width_to_character_numeric\n\n\n\n\n4.3\n3.0\n1.1\n0.1\nsetosa\n3\n10\n3.0\n\n\n4.8\n3.0\n1.4\n0.1\nsetosa\n3\n10\n3.0\n\n\n4.9\n3.1\n1.5\n0.1\nsetosa\n3.1\n11\n3.1\n\n\n4.9\n3.6\n1.4\n0.1\nsetosa\n3.6\n16\n3.6\n\n\n5.2\n4.1\n1.5\n0.1\nsetosa\n4.1\n21\n4.1\n\n\n4.4\n2.9\n1.4\n0.2\nsetosa\n2.9\n9\n2.9",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#complex-sorting",
+    "href": "lectures/Lecture1718/Lecture18.html#complex-sorting",
+    "title": "Lecture 18",
+    "section": "Complex sorting",
+    "text": "Complex sorting\nIf you want to get complex with a data frame sort, for example sort Petal.Width in increasing order and Sepal.Length in decreasing order within the values of the sorted Petal.Width. To do this, we will need to modify the method option to “radix”.\n\niris2 &lt;- iris[order(iris$Petal.Width, iris$Sepal.Length, decreasing = c(FALSE,TRUE), method=\"radix\"),]\nkable(head(iris2))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal_Width_FACTOR\nSepal_Width_to_numeric\nSepal_Width_to_character_numeric\n\n\n\n\n33\n5.2\n4.1\n1.5\n0.1\nsetosa\n4.1\n21\n4.1\n\n\n10\n4.9\n3.1\n1.5\n0.1\nsetosa\n3.1\n11\n3.1\n\n\n38\n4.9\n3.6\n1.4\n0.1\nsetosa\n3.6\n16\n3.6\n\n\n13\n4.8\n3.0\n1.4\n0.1\nsetosa\n3\n10\n3.0\n\n\n14\n4.3\n3.0\n1.1\n0.1\nsetosa\n3\n10\n3.0\n\n\n15\n5.8\n4.0\n1.2\n0.2\nsetosa\n4\n20\n4.0",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#complex-sort-in-dplyr",
+    "href": "lectures/Lecture1718/Lecture18.html#complex-sort-in-dplyr",
+    "title": "Lecture 18",
+    "section": "Complex sort in dplyr",
+    "text": "Complex sort in dplyr\n\nbut dplyr makes that simpler and more intuitive:\n\n\niris3 &lt;- iris %&gt;% arrange(Petal.Width, desc(Sepal.Length))\nhead(iris3) %&gt;% kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal_Width_FACTOR\nSepal_Width_to_numeric\nSepal_Width_to_character_numeric\n\n\n\n\n5.2\n4.1\n1.5\n0.1\nsetosa\n4.1\n21\n4.1\n\n\n4.9\n3.1\n1.5\n0.1\nsetosa\n3.1\n11\n3.1\n\n\n4.9\n3.6\n1.4\n0.1\nsetosa\n3.6\n16\n3.6\n\n\n4.8\n3.0\n1.4\n0.1\nsetosa\n3\n10\n3.0\n\n\n4.3\n3.0\n1.1\n0.1\nsetosa\n3\n10\n3.0\n\n\n5.8\n4.0\n1.2\n0.2\nsetosa\n4\n20\n4.0",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#rare-we-can-order-a-list",
+    "href": "lectures/Lecture1718/Lecture18.html#rare-we-can-order-a-list",
+    "title": "Lecture 18",
+    "section": "(rare) We can order a list",
+    "text": "(rare) We can order a list\nI’ve not seen a useful application of ordering a list, but it’s “do-able”\n\nload(\"pasta.RData\")\nstr(pasta)\n\nList of 7\n $ long      :'data.frame': 20 obs. of  3 variables:\n  ..$ Type       : chr [1:20] \"Barbina                 \" \"Bigoli                  \" \"Bucatini                \" \"Busiate                 \" ...\n  ..$ Description: chr [1:20] \"Thin strands often coiled into nests                                                                           \"| __truncated__ \"Thick tubes, often made of buckwheat or wholewheat flour                                                       \"| __truncated__ \"A thick spaghetti-like pasta with a hole running through the center.                                           \"| __truncated__ \"Typical from the region of Trapani, the long type of macaroni is coiled around a twig of ampelodesmos.         \"| __truncated__ ...\n  ..$ Translation: chr [1:20] \"Little beards                                                                                                  \"| __truncated__ \"                                                                                                               \"| __truncated__ \"Hollow straws[1]Translated from Italian: buco, meaning \\\"hole\\\", and Italian: bucato, meaning \\\"pierced\\\".     \"| __truncated__ \"                                                                                                               \"| __truncated__ ...\n $ ribbon    :'data.frame': 27 obs. of  3 variables:\n  ..$ Type       : chr [1:27] \"Bavette\" \"Bavettine\" \"Ciriole\" \"Fettucce\" ...\n  ..$ Description: chr [1:27] \"Narrower version of tagliatelle\" \"Narrower version of bavette\" \"Thicker version of chitarra\" \"Wider version of fettuccine\" ...\n  ..$ Translation: chr [1:27] \"Bibs [1]\" \"\" \"\" \"Little slices\" ...\n $ short     :'data.frame': 39 obs. of  3 variables:\n  ..$ Type       : chr [1:39] \"Anelloni\" \"Calamarata\" \"Calamaretti\" \"Cannelloni\" ...\n  ..$ Description: chr [1:39] \"Short tubular pasta with ridges on the inside[10] Another type of pasta also with the name anelloni, involving \"| __truncated__ \"Wide ring shaped pasta\" \"\" \"Large stuffable cylindrical (tube) pasta, generally served baked with a filling and covered by a sauce.[12]\" ...\n  ..$ Translation: chr [1:39] \"Big rings\" \"Squid-like\" \"Little squids\" \"Large reeds\" ...\n $ decorative:'data.frame': 43 obs. of  3 variables:\n  ..$ Type       : chr [1:43] \"Biciclette\" \"Cacavelle\" \"Campanelle\" \"Capunti\" ...\n  ..$ Description: chr [1:43] \"bicycle-shaped pasta\" \"Large bowl-like pasta intended for stuffing.\" \"Flattened bell-shaped pasta with a frilly edge on one end\" \"Short convex ovals resembling an open empty pea pod\" ...\n  ..$ Translation: chr [1:43] \"Bicycles\" \"Caravel\" \"Little bells\" \"\" ...\n $ minute    :'data.frame': 29 obs. of  3 variables:\n  ..$ Type       : chr [1:29] \"Acini di pepe\" \"Alfabeto\" \"Anelli\" \"Anellini\" ...\n  ..$ Description: chr [1:29] \"Bead-like pasta\" \"Pasta shaped as letters of the alphabet\" \"Small rings of pasta (not to be confused with Calamaretti)\" \"Smaller version of anelli\" ...\n  ..$ Translation: chr [1:29] \"Grains of pepper\" \"Alphabet\" \"Rings\" \"Little rings\" ...\n $ stuffed   :'data.frame': 17 obs. of  3 variables:\n  ..$ Type       : chr [1:17] \"Agnolotti\" \"Cannelloni\" \"Cappelletti\" \"Caramelle\" ...\n  ..$ Description: chr [1:17] \"Semicircular pockets; can be stuffed with ricotta or mix of cheese and meats or pureed vegetables\" \"Rolls of pasta with various fillings, usually cooked in an oven\" \"Square of dough, filled with minced meat, and closed to form a triangle\" \"A stuffed pasta resembling double twist candies\" ...\n  ..$ Translation: chr [1:17] \"Diminutive of old word for \\\"angel\\\"; Agnolotti was Giotto di Bondone's nickname.\" \"Big little canes\" \"Little caps[30]\" \"Candy\" ...\n $ irregular :'data.frame': 4 obs. of  3 variables:\n  ..$ Type       : chr [1:4] \"Cappelli del prete\" \"Maltagliati\" \"Passatelli\" \"Spätzle\"\n  ..$ Description: chr [1:4] \"Pasta that is shaped like a hat, can take many forms.\" \"Irregular shapes of flat pasta formed from scraps of pasta production.\" \"Formed of bread crumbs, eggs, grated Parmesan cheese, lemon, and nutmeg, and cooked in chicken broth. It is typ\"| __truncated__ \"German egg pasta that is either round in shape, or completely irregular (when hand made)\"\n  ..$ Translation: chr [1:4] \"Priest's hats [1][32][33]\" \"\" \"\" \"Means \\\"little sparrow\\\" in Swabian German.\"\n\nnames(pasta)\n\n[1] \"long\"       \"ribbon\"     \"short\"      \"decorative\" \"minute\"    \n[6] \"stuffed\"    \"irregular\" \n\n\n\npasta2 &lt;- pasta[order(7:1)]\nnames(pasta2)\n\n[1] \"irregular\"  \"stuffed\"    \"minute\"     \"decorative\" \"short\"     \n[6] \"ribbon\"     \"long\"      \n\n\ndplyr does not work on non-data frame lists.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#meet-the-apply-family",
+    "href": "lectures/Lecture1718/Lecture18.html#meet-the-apply-family",
+    "title": "Lecture 18",
+    "section": "Meet the apply() family",
+    "text": "Meet the apply() family\n\nThe apply family consists of vectorized functions which minimize your need to create (for) loops.\nThese functions will “apply” an R function or a set of R functions to an R data object.\nWe will examine the most common forms of apply functions used for data analysis but please understand that additional apply functions exist (mapply, rapply, and vapply) which will not be covered in Stats 20.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#apply",
+    "href": "lectures/Lecture1718/Lecture18.html#apply",
+    "title": "Lecture 18",
+    "section": "apply()",
+    "text": "apply()\n\nThe apply() function is most often used to apply a function to the rows or columns (AKA the margins) of matrices or data frames.\nApply can be used with lists and arrays too. An array is a three-dimensional (r × c × h) object (imagine h stacked r × c matrices or a bunch of spreadsheets in an Excel document). All elements in an array must be of the same data type (character &gt; numeric &gt; logical). For example, Titanic is a built-in dataset\n\n\nis.array(Titanic)\n\n[1] TRUE\n\nstr(Titanic)\n\n 'table' num [1:4, 1:2, 1:2, 1:2] 0 0 35 0 0 0 17 0 118 154 ...\n - attr(*, \"dimnames\")=List of 4\n  ..$ Class   : chr [1:4] \"1st\" \"2nd\" \"3rd\" \"Crew\"\n  ..$ Sex     : chr [1:2] \"Male\" \"Female\"\n  ..$ Age     : chr [1:2] \"Child\" \"Adult\"\n  ..$ Survived: chr [1:2] \"No\" \"Yes\"\n\nTitanic\n\n, , Age = Child, Survived = No\n\n      Sex\nClass  Male Female\n  1st     0      0\n  2nd     0      0\n  3rd    35     17\n  Crew    0      0\n\n, , Age = Adult, Survived = No\n\n      Sex\nClass  Male Female\n  1st   118      4\n  2nd   154     13\n  3rd   387     89\n  Crew  670      3\n\n, , Age = Child, Survived = Yes\n\n      Sex\nClass  Male Female\n  1st     5      1\n  2nd    11     13\n  3rd    13     14\n  Crew    0      0\n\n, , Age = Adult, Survived = Yes\n\n      Sex\nClass  Male Female\n  1st    57    140\n  2nd    14     80\n  3rd    75     76\n  Crew  192     20",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#apply-syntax",
+    "href": "lectures/Lecture1718/Lecture18.html#apply-syntax",
+    "title": "Lecture 18",
+    "section": "apply() syntax",
+    "text": "apply() syntax\nThe syntax for apply() is\napply(x, MARGIN, FUN, ...)\nwhere…\n\nx is the matrix, dataframe or array.\nMARGIN is a vector giving the subscript(s) over which the function will be applied. For example, for a data frame or matrix 1 indicates rows, 2 indicates columns, c(1, 2) for both rows and columns. For an array, we can have higher order margins (e.g., 3, 4, etc.).\nFUN is the function to be applied.\n… is for any other arguments/options to be passed to the function, e.g., na.rm=TRUE",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#apply-and-arrays",
+    "href": "lectures/Lecture1718/Lecture18.html#apply-and-arrays",
+    "title": "Lecture 18",
+    "section": "apply() and arrays",
+    "text": "apply() and arrays\nRecall the Titanic data set:\n\ndimnames(Titanic)\n\n$Class\n[1] \"1st\"  \"2nd\"  \"3rd\"  \"Crew\"\n\n$Sex\n[1] \"Male\"   \"Female\"\n\n$Age\n[1] \"Child\" \"Adult\"\n\n$Survived\n[1] \"No\"  \"Yes\"\n\ndim(Titanic)\n\n[1] 4 2 2 2",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#single-dimensions",
+    "href": "lectures/Lecture1718/Lecture18.html#single-dimensions",
+    "title": "Lecture 18",
+    "section": "Single Dimensions",
+    "text": "Single Dimensions\nWe can use apply to apply sum() to each dimension\n\napply(Titanic, 1, sum) |&gt; kable() # class\n\n\n\n\n\nx\n\n\n\n\n1st\n325\n\n\n2nd\n285\n\n\n3rd\n706\n\n\nCrew\n885\n\n\n\n\napply(Titanic, 2, sum) |&gt; kable() # age\n\n\n\n\n\nx\n\n\n\n\nMale\n1731\n\n\nFemale\n470\n\n\n\n\napply(Titanic, 3, sum) |&gt; kable() # sex\n\n\n\n\n\nx\n\n\n\n\nChild\n109\n\n\nAdult\n2092\n\n\n\n\napply(Titanic, 4, sum) |&gt; kable() # survived\n\n\n\n\n\nx\n\n\n\n\nNo\n1490\n\n\nYes\n711",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#multiple-dimensions",
+    "href": "lectures/Lecture1718/Lecture18.html#multiple-dimensions",
+    "title": "Lecture 18",
+    "section": "Multiple dimensions",
+    "text": "Multiple dimensions\n\napply(Titanic, c(1,2), sum) |&gt; kable() # class by sex \n\n\n\n\n\nMale\nFemale\n\n\n\n\n1st\n180\n145\n\n\n2nd\n179\n106\n\n\n3rd\n510\n196\n\n\nCrew\n862\n23\n\n\n\n\napply(Titanic, c(3,1), sum) |&gt; kable() # age by class\n\n\n\n\n\n1st\n2nd\n3rd\nCrew\n\n\n\n\nChild\n6\n24\n79\n0\n\n\nAdult\n319\n261\n627\n885\n\n\n\n\napply(Titanic, c(3,4), sum) |&gt; kable() # age by survived\n\n\n\n\n\nNo\nYes\n\n\n\n\nChild\n52\n57\n\n\nAdult\n1438\n654\n\n\n\n\napply(Titanic, c(4,1,2), sum) |&gt; kable() # survived by class and gender\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1st.Male\n2nd.Male\n3rd.Male\nCrew.Male\n1st.Female\n2nd.Female\n3rd.Female\nCrew.Female\n\n\n\n\nNo\n118\n154\n422\n670\n4\n13\n106\n3\n\n\nYes\n62\n25\n88\n192\n141\n93\n90\n20",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#example---setup",
+    "href": "lectures/Lecture1718/Lecture18.html#example---setup",
+    "title": "Lecture 18",
+    "section": "Example - setup",
+    "text": "Example - setup\nHere is an example using a data frame, suppose I have a data frame of quiz scores for a small class, here are the first few rows:\n\n\n\n\n\nsid\nq1\nq2\nq3\n\n\n\n\n1\n93\n73\n81\n\n\n2\n70\n79\n73\n\n\n3\n67\n72\n78\n\n\n4\n87\n78\n80\n\n\n5\n87\n76\n79\n\n\n6\n95\n75\n75\n\n\n7\n94\n73\n76\n\n\n8\n91\n74\n73\n\n\n9\n89\n78\n86\n\n\n10\n65\n73\n77",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#example---application",
+    "href": "lectures/Lecture1718/Lecture18.html#example---application",
+    "title": "Lecture 18",
+    "section": "Example - application",
+    "text": "Example - application\nSuppose I wish to compute the median score for each quiz (columns), using apply, it’s easy:\n\napply(scores[, 2:4], 2, median)\n\n\n\n\n\n\nq1\nq2\nq3\n\n\n\n\n88\n74.5\n77.5\n\n\n\n\n\nsuppose I want to calculate the total score for each student (rows):\n\napply(scores[, 2:4], 1, sum)\n\n\n\n\n\n\nx\n\n\n\n\n247\n\n\n222\n\n\n217\n\n\n245\n\n\n242\n\n\n245\n\n\n243\n\n\n238\n\n\n253\n\n\n215",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#same-for-matrices",
+    "href": "lectures/Lecture1718/Lecture18.html#same-for-matrices",
+    "title": "Lecture 18",
+    "section": "Same for matrices",
+    "text": "Same for matrices\nThe same works on matrices, suppose\n\nscorem &lt;- as.matrix(scores[, 2:4])\nkable(scorem)\n\n\n\n\nq1\nq2\nq3\n\n\n\n\n93\n73\n81\n\n\n70\n79\n73\n\n\n67\n72\n78\n\n\n87\n78\n80\n\n\n87\n76\n79\n\n\n95\n75\n75\n\n\n94\n73\n76\n\n\n91\n74\n73\n\n\n89\n78\n86\n\n\n65\n73\n77\n\n\n\n\n\nThe programming is effectively the same, just the input differs:\n\napply(scorem, 2, median)\napply(scorem, 1, sum)\n\n\n\n\n\n\nq1\nq2\nq3\n\n\n\n\n88\n74.5\n77.5\n\n\n\n\n\n\n\n\nx\n\n\n\n\n247\n\n\n222\n\n\n217\n\n\n245\n\n\n242\n\n\n245\n\n\n243\n\n\n238\n\n\n253\n\n\n215",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#dplyr-tidyverse-way",
+    "href": "lectures/Lecture1718/Lecture18.html#dplyr-tidyverse-way",
+    "title": "Lecture 18",
+    "section": "dplyr (Tidyverse way)",
+    "text": "dplyr (Tidyverse way)\n\nIt is useful to perform an apply() in dplyr because the philosophy is a little different, recall the fake data “scores”\nIn dplyr, to compute along the rows, you use rowwise() to change dplyer’s natural direction, then mutate() to create a new column, combined with any function and c_across().\nThe advantage is we are just augmenting our data frame with extra columns\n\n\nlibrary(dplyr)\n\nscores %&gt;%\n  rowwise() %&gt;%\n  mutate(total_score = sum(c_across(q1:q3)), mean_score = mean(c_across(q1:q3))) %&gt;%\n  ungroup()\n\n# A tibble: 10 × 6\n     sid    q1    q2    q3 total_score mean_score\n   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt;\n 1     1    93    73    81         247       82.3\n 2     2    70    79    73         222       74  \n 3     3    67    72    78         217       72.3\n 4     4    87    78    80         245       81.7\n 5     5    87    76    79         242       80.7\n 6     6    95    75    75         245       81.7\n 7     7    94    73    76         243       81  \n 8     8    91    74    73         238       79.3\n 9     9    89    78    86         253       84.3\n10    10    65    73    77         215       71.7\n\n# Alternatively, you can use negative selection to say \"sum everything EXCEPT...\"\n# scores %&gt;%\n# rowwise() %&gt;%\n#  mutate(total_score = sum(c_across(-sid)), mean(c_across(-sid, -total_score))) %&gt;%\n#  ungroup() # always ungroup",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#dplyr-and-columns",
+    "href": "lectures/Lecture1718/Lecture18.html#dplyr-and-columns",
+    "title": "Lecture 18",
+    "section": "dplyr and columns",
+    "text": "dplyr and columns\n\nThis is where dplyr is its happiest, it’s designed to work down columns.\nSummarise will collapse the data frame to a single set of values\n\n\nclass_averages &lt;- scores %&gt;%\n  summarise(across(q1:q3, mean))\n\nclass_stats &lt;- scores %&gt;%\n  summarise(across(q1:q3, list(total = sum, average = mean, median = median, sd = sd)))\n\nclass_averages\n\n    q1   q2   q3\n1 83.8 75.1 77.8\n\nclass_stats\n\n  q1_total q1_average q1_median    q1_sd q2_total q2_average q2_median    q2_sd\n1      838       83.8        88 11.73598      751       75.1      74.5 2.514403\n  q3_total q3_average q3_median    q3_sd\n1      778       77.8      77.5 3.966527\n\n\nThe question to ask when using dplyr working across rows or columns is: “am I creating a new variable (mutate) or collapsing my data down to a summary (summarise)?”.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#lapply",
+    "href": "lectures/Lecture1718/Lecture18.html#lapply",
+    "title": "Lecture 18",
+    "section": "lapply()",
+    "text": "lapply()\n\nThe lapply() function performs the following simple series of operations:\n\nit loops over a list, iterating over each element in that list\nit applies a function to each element of the list (a function that you specify)\nit returns a list (the l in lapply stands for “list” or maybe “loop”).\n\nThe syntax for lapply() is as follows where\n\nlapply(x, FUN, ...)\n\nx is the list\nFUN is the function to be applied\n… is for any other arguments/option to be passed to the function (e.g., na.rm= TRUE)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#lapply-and-data-frames",
+    "href": "lectures/Lecture1718/Lecture18.html#lapply-and-data-frames",
+    "title": "Lecture 18",
+    "section": "lapply() and data frames",
+    "text": "lapply() and data frames\nHere is a data frame (remember, data frames are lists) example.\n\nload(\"budgets.RData\")\nhead(budgets) |&gt; kable()\n\n\n\n\n\nMovieTitle\nWeek2\nPctChange\nBudget\n\n\n\n\n4\nDjango Unchained\n$20,010,745\n-33.6%\n$100\n\n\n6\nLes Miserables (2012)\n$16,015,560\n-41.3%\n$61\n\n\n7\nParental Guidance\n$9,704,619\n-33.3%\n$25\n\n\n12\nPromised Land (2012)\n$4,049,911\n+2,228.7%\n-\n\n\n69\nWest of Memphis\n$7,683\n-42.5%\n-\n\n\n110\nTexas Chainsaw 3D\n$5,279,245\n-75.7%\n-\n\n\n\n\n\n\nsummary(budgets)\n\n     MovieTitle        Week2         PctChange         Budget   \n Length   :527   Length   :527   Length   :527   Length   :527  \n N.unique :527   N.unique :523   N.unique :440   N.unique : 61  \n N.blank  :  0   N.blank  :  0   N.blank  :  0   N.blank  :  0  \n Min.nchar:  2   Min.nchar:  3   Min.nchar:  1   Min.nchar:  1  \n Max.nchar: 61   Max.nchar: 11   Max.nchar: 10   Max.nchar:  6",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#interpretation-of-the-result",
+    "href": "lectures/Lecture1718/Lecture18.html#interpretation-of-the-result",
+    "title": "Lecture 18",
+    "section": "Interpretation of the result",
+    "text": "Interpretation of the result\n\nWe note that summary() doesn’t give us any usable statistics because R has stored the variables as character instead of numeric. This is caused by the commas, dollar and other characters in the data.\nAn easy way to remove the bad characters is to use an lapply() and write a small function to first remove the non-numeric characters and then convert the result to numeric. Further, this is only performed on columns 2 through 4:\n\n\nbudgetfixed &lt;- data.frame(budgets$MovieTitle, \n                          lapply(budgets[,2:4], \n                                 function (x) as.numeric(gsub(\"[^[:digit:]\\\\.-]+\",\"\", x))))\n\nWarning in FUN(X[[i]], ...): NAs introduced by coercion\nWarning in FUN(X[[i]], ...): NAs introduced by coercion\n\nsummary(budgetfixed)\n\n budgets.MovieTitle     Week2            PctChange            Budget       \n Length   :527      Min.   :      60   Min.   :  -96.70   Min.   :  0.065  \n N.unique :527      1st Qu.:    5300   1st Qu.:  -62.90   1st Qu.: 18.500  \n N.blank  :  0      Median :   33729   Median :  -44.60   Median : 36.000  \n Min.nchar:  2      Mean   : 3296901   Mean   :   80.65   Mean   : 59.330  \n Max.nchar: 61      3rd Qu.: 1236676   3rd Qu.:    2.40   3rd Qu.: 90.000  \n                    Max.   :74179601   Max.   :27588.60   Max.   :225.000  \n                                       NAs    :6          NAs    :401",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#aside-detective-work",
+    "href": "lectures/Lecture1718/Lecture18.html#aside-detective-work",
+    "title": "Lecture 18",
+    "section": "(aside) Detective work",
+    "text": "(aside) Detective work\nWe would need to examine the data more closely to figure out what was causing the NAs…\n\nhead(budgets[is.na(budgetfixed$PctChange), ])\n\n                                        MovieTitle   Week2 PctChange Budget\n562                                Caesar Must Die $10,002         -      -\n892                            A Fierce Green Fire  $1,266         -      -\n1120                                   The Kitchen  $1,557         -      -\n4120 Money for Nothing: Inside the Federal Reserve $13,700         -      -\n4277                                     Jerusalem  $7,668         -      -\n4940                                BoyBand (2013)  $3,022         -      -",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#lapply-with-a-list---webscraping-application",
+    "href": "lectures/Lecture1718/Lecture18.html#lapply-with-a-list---webscraping-application",
+    "title": "Lecture 18",
+    "section": "lapply() with a (list) - webscraping application",
+    "text": "lapply() with a (list) - webscraping application\n\nlapply() with a generic vector (list), in this example, a collection of data frames scraped from Wikipedia. The steps involved below are:\n\nuse the rvest package to scrape a wikipedia page which has some (4) different tables with many rows\nthe page information is passed to a function in rvest which will extract the separate tables and store them in a list called “tables”\nwe will examine the first few tables in “tables”",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#the-page",
+    "href": "lectures/Lecture1718/Lecture18.html#the-page",
+    "title": "Lecture 18",
+    "section": "The page",
+    "text": "The page",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#lapply-code",
+    "href": "lectures/Lecture1718/Lecture18.html#lapply-code",
+    "title": "Lecture 18",
+    "section": "lapply() code",
+    "text": "lapply() code\n\nlibrary(rvest)\nwiki &lt;- read_html(\"https://en.wikipedia.org/wiki/List_of_casual_dining_restaurant_chains\")\ntables &lt;- wiki %&gt;% html_nodes(\"table\")  %&gt;% html_table(fill=TRUE)\nlapply(tables, dim)\n\n[[1]]\n[1] 322   5\n\n[[2]]\n[1] 219   5\n\n[[3]]\n[1] 8 5\n\n[[4]]\n[1] 54  5\n\n[[5]]\n[1] 14 12\n\n[[6]]\n[1] 2 2\n\n[[7]]\n[1] 5 8\n\n[[8]]\n[1] 3 2\n\n[[9]]\n[1] 12  2",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#application",
+    "href": "lectures/Lecture1718/Lecture18.html#application",
+    "title": "Lecture 18",
+    "section": "Application",
+    "text": "Application\nSuppose we want to know how many individual restaurants were listed on the web page. We could ask R to tell us how many rows (using the function nrow()) are in each table in the list named tables using an lapply:\n\nlapply(tables[1:4], nrow) |&gt; head()\n\n[[1]]\n[1] 322\n\n[[2]]\n[1] 219\n\n[[3]]\n[1] 8\n\n[[4]]\n[1] 54\n\n\nWe could convert the result of each nrow into a vector using unlist (the lapply result is a list, unlist converts to a vector) and use sum() to sum the vector values (assuming no duplicates). Using pipes, the lapply result is passed to unlist and that result is passed to sum.\n\nlapply(tables[1:4], nrow) |&gt;\n    unlist() |&gt;\n    sum()\n\n[1] 603",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#sapply",
+    "href": "lectures/Lecture1718/Lecture18.html#sapply",
+    "title": "Lecture 18",
+    "section": "sapply()",
+    "text": "sapply()\nThe sapply() function behaves like lapply(); the only real difference is in the return value. sapply() will try to simplify (hence the “s”) the result of lapply() if possible. Essentially, sapply() calls lapply() on its input and then applies the following algorithm:\n+ If the result is a list where every element is length 1, then a vector is returned\n+ If the result is a list where every element is a vector of the same length (&gt; 1), a matrix is returned.\n+ If neither of the above simplifications can be performed then a list is returned\nTo illustrate the differences we can use the previous example using a list with restaurants and compare the sapply and lapply outputs:\n\nsapply(tables[1:4], nrow)\n\n[1] 322 219   8  54\n\nsapply(tables[1:4], nrow) |&gt;  sum()\n\n[1] 603",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#combining-list-components",
+    "href": "lectures/Lecture1718/Lecture18.html#combining-list-components",
+    "title": "Lecture 18",
+    "section": "Combining list components",
+    "text": "Combining list components\n\nIn this example, the first 4 tables are lists of restaurants.\nWe can combine all 600+ into a single data frame, very easy in dplyr:\n\n\nchainsD &lt;- bind_rows(tables[1:4]) # dplyr\nhead(chainsD)\n\n# A tibble: 6 × 6\n  Name    Type  `Location(s)` `Number of locations` Notes Peak number of locat…¹\n  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;                 &lt;chr&gt; &lt;chr&gt;                 \n1 Adyar … Indi… India, Unite… 200+                  \"\"    &lt;NA&gt;                  \n2 Americ… Pizza United State… 8                     \"\"    &lt;NA&gt;                  \n3 Anchor… Amer… United State… 15                    \"\"    &lt;NA&gt;                  \n4 Angus … Stea… United Kingd… 6                     \"\"    &lt;NA&gt;                  \n5 Anjapp… Chet… Australia, C… 30+                   \"Pri… &lt;NA&gt;                  \n6 Annala… Indi… Australia, I… 4                     \"\"    &lt;NA&gt;                  \n# ℹ abbreviated name: ¹​`Peak number of locations`\n\n\nthis is also do-able in base R, but it is less intuitive and much more fragile so it needs much more work\n\ncombined_df &lt;- do.call(rbind, tables[1:4])\n\nError in `match.names()`:\n! names do not match previous names\n\n\nbase R throws an error because the tables do not have the same columns.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#tapply",
+    "href": "lectures/Lecture1718/Lecture18.html#tapply",
+    "title": "Lecture 18",
+    "section": "tapply()",
+    "text": "tapply()\ntapply() is used to apply a function over subsets of a vector. It is primarily used when we have the following circumstances: + A dataset that can be broken up into groups + Within each group, we want to apply a function to a numeric or logical value associated with the groups\nThe arguments to tapply() are as follows:\ntapply(x, INDEX, FUN, ..., simplify = TRUE)\n+ x is a numeric or logical vector\n+ INDEX is a factor or a list of factors (or else they are coerced to factors) that identifies the groups\n+ FUN is a function to be applied to each of the groups\n+ ... contains optional arguments to be passed FUN\n+ simplify, should we simplify the result? (TRUE/FALSE)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#tapply-data",
+    "href": "lectures/Lecture1718/Lecture18.html#tapply-data",
+    "title": "Lecture 18",
+    "section": "tapply() data",
+    "text": "tapply() data\nAn example, we call up a built in dataset in dplyr called starwars:\n\nkable(head(starwars[, 1:11]))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nname\nheight\nmass\nhair_color\nskin_color\neye_color\nbirth_year\nsex\ngender\nhomeworld\nspecies\n\n\n\n\nLuke Skywalker\n172\n77\nblond\nfair\nblue\n19.0\nmale\nmasculine\nTatooine\nHuman\n\n\nC-3PO\n167\n75\nNA\ngold\nyellow\n112.0\nnone\nmasculine\nTatooine\nDroid\n\n\nR2-D2\n96\n32\nNA\nwhite, blue\nred\n33.0\nnone\nmasculine\nNaboo\nDroid\n\n\nDarth Vader\n202\n136\nnone\nwhite\nyellow\n41.9\nmale\nmasculine\nTatooine\nHuman\n\n\nLeia Organa\n150\n49\nbrown\nlight\nbrown\n19.0\nfemale\nfeminine\nAlderaan\nHuman\n\n\nOwen Lars\n178\n120\nbrown, grey\nlight\nblue\n52.0\nmale\nmasculine\nTatooine\nHuman",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#tapply-example",
+    "href": "lectures/Lecture1718/Lecture18.html#tapply-example",
+    "title": "Lecture 18",
+    "section": "tapply() example",
+    "text": "tapply() example\nSuppse we would like to know if the average (mean) mass of a character differs by species. We can use tapply() for this kind of analysis. Mass is measured for each character, we group each character by their species, we calculate the mean for each group, we pass the option na.rm = TRUE to insure that the function doesn’t return NA in the event of missing:\n\ntapply(starwars$mass, starwars$species, mean, na.rm = TRUE)\n\n        Aleena       Besalisk         Cerean       Chagrian       Clawdite \n         15.00         102.00          82.00            NaN          55.00 \n         Droid            Dug           Ewok      Geonosian         Gungan \n         69.75          40.00          20.00          80.00          74.00 \n         Human           Hutt       Iktotchi        Kaleesh       Kaminoan \n         81.31        1358.00            NaN         159.00          88.00 \n       Kel Dor       Mirialan   Mon Calamari           Muun       Nautolan \n         80.00          53.10          83.00            NaN          87.00 \n     Neimodian         Pau'an       Quermian         Rodian        Skakoan \n         90.00          80.00            NaN          74.00          48.00 \n     Sullustan     Tholothian        Togruta          Toong      Toydarian \n         68.00          50.00          57.00          65.00            NaN \n    Trandoshan        Twi'lek     Vulptereen        Wookiee          Xexto \n        113.00          55.00          45.00         124.00            NaN \nYoda's species         Zabrak \n         17.00          80.00 \n\n\nIf we have more than one grouping variable, in this next example, suppose we want to know the mean mass for each gender/species combination:\n\ntapply(starwars$mass, list(starwars$species, starwars$gender), mean, na.rm = TRUE)\n\n               feminine  masculine\nAleena               NA   15.00000\nBesalisk             NA  102.00000\nCerean               NA   82.00000\nChagrian             NA        NaN\nClawdite       55.00000         NA\nDroid               NaN   69.75000\nDug                  NA   40.00000\nEwok                 NA   20.00000\nGeonosian            NA   80.00000\nGungan               NA   74.00000\nHuman          56.33333   85.71765\nHutt                 NA 1358.00000\nIktotchi             NA        NaN\nKaleesh              NA  159.00000\nKaminoan            NaN   88.00000\nKel Dor              NA   80.00000\nMirialan       53.10000         NA\nMon Calamari         NA   83.00000\nMuun                 NA        NaN\nNautolan             NA   87.00000\nNeimodian            NA   90.00000\nPau'an               NA   80.00000\nQuermian             NA        NaN\nRodian               NA   74.00000\nSkakoan              NA   48.00000\nSullustan            NA   68.00000\nTholothian     50.00000         NA\nTogruta        57.00000         NA\nToong                NA   65.00000\nToydarian            NA        NaN\nTrandoshan           NA  113.00000\nTwi'lek        55.00000        NaN\nVulptereen           NA   45.00000\nWookiee              NA  124.00000\nXexto                NA        NaN\nYoda's species       NA   17.00000\nZabrak               NA   80.00000\n\n\nWe could save the result to a data.frame as a new dataset for further analysis:\n\njunk &lt;- data.frame(tapply(starwars$mass, list(starwars$species, starwars$gender), mean, na.rm = TRUE))\nkable(junk)\n\n\n\n\n\nfeminine\nmasculine\n\n\n\n\nAleena\nNA\n15.00000\n\n\nBesalisk\nNA\n102.00000\n\n\nCerean\nNA\n82.00000\n\n\nChagrian\nNA\nNaN\n\n\nClawdite\n55.00000\nNA\n\n\nDroid\nNaN\n69.75000\n\n\nDug\nNA\n40.00000\n\n\nEwok\nNA\n20.00000\n\n\nGeonosian\nNA\n80.00000\n\n\nGungan\nNA\n74.00000\n\n\nHuman\n56.33333\n85.71765\n\n\nHutt\nNA\n1358.00000\n\n\nIktotchi\nNA\nNaN\n\n\nKaleesh\nNA\n159.00000\n\n\nKaminoan\nNaN\n88.00000\n\n\nKel Dor\nNA\n80.00000\n\n\nMirialan\n53.10000\nNA\n\n\nMon Calamari\nNA\n83.00000\n\n\nMuun\nNA\nNaN\n\n\nNautolan\nNA\n87.00000\n\n\nNeimodian\nNA\n90.00000\n\n\nPau’an\nNA\n80.00000\n\n\nQuermian\nNA\nNaN\n\n\nRodian\nNA\n74.00000\n\n\nSkakoan\nNA\n48.00000\n\n\nSullustan\nNA\n68.00000\n\n\nTholothian\n50.00000\nNA\n\n\nTogruta\n57.00000\nNA\n\n\nToong\nNA\n65.00000\n\n\nToydarian\nNA\nNaN\n\n\nTrandoshan\nNA\n113.00000\n\n\nTwi’lek\n55.00000\nNaN\n\n\nVulptereen\nNA\n45.00000\n\n\nWookiee\nNA\n124.00000\n\n\nXexto\nNA\nNaN\n\n\nYoda’s species\nNA\n17.00000\n\n\nZabrak\nNA\n80.00000",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1718/Lecture18.html#group_by-in-dplyr",
+    "href": "lectures/Lecture1718/Lecture18.html#group_by-in-dplyr",
+    "title": "Lecture 18",
+    "section": "group_by() in dplyr",
+    "text": "group_by() in dplyr\ndplyr has base R soundly beat here:\n\nstarwars %&gt;% \n    group_by(species, gender) %&gt;%\n    summarise(observations = n(),\n              mean.mass = mean(mass, na.rm = TRUE),\n              sd.mass = sd(mass, na.rm = TRUE),\n              median.height = median(height, na.rm = TRUE),\n              iqr.height = IQR(height, na.rm = TRUE)) %&gt;%\n    arrange(desc(observations))\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by species and gender.\nℹ Output is grouped by species.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(species, gender))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n# A tibble: 42 × 7\n# Groups:   species [38]\n   species  gender    observations mean.mass sd.mass median.height iqr.height\n   &lt;chr&gt;    &lt;chr&gt;            &lt;int&gt;     &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;\n 1 Human    masculine           26      85.7   16.5            183       10.5\n 2 Human    feminine             9      56.3   16.3            165        9.5\n 3 Droid    masculine            5      69.8   51.0            132       78.5\n 4 &lt;NA&gt;     &lt;NA&gt;                 4      81     31.2            179        8.5\n 5 Gungan   masculine            3      74     11.3            206       14  \n 6 Mirialan feminine             2      53.1    4.38           168        2  \n 7 Wookiee  masculine            2     124     17.0            231        3  \n 8 Zabrak   masculine            2      80     NA              173        2  \n 9 Aleena   masculine            1      15     NA               79        0  \n10 Besalisk masculine            1     102     NA              198        0  \n# ℹ 32 more rows",
+    "crumbs": [
+      "Lectures",
+      "Lecture 18"
     ]
   },
   {
