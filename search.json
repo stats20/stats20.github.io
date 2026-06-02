@@ -3810,35 +3810,530 @@
     "href": "lectures/Lecture1718/quiz9instructions.html",
     "title": "Quiz 9 Ames Technical",
     "section": "",
-    "text": "This is a re-working of a technical interview provided by a former Stats 20 TA. It’s a rich dataset and a good example of a take-home final in terms of expectations. There are two datasets to read (their data descriptions are at the bottom)\names_homesales2024.RData - this is the data on homes, their updated salesprices, their features ames_neighborhood2024.csv - these are the neighborhoods represented in the home data, their walk, transit and bike scores"
+    "text": "This is a re-working of a technical interview provided by a former Stats 20 TA. It’s a rich dataset and a reasonable example of a take-home final in terms of expectations. There are two data sets to read (their data descriptions are at the bottom of this document)\names_homesales2024.RData - this is the data on homes sold in Ames, IA and their updated (to 2024) salesprices, and their features (e.g., number of bathrooms, square footage, etc.) ames_neighborhood2024.csv - these are the neighborhoods represented in the data, their walk, transit and bike scores"
   },
   {
     "objectID": "lectures/Lecture1718/quiz9instructions.html#a-visit-to-ames-ia",
     "href": "lectures/Lecture1718/quiz9instructions.html#a-visit-to-ames-ia",
     "title": "Quiz 9 Ames Technical",
     "section": "",
-    "text": "This is a re-working of a technical interview provided by a former Stats 20 TA. It’s a rich dataset and a good example of a take-home final in terms of expectations. There are two datasets to read (their data descriptions are at the bottom)\names_homesales2024.RData - this is the data on homes, their updated salesprices, their features ames_neighborhood2024.csv - these are the neighborhoods represented in the home data, their walk, transit and bike scores"
+    "text": "This is a re-working of a technical interview provided by a former Stats 20 TA. It’s a rich dataset and a reasonable example of a take-home final in terms of expectations. There are two data sets to read (their data descriptions are at the bottom of this document)\names_homesales2024.RData - this is the data on homes sold in Ames, IA and their updated (to 2024) salesprices, and their features (e.g., number of bathrooms, square footage, etc.) ames_neighborhood2024.csv - these are the neighborhoods represented in the data, their walk, transit and bike scores"
   },
   {
     "objectID": "lectures/Lecture1718/quiz9instructions.html#the-packages-you-may-load-to-solve-the-problems-in-addition-to-base-r",
     "href": "lectures/Lecture1718/quiz9instructions.html#the-packages-you-may-load-to-solve-the-problems-in-addition-to-base-r",
     "title": "Quiz 9 Ames Technical",
     "section": "The packages you may load to solve the problems in addition to base R",
-    "text": "The packages you may load to solve the problems in addition to base R\nThe take-home portion of the final exam in Stats 20 will open at 9pm PDT Thursday June 4th and close on Tuesday June 9th at 9pm PDT unless you have a prior arrangement with UCLA, then your end time will reflect that arrangement. Project 3 is good practice/preparation with two major differences (1) I will give you the data and (2) I will restrict you to base R and a few other libraries (use of other libraries is optional)\n\nlibrary(readr)\nlibrary(ggplot2)\nlibrary(gridExtra)\nlibrary(dplyr)\nlibrary(knitr)\n\nAI Policy: You may use as much or as little AI on this quiz as you like."
+    "text": "The packages you may load to solve the problems in addition to base R\nThis quiz is good practice/preparation for the take-home portion of the final exam in Stats 20. I chose the data and I have specific questions related to the data.\nFYI The take-home portion of the final exam in Stats 20 will open at 9pm PDT Thursday June 4th and close on Tuesday June 9th at 9pm PDT unless you have a prior arrangement with UCLA, then your end time will respect the existing arrangement. Project 3 is also good practice/preparation with two major differences (1) you chose the data in Project 3, I choose it for the final exam and (2) You chose all kinds of packages/libraries in Project 3, I will limit the packages/libraries you can use for the final exam (and for this Quiz 9) to the ones in the chunk below. You may use as many or as few of the listed packages/libraries as you like, but you may not use any other packages/libraries. You may also use any base R functions that you like:\n\nlibrary(readr)\nlibrary(ggplot2)\nlibrary(gridExtra)\nlibrary(dplyr)\nlibrary(knitr)\n\nAI Policy: You may use as much or as little AI on this quiz as you like, I do request that you not simply “copy and paste” code from AI sources without understanding it. If you use AI, please be prepared to explain the code that you used and how it works. You could be asked to modify code that you have used to demonstrate your understanding of it."
   },
   {
     "objectID": "lectures/Lecture1718/quiz9instructions.html#interview-modified-to-make-it-easier",
     "href": "lectures/Lecture1718/quiz9instructions.html#interview-modified-to-make-it-easier",
     "title": "Quiz 9 Ames Technical",
     "section": "Interview (modified to make it easier)",
-    "text": "Interview (modified to make it easier)\nPrompt: You will be analyzing a classic machine learning dataset of housing sales in Ames, Iowa with prices updated to 2024 dollars. There are a few tasks that you need to perform to prep the data.\n1. The dataset with the field (variable) of greatest interest (est_saleprice_2024) can be found in ames_homesales2024.RData and the descriptions for each field (variable) are supplied below. Each row of data contains one home sale. Please set a seed using the last 3 digits of your student ID number and create a random sample of 70% of the data (so 1,022 rows) and use that for the analysis.\n2. There is a second dataset called ames_neighborhood2024.csv which contains walk score, transit score and bike score reflecting the neighborhood level alternative transit information. We want you to add this information to your 70% sample of the home sales data.\n3. Some fields (variables) were incorrectly saved as factors. Please either demonstrate your ability to write a single function or use an lapply() (or combine both) to correct all of the variables which were incorrectly saved as factors.\n4. Please review the combined dataset, determine if there are outliers or bad values, give justification for any observations that you choose to omit or alter and then answer the following questions.\nQuestions\nA. What is the average estimated 2024 sale price for homes which were sold in Ames? Calculate this metric for each neighborhood as well as the minimum and maximum estimated 2024 sale price and display it as a table with the following column labels:\n\n\n\n\n\n\n\n\n\nNeighborhood\nAverage Sales Price\nMinimum\nMaximum\nNumber Sold\n\n\n\n\n\n\n\n\n\nB. What is the median sale price for homes sold which have an indoor square footage of greater than or equal to 2000 ft (excluding porches, garages, decks, basements, and veneers)? What percentage of homes meet this criterion? Calculate this metric for each neighborhood (proportion with an indoor square footage greater than or equal to 2000ft) and display it as a table with the following column labels.\n\n\n\n\n\n\n\nNeighborhood\nMedian sale price\nPercentage with square foot &gt;= 2000\n\n\n\n\n\n\n\nC. A client approaches you with a question about the local housing market. They’re interested in whether more homes are sold at certain times of year than others? In other words, is there seasonality present in the data? Provide a visualization which the client will understand (it should be simple, easy to interpret and correct) and a brief description of your findings.\nD. You’re a contractor consulting for a client who wants to remodel their home and then sell it on the market. Based on your analysis of the data, what variables should they consider in their remodel and what is your justification for recommending these variables?"
+    "text": "Interview (modified to make it easier)\nPrompt: You will be analyzing a classic machine learning dataset of housing sales in Ames, Iowa with prices updated to 2024 dollars. There are a few tasks that you need to perform to prep the data.\n1. The dataset with the field (variable) of greatest interest (est_saleprice_2024) can be found in ames_homesales2024.RData and the descriptions for each field (variable) are supplied below. Each row of data contains one home sale. Please set a seed using the last 3 digits of your student ID number and create a random sample of 70% of the data (so 1,022 rows) and use that for the analysis.\n2. There is a second dataset called ames_neighborhood2024.csv which contains walk score, transit score and bike score reflecting the neighborhood level alternative transit information. We want you to add this information to your 70% sample of the home sales data.\n3. Some fields (variables) were incorrectly saved as factors. Please either demonstrate your ability to write a single function or use an lapply() (or combine both) to correct all of the variables which were incorrectly saved as factors. Any corrections outside of these two approved methods will not be accepted. You should be able to demonstrate that you have successfully converted the variables to the correct data type (e.g., numeric, character, etc.).\n4. Please review the combined dataset, determine if there are outliers or bad values, give justification for any observations that you choose to omit or alter and then answer the following questions.\nQuestions\nA. What is the average estimated 2024 sale price for homes which were sold in Ames? Calculate this metric for each neighborhood as well as the minimum and maximum estimated 2024 sale price and display it as a table with the following column labels:\n\n\n\n\n\n\n\n\n\n\nNeighborhood\nAverage Sales Price\nMinimum\nMaximum\nNumber Sold\nWalk Score\n\n\n\n\n\n\n\n\n\n\nB. What is the median sale price for homes sold which have an indoor square footage of greater than or equal to 2000 ft (excluding porches, garages, decks, basements, and veneers)? What percentage of homes meet this criterion? Calculate this metric for each neighborhood (proportion with an indoor square footage greater than or equal to 2000ft) and display it as a table with the following column labels.\n\n\n\n\n\n\n\n\n\nNeighborhood\nMedian sale price\nPercentage with square foot &gt;= 2000\nTransit Score\nBike Score\n\n\n\n\n\n\n\n\n\nC. A client approaches you with a question about the local housing market. They’re interested in whether more homes are sold at certain times of year than others? In other words, is there seasonality present in the data? Provide a visualization which the client will understand (it should be simple, easy to interpret and correct) and a brief description of your findings.\nD. Pretend that you’re a contractor consulting for a client who wants to remodel their home and then sell it. Based on your analysis of the data, what variables should they consider in their remodel and what is your justification for recommending these variables?"
   },
   {
     "objectID": "lectures/Lecture1718/quiz9instructions.html#the-other-details",
     "href": "lectures/Lecture1718/quiz9instructions.html#the-other-details",
     "title": "Quiz 9 Ames Technical",
     "section": "The other details",
-    "text": "The other details\nWhen you submit for the actual final exam (not this quiz), please be prepared to submit an .Rmd or .qmd file and the .pdf that was the result of knitting/rendering it. For the quiz, just answer the question on how you would score your response.\nI will post a possible solution (there are very many depending on your approach) to this quiz over the weekend.\nData Description ames_neighborhood2024.csv\nneighborhood: Name of Neighborhood\n\nwalk_score: range is 0 - 100. 100 is very walkable. It based on the walking distance \nfrom  restaurants, groceries, schools, entertainment, and more.   \n\ntransit_score: range is 0 - 100, 100 is perfect. Transit Score measures how well \na location is served by public transit.   \n\nbike_score: range is 0 - 100, 100 is perfect. The Bike Score measures how well \na location is set up for bike transit.  \nData Description ames_homesales2024.RData\nMSSubClass: Identifies the type of dwelling involved in the sale.   \n\n        20  1-STORY 1946 & NEWER ALL STYLES\n        30  1-STORY 1945 & OLDER\n        40  1-STORY W/FINISHED ATTIC ALL AGES\n        45  1-1/2 STORY - UNFINISHED ALL AGES\n        50  1-1/2 STORY FINISHED ALL AGES\n        60  2-STORY 1946 & NEWER\n        70  2-STORY 1945 & OLDER\n        75  2-1/2 STORY ALL AGES\n        80  SPLIT OR MULTI-LEVEL\n        85  SPLIT FOYER\n        90  DUPLEX - ALL STYLES AND AGES\n       120  1-STORY PUD (Planned Unit Development) - 1946 & NEWER\n       150  1-1/2 STORY PUD - ALL AGES\n       160  2-STORY PUD - 1946 & NEWER\n       180  PUD - MULTILEVEL - INCL SPLIT LEV/FOYER\n       190  2 FAMILY CONVERSION - ALL STYLES AND AGES\n\nMSZoning: Identifies the general zoning classification of the sale.\n        \n       A    Agriculture\n       C    Commercial\n       FV   Floating Village Residential\n       I    Industrial\n       RH   Residential High Density\n       RL   Residential Low Density\n       RP   Residential Low Density Park \n       RM   Residential Medium Density\n    \nLotFrontage: Linear feet of street connected to property\n\nLotArea: Lot size in square feet\n\nStreet: Type of road access to property\n\n       Grvl Gravel  \n       Pave Paved\n        \nAlley: Type of alley access to property\n\n       Grvl Gravel\n       Pave Paved\n       NA   No alley access\n        \nLotShape: General shape of property\n\n       Reg  Regular \n       IR1  Slightly irregular\n       IR2  Moderately Irregular\n       IR3  Irregular\n       \nLandContour: Flatness of the property\n\n       Lvl  Near Flat/Level \n       Bnk  Banked - Quick and significant rise from street grade to building\n       HLS  Hillside - Significant slope from side to side\n       Low  Depression\n        \nUtilities: Type of utilities available\n        \n       AllPub   All public Utilities (E,G,W,& S)    \n       NoSewr   Electricity, Gas, and Water (Septic Tank)\n       NoSeWa   Electricity and Gas Only\n       ELO  Electricity only    \n    \nLotConfig: Lot configuration\n\n       Inside   Inside lot\n       Corner   Corner lot\n       CulDSac  Cul-de-sac\n       FR2  Frontage on 2 sides of property\n       FR3  Frontage on 3 sides of property\n    \nLandSlope: Slope of property\n        \n       Gtl  Gentle slope\n       Mod  Moderate Slope  \n       Sev  Severe Slope\n    \nNeighborhood: Physical locations within Ames city limits\n\n       Blmngtn  Bloomington Heights\n       Blueste  Bluestem\n       BrDale   Briardale\n       BrkSide  Brookside\n       ClearCr  Clear Creek\n       CollgCr  College Creek\n       Crawfor  Crawford\n       Edwards  Edwards\n       Gilbert  Gilbert\n       IDOTRR   Iowa DOT and Rail Road\n       MeadowV  Meadow Village\n       Mitchel  Mitchell\n       Names    North Ames\n       NoRidge  Northridge\n       NPkVill  Northpark Villa\n       NridgHt  Northridge Heights\n       NWAmes   Northwest Ames\n       OldTown  Old Town\n       SWISU    South & West of Iowa State University\n       Sawyer   Sawyer\n       SawyerW  Sawyer West\n       Somerst  Somerset\n       StoneBr  Stone Brook\n       Timber   Timberland\n       Veenker  Veenker\n            \nCondition1: Proximity to various conditions\n    \n       Artery   Adjacent to arterial street\n       Feedr    Adjacent to feeder street   \n       Norm Normal  \n       RRNn Within 200' of North-South Railroad\n       RRAn Adjacent to North-South Railroad\n       PosN Near positive off-site feature--park, greenbelt, etc.\n       PosA Adjacent to postive off-site feature\n       RRNe Within 200' of East-West Railroad\n       RRAe Adjacent to East-West Railroad\n    \nCondition2: Proximity to various conditions (if more than one is present)\n        \n       Artery   Adjacent to arterial street\n       Feedr    Adjacent to feeder street   \n       Norm Normal  \n       RRNn Within 200' of North-South Railroad\n       RRAn Adjacent to North-South Railroad\n       PosN Near positive off-site feature--park, greenbelt, etc.\n       PosA Adjacent to postive off-site feature\n       RRNe Within 200' of East-West Railroad\n       RRAe Adjacent to East-West Railroad\n    \nBldgType: Type of dwelling\n        \n       1Fam Single-family Detached  \n       2FmCon   Two-family Conversion; originally built as one-family dwelling\n       Duplx    Duplex\n       TwnhsE   Townhouse End Unit\n       TwnhsI   Townhouse Inside Unit\n    \nHouseStyle: Style of dwelling\n    \n       1Story   One story\n       1.5Fin   One and one-half story: 2nd level finished\n       1.5Unf   One and one-half story: 2nd level unfinished\n       2Story   Two story\n       2.5Fin   Two and one-half story: 2nd level finished\n       2.5Unf   Two and one-half story: 2nd level unfinished\n       SFoyer   Split Foyer\n       SLvl Split Level\n    \nOverallQual: Rates the overall material and finish of the house\n\n       10   Very Excellent\n       9    Excellent\n       8    Very Good\n       7    Good\n       6    Above Average\n       5    Average\n       4    Below Average\n       3    Fair\n       2    Poor\n       1    Very Poor\n    \nOverallCond: Rates the overall condition of the house\n\n       10   Very Excellent\n       9    Excellent\n       8    Very Good\n       7    Good\n       6    Above Average   \n       5    Average\n       4    Below Average   \n       3    Fair\n       2    Poor\n       1    Very Poor\n        \nYearBuilt: Original construction date\n\nYearRemodAdd: Remodel date (same as construction date if no remodeling or additions)\n\nRoofStyle: Type of roof\n\n       Flat Flat\n       Gable    Gable\n       Gambrel  Gabrel (Barn)\n       Hip  Hip\n       Mansard  Mansard\n       Shed Shed\n        \nRoofMatl: Roof material\n\n       ClyTile  Clay or Tile\n       CompShg  Standard (Composite) Shingle\n       Membran  Membrane\n       Metal    Metal\n       Roll Roll\n       Tar&Grv  Gravel & Tar\n       WdShake  Wood Shakes\n       WdShngl  Wood Shingles\n        \nExterior1st: Exterior covering on house\n\n       AsbShng  Asbestos Shingles\n       AsphShn  Asphalt Shingles\n       BrkComm  Brick Common\n       BrkFace  Brick Face\n       CBlock   Cinder Block\n       CemntBd  Cement Board\n       HdBoard  Hard Board\n       ImStucc  Imitation Stucco\n       MetalSd  Metal Siding\n       Other    Other\n       Plywood  Plywood\n       PreCast  PreCast \n       Stone    Stone\n       Stucco   Stucco\n       VinylSd  Vinyl Siding\n       Wd Sdng  Wood Siding\n       WdShing  Wood Shingles\n    \nExterior2nd: Exterior covering on house (if more than one material)\n\n       AsbShng  Asbestos Shingles\n       AsphShn  Asphalt Shingles\n       BrkComm  Brick Common\n       BrkFace  Brick Face\n       CBlock   Cinder Block\n       CemntBd  Cement Board\n       HdBoard  Hard Board\n       ImStucc  Imitation Stucco\n       MetalSd  Metal Siding\n       Other    Other\n       Plywood  Plywood\n       PreCast  PreCast\n       Stone    Stone\n       Stucco   Stucco\n       VinylSd  Vinyl Siding\n       Wd Sdng  Wood Siding\n       WdShing  Wood Shingles\n    \nMasVnrType: Masonry veneer type\n\n       BrkCmn   Brick Common\n       BrkFace  Brick Face\n       CBlock   Cinder Block\n       None None\n       Stone    Stone\n    \nMasVnrArea: Masonry veneer area in square feet\n\nExterQual: Evaluates the quality of the material on the exterior \n        \n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       Po   Poor\n        \nExterCond: Evaluates the present condition of the material on the exterior\n        \n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       Po   Poor\n        \nFoundation: Type of foundation\n        \n       BrkTil   Brick & Tile\n       CBlock   Cinder Block\n       PConc    Poured Contrete \n       Slab Slab\n       Stone    Stone\n       Wood Wood\n        \nBsmtQual: Evaluates the height of the basement\n\n       Ex   Excellent (100+ inches) \n       Gd   Good (90-99 inches)\n       TA   Typical (80-89 inches)\n       Fa   Fair (70-79 inches)\n       Po   Poor (&lt;70 inches\n       NA   No Basement\n        \nBsmtCond: Evaluates the general condition of the basement\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical - slight dampness allowed\n       Fa   Fair - dampness or some cracking or settling\n       Po   Poor - Severe cracking, settling, or wetness\n       NA   No Basement\n    \nBsmtExposure: Refers to walkout or garden level walls\n\n       Gd   Good Exposure\n       Av   Average Exposure (split levels or foyers typically score average or above)  \n       Mn   Mimimum Exposure\n       No   No Exposure\n       NA   No Basement\n    \nBsmtFinType1: Rating of basement finished area\n\n       GLQ  Good Living Quarters\n       ALQ  Average Living Quarters\n       BLQ  Below Average Living Quarters   \n       Rec  Average Rec Room\n       LwQ  Low Quality\n       Unf  Unfinshed\n       NA   No Basement\n        \nBsmtFinSF1: Type 1 finished square feet\n\nBsmtFinType2: Rating of basement finished area (if multiple types)\n\n       GLQ  Good Living Quarters\n       ALQ  Average Living Quarters\n       BLQ  Below Average Living Quarters   \n       Rec  Average Rec Room\n       LwQ  Low Quality\n       Unf  Unfinshed\n       NA   No Basement\n\nBsmtFinSF2: Type 2 finished square feet\n\nBsmtUnfSF: Unfinished square feet of basement area\n\nTotalBsmtSF: Total square feet of basement area\n\nHeating: Type of heating\n        \n       Floor    Floor Furnace\n       GasA Gas forced warm air furnace\n       GasW Gas hot water or steam heat\n       Grav Gravity furnace \n       OthW Hot water or steam heat other than gas\n       Wall Wall furnace\n        \nHeatingQC: Heating quality and condition\n\n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       Po   Poor\n        \nCentralAir: Central air conditioning\n\n       N    No\n       Y    Yes\n        \nElectrical: Electrical system\n\n       SBrkr    Standard Circuit Breakers & Romex\n       FuseA    Fuse Box over 60 AMP and all Romex wiring (Average) \n       FuseF    60 AMP Fuse Box and mostly Romex wiring (Fair)\n       FuseP    60 AMP Fuse Box and mostly knob & tube wiring (poor)\n       Mix  Mixed\n        \n1stFlrSF: First Floor square feet\n \n2ndFlrSF: Second floor square feet\n\nLowQualFinSF: Low quality finished square feet (all floors)\n\nGrLivArea: Above grade (ground) living area square feet\n\nBsmtFullBath: Basement full bathrooms\n\nBsmtHalfBath: Basement half bathrooms\n\nFullBath: Full bathrooms above grade\n\nHalfBath: Half baths above grade\n\nBedroom: Bedrooms above grade (does NOT include basement bedrooms)\n\nKitchen: Kitchens above grade\n\nKitchenQual: Kitchen quality\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical/Average\n       Fa   Fair\n       Po   Poor\n        \nTotRmsAbvGrd: Total rooms above grade (does not include bathrooms)\n\nFunctional: Home functionality (Assume typical unless deductions are warranted)\n\n       Typ  Typical Functionality\n       Min1 Minor Deductions 1\n       Min2 Minor Deductions 2\n       Mod  Moderate Deductions\n       Maj1 Major Deductions 1\n       Maj2 Major Deductions 2\n       Sev  Severely Damaged\n       Sal  Salvage only\n        \nFireplaces: Number of fireplaces\n\nFireplaceQu: Fireplace quality\n\n       Ex   Excellent - Exceptional Masonry Fireplace\n       Gd   Good - Masonry Fireplace in main level\n       TA   Average - Prefabricated Fireplace in main living area or Masonry Fireplace in basement\n       Fa   Fair - Prefabricated Fireplace in basement\n       Po   Poor - Ben Franklin Stove\n       NA   No Fireplace\n        \nGarageType: Garage location\n        \n       2Types   More than one type of garage\n       Attchd   Attached to home\n       Basment  Basement Garage\n       BuiltIn  Built-In (Garage part of house - typically has room above garage)\n       CarPort  Car Port\n       Detchd   Detached from home\n       NA   No Garage\n        \nGarageYrBlt: Year garage was built\n        \nGarageFinish: Interior finish of the garage\n\n       Fin  Finished\n       RFn  Rough Finished  \n       Unf  Unfinished\n       NA   No Garage\n        \nGarageCars: Size of garage in car capacity\n\nGarageArea: Size of garage in square feet\n\nGarageQual: Garage quality\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical/Average\n       Fa   Fair\n       Po   Poor\n       NA   No Garage\n        \nGarageCond: Garage condition\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical/Average\n       Fa   Fair\n       Po   Poor\n       NA   No Garage\n        \nPavedDrive: Paved driveway\n\n       Y    Paved \n       P    Partial Pavement\n       N    Dirt/Gravel\n        \nWoodDeckSF: Wood deck area in square feet\n\nOpenPorchSF: Open porch area in square feet\n\nEnclosedPorch: Enclosed porch area in square feet\n\n3SsnPorch: Three season porch area in square feet\n\nScreenPorch: Screen porch area in square feet\n\nPoolArea: Pool area in square feet\n\nPoolQC: Pool quality\n        \n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       NA   No Pool\n        \nFence: Fence quality\n        \n       GdPrv    Good Privacy\n       MnPrv    Minimum Privacy\n       GdWo Good Wood\n       MnWw Minimum Wood/Wire\n       NA   No Fence\n    \nMiscFeature: Miscellaneous feature not covered in other categories\n        \n       Elev Elevator\n       Gar2 2nd Garage (if not described in garage section)\n       Othr Other\n       Shed Shed (over 100 SF)\n       TenC Tennis Court\n       NA   None\n        \nMiscVal: $Value of miscellaneous feature\n\nMoSold: Month Sold \n\nSaleType: Type of sale\n        \n       WD   Warranty Deed - Conventional\n       CWD  Warranty Deed - Cash\n       VWD  Warranty Deed - VA Loan\n       New  Home just constructed and sold\n       COD  Court Officer Deed/Estate\n       Con  Contract 15% Down payment regular terms\n       ConLw    Contract Low Down payment and low interest\n       ConLI    Contract Low Interest\n       ConLD    Contract Low Down\n       Oth  Other\n        \nSaleCondition: Condition of sale\n\n       Normal   Normal Sale\n       Abnorml  Abnormal Sale -  trade, foreclosure, short sale\n       AdjLand  Adjoining Land Purchase\n       Alloca   Allocation - two linked properties with separate deeds, typically condo with a garage unit  \n       Family   Sale between family members\n       Partial  Home was not completed when last assessed (associated with New Homes)\n\nest_saleprice_2024 the estimated sales price for this home in 2024"
+    "text": "The other details\nJust like this quiz, when you submit for the actual final exam, please be prepared to submit an .Rmd or .qmd file and the .pdf that was the result of knitting/rendering it.\nI will post a possible solution (there are very many depending on your approach) to this quiz over the weekend.\nData Description ames_neighborhood2024.csv\nneighborhood: Name of Neighborhood\n\nwalk_score: range is 0 - 100. 100 is very walkable. It based on the walking distance \nfrom  restaurants, groceries, schools, entertainment, and more.   \n\ntransit_score: range is 0 - 100, 100 is perfect. Transit Score measures how well \na location is served by public transit.   \n\nbike_score: range is 0 - 100, 100 is perfect. The Bike Score measures how well \na location is set up for bike transit.  \nData Description ames_homesales2024.RData\nMSSubClass: Identifies the type of dwelling involved in the sale.   \n\n        20  1-STORY 1946 & NEWER ALL STYLES\n        30  1-STORY 1945 & OLDER\n        40  1-STORY W/FINISHED ATTIC ALL AGES\n        45  1-1/2 STORY - UNFINISHED ALL AGES\n        50  1-1/2 STORY FINISHED ALL AGES\n        60  2-STORY 1946 & NEWER\n        70  2-STORY 1945 & OLDER\n        75  2-1/2 STORY ALL AGES\n        80  SPLIT OR MULTI-LEVEL\n        85  SPLIT FOYER\n        90  DUPLEX - ALL STYLES AND AGES\n       120  1-STORY PUD (Planned Unit Development) - 1946 & NEWER\n       150  1-1/2 STORY PUD - ALL AGES\n       160  2-STORY PUD - 1946 & NEWER\n       180  PUD - MULTILEVEL - INCL SPLIT LEV/FOYER\n       190  2 FAMILY CONVERSION - ALL STYLES AND AGES\n\nMSZoning: Identifies the general zoning classification of the sale.\n        \n       A    Agriculture\n       C    Commercial\n       FV   Floating Village Residential\n       I    Industrial\n       RH   Residential High Density\n       RL   Residential Low Density\n       RP   Residential Low Density Park \n       RM   Residential Medium Density\n    \nLotFrontage: Linear feet of street connected to property\n\nLotArea: Lot size in square feet\n\nStreet: Type of road access to property\n\n       Grvl Gravel  \n       Pave Paved\n        \nAlley: Type of alley access to property\n\n       Grvl Gravel\n       Pave Paved\n       NA   No alley access\n        \nLotShape: General shape of property\n\n       Reg  Regular \n       IR1  Slightly irregular\n       IR2  Moderately Irregular\n       IR3  Irregular\n       \nLandContour: Flatness of the property\n\n       Lvl  Near Flat/Level \n       Bnk  Banked - Quick and significant rise from street grade to building\n       HLS  Hillside - Significant slope from side to side\n       Low  Depression\n        \nUtilities: Type of utilities available\n        \n       AllPub   All public Utilities (E,G,W,& S)    \n       NoSewr   Electricity, Gas, and Water (Septic Tank)\n       NoSeWa   Electricity and Gas Only\n       ELO  Electricity only    \n    \nLotConfig: Lot configuration\n\n       Inside   Inside lot\n       Corner   Corner lot\n       CulDSac  Cul-de-sac\n       FR2  Frontage on 2 sides of property\n       FR3  Frontage on 3 sides of property\n    \nLandSlope: Slope of property\n        \n       Gtl  Gentle slope\n       Mod  Moderate Slope  \n       Sev  Severe Slope\n    \nNeighborhood: Physical locations within Ames city limits\n\n       Blmngtn  Bloomington Heights\n       Blueste  Bluestem\n       BrDale   Briardale\n       BrkSide  Brookside\n       ClearCr  Clear Creek\n       CollgCr  College Creek\n       Crawfor  Crawford\n       Edwards  Edwards\n       Gilbert  Gilbert\n       IDOTRR   Iowa DOT and Rail Road\n       MeadowV  Meadow Village\n       Mitchel  Mitchell\n       Names    North Ames\n       NoRidge  Northridge\n       NPkVill  Northpark Villa\n       NridgHt  Northridge Heights\n       NWAmes   Northwest Ames\n       OldTown  Old Town\n       SWISU    South & West of Iowa State University\n       Sawyer   Sawyer\n       SawyerW  Sawyer West\n       Somerst  Somerset\n       StoneBr  Stone Brook\n       Timber   Timberland\n       Veenker  Veenker\n            \nCondition1: Proximity to various conditions\n    \n       Artery   Adjacent to arterial street\n       Feedr    Adjacent to feeder street   \n       Norm Normal  \n       RRNn Within 200' of North-South Railroad\n       RRAn Adjacent to North-South Railroad\n       PosN Near positive off-site feature--park, greenbelt, etc.\n       PosA Adjacent to postive off-site feature\n       RRNe Within 200' of East-West Railroad\n       RRAe Adjacent to East-West Railroad\n    \nCondition2: Proximity to various conditions (if more than one is present)\n        \n       Artery   Adjacent to arterial street\n       Feedr    Adjacent to feeder street   \n       Norm Normal  \n       RRNn Within 200' of North-South Railroad\n       RRAn Adjacent to North-South Railroad\n       PosN Near positive off-site feature--park, greenbelt, etc.\n       PosA Adjacent to postive off-site feature\n       RRNe Within 200' of East-West Railroad\n       RRAe Adjacent to East-West Railroad\n    \nBldgType: Type of dwelling\n        \n       1Fam Single-family Detached  \n       2FmCon   Two-family Conversion; originally built as one-family dwelling\n       Duplx    Duplex\n       TwnhsE   Townhouse End Unit\n       TwnhsI   Townhouse Inside Unit\n    \nHouseStyle: Style of dwelling\n    \n       1Story   One story\n       1.5Fin   One and one-half story: 2nd level finished\n       1.5Unf   One and one-half story: 2nd level unfinished\n       2Story   Two story\n       2.5Fin   Two and one-half story: 2nd level finished\n       2.5Unf   Two and one-half story: 2nd level unfinished\n       SFoyer   Split Foyer\n       SLvl Split Level\n    \nOverallQual: Rates the overall material and finish of the house\n\n       10   Very Excellent\n       9    Excellent\n       8    Very Good\n       7    Good\n       6    Above Average\n       5    Average\n       4    Below Average\n       3    Fair\n       2    Poor\n       1    Very Poor\n    \nOverallCond: Rates the overall condition of the house\n\n       10   Very Excellent\n       9    Excellent\n       8    Very Good\n       7    Good\n       6    Above Average   \n       5    Average\n       4    Below Average   \n       3    Fair\n       2    Poor\n       1    Very Poor\n        \nYearBuilt: Original construction date\n\nYearRemodAdd: Remodel date (same as construction date if no remodeling or additions)\n\nRoofStyle: Type of roof\n\n       Flat Flat\n       Gable    Gable\n       Gambrel  Gabrel (Barn)\n       Hip  Hip\n       Mansard  Mansard\n       Shed Shed\n        \nRoofMatl: Roof material\n\n       ClyTile  Clay or Tile\n       CompShg  Standard (Composite) Shingle\n       Membran  Membrane\n       Metal    Metal\n       Roll Roll\n       Tar&Grv  Gravel & Tar\n       WdShake  Wood Shakes\n       WdShngl  Wood Shingles\n        \nExterior1st: Exterior covering on house\n\n       AsbShng  Asbestos Shingles\n       AsphShn  Asphalt Shingles\n       BrkComm  Brick Common\n       BrkFace  Brick Face\n       CBlock   Cinder Block\n       CemntBd  Cement Board\n       HdBoard  Hard Board\n       ImStucc  Imitation Stucco\n       MetalSd  Metal Siding\n       Other    Other\n       Plywood  Plywood\n       PreCast  PreCast \n       Stone    Stone\n       Stucco   Stucco\n       VinylSd  Vinyl Siding\n       Wd Sdng  Wood Siding\n       WdShing  Wood Shingles\n    \nExterior2nd: Exterior covering on house (if more than one material)\n\n       AsbShng  Asbestos Shingles\n       AsphShn  Asphalt Shingles\n       BrkComm  Brick Common\n       BrkFace  Brick Face\n       CBlock   Cinder Block\n       CemntBd  Cement Board\n       HdBoard  Hard Board\n       ImStucc  Imitation Stucco\n       MetalSd  Metal Siding\n       Other    Other\n       Plywood  Plywood\n       PreCast  PreCast\n       Stone    Stone\n       Stucco   Stucco\n       VinylSd  Vinyl Siding\n       Wd Sdng  Wood Siding\n       WdShing  Wood Shingles\n    \nMasVnrType: Masonry veneer type\n\n       BrkCmn   Brick Common\n       BrkFace  Brick Face\n       CBlock   Cinder Block\n       None None\n       Stone    Stone\n    \nMasVnrArea: Masonry veneer area in square feet\n\nExterQual: Evaluates the quality of the material on the exterior \n        \n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       Po   Poor\n        \nExterCond: Evaluates the present condition of the material on the exterior\n        \n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       Po   Poor\n        \nFoundation: Type of foundation\n        \n       BrkTil   Brick & Tile\n       CBlock   Cinder Block\n       PConc    Poured Contrete \n       Slab Slab\n       Stone    Stone\n       Wood Wood\n        \nBsmtQual: Evaluates the height of the basement\n\n       Ex   Excellent (100+ inches) \n       Gd   Good (90-99 inches)\n       TA   Typical (80-89 inches)\n       Fa   Fair (70-79 inches)\n       Po   Poor (&lt;70 inches\n       NA   No Basement\n        \nBsmtCond: Evaluates the general condition of the basement\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical - slight dampness allowed\n       Fa   Fair - dampness or some cracking or settling\n       Po   Poor - Severe cracking, settling, or wetness\n       NA   No Basement\n    \nBsmtExposure: Refers to walkout or garden level walls\n\n       Gd   Good Exposure\n       Av   Average Exposure (split levels or foyers typically score average or above)  \n       Mn   Mimimum Exposure\n       No   No Exposure\n       NA   No Basement\n    \nBsmtFinType1: Rating of basement finished area\n\n       GLQ  Good Living Quarters\n       ALQ  Average Living Quarters\n       BLQ  Below Average Living Quarters   \n       Rec  Average Rec Room\n       LwQ  Low Quality\n       Unf  Unfinshed\n       NA   No Basement\n        \nBsmtFinSF1: Type 1 finished square feet\n\nBsmtFinType2: Rating of basement finished area (if multiple types)\n\n       GLQ  Good Living Quarters\n       ALQ  Average Living Quarters\n       BLQ  Below Average Living Quarters   \n       Rec  Average Rec Room\n       LwQ  Low Quality\n       Unf  Unfinshed\n       NA   No Basement\n\nBsmtFinSF2: Type 2 finished square feet\n\nBsmtUnfSF: Unfinished square feet of basement area\n\nTotalBsmtSF: Total square feet of basement area\n\nHeating: Type of heating\n        \n       Floor    Floor Furnace\n       GasA Gas forced warm air furnace\n       GasW Gas hot water or steam heat\n       Grav Gravity furnace \n       OthW Hot water or steam heat other than gas\n       Wall Wall furnace\n        \nHeatingQC: Heating quality and condition\n\n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       Po   Poor\n        \nCentralAir: Central air conditioning\n\n       N    No\n       Y    Yes\n        \nElectrical: Electrical system\n\n       SBrkr    Standard Circuit Breakers & Romex\n       FuseA    Fuse Box over 60 AMP and all Romex wiring (Average) \n       FuseF    60 AMP Fuse Box and mostly Romex wiring (Fair)\n       FuseP    60 AMP Fuse Box and mostly knob & tube wiring (poor)\n       Mix  Mixed\n        \n1stFlrSF: First Floor square feet\n \n2ndFlrSF: Second floor square feet\n\nLowQualFinSF: Low quality finished square feet (all floors)\n\nGrLivArea: Above grade (ground) living area square feet\n\nBsmtFullBath: Basement full bathrooms\n\nBsmtHalfBath: Basement half bathrooms\n\nFullBath: Full bathrooms above grade\n\nHalfBath: Half baths above grade\n\nBedroom: Bedrooms above grade (does NOT include basement bedrooms)\n\nKitchen: Kitchens above grade\n\nKitchenQual: Kitchen quality\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical/Average\n       Fa   Fair\n       Po   Poor\n        \nTotRmsAbvGrd: Total rooms above grade (does not include bathrooms)\n\nFunctional: Home functionality (Assume typical unless deductions are warranted)\n\n       Typ  Typical Functionality\n       Min1 Minor Deductions 1\n       Min2 Minor Deductions 2\n       Mod  Moderate Deductions\n       Maj1 Major Deductions 1\n       Maj2 Major Deductions 2\n       Sev  Severely Damaged\n       Sal  Salvage only\n        \nFireplaces: Number of fireplaces\n\nFireplaceQu: Fireplace quality\n\n       Ex   Excellent - Exceptional Masonry Fireplace\n       Gd   Good - Masonry Fireplace in main level\n       TA   Average - Prefabricated Fireplace in main living area or Masonry Fireplace in basement\n       Fa   Fair - Prefabricated Fireplace in basement\n       Po   Poor - Ben Franklin Stove\n       NA   No Fireplace\n        \nGarageType: Garage location\n        \n       2Types   More than one type of garage\n       Attchd   Attached to home\n       Basment  Basement Garage\n       BuiltIn  Built-In (Garage part of house - typically has room above garage)\n       CarPort  Car Port\n       Detchd   Detached from home\n       NA   No Garage\n        \nGarageYrBlt: Year garage was built\n        \nGarageFinish: Interior finish of the garage\n\n       Fin  Finished\n       RFn  Rough Finished  \n       Unf  Unfinished\n       NA   No Garage\n        \nGarageCars: Size of garage in car capacity\n\nGarageArea: Size of garage in square feet\n\nGarageQual: Garage quality\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical/Average\n       Fa   Fair\n       Po   Poor\n       NA   No Garage\n        \nGarageCond: Garage condition\n\n       Ex   Excellent\n       Gd   Good\n       TA   Typical/Average\n       Fa   Fair\n       Po   Poor\n       NA   No Garage\n        \nPavedDrive: Paved driveway\n\n       Y    Paved \n       P    Partial Pavement\n       N    Dirt/Gravel\n        \nWoodDeckSF: Wood deck area in square feet\n\nOpenPorchSF: Open porch area in square feet\n\nEnclosedPorch: Enclosed porch area in square feet\n\n3SsnPorch: Three season porch area in square feet\n\nScreenPorch: Screen porch area in square feet\n\nPoolArea: Pool area in square feet\n\nPoolQC: Pool quality\n        \n       Ex   Excellent\n       Gd   Good\n       TA   Average/Typical\n       Fa   Fair\n       NA   No Pool\n        \nFence: Fence quality\n        \n       GdPrv    Good Privacy\n       MnPrv    Minimum Privacy\n       GdWo Good Wood\n       MnWw Minimum Wood/Wire\n       NA   No Fence\n    \nMiscFeature: Miscellaneous feature not covered in other categories\n        \n       Elev Elevator\n       Gar2 2nd Garage (if not described in garage section)\n       Othr Other\n       Shed Shed (over 100 SF)\n       TenC Tennis Court\n       NA   None\n        \nMiscVal: $Value of miscellaneous feature\n\nMoSold: Month Sold \n\nSaleType: Type of sale\n        \n       WD   Warranty Deed - Conventional\n       CWD  Warranty Deed - Cash\n       VWD  Warranty Deed - VA Loan\n       New  Home just constructed and sold\n       COD  Court Officer Deed/Estate\n       Con  Contract 15% Down payment regular terms\n       ConLw    Contract Low Down payment and low interest\n       ConLI    Contract Low Interest\n       ConLD    Contract Low Down\n       Oth  Other\n        \nSaleCondition: Condition of sale\n\n       Normal   Normal Sale\n       Abnorml  Abnormal Sale -  trade, foreclosure, short sale\n       AdjLand  Adjoining Land Purchase\n       Alloca   Allocation - two linked properties with separate deeds, typically condo with a garage unit  \n       Family   Sale between family members\n       Partial  Home was not completed when last assessed (associated with New Homes)\n\nest_saleprice_2024 the estimated sales price for this home in 2024"
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#function-writing-advice-from-r4ds",
+    "href": "lectures/Lecture1920/Lecture19.html#function-writing-advice-from-r4ds",
+    "title": "Lecture 19",
+    "section": "Function Writing Advice from R4DS",
+    "text": "Function Writing Advice from R4DS\n\nChapter 25\nWriting functions is related to exercising/strengthening your understanding of data science\nNaming: You can give your function a memorable/understandable name\nAs you grow in your skills and software and methods change, you might only need to update R code in one place\nDecrease the chance mistakes\nFunctions makes it easier to reuse work from past projects\nIncrease your productivity over time.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#recall",
+    "href": "lectures/Lecture1920/Lecture19.html#recall",
+    "title": "Lecture 19",
+    "section": "Recall",
+    "text": "Recall\n\nIn R, functions generally take this form: (the red is absolutely required) name and the function function\n\n\n\nThe grey will depend on the needs of the programmer + the function\nargument_1, argument_2, etc. this known as “the formals”\nThe part bracketed by { } is the body of the function\nThere is a fourth part, not seen here, called the environment",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#example-sd",
+    "href": "lectures/Lecture1920/Lecture19.html#example-sd",
+    "title": "Lecture 19",
+    "section": "Example: sd()",
+    "text": "Example: sd()",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#example-eda_summary",
+    "href": "lectures/Lecture1920/Lecture19.html#example-eda_summary",
+    "title": "Lecture 19",
+    "section": "Example: eda_summary()",
+    "text": "Example: eda_summary()\n\nYou can view your own function View(eda_summary)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#environments",
+    "href": "lectures/Lecture1920/Lecture19.html#environments",
+    "title": "Lecture 19",
+    "section": "Environments",
+    "text": "Environments\n\n&lt;environment: R_GlobalEnv&gt;\n\nR_GlobalEnv stands for the “Global Environment.” This is your personal work area in R.\nWhenever you import a dataset, create a variable, or write your very own custom function like eda_summary(), you are storing it in your own work area. Everything here is yours. You can use, modify, or delete it. It belongs to you\n\nenvironment(sd) returned &lt;environment: namespace:stats&gt;\n\nnamespace:stats belongs to R.\nWhen you installed R, it came with thousands of professional, pre-built functions. But R doesn’t dump all these functions onto your personal work area. Instead, it organizes them into other work areas (its). These areas are called “namespaces” (AKA packages). The sd() function exists in a package labeled “stats”.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#why-is-this-important",
+    "href": "lectures/Lecture1920/Lecture19.html#why-is-this-important",
+    "title": "Lecture 19",
+    "section": "Why is this important?",
+    "text": "Why is this important?\n\nR uses environments to protect itself from us (and us from it).\nWhat happens if I misuse the name of sd for one of my own functions?\n\n\nsd &lt;- function() {\n  cat(\"I broke the standard deviation!\")\n}\nsd()\n\nI broke the standard deviation!\n\n# did I break it? kinda\nreal_numbers &lt;- c(10, 20, 30)\n\nsd(real_numbers)\n\nError in `sd()`:\n! unused argument (real_numbers)\n\n# BUT\nstats::sd(real_numbers) \n\n[1] 10",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#takeaway",
+    "href": "lectures/Lecture1920/Lecture19.html#takeaway",
+    "title": "Lecture 19",
+    "section": "Takeaway",
+    "text": "Takeaway\n\nWhen you create anything in R, R always looks at your personal area (R_GlobalEnv) first.\nIt sees your version of sd that reads “I broke the standard deviation” and prints it.\nBut when you actually ask R to do the calculations, or if you specifically point to the right environment (stats::sd()), R ignores your work area, and goes elsewhere.\nR guarantees that no matter how messy your R_GlobalEnv gets, you can never accidentally permanently delete R’s tools",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#recall-1",
+    "href": "lectures/Lecture1920/Lecture19.html#recall-1",
+    "title": "Lecture 19",
+    "section": "Recall …",
+    "text": "Recall …\n\nSome functions (e.g., data.frame) can accept any number of user specified-arguments.\nThe … (ellipsis) argument makes this possible.\n… is employed when extending another function and the programmer does not want to copy the entire argument list of the original function.\nBe cautious when using … If an argument is misspelled it will NOT generate an error. Also any arguments used after … must be fully named.\nYou can see whether an ellipsis is used in a function on the corresponding help page or with args().\n\n\nargs(data.frame)\n\nfunction (..., row.names = NULL, check.rows = FALSE, check.names = TRUE, \n    fix.empty.names = TRUE, stringsAsFactors = FALSE) \nNULL",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#if-i-show-you-a-function-in-the-future",
+    "href": "lectures/Lecture1920/Lecture19.html#if-i-show-you-a-function-in-the-future",
+    "title": "Lecture 19",
+    "section": "If I show you a function in the future…",
+    "text": "If I show you a function in the future…\nYou should be able to identify the parts:",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#using-return",
+    "href": "lectures/Lecture1920/Lecture19.html#using-return",
+    "title": "Lecture 19",
+    "section": "Using return()",
+    "text": "Using return()\n\nIf the end of a function is reached without calling return(), the value of the last evaluated expression is returned automatically by R.\nR’s behavior is different from many other languages.\nreturn() is not required, but it is generally considered poor style/poor communication to exclude it from a function\nBut a return() will end your R function immediately, so either it should be the last line of a function OR it might be associated with an early termination due to error.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#example-with-more-than-one-return",
+    "href": "lectures/Lecture1920/Lecture19.html#example-with-more-than-one-return",
+    "title": "Lecture 19",
+    "section": "Example with more than one return()",
+    "text": "Example with more than one return()\n\nmy_string_n &lt;- function(x){\n  if(!is.character(x)) # understood as if character is not true\n    return(print(\"This function requires character data!\"))\n  else\n    return(strsplit(x, split = \"\") |&gt; unlist() |&gt; length())\n}\n\nmy_string_n(155)\n\n[1] \"This function requires character data!\"\n\nmy_string_n(\"Therefore at such a time the prudent person keeps quiet, because it is an evil time.\")\n\n[1] 84",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#print-vs.-cat-vs.-message",
+    "href": "lectures/Lecture1920/Lecture19.html#print-vs.-cat-vs.-message",
+    "title": "Lecture 19",
+    "section": "print() vs. cat() vs. message()",
+    "text": "print() vs. cat() vs. message()\n\nThey all look the same, more or less\n\n\nprint(\"🛑 Stop! In the name of love ♡\")\n\n[1] \"🛑 Stop! In the name of love ♡\"\n\ncat(\"🛑 Stop! In the name of love ♡\", \"\\n\") # cat needs a line break \n\n🛑 Stop! In the name of love ♡ \n\nmessage(\"🛑 Stop! In the name of love ♡\")\n\n🛑 Stop! In the name of love ♡\n\n\n\nUse print() when you are debugging code, or when you need to see a data frame, a list, or model output.\nUse cat() you want to format anything that the human eye can easily read on screen\nWhen programming functions, use message() because we can suppressMessages() when we don’t want to see them\ncat() and message() are not the same, message() is response to other programming related functions, cat() is not",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#writing-helper-functions",
+    "href": "lectures/Lecture1920/Lecture19.html#writing-helper-functions",
+    "title": "Lecture 19",
+    "section": "Writing Helper Functions",
+    "text": "Writing Helper Functions\n\nDon’t be afraid to start small, like a good Stats 20 problem for your final could be “write a little helper function that converts all factors in a data frame to character” or “write a little helper function that removes all dollar signs, commas and percentage signs from your data frame”\nThese helper functions can be called in other functions and re-used\nWhen you are programming a much more complicated function, say something for Stats 102A, try to break down the 102A problem into smaller pieces which behave like “helper functions”",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#example",
+    "href": "lectures/Lecture1920/Lecture19.html#example",
+    "title": "Lecture 19",
+    "section": "Example",
+    "text": "Example\n\nDropping tweets that don’t really have analyzable content\n\n\n# helper function example \nremove_RT &lt;- function(x) {\n  rt &lt;- grepl(\"^RT\", x$text)\n  return(x[!rt,])\n}\nremove_WP &lt;- function(y) {\n  wp &lt;- grepl(\"^http\", y$text)\n  return(y[!wp,])\n}\nremove_IMAGE &lt;- function(z) {\n  image &lt;- grepl(\"^\\\\[\", z$text)  # need \\\\ to escape [\n  return(z[!image,])\n}\n\n\ncombine them into a single function\n\n\nclean_tweet &lt;- function(x) {\n  remove_RT(x) |&gt; remove_WP() |&gt; remove_IMAGE()\n}",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#example-contd",
+    "href": "lectures/Lecture1920/Lecture19.html#example-contd",
+    "title": "Lecture 19",
+    "section": "Example (cont’d)",
+    "text": "Example (cont’d)\nAlways test your functions.\n\nlibrary(readr)\nsample_tweets &lt;- suppressMessages(read_csv(\"data/sample_tweets.csv\"))\ntail(sample_tweets$text)\n\n[1] \"Kennedy Center to Be Renamed Trump-Kennedy Center: https://www. newsmax.com/us/kennedy-center- donald-trump-board/2025/12/18/id/1238860/\"                                                    \n[2] \"Amazon to invest up to $50B to build AI infrastructure for US government agencies: https://www. foxbusiness.com/markets/amazon -invest-up-50b-build-ai-infrastructure-us-government-agencies\"\n[3] \"[Image]\"                                                                                                                                                                                     \n[4] \"RT: https://truthsocial.com/users/realDonaldTrump/statuses/115798247418895666\"                                                                                                               \n[5] \"[Video]\"                                                                                                                                                                                     \n[6] \"RT: https://truthsocial.com/users/realDonaldTrump/statuses/115798237843100749\"                                                                                                               \n\nsample_tweets_cleaned &lt;- clean_tweet(sample_tweets)\ntail(sample_tweets_cleaned$text)\n\n[1] \"Trump Delivers Rousing Primetime Address, Announces “Warrior Dividend” for Troops: https:// amac.us/newsline/economy/trump -delivers-rousing-primetime-address-announces-warrior-dividend-for-troops/\"                             \n[2] \"Trump Hammers the ‘Mess’ Biden Left on Border, Inflation, Wages: ‘I’m Fixing It’: https://www. breitbart.com/politics/2025/12 /18/trump-hammers-the-mess-biden-left-on-border-inflation-wages-im-fixing-it/\"                       \n[3] \"Kennedy Center Board Votes Unanimously to Add Donald Trump’s Name to Iconic D.C. Venue: https://www. breitbart.com/entertainment/20 25/12/18/kennedy-center-board-votes-unanimously-to-add-donald-trumps-name-to-iconic-d-c-venue/\"\n[4] \"Board votes Kennedy Center to be renamed 'Trump-Kennedy Center': https://www. foxnews.com/politics/board-vot es-kennedy-center-renamed-trump-kennedy-center-leavitt-says\"                                                          \n[5] \"Kennedy Center to Be Renamed Trump-Kennedy Center: https://www. newsmax.com/us/kennedy-center- donald-trump-board/2025/12/18/id/1238860/\"                                                                                          \n[6] \"Amazon to invest up to $50B to build AI infrastructure for US government agencies: https://www. foxbusiness.com/markets/amazon -invest-up-50b-build-ai-infrastructure-us-government-agencies\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#local-vs-global-scope",
+    "href": "lectures/Lecture1920/Lecture19.html#local-vs-global-scope",
+    "title": "Lecture 19",
+    "section": "Local vs Global Scope",
+    "text": "Local vs Global Scope\n\nIf you examine your environment tab (your global environment) more closely, you will notice that the functions remove_RT, remove_WP, remove_IMAGE didn’t create any objects named x, y, rt, etc. behind.\nThe objects used in those functions are only available within those functions and are said to have “local scope”\nThe momemnt you run your own function, R instantly builds a temporary environment and performs its work in there.\nIn this temporary enviroment, the function can create temporary variables, rename columns, filter rows, and do all sorts of things. This is the Local Scope.\nWhen the function finishes it returns a result, and temporary environment with all the other variables in it, disappears.\nBecause of this, nothing done inside the function can accidentally destroy objects in the Global Environment.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#try-this-during-break",
+    "href": "lectures/Lecture1920/Lecture19.html#try-this-during-break",
+    "title": "Lecture 19",
+    "section": "Try this during break",
+    "text": "Try this during break\n\n# Make an important object in the Global Env\nmy_important_number &lt;- 100\n\n# Build a function\ngodzilla_function &lt;- function() {\n  \n  # Inside the local scope, overwrite the number\n  my_important_number &lt;- 0 \n  \n  # Make a new variable that only exists in function\n  my_secret_variable &lt;- \"I don't think I exist\"\n  \n  return(\"The function has finished running.\")\n}\n\n# Run the function\ngodzilla_function()\n\n[1] \"The function has finished running.\"\n\n# Did the function destroy our object? NO\nprint(my_important_number)\n\n[1] 100\n\n# Can we see the secret variable? NO\nprint(my_secret_variable)\n\nError:\n! object 'my_secret_variable' not found",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#more-expectations-from-102a",
+    "href": "lectures/Lecture1920/Lecture19.html#more-expectations-from-102a",
+    "title": "Lecture 19",
+    "section": "More expectations from 102A",
+    "text": "More expectations from 102A\n\nConstruct vectors, especially sequences\nCoercion, when and how to coerce, just by looking, what will the result be?\n\nc(0, TRUE)\nc(\"f\", 1)\nc(list(1), \"b\") # everything becomes a list\nc(FALSE, 1L) # 1L literal integer, sometimes you see this in older code\n\nKnow the difference between NULL, NA, and NaN",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#null-na-nan",
+    "href": "lectures/Lecture1920/Lecture19.html#null-na-nan",
+    "title": "Lecture 19",
+    "section": "NULL, NA, NaN",
+    "text": "NULL, NA, NaN\n\nUses of NA:\n\nData is missing but should exist\nYou need to keep consistent vector length\n\nUses of NaN:\n\nNaN usually is a result of calculations\nWe usually don’t create it manually (maybe for a teaching example…)\n\nUses of NULL:\n\nRemove elements of a vector, data.frame, list\nHave an empty list component (perhaps to fill later or grow conditionally)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#example-nan-and-null",
+    "href": "lectures/Lecture1920/Lecture19.html#example-nan-and-null",
+    "title": "Lecture 19",
+    "section": "Example NaN and NULL",
+    "text": "Example NaN and NULL\nNaN is the result of calculation\n\nc(0/0, Inf/Inf, Inf - Inf, log(-1), sqrt(-1), asin(-2) )\n\n[1] NaN NaN NaN NaN NaN NaN\n\n\nNULL - used with lists and data frames\n\niris$Species &lt;- NULL # deleted the Species column\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width\n1          5.1         3.5          1.4         0.2\n2          4.9         3.0          1.4         0.2\n3          4.7         3.2          1.3         0.2\n4          4.6         3.1          1.5         0.2\n5          5.0         3.6          1.4         0.2\n6          5.4         3.9          1.7         0.4\n\nmy_list &lt;- list(iris, NULL, c(\"UCLA\", \"fight\", \"fight\", \"fight\"))\nstr(my_list) # created an empty list component\n\nList of 3\n $ :'data.frame':   150 obs. of  4 variables:\n  ..$ Sepal.Length: num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...\n  ..$ Sepal.Width : num [1:150] 3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...\n  ..$ Petal.Length: num [1:150] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...\n  ..$ Petal.Width : num [1:150] 0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...\n $ : NULL\n $ : chr [1:4] \"UCLA\" \"fight\" \"fight\" \"fight\"\n\n\nYou can change it later\n\nmy_list[[2]] &lt;- 1:10\nstr(my_list)\n\nList of 3\n $ :'data.frame':   150 obs. of  4 variables:\n  ..$ Sepal.Length: num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...\n  ..$ Sepal.Width : num [1:150] 3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...\n  ..$ Petal.Length: num [1:150] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...\n  ..$ Petal.Width : num [1:150] 0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...\n $ : int [1:10] 1 2 3 4 5 6 7 8 9 10\n $ : chr [1:4] \"UCLA\" \"fight\" \"fight\" \"fight\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#classic-102a-homework-problem",
+    "href": "lectures/Lecture1920/Lecture19.html#classic-102a-homework-problem",
+    "title": "Lecture 19",
+    "section": "Classic 102A homework problem",
+    "text": "Classic 102A homework problem",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#solution-base-r",
+    "href": "lectures/Lecture1920/Lecture19.html#solution-base-r",
+    "title": "Lecture 19",
+    "section": "Solution, Base R",
+    "text": "Solution, Base R\n\nf &lt;- function(x){\n  if (x &lt;= 0) {\n    return(-x^3)\n  } else if (x &lt;= 1) {\n    return(x^2)\n  } else {\n    return(sqrt(x))\n  }\n}\n\nx_values &lt;- seq(-2, 2, by = 0.1)\n\ny_values &lt;- rep(NA, length(x_values))\nfor (i in seq_along(x_values)) {\n  x &lt;- x_values[i]\n  y_values[i] &lt;- f(x)\n}",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#graph",
+    "href": "lectures/Lecture1920/Lecture19.html#graph",
+    "title": "Lecture 19",
+    "section": "Graph",
+    "text": "Graph\n\nplot(x_values, y_values, type = \"l\")",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#a-little-more-on-environments",
+    "href": "lectures/Lecture1920/Lecture19.html#a-little-more-on-environments",
+    "title": "Lecture 19",
+    "section": "A little more on environments",
+    "text": "A little more on environments\nhttps://blog.thatbuthow.com/how-r-searches-and-finds-stuff/\n\n\nHow R manages to keep everything straight (R is well managed)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#just-a-bit-more",
+    "href": "lectures/Lecture1920/Lecture19.html#just-a-bit-more",
+    "title": "Lecture 19",
+    "section": "Just a bit more",
+    "text": "Just a bit more\n\nGenerally, an environment is similar to a list, with important exceptions:\nEvery object in a given environment has a unique name.\nThe objects in an environment are not ordered (e.g., lists components can be accessed in numerical order)\nAn environment has a parent. The parent of the global environment is the last package that you attached with library() or a require().",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#relationship-package-library-environment",
+    "href": "lectures/Lecture1920/Lecture19.html#relationship-package-library-environment",
+    "title": "Lecture 19",
+    "section": "Relationship: package, library, environment",
+    "text": "Relationship: package, library, environment\nSuppose you issue library(ggplot2), R does three things:\n\nReads your Library (a folder on your hard drive).\nFinds ggplot2, a package that was downloaded and saved to the folder\nIt unpacks the functions, data, etc. in ggplot2 and put them into a new environment (the namespace) that you can use\n\n\nlibrary(ggplot2)\nscale_x_reverse\n\nfunction (...) \n{\n    scale_x_continuous(..., transform = transform_reverse())\n}\n&lt;bytecode: 0x11837c5c8&gt;\n&lt;environment: namespace:ggplot2&gt;",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#when-you-see",
+    "href": "lectures/Lecture1920/Lecture19.html#when-you-see",
+    "title": "Lecture 19",
+    "section": "When you see…",
+    "text": "When you see…\n\neither use :: to specify the exact package::function or reorder the library() calls and issue it last (just before the global environment)",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#programming-with-style",
+    "href": "lectures/Lecture1920/Lecture19.html#programming-with-style",
+    "title": "Lecture 19",
+    "section": "Programming with Style",
+    "text": "Programming with Style\n\nHaving good style can be taught and learned, but like anything else, it takes time\nThere is mostly agreement on R style, but some areas are open\nHaving good style reduces errors\nHaving good style reduces time spent fixing programs\nFixing a programming problem requires more time than writing it correctly from the start",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#this-is-not-on-your-final-you-are-not-asked-about-this-material",
+    "href": "lectures/Lecture1920/Lecture19.html#this-is-not-on-your-final-you-are-not-asked-about-this-material",
+    "title": "Lecture 19",
+    "section": "This is not on your final, you are not asked about this material",
+    "text": "This is not on your final, you are not asked about this material\n\nThis relates to Chapter 6 of Braun & Murdoch\nAnd training in Math 33A and 115A (upper division proof based linear algebra)\nThis is the mathematics of data science (and more)\nJust want to show you a few basic concepts to help inform you going forward\nAnd how R is used as a tool to help you see the value.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#constructing-matrices",
+    "href": "lectures/Lecture1920/Lecture19.html#constructing-matrices",
+    "title": "Lecture 19",
+    "section": "Constructing Matrices",
+    "text": "Constructing Matrices\n\nmatrix(), cbind() and rbind() are commonly seen\n\n\nmatrix(c(1, 1/2, 1/3, 1/2, 1/3, 1/4, 1/3, 1/4, 1/5), nrow=3) # implies ncol = 3\n\n          [,1]      [,2]      [,3]\n[1,] 1.0000000 0.5000000 0.3333333\n[2,] 0.5000000 0.3333333 0.2500000\n[3,] 0.3333333 0.2500000 0.2000000\n\n\n\nalso some combination of math and R functions\n\n\n1/cbind(seq(1, 3), seq(2, 4), seq(3, 5)) \n\n          [,1]      [,2]      [,3]\n[1,] 1.0000000 0.5000000 0.3333333\n[2,] 0.5000000 0.3333333 0.2500000\n[3,] 0.3333333 0.2500000 0.2000000\n\n\n\nrbind() and cbind() are not really different\n\n\n1/rbind(seq(1, 3), seq(2, 4), seq(3, 5))\n\n          [,1]      [,2]      [,3]\n[1,] 1.0000000 0.5000000 0.3333333\n[2,] 0.5000000 0.3333333 0.2500000\n[3,] 0.3333333 0.2500000 0.2000000",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#row-and-column-naming",
+    "href": "lectures/Lecture1920/Lecture19.html#row-and-column-naming",
+    "title": "Lecture 19",
+    "section": "Row and Column Naming",
+    "text": "Row and Column Naming\nSometimes you might want to name your rows and columns.\n\nheight &lt;- c(172, 168, 167, 175, 180)\nweight &lt;- c(62, 64, 51, 71, 69)\n\nmatrix_5 &lt;- cbind(height, weight) # produces a matrix\nmatrix_5\n\n     height weight\n[1,]    172     62\n[2,]    168     64\n[3,]    167     51\n[4,]    175     71\n[5,]    180     69\n\nrow.names(matrix_5) &lt;- c(\"Anna\",\"Bella\",\"Carina\",\"Dora\",\"Estella\")\n\nmatrix_5\n\n        height weight\nAnna       172     62\nBella      168     64\nCarina     167     51\nDora       175     71\nEstella    180     69\n\nis(matrix_5)  # this could have been converted to data.frame\n\n[1] \"matrix\"    \"array\"     \"structure\" \"vector\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#helpful-base-r-functions-for-matrices",
+    "href": "lectures/Lecture1920/Lecture19.html#helpful-base-r-functions-for-matrices",
+    "title": "Lecture 19",
+    "section": "Helpful base R functions for matrices",
+    "text": "Helpful base R functions for matrices\n\ntranspose\n\n\nt(matrix_5)\n\n       Anna Bella Carina Dora Estella\nheight  172   168    167  175     180\nweight   62    64     51   71      69\n\n\n\ndiagonal matrix\n\n\ndiag(5)\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    1    0    0    0    0\n[2,]    0    1    0    0    0\n[3,]    0    0    1    0    0\n[4,]    0    0    0    1    0\n[5,]    0    0    0    0    1\n\n\n\ndiagonal with your own values\n\n\ndiag(c(8,6,7,5), nrow = 4) # implies ncol = 4\n\n     [,1] [,2] [,3] [,4]\n[1,]    8    0    0    0\n[2,]    0    6    0    0\n[3,]    0    0    7    0\n[4,]    0    0    0    5",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#no-desire-to-overwhelm",
+    "href": "lectures/Lecture1920/Lecture19.html#no-desire-to-overwhelm",
+    "title": "Lecture 19",
+    "section": "No desire to overwhelm",
+    "text": "No desire to overwhelm\n\nFor a guide to basics see https://stats.oarc.ucla.edu/r/seminars/r-matrix-operations/\nBut I want to show you something more complex, B & M introduce the Hankel Matrix in Chapter 6 and this is a good place to end Stats 20\n\n\n# we initialize a matrix to be filled\nH &lt;- matrix(0, nrow = 10, ncol = 10) # NA would work too\ndim(H)\n\n[1] 10 10\n\nH\n\n      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n [1,]    0    0    0    0    0    0    0    0    0     0\n [2,]    0    0    0    0    0    0    0    0    0     0\n [3,]    0    0    0    0    0    0    0    0    0     0\n [4,]    0    0    0    0    0    0    0    0    0     0\n [5,]    0    0    0    0    0    0    0    0    0     0\n [6,]    0    0    0    0    0    0    0    0    0     0\n [7,]    0    0    0    0    0    0    0    0    0     0\n [8,]    0    0    0    0    0    0    0    0    0     0\n [9,]    0    0    0    0    0    0    0    0    0     0\n[10,]    0    0    0    0    0    0    0    0    0     0",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#convert-it-to-a-hankel-matrix",
+    "href": "lectures/Lecture1920/Lecture19.html#convert-it-to-a-hankel-matrix",
+    "title": "Lecture 19",
+    "section": "Convert it to a Hankel Matrix",
+    "text": "Convert it to a Hankel Matrix\n\nA Hankel Matrix is a matrix in which each ascending skew-diagonal (anti-diagonal) from left to right is constant (recall diag() above refers to the main diagonal on a matrix.)\n\n\nx &lt;- 1:19 # a 10x10 Hankel Matrix needs 10 + 10 - 1 values, so 19\n\nfor (i in seq_len(nrow(H))) {\n  for (j in seq_len(ncol(H))) {\n      H[i, j] &lt;- x[i + j - 1]\n  }\n}\nH\n\n      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n [1,]    1    2    3    4    5    6    7    8    9    10\n [2,]    2    3    4    5    6    7    8    9   10    11\n [3,]    3    4    5    6    7    8    9   10   11    12\n [4,]    4    5    6    7    8    9   10   11   12    13\n [5,]    5    6    7    8    9   10   11   12   13    14\n [6,]    6    7    8    9   10   11   12   13   14    15\n [7,]    7    8    9   10   11   12   13   14   15    16\n [8,]    8    9   10   11   12   13   14   15   16    17\n [9,]    9   10   11   12   13   14   15   16   17    18\n[10,]   10   11   12   13   14   15   16   17   18    19\n\n\nHopefully you could see where writing your own function (it exists in a library called “matrixcalc”) is more flexible because every time I want a different size, I’ve got to change several values – this introduces potential error.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#application-of-linear-algebra",
+    "href": "lectures/Lecture1920/Lecture19.html#application-of-linear-algebra",
+    "title": "Lecture 19",
+    "section": "Application of Linear Algebra",
+    "text": "Application of Linear Algebra\n\nThis is way beyond the scope of Stats 20, think a year from now, maybe two years from now, maybe never. It depends on your personal choices and direction.\nWhen we look at sequential data — whether it is the stock market, victories on the football field, or crime patterns- it is often messy and difficulty to understand. The line on the graph may go up and down, but is there a real, underlying structure driving those movements, or is it just random chance?\nBefore we try to build complex models to answer our questions, we need to know if there is anything in the data worth modeling.\nWe will reshape a 1D timeline into a 2D memory structure: Hankel Matrix it isn’t just a grid of numbers — it has hidden structure.\nBraun & Murdoch leave you with “program a Hankel Matrix” - but let’s apply it to give you a taste of where this may continue for you.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#the-real-question-re-data",
+    "href": "lectures/Lecture1920/Lecture19.html#the-real-question-re-data",
+    "title": "Lecture 19",
+    "section": "The real question re: data",
+    "text": "The real question re: data\n\nCan we describe data - in this example a matrix of many values - using fewer numbers? That’s the heart of the discipline, summarizing or in other contexts - compressing/decomposing/reducing data - into fewer values.\nIn the example which follows, once the data is in the form of a Hankel Matrix, we employ Singular Value Decomposition (SVD) (I’ll briefly introduce you) a tool that can identify structure in the data\nIf the data is purely random, the matrix will tell us.\nIf there is a hidden cycle or patterning, the matrix will separate it from the noise.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#some-random-data",
+    "href": "lectures/Lecture1920/Lecture19.html#some-random-data",
+    "title": "Lecture 19",
+    "section": "Some Random Data",
+    "text": "Some Random Data\n\n# Generate a random walk\nset.seed(123)\ntime_steps &lt;- 1:150\nrandom_walk &lt;- cumsum(rnorm(150, mean = 0, sd = 1))\nhead(random_walk) \n\n[1] -0.5604756 -0.7906531  0.7680552  0.8385636  0.9678513  2.6829163\n\n# Visualize it\nplot(time_steps, random_walk, type = \"l\", col = \"darkgray\", lwd = 2,\n     main = \"Random Data\",\n     ylab = \"Observed Value\", xlab = \"Time\")",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#construct-the-hankel-matrix",
+    "href": "lectures/Lecture1920/Lecture19.html#construct-the-hankel-matrix",
+    "title": "Lecture 19",
+    "section": "Construct the Hankel Matrix",
+    "text": "Construct the Hankel Matrix\n\n# Define the window size (rows) and the number of columns\nL &lt;- 30  ## the limit of L would be length(data)/2, choosing L=30 would be informed by domain knowledge\nK &lt;- length(random_walk) - L + 1\n\n# Initialize and fill the Hankel Matrix\nH_random &lt;- matrix(0, nrow = L, ncol = K)\n\nfor (i in 1:L) {\n  H_random[i, ] &lt;- random_walk[i:(i + K - 1)]\n}\n\ndim(H_random)\n\n[1]  30 121\n\nH_random[1:7, 1:7] ## examine it\n\n           [,1]       [,2]      [,3]      [,4]      [,5]      [,6]      [,7]\n[1,] -0.5604756 -0.7906531 0.7680552 0.8385636 0.9678513 2.6829163 3.1438325\n[2,] -0.7906531  0.7680552 0.8385636 0.9678513 2.6829163 3.1438325 1.8787713\n[3,]  0.7680552  0.8385636 0.9678513 2.6829163 3.1438325 1.8787713 1.1919184\n[4,]  0.8385636  0.9678513 2.6829163 3.1438325 1.8787713 1.1919184 0.7462564\n[5,]  0.9678513  2.6829163 3.1438325 1.8787713 1.1919184 0.7462564 1.9703382\n[6,]  2.6829163  3.1438325 1.8787713 1.1919184 0.7462564 1.9703382 2.3301521\n[7,]  3.1438325  1.8787713 1.1919184 0.7462564 1.9703382 2.3301521 2.7309235",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#decompose-the-hankel-matrix",
+    "href": "lectures/Lecture1920/Lecture19.html#decompose-the-hankel-matrix",
+    "title": "Lecture 19",
+    "section": "Decompose the Hankel Matrix",
+    "text": "Decompose the Hankel Matrix\n\nUse Singular Value Decomposition (svd()) (Please don’t worry about the underlying calculus - continuing to study math is a personal decision). This is ultra-simplified, but bear with me\nSVD breaks the original data matrix into components: \\(U\\) × \\(\\Sigma\\) × \\(V^T\\)\n\\(U\\) is a matrix containing the patterns found in the data\nThe values in \\(\\Sigma\\) (a diagonal matrix) tell you exactly how much of each pattern in \\(U\\) is required to recreate the original data. (In R, it will be called “D” and it will be stored as a vector to save resources)\n\\(V^T\\) (the T means “transpose”) this matrix contains information on how to combine the other two to get back to the original data.\nThe short version: using math, we can reconstruct a good approximation of the original data matrix using only the top 1 or 2 patterns. \\(\\Sigma\\) (D in R) reveals it.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#example-1",
+    "href": "lectures/Lecture1920/Lecture19.html#example-1",
+    "title": "Lecture 19",
+    "section": "Example",
+    "text": "Example\n\n# Deconstruct the matrix\nsvd_random &lt;- svd(H_random)\nstr(svd_random)\n\nList of 3\n $ d: num [1:30] 201.6 81.3 51.9 34.6 23.5 ...\n $ u: num [1:30, 1:30] -0.164 -0.169 -0.173 -0.176 -0.18 ...\n $ v: num [1:121, 1:30] -0.0326 -0.032 -0.0313 -0.03 -0.0292 ...\n\nis(svd_random$d)\n\n[1] \"numeric\" \"vector\" \n\nis(svd_random$u)\n\n[1] \"matrix\"    \"array\"     \"structure\" \"vector\"   \n\nis(svd_random$v)\n\n[1] \"matrix\"    \"array\"     \"structure\" \"vector\"",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#visualize",
+    "href": "lectures/Lecture1920/Lecture19.html#visualize",
+    "title": "Lecture 19",
+    "section": "Visualize",
+    "text": "Visualize\n\n# Plot the singular values (the \"importance\" of each component)\nplot(svd_random$d, type = \"b\", pch = 16, col = \"darkgray\",\n     main = \"Diagnostic: Pure Random Walk\",\n     ylab = \"Information Captured (Singular Value)\", \n     xlab = \"Component Number\")\n\n\n\n\n\n\n\n\n\nThe interpretation of this plot: The gentle slope with no sharp drop-off is suggesting there is nothing interesting here. Every component is just carrying a little bit of random noise.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#some-non-random-data",
+    "href": "lectures/Lecture1920/Lecture19.html#some-non-random-data",
+    "title": "Lecture 19",
+    "section": "Some non-random data",
+    "text": "Some non-random data\n\n# Let's say every 12 months something happens and every 60 months too\ntrue_cycle &lt;- 3 * sin(2 * pi * time_steps / 12) + 2 * cos(2 * pi * time_steps / 60)\n\n# create some random noise \nset.seed(123)\nnoise &lt;- rnorm(150, mean = 0, sd = 2)\n\n# combine to make our data look more real\nmigration_flow &lt;- true_cycle + noise\n\n# visualize\nplot(time_steps, migration_flow, type = \"l\", col = \"blue\", lwd = 1,\n     main = \"Seasonal Migration Flows\",\n     ylab = \"Net Migration Anomaly\", xlab = \"Months\")",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#hankel-matrix-again",
+    "href": "lectures/Lecture1920/Lecture19.html#hankel-matrix-again",
+    "title": "Lecture 19",
+    "section": "Hankel Matrix Again",
+    "text": "Hankel Matrix Again\n\nL &lt;- 30\nK &lt;- length(migration_flow) - L + 1\n\n# Build the Hankel Matrix for the migration data\nH_flow &lt;- matrix(0, nrow = L, ncol = K)\nfor (i in 1:L) {\n  H_flow[i, ] &lt;- migration_flow[i:(i + K - 1)]\n}\n\nH_flow[1:5, 1:5]\n\n         [,1]     [,2]      [,3]       [,4]       [,5]\n[1,] 2.368092 4.094016 8.0195297  4.5661839  3.4906263\n[2,] 4.094016 8.019530 4.5661839  3.4906263  5.0481640\n[3,] 8.019530 4.566184 3.4906263  5.0481640  0.9081221\n[4,] 4.566184 3.490626 5.0481640  0.9081221 -3.7899375\n[5,] 3.490626 5.048164 0.9081221 -3.7899375 -3.1981352",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#deconstruct-with-svd",
+    "href": "lectures/Lecture1920/Lecture19.html#deconstruct-with-svd",
+    "title": "Lecture 19",
+    "section": "Deconstruct with SVD",
+    "text": "Deconstruct with SVD\n\nsvd_flow &lt;- svd(H_flow)\n\nplot(svd_flow$d, type = \"b\", pch = 16, col = \"red\",\n     main = \"Migration Data\",\n     ylab = \"Information Captured (Singular Value)\", \n     xlab = \"Component Number\")\n\n\n\n\n\n\n\n\n\nTakeaway: Look at that sharp drop-off as compared with the previous example. The first four components are capturing all the information, while the other components are noise. It’s four because mathematically SVD needs the first two to identify the 12-month seasonal swings and 3 and 4 are used to rebuild the 60-month shifts.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/Lecture19.html#reconstruct-it",
+    "href": "lectures/Lecture1920/Lecture19.html#reconstruct-it",
+    "title": "Lecture 19",
+    "section": "Reconstruct it?",
+    "text": "Reconstruct it?\nSure. And we can check to see it is the same.\n\nreconstructed_cycle &lt;- svd_flow$u %*% diag(svd_flow$d) %*% t(svd_flow$v)\nall.equal(reconstructed_cycle[1:5, 1:5], H_flow[1:5, 1:5])\n\n[1] TRUE\n\n\n\nWe started Stats 20 by saying it is just a fancy calculator (maybe a fancy graphing calculator)\nAnd it really is just that.",
+    "crumbs": [
+      "Lectures",
+      "Lecture 19"
+    ]
   },
   {
     "objectID": "lectures/Lecture1112/Lecture12.html#activity-1-always-anonymous",
@@ -7201,6 +7696,48 @@
       "Lectures",
       "Lecture 11"
     ]
+  },
+  {
+    "objectID": "lectures/Lecture1920/part2practice.html",
+    "href": "lectures/Lecture1920/part2practice.html",
+    "title": "Practice Final: In Class Version",
+    "section": "",
+    "text": "This document is to help you develop a sense of the in class final. In is in person, it runs for 60 minutes and you are expected to answer five questions.\nI think of it as a interview except I am unable to interview all of you individually.\nYou are not asked to code. You can if you want (it will be pencil or pen and paper absolutely no electronics). If you code, minor typos are OK but what I want to see is for you to explain your computation choices, logic and understanding.\nThe questions cover base R and will test your R knowledge, troubleshooting logic, and ability to communicate R concepts to someone who has no knowledge of R."
+  },
+  {
+    "objectID": "lectures/Lecture1920/part2practice.html#question-1",
+    "href": "lectures/Lecture1920/part2practice.html#question-1",
+    "title": "Practice Final: In Class Version",
+    "section": "Question 1",
+    "text": "Question 1\nSuppose an important data frame column containing numerical data (like est_saleprice_2024) was accidentally read in as a factor or character vector due to a incorrect text entry (e.g., $ and commas or using a word like “MISSING” instead of leaving the input blank).\nYour supervisor, who knows absolutely no R but spends a lot of time with Claude/Gemini/Chat and others copied and pasted code to calculate mean home sales and a number was output that could not possibly be correct (and least your supervisor was smart enough to recognize there is a problem).\nYour supervisor turns to you and says - “Explain why R did this!” and “How do you fix it or tell me how to write a prompt to fix it!”"
+  },
+  {
+    "objectID": "lectures/Lecture1920/part2practice.html#question-2",
+    "href": "lectures/Lecture1920/part2practice.html#question-2",
+    "title": "Practice Final: In Class Version",
+    "section": "Question 2",
+    "text": "Question 2\nNow that you’ve answered question 1 correctly, your supervisor thinks they have hired a genius in you. Your supervisor wrote a little for loop to classify credit and print a nice message for users. Unfortunately, it does not work right. He shows you the code and the error:\n\nPlease tell him what he needs to do/change to make it work. You do not need to program it for him, he needs to understand why this threw an error and is waiting for you to explain his mistake."
+  },
+  {
+    "objectID": "lectures/Lecture1920/part2practice.html#question-3",
+    "href": "lectures/Lecture1920/part2practice.html#question-3",
+    "title": "Practice Final: In Class Version",
+    "section": "Question 3",
+    "text": "Question 3\nYou are so done with your supervisor that you have applied for a different job. You are such a good programmer that you are offered a return interview immediately. During the interview, the interviewer says to you, “I have never understood the difference between using $, [ and [[]] as used in the following example:”\nx &lt;- iris$Sepal.Length\ny &lt;- iris[[\"Sepal.Length\"]]\nz &lt;- iris[\"Sepal.Length\"]\na &lt;- iris[ , \"Sepal.Length\"]\nFirst, tell the interviewer whether or not they all do the same thing and then tell the interviewer what type of data structures x, y, z, and a are."
+  },
+  {
+    "objectID": "lectures/Lecture1920/part2practice.html#question-4",
+    "href": "lectures/Lecture1920/part2practice.html#question-4",
+    "title": "Practice Final: In Class Version",
+    "section": "Question 4",
+    "text": "Question 4\nYou just can’t get away from R even though what you really want on your résumé is Python. Your roommate is taking Stats 20 next quarter but is starting to study it now because your roommate finds you inspiring (awww…)\nUnfortunately, your roommate is bothering you all of the time now for help (can’t they use AI?). They show you the following:\n\nYour roommate swears up and down that this should fix the homes sales price variable and you say:"
+  },
+  {
+    "objectID": "lectures/Lecture1920/part2practice.html#question-5",
+    "href": "lectures/Lecture1920/part2practice.html#question-5",
+    "title": "Practice Final: In Class Version",
+    "section": "Question 5",
+    "text": "Question 5\nIn the solutions for Quiz 9, your professor wrote a sloppy function:\neda_summary &lt;- function(df) {\n  \n  data.frame(\n    variable = names(df),\n    \n    type = sapply(df, function(col) class(col)),\n        \n    n_unique = sapply(df, function(col) {\n      if (is.character(col)) {\n        col &lt;- col[!is.na(col) & col != \"\"]\n      } else {\n        col &lt;- col[!is.na(col)]\n      }\n        sum(!duplicated(col))\n    }),\n    \n    prop_missing = sapply(df, function(col) {\n      if (is.character(col)) {\n        mean(is.na(col) | col == \"\") |&gt; round(digits = 3)\n      } else {\n        mean(is.na(col))|&gt; round(digits = 3)\n      }\n    }),\n    \n    row.names = NULL\n  )\n}\nSloppy because your roommate tried it and broke it immediately\n\nand your roommate also wants to change the digits kept after rounding to some other number, not just “3” all of the time everytime but wants the choice and power of changing digits whenever eda_summary() is used.\nPlease tell us (a) how to prevent people like your roommate from breaking the function and (b) how it could be modified to allow your roommate to change digits anytime?"
   },
   {
     "objectID": "lectures/Lecture1718/Lecture18.html#what-are-factors",
