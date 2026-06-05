@@ -1112,7 +1112,10 @@ margin-right: 0; }
 </section>
 <section id="atomic-vector-types" class="slide level2">
 <h2>(Atomic) Vector Types</h2>
-<p>In Stats 20: * Logical, Integer, Double (Numeric), Character * Complex and Raw also exist, but not used in this class * Knowing the explicit difference between an integer (<code>1L</code>) and a double (<code>1.0</code>) prevents precision issues in calculations. * Atomic vectors can only hold <em>one</em> type of data. * Coercion Hierarchy <code>Logical</code> <span class="math inline">\(\rightarrow\)</span> <code>Integer</code> <span class="math inline">\(\rightarrow\)</span> <code>Double</code> <span class="math inline">\(\rightarrow\)</span> <code>Character</code>.</p>
+<p>In Stats 20:<br>
+* Logical, Integer, Double (Numeric), Character. * Complex and Raw also exist, but not used in this class. * Knowing the explicit difference between an integer (<code>1L</code>) and a double (<code>1.0</code>) prevents precision issues in calculations.<br>
+* Atomic vectors can only hold <em>one</em> type of data.<br>
+* Coercion Hierarchy <code>Logical</code> <span class="math inline">\(\rightarrow\)</span> <code>Integer</code> <span class="math inline">\(\rightarrow\)</span> <code>Double</code> <span class="math inline">\(\rightarrow\)</span> <code>Character</code>.</p>
 <p>Application: If a dataset mixes a single piece of text (<code>&quot;missing&quot;</code>) into a column of 10,000 numbers, R coerces the <em>entire</em> vector to characters. You cannot calculate a mean on characters. So it would need to be fixed.</p>
 <ul>
 <li><strong>Explicit Coercion:</strong> The <code>as.*</code> family (<code>as.numeric()</code>, <code>as.character()</code>) is used to correct issues</li>
@@ -1126,7 +1129,10 @@ margin-right: 0; }
 <li><strong>Lists:</strong> Allow heterogenity of data. A list can hold vectors, data frames, or even other lists.</li>
 <li><strong>Data Frames:</strong> Technically, a data frame is a <em>list of equal-length vectors</em>. This is why columns can have different data types, but rows must align.</li>
 </ul>
-<p>It may help to remember the little functions * <code>names()</code>, <code>colnames()</code>, <code>rownames()</code>, and <code>dim()</code>.</p>
+<p>It may help to remember the little functions.</p>
+<ul>
+<li><code>names()</code>, <code>colnames()</code>, <code>rownames()</code>, and <code>dim()</code>.</li>
+</ul>
 </section>
 <section id="factors" class="slide level2">
 <h2>Factors</h2>
@@ -1145,13 +1151,16 @@ margin-right: 0; }
 <li><code>[[ ]]</code> Extracts a <em>single element</em> but does not preserve the original structure so subsetting a data frame with <code>[[</code> returns a vector.</li>
 <li><code>$</code>: Convenient alternative for <code>[[ ]]</code> using literal names, not position.</li>
 </ul>
-<p>A “gotcha” with <code>[</code> * Subsetting a single column from a data frame using <code>df[, 1]</code> instead of df[1] does not preserve the structure and converts to a vector. * <code>df[, 1, drop = FALSE]</code> guarantees the output remains a 2D data frame (not tested on that but just in case you make a mistake) * Use logical vectors (e.g., <code>df[df$age &gt; 30, ]</code>) to subset and even safer <code>df[which(df$age &gt; 30), ]</code> in case age has NA values.</p>
+<p>A “gotcha” with <code>[</code>.<br>
+* Subsetting a single column from a data frame using <code>df[, 1]</code> instead of df[1] does not preserve the structure and converts to a vector<br>
+* <code>df[, 1, drop = FALSE]</code> guarantees the output remains a 2D data frame (not tested on that but just in case you make a mistake)<br>
+* Use logical vectors (e.g., <code>df[df$age &gt; 30, ]</code>) to subset and even safer <code>df[which(df$age &gt; 30), ]</code> in case age has NA values</p>
 </section>
 <section id="the-functional-engine-vectorization-vs.-loops" class="slide level2">
 <h2>The Functional Engine (Vectorization vs. Loops)</h2>
 <ul>
 <li>Base R operations (like <code>+</code>, <code>*</code>, or <code>log()</code>) are vectorized—they apply to whole vectors (no loop needed).</li>
-<li>That’s why in R, you can write something like <span class="math inline">\(df\)</span>age^2$ without using a loop. R is vectorized.</li>
+<li>That’s why in R, you can write something like <code>df$age^2</code> without using a loop. R is vectorized.</li>
 </ul>
 <h3 id="sometimes-loops-must-be-used">Sometimes Loops must be used</h3>
 <ul>
@@ -1205,7 +1214,7 @@ margin-right: 0; }
 <section id="lecture-7-the-logic-of-constructing-plots-in-r" class="slide level2">
 <h2>(Lecture 7) The Logic of Constructing Plots in R</h2>
 <ul>
-<li>The functions on the previous slide could be roughly categorized in “high level” and “low level” functions.</li>
+<li>Plotting functions can be roughly categorized in “high level” and “low level” functions.</li>
 <li>A plot is created in base R graphics by first calling a high-level function.</li>
 <li>A high-level graphics function can create a plot and does not require any other function to precede it</li>
 <li>A low-level graphics function are called to add more output to the plot (such as additional lines or points). These functions depend on a previous high-level function.</li>
@@ -1324,7 +1333,7 @@ margin-right: 0; }
 <p>will cover most of your needs. Of course there are many types of visualizations, but one only needs a few general purpose visualization functions.</p>
 </section>
 <section id="lecture-8-tables" class="slide level2">
-<h2>Lecture 8: tables()</h2>
+<h2>(Lecture 8) tables()</h2>
 <ul>
 <li>The table() function is ancient but easy and useful. Especially when trying to build data for plots</li>
 <li>from the documentation, simplified</li>
